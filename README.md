@@ -8,6 +8,8 @@
 
 This is Jelly Belly, an app aimed for restaurant owners to manage their customers with minimum contact, when customer’s seated at a restaurant table.
 
+**The code targets iOS 16**
+
 ## Features
 
 1. The app shows a menu as a list
