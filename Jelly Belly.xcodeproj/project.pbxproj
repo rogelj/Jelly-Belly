@@ -33,6 +33,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		46A1B01928AFD7D600302426 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				46AAB96428AFCDDE00DE602A /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		46A1B01A28AFD7F400302426 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				46AAB96228AFCDDE00DE602A /* Jelly_BellyApp.swift */,
+				46AAB96628AFCDDF00DE602A /* Assets.xcassets */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		46A1B01B28AFD7FC00302426 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		46AAB95628AFCDDE00DE602A = {
 			isa = PBXGroup;
 			children = (
@@ -52,9 +76,9 @@
 		46AAB96128AFCDDE00DE602A /* Jelly Belly */ = {
 			isa = PBXGroup;
 			children = (
-				46AAB96228AFCDDE00DE602A /* Jelly_BellyApp.swift */,
-				46AAB96428AFCDDE00DE602A /* ContentView.swift */,
-				46AAB96628AFCDDF00DE602A /* Assets.xcassets */,
+				46A1B01A28AFD7F400302426 /* App */,
+				46A1B01928AFD7D600302426 /* Views */,
+				46A1B01B28AFD7FC00302426 /* Models */,
 				46AAB96828AFCDDF00DE602A /* Jelly_Belly.entitlements */,
 				46AAB96928AFCDDF00DE602A /* Preview Content */,
 			);
