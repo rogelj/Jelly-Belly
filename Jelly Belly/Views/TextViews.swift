@@ -12,11 +12,11 @@ struct BigBoldText: View {
     
     var body: some View {
         Text(text)
+            .multilineTextAlignment(.center)
             .kerning(-1.0)
             .foregroundColor(Color("Jelly"))
             .font(.largeTitle)
             .fontWeight(.black)
-            .multilineTextAlignment(.center)
     }
 }
 
@@ -55,6 +55,8 @@ struct TextViews: View {
 struct TextViews_Previews: PreviewProvider {
     static var previews: some View {
         TextViews()
+        TextViews()
+            .previewInterfaceOrientation(.landscapeLeft)
         TextViews()
             .preferredColorScheme(.dark)
     }

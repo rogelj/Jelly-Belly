@@ -8,13 +8,26 @@
 import SwiftUI
 
 struct ContentView: View {
+    let userName = "John Appleseed"
+    
+    @Environment(\.verticalSizeClass) var verticalSizeClass
+    @Environment(\.horizontalSizeClass) var horizontalSizeClass
+    
     var body: some View {
         ZStack {
             HomeBackgroundView()
             VStack(spacing: 50) {
-                BigBoldText(text: "Welcome\n John Appleseed")
-                    .padding(.bottom, 300)
+                HStack {
+                    if verticalSizeClass == .regular && horizontalSizeClass == .compact {
+                        BigBoldText(text: "Welcome\n\(userName)")
+                    } else {
+                        BigBoldText(text: "Welcome \(userName)")
+                            .padding(.leading, 30.0)
+                            .padding(.trailing, 30.0)
+                    }
                 }
+            .padding(.bottom, 300)
+            }
             RoundLogoView(imageSize: Constants.General.logoViewSize)
         }
     }
