@@ -12,16 +12,16 @@ struct TopView: View {
         HStack{
             Spacer()
             RoundedImageView(systemName: "fork.knife")
+                .padding()
         }
     }
 }
 
-struct LogoView: View {
+struct BackgroundView: View {
     var body: some View {
         ZStack {
             Color("BackgroundColorAccent")
                 .edgesIgnoringSafeArea(.all)
-            RoundLogoView(imageSize: Constants.General.logoViewSize)
         }
     }
 }
@@ -34,7 +34,7 @@ struct HomeBackgroundView: View {
             Spacer()
         }
         .padding()
-        .background(LogoView())
+        .background(BackgroundView())
     }
 }
 
