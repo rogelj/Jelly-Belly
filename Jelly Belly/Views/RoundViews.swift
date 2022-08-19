@@ -37,17 +37,35 @@ struct RoundedImageView: View {
     }
 }
 
+struct LogoView: View {
+    @Environment(\.colorScheme) var colorScheme
+    
+    var imageSize: CGFloat
+    var imageLogo: String = "JellyBelly"
+    
+    var body: some View {
+//        Text("here")
+        
+        let imageLogo = colorScheme == .dark ? "JellyBellyDark" : "JellyBelly"
+        
+        Image(imageLogo)
+            .resizable()
+                .aspectRatio(contentMode: .fill)
+                .frame(width: imageSize, height: imageSize, alignment: .center)
+                .clipShape(Circle())
+    }
+}
+
 struct RoundViews: View {
     var body: some View {
         VStack(spacing: 10.0) {
-//            RoundedImageViewStroked(systemName: "arrow.counterclockwise")
-//            RoundedImageViewFilled(systemName: "list.dash")
-//            RoundRectTextView(text: "100")
             RoundedTextView(text: "1")
             RoundedImageView(systemName: "fork.knife")
+            LogoView(imageSize: Constants.General.logoViewSize)
         }
     }
 }
+
 
 struct RoundViews_Previews: PreviewProvider {
     static var previews: some View {
