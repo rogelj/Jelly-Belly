@@ -20,10 +20,23 @@ struct BigBoldText: View {
     }
 }
 
+struct BigText: View {
+    let text: String
+    
+    var body: some View {
+        Text(text)
+            .foregroundColor(Color("Jelly"))
+            .font(.title)
+            .bold()
+            .multilineTextAlignment(.center)
+    }
+}
+
 struct TextViews: View {
     var body: some View {
         VStack {
             BigBoldText(text: "Welcome\n John Appleseed")
+            BigText(text: "Jelly Belly")
         }
     }
 }
