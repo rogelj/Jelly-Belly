@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		46A1B01D28AFD8FF00302426 /* TextViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A1B01C28AFD8FF00302426 /* TextViews.swift */; };
 		46A1B01F28AFD91D00302426 /* RoundViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A1B01E28AFD91D00302426 /* RoundViews.swift */; };
-		46A1B02128AFD93800302426 /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A1B02028AFD93800302426 /* BackgroundView.swift */; };
+		46A1B02128AFD93800302426 /* HomeBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A1B02028AFD93800302426 /* HomeBackgroundView.swift */; };
 		46A1B02328AFD95200302426 /* OnboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A1B02228AFD95200302426 /* OnboardView.swift */; };
 		46A1B02528AFDE2000302426 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A1B02428AFDE2000302426 /* Constants.swift */; };
 		46AAB96328AFCDDE00DE602A /* Jelly_BellyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AAB96228AFCDDE00DE602A /* Jelly_BellyApp.swift */; };
@@ -21,7 +21,7 @@
 /* Begin PBXFileReference section */
 		46A1B01C28AFD8FF00302426 /* TextViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViews.swift; sourceTree = "<group>"; };
 		46A1B01E28AFD91D00302426 /* RoundViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundViews.swift; sourceTree = "<group>"; };
-		46A1B02028AFD93800302426 /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
+		46A1B02028AFD93800302426 /* HomeBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBackgroundView.swift; sourceTree = "<group>"; };
 		46A1B02228AFD95200302426 /* OnboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardView.swift; sourceTree = "<group>"; };
 		46A1B02428AFDE2000302426 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		46AAB95F28AFCDDE00DE602A /* Jelly Belly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Jelly Belly.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -49,7 +49,7 @@
 				46AAB96428AFCDDE00DE602A /* ContentView.swift */,
 				46A1B01C28AFD8FF00302426 /* TextViews.swift */,
 				46A1B01E28AFD91D00302426 /* RoundViews.swift */,
-				46A1B02028AFD93800302426 /* BackgroundView.swift */,
+				46A1B02028AFD93800302426 /* HomeBackgroundView.swift */,
 				46A1B02228AFD95200302426 /* OnboardView.swift */,
 			);
 			path = Views;
@@ -178,7 +178,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				46A1B02128AFD93800302426 /* BackgroundView.swift in Sources */,
+				46A1B02128AFD93800302426 /* HomeBackgroundView.swift in Sources */,
 				46AAB96528AFCDDE00DE602A /* ContentView.swift in Sources */,
 				46A1B01F28AFD91D00302426 /* RoundViews.swift in Sources */,
 				46AAB96328AFCDDE00DE602A /* Jelly_BellyApp.swift in Sources */,

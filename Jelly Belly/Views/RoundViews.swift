@@ -37,7 +37,7 @@ struct RoundedImageView: View {
     }
 }
 
-struct LogoView: View {
+struct RoundLogoView: View {
     @Environment(\.colorScheme) var colorScheme
     
     var imageSize: CGFloat
@@ -61,7 +61,7 @@ struct RoundViews: View {
         VStack(spacing: 10.0) {
             RoundedTextView(text: "1")
             RoundedImageView(systemName: "fork.knife")
-            LogoView(imageSize: Constants.General.logoViewSize)
+            RoundLogoView(imageSize: Constants.General.logoViewSize)
         }
     }
 }
