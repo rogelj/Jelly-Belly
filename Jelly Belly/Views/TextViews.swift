@@ -32,11 +32,22 @@ struct BigText: View {
     }
 }
 
+struct BodyText: View {
+    var text: String
+    
+    var body: some View {
+        Text(text)
+            .font(.body)
+            .multilineTextAlignment(.leading)
+    }
+}
+
 struct TextViews: View {
     var body: some View {
-        VStack {
+        VStack(spacing: 10) {
             BigBoldText(text: "Welcome\n John Appleseed")
             BigText(text: "Jelly Belly")
+            BodyText(text: "This is an example of the features in the app")
         }
     }
 }
