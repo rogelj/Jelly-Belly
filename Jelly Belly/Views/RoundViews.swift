@@ -53,8 +53,6 @@ struct RoundLogoView: View {
     var imageLogo: String = "JellyBelly"
     
     var body: some View {
-//        Text("here")
-        
         let imageLogo = colorScheme == .dark ? "JellyBellyDark" : "JellyBelly"
         
         Image(imageLogo)
@@ -65,16 +63,46 @@ struct RoundLogoView: View {
     }
 }
 
+struct JellyBellyButton: View {
+    var message: String
+    
+    var body: some View {
+
+        Button(action: { }) {
+                Text(message)
+                    .bold()
+                   .font(.title3)
+            }   .buttonStyle(WideBellyButton())
+    }
+}
+
+struct WideBellyButton: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .padding()
+            .frame(maxWidth: 175, maxHeight: 40)
+            .foregroundColor(.white)
+            .padding()
+            .background(
+                ZStack {
+                    RoundedRectangle(cornerRadius: Constants.General.roudedRectCornerRadius)
+                        .fill(Color("Belly"))
+                    LinearGradient(gradient: Gradient(colors: [Color.white.opacity(0.3), Color.clear]), startPoint: .top, endPoint: .bottom)
+                }
+        )
+    }
+}
+    
 struct RoundViews: View {
     var body: some View {
         VStack(spacing: 10.0) {
             RoundedTextView(text: "1")
             RoundedImageView(systemName: "fork.knife")
             RoundLogoView(imageSize: Constants.General.logoViewSize)
+            JellyBellyButton(message: "OK")
         }
     }
 }
-
 
 struct RoundViews_Previews: PreviewProvider {
     static var previews: some View {
