@@ -23,6 +23,7 @@ struct HeaderView: View {
     }
 }
 
+
 /**
  A  view to create rows for the list of features, enumerated with a rounded view
  */
@@ -42,6 +43,8 @@ struct RowView: View {
     }
 }
 
+
+
 /**
  Main onboard view
  */
@@ -56,7 +59,7 @@ struct OnboardView: View {
                        "Users can write a review of the menu item and add a photo of the dish"]
     
     var body: some View {
-        VStack(spacing: 30.0) {
+        VStack(spacing: 20.0) {
             HeaderView()
             Text("Features to be build over time")
                 .bold()
@@ -77,6 +80,8 @@ struct OnboardView: View {
                         .bold()
                        .font(.title3)
                 }   .buttonStyle(WideBellyButton())
+            Spacer()
+                .frame(height: 1.0)
         }
     }
 }
