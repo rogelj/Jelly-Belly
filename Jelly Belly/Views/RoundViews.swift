@@ -80,7 +80,7 @@ struct WideBellyButton: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
             .padding()
-            .frame(maxWidth: 175, maxHeight: 40)
+            .frame(maxWidth: 175, maxHeight: 10)
             .foregroundColor(.white)
             .padding()
             .background(
@@ -89,6 +89,7 @@ struct WideBellyButton: ButtonStyle {
                         .fill(Color("Belly"))
                     LinearGradient(gradient: Gradient(colors: [Color.white.opacity(0.3), Color.clear]), startPoint: .top, endPoint: .bottom)
                 }
+                    .cornerRadius(Constants.General.roudedRectCornerRadius)
         )
     }
 }

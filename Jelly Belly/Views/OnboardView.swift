@@ -63,6 +63,11 @@ struct OnboardView: View {
                     }
                 }
             }
+            Button(action: { }) {
+                    Text("OK")
+                        .bold()
+                       .font(.title3)
+                }   .buttonStyle(WideBellyButton())
         }
     }
 }
