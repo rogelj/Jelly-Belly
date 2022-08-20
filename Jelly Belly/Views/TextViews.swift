@@ -7,6 +7,9 @@
 
 import SwiftUI
 
+/**
+ A text view to create big bold text as used in the welcome page.
+ */
 struct BigBoldText: View {
     let text: String
     
@@ -20,6 +23,9 @@ struct BigBoldText: View {
     }
 }
 
+/**
+ A text view to create big big text as used in the onboarding page.
+ */
 struct BigText: View {
     let text: String
     
@@ -32,6 +38,9 @@ struct BigText: View {
     }
 }
 
+/**
+ A text view to create text used in the body of the app.
+ */
 struct BodyText: View {
     var text: String
     
@@ -41,6 +50,7 @@ struct BodyText: View {
             .multilineTextAlignment(.leading)
     }
 }
+
 
 struct TextViews: View {
     var body: some View {

@@ -7,6 +7,9 @@
 
 import SwiftUI
 
+/**
+ A round view to show one or two characters inside a circle
+ */
 struct RoundedTextView: View {
     let text: String
     
@@ -22,6 +25,9 @@ struct RoundedTextView: View {
     }
 }
 
+/**
+ A round view to show an image  inside a circle. Best used for suitable SF Symbols
+ */
 struct RoundedImageView: View {
     var systemName: String
     
@@ -37,6 +43,9 @@ struct RoundedImageView: View {
     }
 }
 
+/**
+ A  view to embed an image such as the app logo
+ */
 struct RoundLogoView: View {
     @Environment(\.colorScheme) var colorScheme
     

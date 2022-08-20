@@ -7,6 +7,9 @@
 
 import SwiftUI
 
+/**
+ The Top View of the landing page
+ */
 struct TopView: View {
     var body: some View {
         HStack{
@@ -17,6 +20,9 @@ struct TopView: View {
     }
 }
 
+/**
+ A  view to with a bacground in the `BackgroundColorAccent` color
+ */
 struct BackgroundView: View {
     var body: some View {
         ZStack {
