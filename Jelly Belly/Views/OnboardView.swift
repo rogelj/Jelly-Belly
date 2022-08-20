@@ -15,6 +15,8 @@ import SwiftUI
 struct HeaderView: View {
     var body: some View {
         VStack(spacing: 20.0) {
+            Spacer()
+                .frame(height: 30)
             BigText(text: "Jelly Belly")
             RoundLogoView(imageSize: Constants.General.logoViewSizeSmall)
         }
@@ -40,7 +42,12 @@ struct RowView: View {
     }
 }
 
+/**
+ Main onboard view
+ */
 struct OnboardView: View {
+    @Binding var onboardingIsShowing: Bool
+    
     let featuresToBuild = ["The app shows a menu as a list",
                        "Menu list is fetched from an API and saved in the app",
                        "Users can choose menu items and add them to their order",
@@ -63,7 +70,9 @@ struct OnboardView: View {
                     }
                 }
             }
-            Button(action: { }) {
+            Button(action: {
+                onboardingIsShowing = false
+            }) {
                     Text("OK")
                         .bold()
                        .font(.title3)
@@ -73,11 +82,12 @@ struct OnboardView: View {
 }
 
 struct OnboardView_Previews: PreviewProvider {
+    static private var onboardingIsShowing = Binding.constant(false)
     static var previews: some View {
-        OnboardView()
-        OnboardView()
+        OnboardView(onboardingIsShowing: onboardingIsShowing)
+        OnboardView(onboardingIsShowing: onboardingIsShowing)
             .preferredColorScheme(.dark)
-        OnboardView()
+        OnboardView(onboardingIsShowing: onboardingIsShowing)
             .previewInterfaceOrientation(.landscapeLeft)
     }
 }

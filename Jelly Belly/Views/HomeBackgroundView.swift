@@ -11,11 +11,19 @@ import SwiftUI
  The Top View of the landing page
  */
 struct TopView: View {
+    @State private var onboardingIsShowing = false
+    
     var body: some View {
         HStack{
             Spacer()
-            RoundedImageView(systemName: "fork.knife")
-                .padding()
+            Button( action: {
+                onboardingIsShowing = true
+            }) {
+                RoundedImageView(systemName: "fork.knife")
+            }.sheet(isPresented: $onboardingIsShowing, onDismiss: {}, content: {
+                OnboardView(onboardingIsShowing: $onboardingIsShowing)
+            })
+            .padding()
         }
     }
 }
