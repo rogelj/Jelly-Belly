@@ -16,6 +16,7 @@ enum Constants {
 //        public static let roundedRectViewHeight = CGFloat(56.0)
 //        public static let roudedRectCornerRadius = CGFloat(21.0)
         public static let logoViewSize = CGFloat(100.0)
+        public static let logoViewSizeSmall = CGFloat(75.0)
     }
-    
 }
+
