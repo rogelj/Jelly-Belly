@@ -80,8 +80,6 @@ struct OnboardView: View {
                         .bold()
                        .font(.title3)
                 }   .buttonStyle(WideBellyButton())
-            Spacer()
-                .frame(height: 1.0)
         }
     }
 }
