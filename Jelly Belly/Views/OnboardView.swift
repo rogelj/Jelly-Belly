@@ -13,12 +13,28 @@ import SwiftUI
  - App logo
  */
 struct HeaderView: View {
+    @Environment(\.verticalSizeClass) var verticalSizeClass
+    @Environment(\.horizontalSizeClass) var horizontalSizeClass
+    
     var body: some View {
-        VStack(spacing: 20.0) {
+        
+        if verticalSizeClass == .regular && horizontalSizeClass == .compact {
+            VStack(spacing: 20.0) {
+                Spacer()
+                    .frame(height: 30)
+                BigText(text: "Jelly Belly")
+                RoundLogoView(imageSize: Constants.General.logoViewSizeSmall)
+            }
+        } else {
             Spacer()
-                .frame(height: 30)
-            BigText(text: "Jelly Belly")
-            RoundLogoView(imageSize: Constants.General.logoViewSizeSmall)
+                .frame(height: 0.5)
+            HStack {
+                BigText(text: "Jelly Belly")
+                    .padding(.leading)
+                Spacer()
+                RoundLogoView(imageSize: Constants.General.logoViewSizeSmall)
+                    .padding(.trailing)
+            }
         }
     }
 }
@@ -42,8 +58,6 @@ struct RowView: View {
         }
     }
 }
-
-
 
 /**
  Main onboard view
@@ -80,6 +94,8 @@ struct OnboardView: View {
                         .bold()
                        .font(.title3)
                 }   .buttonStyle(WideBellyButton())
+            Spacer()
+                .frame(height: 0.5)
         }
     }
 }
@@ -92,5 +108,8 @@ struct OnboardView_Previews: PreviewProvider {
             .preferredColorScheme(.dark)
         OnboardView(onboardingIsShowing: onboardingIsShowing)
             .previewInterfaceOrientation(.landscapeLeft)
+        OnboardView(onboardingIsShowing: onboardingIsShowing)
+            .previewInterfaceOrientation(.landscapeLeft)
+            .preferredColorScheme(.dark)
     }
 }
