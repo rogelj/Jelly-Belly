@@ -99,7 +99,7 @@ struct RoundViews: View {
         VStack(spacing: 10.0) {
             RoundedTextView(text: "1")
             RoundedImageView(systemName: "fork.knife")
-            RoundLogoView(imageSize: Constants.General.logoViewSize)
+            RoundLogoView(imageSize: Constants.Logo.logoViewSize)
             JellyBellyButton(message: "OK")
         }
     }

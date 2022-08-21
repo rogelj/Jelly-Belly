@@ -22,7 +22,7 @@ struct ContentView: View {
                 }
             .padding(.bottom, 300)
             }
-            RoundLogoView(imageSize: Constants.General.logoViewSize)
+            RoundLogoView(imageSize: Constants.Logo.logoViewSize)
         }
     }
 }

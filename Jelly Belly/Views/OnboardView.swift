@@ -23,7 +23,7 @@ struct HeaderView: View {
                 Spacer()
                     .frame(height: 30)
                 BigText(text: "Jelly Belly")
-                RoundLogoView(imageSize: Constants.General.logoViewSizeSmall)
+                RoundLogoView(imageSize: Constants.Logo.logoViewSizeSmall)
             }
         } else {
             Spacer()
@@ -32,7 +32,7 @@ struct HeaderView: View {
                 BigText(text: "Jelly Belly")
                     .padding(.leading)
                 Spacer()
-                RoundLogoView(imageSize: Constants.General.logoViewSizeSmall)
+                RoundLogoView(imageSize: Constants.Logo.logoViewSizeSmall)
                     .padding(.trailing)
             }
         }
