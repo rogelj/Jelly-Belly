@@ -42,4 +42,5 @@ For an app like Jelly Belly,  some ideas include:
 
 - [ ]  Display the data on the iPhone simulator.
 - [ ] Create more than one collection.
-- [ ] Use a return statement.
+- [ ] Use a return statement
+
