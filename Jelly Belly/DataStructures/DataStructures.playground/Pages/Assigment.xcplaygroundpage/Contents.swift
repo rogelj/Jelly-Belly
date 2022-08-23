@@ -121,21 +121,29 @@ var naranjada = Dish(name: "Naranjada",
                         special: true)  // Adding an optional
 
 var garlicBread = Dish(name: "Garlic Bread",
-                            ingredients: [(ingredient: "Fusilli", portion: 2),
-                                         ("Parmesan", 1),
-                                         ("Pasta Sauce", 1)],
-                            cusine: cuisine[1],
-                            mealtype: mealType[2],
-                            cost: 15.0
-                            dietary: diet[0])  // Adding an optional
+                   ingredients: [(ingredient: "Garlic", portion: 1),
+                                     ("Parmesan", 2),
+                                     ("Bread", 2)],
+                        cusine: cuisine[0],
+                        mealtype: mealType[0],
+                        cost: 9.0,
+                        dietary: diet[0])  // Adding an optional
 
 var tiramisu = Dish(name: "Tiramisu",
-                            ingredients: [(ingredient: "Pizza Base", portion: 1),
-                                         ("Mozarella", 2),
-                                         ("Pasta Sauce", 2)],
-                            cusine: cuisine[0],
-                            mealtype: mealType[2],
-                            cost: 15.0)
+                        ingredients: [(ingredient: "Chocolate", portion: 1),
+                                     ("Cream", 2),
+                                     ("Mascarpone", 2),
+                                     ("Coffee",1)],
+                        cusine: cuisine[0],
+                        mealtype: mealType[2],
+                        cost: 14.0)
+
+func addToOrder(order: [Dish], dish: Dish) {
+    print(order)
+    print(dish)
+}
+
+addToOrder(order: order, dish: tiramisu)
 
 
 //: [Next](@next)
