@@ -81,7 +81,11 @@ diet.append("Gluten Free")
 var order: [Dish] = []
 
 //: ### Assignment 4 - Create six instances of the `Dish` struct. For 2 of the objects use `nil` for the optionals.
-//: For 2 of the objects use `nil` for the optionals.
+//: For 2 of the objects use `nil` for the optionals. I actually added it to 4 as I implemented 2 optionals:
+//: - `fusilliArrabiata`
+//: - `pizzaMargherita`
+//: - `naranjada`
+//: - `garlicBread`
 
 var fusilliArrabiata = Dish(name: "Fusilli Arrabiata",
                             ingredients: [(ingredient: "Fusilli", portion: 2.0),
@@ -90,7 +94,7 @@ var fusilliArrabiata = Dish(name: "Fusilli Arrabiata",
                             cusine: cuisine[0],
                             mealtype: mealType[1],
                             cost: 15.0,
-                            special: true)
+                            special: true)  // Adding an optional
 
 var pizzaMargherita = Dish(name: "Pizza Margherita",
                            ingredients: [(ingredient: "Pizza Base", portion: 1.0),
@@ -99,7 +103,7 @@ var pizzaMargherita = Dish(name: "Pizza Margherita",
                         cusine: cuisine[0],
                         mealtype: mealType[1],
                         cost: 19.0,
-                        dietary: diet[0])
+                        dietary: diet[0])  // Adding an optional
 
 var lemonade = Dish(name: "Lemonade",
                     ingredients: [(ingredient: "Lemon", portion: 3.0),
@@ -114,7 +118,7 @@ var naranjada = Dish(name: "Naranjada",
                         cusine: cuisine[1],
                         mealtype: mealType[3],
                         cost: 12.0,
-                        special: true)
+                        special: true)  // Adding an optional
 
 var garlicBread = Dish(name: "Garlic Bread",
                             ingredients: [(ingredient: "Fusilli", portion: 2),
@@ -122,7 +126,8 @@ var garlicBread = Dish(name: "Garlic Bread",
                                          ("Pasta Sauce", 1)],
                             cusine: cuisine[1],
                             mealtype: mealType[2],
-                            cost: 15.0)
+                            cost: 15.0
+                            dietary: diet[0])  // Adding an optional
 
 var tiramisu = Dish(name: "Tiramisu",
                             ingredients: [(ingredient: "Pizza Base", portion: 1),

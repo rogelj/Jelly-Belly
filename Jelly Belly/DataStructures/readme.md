@@ -13,19 +13,19 @@ For an app like Jelly Belly,  some ideas include:
 
 ## Tasks
 
-- [ ]  **Assignment 1:** Create an Xcode playground.
+- [x]  **Assignment 1:** Create an Xcode playground.
   - Create a struct or class to model data for your app. Examples of app data:
   - - For the shopping, it could be the items you are selling.
     - For the Trip Planner, it could be a hotel booked for the trip.
     - For the Pet diary, it could be a Grooming spa used for the pet.
     - For the restaurant, it could be a meal on the menu.
-- [ ]  **Assignment 2:** 
+- [x]  **Assignment 2:** 
   - Create an empty collection to hold a group of the data you collected in Assignment 1.
   - Select either a Tuple, Array, Set, or Dictionary as the type for your collection.
   - Use your knowledge of the different collection types to select an appropriate collection.
-- [ ]  **Assignment 3:**
+- [x]  **Assignment 3:**
   - Make one of the properties of the struct or class you created in Assignment 1 optional. 
-- [ ]  **Assignment 4:** 
+- [x]  **Assignment 4:** 
   - Create Six instances/objects using the struct or class you created in Assignment 1.
   - For 2 of the objects created above provide the value as nil for the property you marked as optionals in Assignment 3.
 - [ ]  **Assignment 5:**
