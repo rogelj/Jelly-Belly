@@ -222,4 +222,14 @@ printDietaryDishes(order: order)
 
 print(fusilliArrabiata.getCalories())
 
+func totalOrder(order: [Dish]) -> Float {
+    var total: Float = 0.0
+    for entry in order {
+        total += entry.cost
+    }
+    return total
+}
+
+print(totalOrder(order: order))
+
 //: [Next](@next)

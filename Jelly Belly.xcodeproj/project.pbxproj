@@ -115,8 +115,8 @@
 		46B4943928B4E462003D910B /* DataStructures */ = {
 			isa = PBXGroup;
 			children = (
-				46B4943A28B4E4B8003D910B /* readme.md */,
 				46B4943C28B4E4F0003D910B /* DataStructures.playground */,
+				46B4943A28B4E4B8003D910B /* readme.md */,
 			);
 			path = DataStructures;
 			sourceTree = "<group>";
