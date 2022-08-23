@@ -34,7 +34,7 @@ let mealType: Set = ["starter", "main", "beverage", "dessert"]
 //: The ingredients are stored in a dictionary that provides information about the calory content.
 //: At this stage I am not 100% convinced this is the most sustainable way to show this in the app. However, it
 //: gives me an opportunity to play with this data structure as this stage.
-var ingredients: [String: Float] = []
+var ingredients: [String: Float] = [:]
 ingredients["Fusilli"] = 450
 ingredients["Mozarella"] = 400
 ingredients["Pasta Sauce"] = 180
