@@ -36,7 +36,7 @@ struct Dish {
                 calories += ingredient.portion * calorieVal
             }
         }
-        return calories
+        return calories  // **Nice to have** - implementing a method with `return` 
     }
 }
 //: Let us now implement some of the components for the Dish class to be built later on.
