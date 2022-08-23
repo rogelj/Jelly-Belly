@@ -17,7 +17,7 @@
 struct Dish {
     let name: String
     var ingredients: [(ingredient: String, portion: Float)]
-    var cusine: String
+    var cuisine: String
     var mealtype: String
     var cost: Float
     var special: Bool?       // ### Assignment 3 - Making at least one property optional
@@ -91,7 +91,7 @@ var fusilliArrabiata = Dish(name: "Fusilli Arrabiata",
                             ingredients: [(ingredient: "Fusilli", portion: 2.0),
                                           ("Parmesan", 1.0),
                                           ("Pasta Sauce", 1.0)],
-                            cusine: cuisine[0],
+                            cuisine: cuisine[0],
                             mealtype: mealType[1],
                             cost: 15.0,
                             special: true)  // Adding an optional
@@ -100,7 +100,7 @@ var pizzaMargherita = Dish(name: "Pizza Margherita",
                            ingredients: [(ingredient: "Pizza Base", portion: 1.0),
                                          ("Mozarella", 2.0),
                                          ("Pasta Sauce", 2.0)],
-                        cusine: cuisine[0],
+                        cuisine: cuisine[0],
                         mealtype: mealType[1],
                         cost: 19.0,
                         dietary: diet[0])  // Adding an optional
@@ -108,14 +108,14 @@ var pizzaMargherita = Dish(name: "Pizza Margherita",
 var lemonade = Dish(name: "Lemonade",
                     ingredients: [(ingredient: "Lemon", portion: 3.0),
                                   ("Sugar", 1.0)],
-                    cusine: cuisine[2],
+                    cuisine: cuisine[2],
                     mealtype: mealType[3],
                     cost: 9.0)
 
 var naranjada = Dish(name: "Naranjada",
                         ingredients: [(ingredient: "Orange", portion: 3),
                                       ("Sugar", 0.5)],
-                        cusine: cuisine[1],
+                        cuisine: cuisine[1],
                         mealtype: mealType[3],
                         cost: 12.0,
                         special: true)  // Adding an optional
@@ -124,7 +124,7 @@ var garlicBread = Dish(name: "Garlic Bread",
                    ingredients: [(ingredient: "Garlic", portion: 1),
                                      ("Parmesan", 2),
                                      ("Bread", 2)],
-                        cusine: cuisine[0],
+                        cuisine: cuisine[0],
                         mealtype: mealType[0],
                         cost: 9.0,
                         dietary: diet[0])  // Adding an optional
@@ -134,16 +134,75 @@ var tiramisu = Dish(name: "Tiramisu",
                                      ("Cream", 2),
                                      ("Mascarpone", 2),
                                      ("Coffee",1)],
-                        cusine: cuisine[0],
+                        cuisine: cuisine[0],
                         mealtype: mealType[2],
                         cost: 14.0)
 
-func addToOrder(order: [Dish], dish: Dish) {
-    print(order)
-    print(dish)
+//: ### Assignment 5 -  function that takes an object as a parameter & adds the objects you created in Assignment 4 (?) to the collection in created Assignment 2.
+//: Use the function created above to add objects to the collection
+//:
+//: I would have prefered to simply use the `.append` method for my list, but I hope this covers the
+//: requirement for this assignment :]
+//:
+
+func addToOrder(dish: Dish)-> [Dish] {
+    var newOrder: [Dish] = []
+    
+    newOrder = order + [dish]
+    return newOrder
 }
 
-addToOrder(order: order, dish: tiramisu)
+order = addToOrder(dish: fusilliArrabiata)
+order = addToOrder(dish: pizzaMargherita)
+order = addToOrder(dish: lemonade)
+order = addToOrder(dish: naranjada)
+order = addToOrder(dish: garlicBread)
+order = addToOrder(dish: tiramisu)
+//print(order)
+
+//: ### Assignment 6 -  Create a function that takes a collection as a parameter & prints out all elements of the collection whose optional properties are not nil.
+//:
+//: I am implementing 2 functions as I have 2 optional objects
+
+func printSpecials(order: [Dish]) {
+    for entry in order {
+        if let special = entry.special {
+            print("===")
+            print("Name: \(entry.name)")
+            print("Ingredients:")
+            for ingredient in entry.ingredients {
+                print("- \(ingredient.0)")
+            }
+            print("Cusine: \(entry.cuisine)")
+            print("Meal Type: \(entry.mealtype)")
+            print("Cost: \(entry.cost)")
+            print("Special: \(special)")
+            print("===\n")
+        }
+    }
+}
+
+func printDietaryDishes(order: [Dish]) {
+    for entry in order {
+        if let dietary = entry.dietary {
+            print("===")
+            print("Name: \(entry.name)")
+            print("Ingredients:")
+            for ingredient in entry.ingredients {
+                print("- \(ingredient.0)")
+            }
+            print("Cusine: \(entry.cuisine)")
+            print("Meal Type: \(entry.mealtype)")
+            print("Cost: \(entry.cost)")
+            print("Dietary: \(dietary)")
+            print("===\n")
+        }
+    }
+}
+
+printSpecials(order: order)
+printDietaryDishes(order: order)
+        
 
 
 //: [Next](@next)
