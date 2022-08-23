@@ -1,6 +1,11 @@
 //: [Previous](@previous)
 //: ## Week 2 - Assignment
 
+//: ### Assignment 1 - Creating a class or struct
+//: We are creating a `Dish` struct to hold dishes that are served at the restaurant.
+
+
+
 //: Let us start with some of the simpler components for the Dish class to be built later on.
 //: The dish class will comprise:
 //:   - name: String
@@ -50,6 +55,17 @@ ingredients["Chocolate"] = 200
 ingredients["Mascarpone"] = 450
 ingredients["Cream"] = 250
 ingredients["Coffee"] = 40
+
+//: ### `diet` - `Array`
+//: The diet array holds information about the type of dietary requirement the meal meets.
+//: We are using an optional Array
+
+var diet: [String] = []
+diet.append("Vegetarian")
+diet.append("Vegan")
+diet.append("Kosher")
+diet.append("Lactose Free")
+diet.append("Gluten Free")
 
 
 //: [Next](@next)
