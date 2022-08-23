@@ -16,13 +16,12 @@
 
 struct Dish {
     let name: String
-    var ingredients: [(item: String, potion: Float)]
-    var calories: Float
+    var ingredients: [(ingredient: String, portion: Float)]
     var cusine: String
     var mealtype: String
+    var cost: Float
     var special: Bool?       // ### Assignment 3 - Making at least one property optional
     var dietary: String?     // ### Assignment 3 - Making at least one property optional
-    var cost: Float
 }
 //: cost: FloaLet us start with some of the simpler components for the Dish class to be built later on.
 
@@ -38,10 +37,10 @@ cuisine.append("Japanese")
 cuisine.append("Chinese")
 cuisine.append("French")
 
-//: ### `mealType` - `Set`
-//: In this case we are using a set to differentiate different sections in the menu, such as starters,
+//: ### `mealType` - `Array`
+//: In this case we are using this information todifferentiate sections in the menu, such as starters,
 //: main dishes, beverages and desserts
-let mealType: Set = ["starter", "main", "beverage", "dessert"]
+let mealType: [String] = ["starter", "main", "dessert", "beverage"]
 
 //: ### `caloryValues` - `Dictionary`
 //: The calory values per potion of ingredient are stored in a dictionary.
@@ -80,5 +79,58 @@ diet.append("Gluten Free")
 //:
 //: An order is a list (Array) of dishes selected by the customer. Initially it is empty
 var order: [Dish] = []
+
+//: ### Assignment 4 - Create six instances of the `Dish` struct. For 2 of the objects use `nil` for the optionals.
+//: For 2 of the objects use `nil` for the optionals.
+
+var fusilliArrabiata = Dish(name: "Fusilli Arrabiata",
+                            ingredients: [(ingredient: "Fusilli", portion: 2.0),
+                                          ("Parmesan", 1.0),
+                                          ("Pasta Sauce", 1.0)],
+                            cusine: cuisine[0],
+                            mealtype: mealType[1],
+                            cost: 15.0,
+                            special: true)
+
+var pizzaMargherita = Dish(name: "Pizza Margherita",
+                           ingredients: [(ingredient: "Pizza Base", portion: 1.0),
+                                         ("Mozarella", 2.0),
+                                         ("Pasta Sauce", 2.0)],
+                        cusine: cuisine[0],
+                        mealtype: mealType[1],
+                        cost: 19.0,
+                        dietary: diet[0])
+
+var lemonade = Dish(name: "Lemonade",
+                    ingredients: [(ingredient: "Lemon", portion: 3.0),
+                                  ("Sugar", 1.0)],
+                    cusine: cuisine[2],
+                    mealtype: mealType[3],
+                    cost: 9.0)
+
+var naranjada = Dish(name: "Naranjada",
+                        ingredients: [(ingredient: "Orange", portion: 3),
+                                      ("Sugar", 0.5)],
+                        cusine: cuisine[1],
+                        mealtype: mealType[3],
+                        cost: 12.0,
+                        special: true)
+
+var garlicBread = Dish(name: "Garlic Bread",
+                            ingredients: [(ingredient: "Fusilli", portion: 2),
+                                         ("Parmesan", 1),
+                                         ("Pasta Sauce", 1)],
+                            cusine: cuisine[1],
+                            mealtype: mealType[2],
+                            cost: 15.0)
+
+var tiramisu = Dish(name: "Tiramisu",
+                            ingredients: [(ingredient: "Pizza Base", portion: 1),
+                                         ("Mozarella", 2),
+                                         ("Pasta Sauce", 2)],
+                            cusine: cuisine[0],
+                            mealtype: mealType[2],
+                            cost: 15.0)
+
 
 //: [Next](@next)
