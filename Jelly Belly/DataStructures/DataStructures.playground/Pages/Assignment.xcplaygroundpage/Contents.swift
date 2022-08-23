@@ -5,14 +5,13 @@
 //: We are creating a `Dish` struct to hold dishes that are served at the restaurant.
 //:
 //: The dish class will comprise:
-//:   - name: String
-//:   - ingredients: Array of tuples [(item, portion)]
-//:   - calories: Float (calculated)
-//:   - cusine: String
-//:   - mealtype: String
-//:   - special: Bool (optional) - Is the dish a special this month?
-//:   - dietary: Set (optional) - Dietary restriction
-//:   - cost: Float
+//:   - `name: String`
+//:   - `ingredients`: `Array` of `Tuples` `[(item, portion)]`
+//:   - `cusine: String`
+//:   - `mealtype: String`
+//:   - `special: Bool` (optional) - Is the dish a special this month?
+//:   - `dietary: Array` (optional) - Dietary restriction
+//:   - `cost: Float`
 
 //: ### `caloryValue` - `Dictionary`
 //: The calory values per potion of ingredient are stored in a dictionary.
@@ -217,10 +216,15 @@ func printDietaryDishes(order: [Dish]) {
     }
 }
 
+//: ## Looking at results
+//: First printing the Specials and the dishes with dietary requirements
 printSpecials(order: order)
 printDietaryDishes(order: order)
 
+//: Calculating the calorie content for one of the dishes
 print(fusilliArrabiata.getCalories())
+
+//: ## Bonus - Calculating the total of the order
 
 func totalOrder(order: [Dish]) -> Float {
     var total: Float = 0.0
@@ -231,5 +235,3 @@ func totalOrder(order: [Dish]) -> Float {
 }
 
 print(totalOrder(order: order))
-
-//: [Next](@next)
