@@ -14,6 +14,11 @@
 //:   - dietary: Set (optional) - Dietary restriction
 //:   - cost: Float
 
+//: ### `caloryValue` - `Dictionary`
+//: The calory values per potion of ingredient are stored in a dictionary.
+//: At this stage I am not 100% convinced this is the most sustainable way to show this in the app. However, it
+//: gives me an opportunity to play with this data structure as this stage.
+
 struct Dish {
     let name: String
     var ingredients: [(ingredient: String, portion: Float)]
@@ -22,8 +27,20 @@ struct Dish {
     var cost: Float
     var special: Bool?       // ### Assignment 3 - Making at least one property optional
     var dietary: String?     // ### Assignment 3 - Making at least one property optional
+    
+    // Implemending a method to calculate the calories of the dish - Not bad!!
+    func getCalories() -> Float {
+        var calories: Float = 0.0
+        for ingredient in ingredients {
+            if let calorieVal = calorieValue[ingredient.ingredient] {
+                calories += ingredient.portion * calorieVal
+            }
+        }
+        return calories
+    }
 }
-//: cost: FloaLet us start with some of the simpler components for the Dish class to be built later on.
+//: Let us now implement some of the components for the Dish class to be built later on.
+//: **Nice to have** - implementing more than one collection... :]
 
 //: ### `cuisine` - `Array`
 //: Looking at creating the array for `cuisine`. In this case we use an array as we are simply
@@ -42,26 +59,26 @@ cuisine.append("French")
 //: main dishes, beverages and desserts
 let mealType: [String] = ["starter", "main", "dessert", "beverage"]
 
-//: ### `caloryValues` - `Dictionary`
-//: The calory values per potion of ingredient are stored in a dictionary.
+//: ### `calorieValue` - `Dictionary`
+//: The calorie values per potion of ingredient are stored in a dictionary.
 //: At this stage I am not 100% convinced this is the most sustainable way to show this in the app. However, it
 //: gives me an opportunity to play with this data structure as this stage.
-var caloryValues: [String: Float] = [:]
-caloryValues["Fusilli"] = 450
-caloryValues["Mozarella"] = 400
-caloryValues["Pasta Sauce"] = 180
-caloryValues["Pizza Base"] = 500
-caloryValues["Parmesan"] = 300
-caloryValues["Bread"] = 180
-caloryValues["Garlic"] = 20
-caloryValues["Olives"] = 50
-caloryValues["Lemon"] = 100
-caloryValues["Sugar"] = 250
-caloryValues["Orange"] = 120
-caloryValues["Chocolate"] = 200
-caloryValues["Mascarpone"] = 450
-caloryValues["Cream"] = 250
-caloryValues["Coffee"] = 40
+var calorieValue: [String: Float] = [:]
+calorieValue["Fusilli"] = 450
+calorieValue["Mozarella"] = 400
+calorieValue["Pasta Sauce"] = 180
+calorieValue["Pizza Base"] = 500
+calorieValue["Parmesan"] = 300
+calorieValue["Bread"] = 180
+calorieValue["Garlic"] = 20
+calorieValue["Olives"] = 50
+calorieValue["Lemon"] = 100
+calorieValue["Sugar"] = 250
+calorieValue["Orange"] = 120
+calorieValue["Chocolate"] = 200
+calorieValue["Mascarpone"] = 450
+calorieValue["Cream"] = 250
+calorieValue["Coffee"] = 40
 
 //: ### `diet` - `Array`
 //: The diet array holds information about the type of dietary requirement the meal meets.
@@ -149,7 +166,7 @@ func addToOrder(dish: Dish)-> [Dish] {
     var newOrder: [Dish] = []
     
     newOrder = order + [dish]
-    return newOrder
+    return newOrder           // **Nice to have**: using a `return` statement
 }
 
 order = addToOrder(dish: fusilliArrabiata)
@@ -202,7 +219,7 @@ func printDietaryDishes(order: [Dish]) {
 
 printSpecials(order: order)
 printDietaryDishes(order: order)
-        
 
+print(fusilliArrabiata.getCalories())
 
 //: [Next](@next)
