@@ -151,9 +151,14 @@ struct DishView: View {
                     }
                 }
             }
-            DishItemText(text: "Cost:")
-                .bold()
-            DishItemText(text: "£\(dish.cost)")
+            HStack {
+                DishItemText(text: "Calories:")
+                    .bold()
+                DishItemText(text: "\(dish.getCalories())")
+                DishItemText(text: "Cost:")
+                    .bold()
+                DishItemText(text: "£\(dish.cost)")
+            }
             
         }
         .padding()

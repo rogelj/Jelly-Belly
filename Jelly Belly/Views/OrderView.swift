@@ -64,6 +64,8 @@ struct OrderView: View {
     var body: some View {
         VStack(spacing: 20.0) {
             HeaderViewOrder(orderIsShowing: $orderIsShowing)
+//            Text("Total: \(order.totalOrder(order: order))")
+                .frame(maxWidth: .infinity, alignment: .leading)
             Text("Enjoy your meal!")
                 .bold()
                 .frame(maxWidth: .infinity, alignment: .leading)
