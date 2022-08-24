@@ -12,7 +12,7 @@ import SwiftUI
  - App name
  - App logo
  */
-struct HeaderView: View {
+struct HeaderViewOnboarding: View {
     @Environment(\.verticalSizeClass) var verticalSizeClass
     @Environment(\.horizontalSizeClass) var horizontalSizeClass
     
@@ -44,7 +44,6 @@ struct HeaderView: View {
                     .padding(.leading)
                 Spacer()
                 RoundLogoView(imageSize: Constants.Logo.logoViewSizeSmall)
-                    .padding(.trailing)
                 Spacer()
                 Button(action: {
                     onboardingIsShowing = false
@@ -52,7 +51,7 @@ struct HeaderView: View {
                     Text("Done")
                         .bold()
                 }
-                .padding(.all)
+                .padding(.trailing)
             }
         }
     }
@@ -93,7 +92,7 @@ struct OnboardView: View {
     
     var body: some View {
         VStack(spacing: 20.0) {
-            HeaderView(onboardingIsShowing: $onboardingIsShowing)
+            HeaderViewOnboarding(onboardingIsShowing: $onboardingIsShowing)
             Text("Features to be build over time")
                 .bold()
                 .frame(maxWidth: .infinity, alignment: .leading)

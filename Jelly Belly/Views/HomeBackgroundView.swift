@@ -12,6 +12,8 @@ import SwiftUI
  */
 struct TopView: View {
     @State private var onboardingIsShowing = false
+    @State private var orderIsShowing = false
+    @Binding var order: Order
     
     var body: some View {
         HStack{
@@ -25,11 +27,11 @@ struct TopView: View {
             .padding()
             Spacer()
             Button( action: {
-                onboardingIsShowing = true
+                orderIsShowing = true
             }) {
                 RoundedImageView(systemName: "fork.knife")
-            }.sheet(isPresented: $onboardingIsShowing, onDismiss: {}, content: {
-                OnboardView(onboardingIsShowing: $onboardingIsShowing)
+            }.sheet(isPresented: $orderIsShowing, onDismiss: {}, content: {
+                OrderView(orderIsShowing: $orderIsShowing, order: $order)
             })
             .padding()
         }
@@ -50,9 +52,11 @@ struct BackgroundView: View {
 
 
 struct HomeBackgroundView: View {
+    @Binding var order: Order
+    
     var body: some View {
         VStack {
-            TopView()
+            TopView(order: $order)
             Spacer()
         }
         .padding()
@@ -62,8 +66,8 @@ struct HomeBackgroundView: View {
 
 struct HomeBackgroundView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeBackgroundView()
-        HomeBackgroundView()
+        HomeBackgroundView(order: .constant(Order()))
+        HomeBackgroundView(order: .constant(Order()))
             .preferredColorScheme(.dark)
     }
 }

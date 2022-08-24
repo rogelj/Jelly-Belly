@@ -8,12 +8,13 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var order = Order()
     
     let userName = "John Appleseed"
     
     var body: some View {
         ZStack {
-            HomeBackgroundView()
+            HomeBackgroundView(order: $order)
             VStack {
                 Spacer()
                     .frame(height: 30.0)
