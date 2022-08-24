@@ -85,7 +85,7 @@ struct Order {
     
     init(loadTestData: Bool = false) {
         if loadTestData {
-            var fusilliArrabiata = Dish(name: "Fusilli Arrabiata",
+            let fusilliArrabiata = Dish(name: "Fusilli Arrabiata",
                                         ingredients: [(ingredient: "Fusilli", portion: 2.0),
                                                       ("Parmesan", 1.0),
                                                       ("Pasta Sauce", 1.0)],
@@ -94,7 +94,7 @@ struct Order {
                                         cost: 15.0,
                                         special: true)
             
-            var pizzaMargherita = Dish(name: "Pizza Margherita",
+            let pizzaMargherita = Dish(name: "Pizza Margherita",
                                        ingredients: [(ingredient: "Pizza Base", portion: 1.0),
                                                      ("Mozarella", 2.0),
                                                      ("Pasta Sauce", 2.0)],
@@ -103,14 +103,14 @@ struct Order {
                                        cost: 19.0,
                                        dietary: DishParts.diet[0])
             
-            var lemonade = Dish(name: "Lemonade",
+            let lemonade = Dish(name: "Lemonade",
                                 ingredients: [(ingredient: "Lemon", portion: 3.0),
                                               ("Sugar", 1.0)],
                                 cuisine: DishParts.cuisine[2],
                                 mealtype: DishParts.mealType[3],
                                 cost: 9.0)
             
-            var naranjada = Dish(name: "Naranjada",
+            let naranjada = Dish(name: "Naranjada",
                                  ingredients: [(ingredient: "Orange", portion: 3),
                                                ("Sugar", 0.5)],
                                  cuisine: DishParts.cuisine[1],
@@ -118,7 +118,7 @@ struct Order {
                                  cost: 12.0,
                                  special: true)
             
-            var garlicBread = Dish(name: "Garlic Bread",
+            let garlicBread = Dish(name: "Garlic Bread",
                                    ingredients: [(ingredient: "Garlic", portion: 1),
                                                  ("Parmesan", 2),
                                                  ("Bread", 2)],
@@ -127,7 +127,7 @@ struct Order {
                                    cost: 9.0,
                                    dietary: DishParts.diet[0])
             
-            var tiramisu = Dish(name: "Tiramisu",
+            let tiramisu = Dish(name: "Tiramisu",
                                 ingredients: [(ingredient: "Chocolate", portion: 1),
                                               ("Cream", 2),
                                               ("Mascarpone", 2),

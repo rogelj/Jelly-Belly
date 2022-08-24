@@ -15,9 +15,9 @@ struct RoundedTextView: View {
     
     var body: some View {
         Text(text)
-            .font(.title)
+            .font(.title2)
             .foregroundColor(Color("RingsText"))
-            .frame(width: 56.0, height: Constants.General.roundedViewLength)
+            .frame(width: 45.0, height: Constants.General.roundedViewLength)
             .overlay(
                 Circle()
                     .strokeBorder(Color("RingsColor"), lineWidth: Constants.General.strokeWidth)
@@ -33,9 +33,9 @@ struct RoundedImageView: View {
     
     var body: some View {
         Image(systemName: systemName)
-            .font(.largeTitle)
+            .font(.title2)
             .foregroundColor(Color("RingsText"))
-            .frame(width: 56.0, height: Constants.General.roundedViewLength)
+            .frame(width: 45.0, height: Constants.General.roundedViewLength)
             .overlay(
                 Circle()
                     .strokeBorder(Color("RingsColor"), lineWidth: Constants.General.strokeWidth)

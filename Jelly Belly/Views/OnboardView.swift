@@ -16,12 +16,22 @@ struct HeaderView: View {
     @Environment(\.verticalSizeClass) var verticalSizeClass
     @Environment(\.horizontalSizeClass) var horizontalSizeClass
     
+    @Binding var onboardingIsShowing: Bool
+    
     var body: some View {
         
         if verticalSizeClass == .regular && horizontalSizeClass == .compact {
-            VStack(spacing: 20.0) {
+            HStack {
                 Spacer()
-                    .frame(height: 30)
+                Button(action: {
+                    onboardingIsShowing = false
+                }) {
+                    Text("Done")
+                        .bold()
+                }
+                .padding(.all)
+            }
+            VStack(spacing: 20.0) {
                 BigText(text: "Jelly Belly")
                 RoundLogoView(imageSize: Constants.Logo.logoViewSizeSmall)
             }
@@ -34,6 +44,14 @@ struct HeaderView: View {
                 Spacer()
                 RoundLogoView(imageSize: Constants.Logo.logoViewSizeSmall)
                     .padding(.trailing)
+                Spacer()
+                Button(action: {
+                    onboardingIsShowing = false
+                }) {
+                    Text("Done")
+                        .bold()
+                }
+                .padding(.all)
             }
         }
     }
@@ -74,7 +92,7 @@ struct OnboardView: View {
     
     var body: some View {
         VStack(spacing: 20.0) {
-            HeaderView()
+            HeaderView(onboardingIsShowing: $onboardingIsShowing)
             Text("Features to be build over time")
                 .bold()
                 .frame(maxWidth: .infinity, alignment: .leading)
@@ -87,15 +105,8 @@ struct OnboardView: View {
                     }
                 }
             }
-            Button(action: {
-                onboardingIsShowing = false
-            }) {
-                    Text("OK")
-                        .bold()
-                       .font(.title3)
-                }   .buttonStyle(WideBellyButton())
             Spacer()
-                .frame(height: 0.5)
+                .frame(height: 0.1)
         }
     }
 }

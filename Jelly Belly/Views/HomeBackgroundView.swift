@@ -15,6 +15,14 @@ struct TopView: View {
     
     var body: some View {
         HStack{
+            Button( action: {
+                onboardingIsShowing = true
+            }) {
+                RoundedImageView(systemName: "info")
+            }.sheet(isPresented: $onboardingIsShowing, onDismiss: {}, content: {
+                OnboardView(onboardingIsShowing: $onboardingIsShowing)
+            })
+            .padding()
             Spacer()
             Button( action: {
                 onboardingIsShowing = true
