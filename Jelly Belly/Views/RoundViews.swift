@@ -163,7 +163,7 @@ struct DishView: View {
 }
     
 struct RoundViews: View {
-    let fusilliArrabiata = Dish(name: "Fusilli Arrabiata",
+    let testDish = Dish(name: "Fusilli Arrabiata",
                                 ingredients: [(ingredient: "Fusilli", portion: 2.0),
                                               ("Parmesan", 1.0),
                                               ("Pasta Sauce", 1.0)],
@@ -179,7 +179,7 @@ struct RoundViews: View {
             RoundedImageView(systemName: "fork.knife")
             RoundLogoView(imageSize: Constants.Logo.logoViewSize)
             JellyBellyButton(message: "OK")
-            DishView(dish: fusilliArrabiata)
+            DishView(dish: testDish)
         }
     }
 }
