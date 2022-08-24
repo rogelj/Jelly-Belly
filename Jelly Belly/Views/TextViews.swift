@@ -38,6 +38,15 @@ struct BigText: View {
     }
 }
 
+struct DishItemText: View {
+    let text: String
+    
+    var body: some View {
+        Text("\(text)")
+            .frame(maxWidth: .infinity, alignment: .leading)
+    }
+}
+
 /**
  A text view to create text used in the body of the app.
  */
@@ -58,6 +67,7 @@ struct TextViews: View {
             BigBoldText(text: "Welcome\n John Appleseed")
             BigText(text: "Jelly Belly")
             BodyText(text: "This is an example of the features in the app")
+            DishItemText(text: "Pasta")
         }
     }
 }

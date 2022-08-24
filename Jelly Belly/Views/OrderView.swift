@@ -77,9 +77,10 @@ struct OrderView: View {
                 .padding(.leading)
             ScrollView {
                 VStack(spacing: 10) {
-                    ForEach(featuresToBuild.indices, id: \.self) {
+                    ForEach(order.order.indices, id: \.self) {
                         i in
-                        RowView(index: i+1, text: featuresToBuild[i])
+                        Text(order.order[i].name)
+//                        MyRowView(index: i+1, text: order[i])
                     }
                 }
             }

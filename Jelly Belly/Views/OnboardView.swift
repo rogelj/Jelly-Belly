@@ -61,7 +61,7 @@ struct HeaderViewOnboarding: View {
 /**
  A  view to create rows for the list of features, enumerated with a rounded view
  */
-struct RowView: View {
+struct RowViewOnboarding: View {
     let index: Int
     let text: String
     
@@ -101,7 +101,7 @@ struct OnboardView: View {
                 VStack(spacing: 10) {
                     ForEach(featuresToBuild.indices, id: \.self) {
                         i in
-                        RowView(index: i+1, text: featuresToBuild[i])
+                        RowViewOnboarding(index: i+1, text: featuresToBuild[i])
                     }
                 }
             }
