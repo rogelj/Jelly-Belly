@@ -13,7 +13,7 @@ import SwiftUI
 struct TopView: View {
     @State private var onboardingIsShowing = false
     @State private var orderIsShowing = false
-    @Binding var order: Order
+    @Binding var customerOrder: Order
     
     var body: some View {
         HStack{
@@ -31,7 +31,7 @@ struct TopView: View {
             }) {
                 RoundedImageView(systemName: "fork.knife")
             }.sheet(isPresented: $orderIsShowing, onDismiss: {}, content: {
-                OrderView(orderIsShowing: $orderIsShowing, order: $order)
+                OrderView(orderIsShowing: $orderIsShowing, customerOrder: $customerOrder)
             })
             .padding()
         }
@@ -52,11 +52,11 @@ struct BackgroundView: View {
 
 
 struct HomeBackgroundView: View {
-    @Binding var order: Order
+    @Binding var customerOrder: Order
     
     var body: some View {
         VStack {
-            TopView(order: $order)
+            TopView(customerOrder: $customerOrder)
             Spacer()
         }
         .padding()
@@ -66,8 +66,8 @@ struct HomeBackgroundView: View {
 
 struct HomeBackgroundView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeBackgroundView(order: .constant(Order()))
-        HomeBackgroundView(order: .constant(Order()))
+        HomeBackgroundView(customerOrder: .constant(Order()))
+        HomeBackgroundView(customerOrder: .constant(Order()))
             .preferredColorScheme(.dark)
     }
 }

@@ -59,12 +59,14 @@ struct HeaderViewOrder: View {
  */
 struct OrderView: View {
     @Binding var orderIsShowing: Bool
-    @Binding var order: Order
+    @Binding var customerOrder: Order
     
     var body: some View {
         VStack(spacing: 20.0) {
             HeaderViewOrder(orderIsShowing: $orderIsShowing)
-//            Text("Total: \(order.totalOrder(order: order))")
+            Text(String(format: "Total: £%.2f", customerOrder.totalOrder(order: customerOrder.order)))
+                .bold()
+                .padding(.leading)
                 .frame(maxWidth: .infinity, alignment: .leading)
             Text("Enjoy your meal!")
                 .bold()
@@ -72,9 +74,9 @@ struct OrderView: View {
                 .padding(.leading)
             ScrollView {
                 VStack(spacing: 10) {
-                    ForEach(order.order.indices, id: \.self) {
+                    ForEach(customerOrder.order.indices, id: \.self) {
                         i in
-                        DishView(dish: order.order[i])
+                        DishView(dish: customerOrder.order[i])
                             .padding(.trailing)
                             .padding(.leading)
                     }
@@ -88,15 +90,15 @@ struct OrderView: View {
 
 struct OrderView_Previews: PreviewProvider {
     static private var orderIsShowing = Binding.constant(false)
-    static private var order = Binding.constant(Order(loadTestData: true))
+    static private var testOrder = Binding.constant(Order(loadTestData: true))
     
     static var previews: some View {
-        OrderView(orderIsShowing: orderIsShowing, order: order)
-        OrderView(orderIsShowing: orderIsShowing, order: order)
+        OrderView(orderIsShowing: orderIsShowing, customerOrder: testOrder)
+        OrderView(orderIsShowing: orderIsShowing, customerOrder: testOrder)
             .preferredColorScheme(.dark)
-        OrderView(orderIsShowing: orderIsShowing, order: order)
+        OrderView(orderIsShowing: orderIsShowing, customerOrder: testOrder)
             .previewInterfaceOrientation(.landscapeLeft)
-        OrderView(orderIsShowing: orderIsShowing, order: order)
+        OrderView(orderIsShowing: orderIsShowing, customerOrder: testOrder)
             .previewInterfaceOrientation(.landscapeLeft)
             .preferredColorScheme(.dark)
     }

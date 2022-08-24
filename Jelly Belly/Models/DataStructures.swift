@@ -139,22 +139,6 @@ struct Order {
             order = [fusilliArrabiata, pizzaMargherita, lemonade, naranjada, garlicBread, tiramisu]
         }
     }
-    
-    /**
-     Adds a  `Dish` object to an order
-     
-     - Parameters:
-     - dish: a `Dish` object to add to the order
-     
-     - Returns: An Array of  `Dish` object
-     
-     */
-    func addToOrder(dish: Dish)-> [Dish] {
-        var newOrder: [Dish] = []
-        
-        newOrder = order + [dish]
-        return newOrder    // **Nice to have**: using a `return` statement
-    }
 
     /**
     Prints the dishes that are marked as `special` in an order
