@@ -13,11 +13,6 @@
 //:   - `dietary: Array` (optional) - Dietary restriction
 //:   - `cost: Float`
 
-//: ### `caloryValue` - `Dictionary`
-//: The calory values per potion of ingredient are stored in a dictionary.
-//: At this stage I am not 100% convinced this is the most sustainable way to show this in the app. However, it
-//: gives me an opportunity to play with this data structure as this stage.
-
 struct Dish {
     let name: String
     var ingredients: [(ingredient: String, portion: Float)]
@@ -27,7 +22,7 @@ struct Dish {
     var special: Bool?       // ### Assignment 3 - Making at least one property optional
     var dietary: String?     // ### Assignment 3 - Making at least one property optional
     
-    // Implemending a method to calculate the calories of the dish - Not bad!!
+    // Implementing a method to calculate the calories of the dish - Not bad!!
     func getCalories() -> Float {
         var calories: Float = 0.0
         for ingredient in ingredients {
