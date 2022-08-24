@@ -28,6 +28,7 @@ struct HeaderView: View {
                 }) {
                     Text("Done")
                         .bold()
+                        .foregroundColor(Color("Belly"))
                 }
                 .padding(.all)
             }

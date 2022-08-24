@@ -14,7 +14,9 @@ struct ContentView: View {
     var body: some View {
         ZStack {
             HomeBackgroundView()
-            VStack(spacing: 50) {
+            VStack {
+                Spacer()
+                    .frame(height: 30.0)
                 HStack {
                     BigBoldText(text: greeting(userName: userName))
                         .padding(.leading, 30.0)
