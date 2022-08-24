@@ -159,6 +159,8 @@ struct DishView: View {
         .padding()
         .frame(maxWidth: .infinity)
         .background(Color("BackgroundColor"))
+        .cornerRadius(Constants.General.roudedRectCornerRadius)
+        .shadow(radius: 10, x: 5, y: 5)
     }
 }
     
@@ -189,5 +191,7 @@ struct RoundViews_Previews: PreviewProvider {
         RoundViews()
         RoundViews()
             .preferredColorScheme(.dark)
+        RoundViews()
+            .previewInterfaceOrientation(.landscapeLeft)
     }
 }

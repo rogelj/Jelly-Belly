@@ -61,13 +61,6 @@ struct OrderView: View {
     @Binding var orderIsShowing: Bool
     @Binding var order: Order
     
-    let featuresToBuild = ["The app shows a menu as a list",
-                       "Menu list is fetched from an API and saved in the app",
-                       "Users can choose menu items and add them to their order",
-                       "Upon placing an order, users can select or add a tip",
-                       "Upon checkout, total amount will be calculated",
-                       "Users can write a review of the menu item and add a photo of the dish"]
-    
     var body: some View {
         VStack(spacing: 20.0) {
             HeaderViewOrder(orderIsShowing: $orderIsShowing)
@@ -79,8 +72,9 @@ struct OrderView: View {
                 VStack(spacing: 10) {
                     ForEach(order.order.indices, id: \.self) {
                         i in
-                        Text(order.order[i].name)
-//                        MyRowView(index: i+1, text: order[i])
+                        DishView(dish: order.order[i])
+                            .padding(.trailing)
+                            .padding(.leading)
                     }
                 }
             }

@@ -19,7 +19,6 @@ struct HeaderViewOnboarding: View {
     @Binding var onboardingIsShowing: Bool
     
     var body: some View {
-        
         if verticalSizeClass == .regular && horizontalSizeClass == .compact {
             HStack {
                 Spacer()
