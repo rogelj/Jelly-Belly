@@ -24,7 +24,7 @@ struct Dish {
     let name: String
     var ingredients: [(ingredient: String, portion: Float)]
     var cuisine: String
-    var mealtype: String
+    var mealtype: (String, String)
     var cost: Float
     var special: Bool?       // ### Assignment 3 - Making at least one property optional
     var dietary: String?     // ### Assignment 3 - Making at least one property optional
@@ -60,7 +60,7 @@ struct Dish {
 */
 enum DishParts {
     public static let cuisine = ["Italian", "Mexican", "American", "Japanese", "French"]
-    public static let mealType = ["starter", "main", "dessert", "beverage"]
+    public static let mealType = [("Starter", "🥗"), ("Main", "🍽"), ("Dessert", "🍰"), ("Beverage", "🥤")]
     public static let calorieValue: [String: Float] = ["Fusilli": 450.0,
                                       "Mozarella": 400.0,
                                       "Pasta Sauce": 180.0,

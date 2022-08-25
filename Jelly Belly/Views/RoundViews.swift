@@ -106,14 +106,26 @@ struct DishView: View {
     var body: some View {
         VStack(spacing: 3) {
             HStack {
-                Text(dish.name.uppercased())
-                    .bold()
-                    .font(.title3)
-                Spacer()
-                Text("🍴")
-                    .font(.title3)
+                if dish.special != nil && dish.special == true {
+                    VStack(alignment: .leading){
+                        Text(dish.name.uppercased())
+                            .bold()
+                            .font(.title3)
+                        Text("Special")
+                            .foregroundColor(Color("Jelly"))
+                            .font(.headline)
+                    }
+                    Spacer()
+                } else {
+                    Text(dish.name.uppercased())
+                        .bold()
+                        .font(.title3)
+                    Spacer()
+                }
+                Text(dish.mealtype.1)
+                    .font(.title)
             }
-            HStack {
+            HStack(alignment: .top) {
                 VStack {
                     DishItemText(text: "Ingredients:")
                         .bold()
@@ -125,22 +137,11 @@ struct DishView: View {
                     DishItemText(text: "Cuisine:")
                         .bold()
                     DishItemText(text: dish.cuisine)
-                    Spacer()
-                        .frame(height: 10.0)
-                    DishItemText(text: "Meal:")
-                        .bold()
-                    DishItemText(text: dish.mealtype)
                 }
             }
             Spacer()
                 .frame(height: 5.0)
             VStack {
-                if dish.special != nil && dish.special == true {
-                    DishItemText(text: "Special Dish")
-                        .bold()
-                    Spacer()
-                        .frame(height: 5.0)
-                }
                 if let isDietary = dish.dietary {
                     VStack{
                         DishItemText(text: "Dietary Requirement:")
