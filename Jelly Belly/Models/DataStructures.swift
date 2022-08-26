@@ -52,39 +52,12 @@ struct Dish {
     }
 }
 
-/**
- - `cuisine` - Holds the different cuisines that are made at the restaurant
- - `mealType` - Holds the sections in the menu a dish belongs to
- - `calorieValue` - Holds the calorie values per potion of ingredient are stored in a dictionary.
- - `diet` - Holds the diet array holds information about the type of dietary requirement the meal meets.
-*/
-enum DishParts {
-    public static let cuisine = ["Italian", "Mexican", "American", "Japanese", "French"]
-    public static let mealType = [("Starter", "🥗"), ("Main", "🍽"), ("Dessert", "🍰"), ("Beverage", "🥤")]
-    public static let calorieValue: [String: Float] = ["Fusilli": 450.0,
-                                      "Mozarella": 400.0,
-                                      "Pasta Sauce": 180.0,
-                                      "Pizza Base": 500.0,
-                                      "Parmesan": 300.0,
-                                      "Bread": 180.0,
-                                      "Garlic": 20.0,
-                                      "Olives": 50.0,
-                                      "Lemon":100.0,
-                                      "Sugar": 250.0,
-                                      "Orange": 120.0,
-                                      "Chocolate": 200.0,
-                                      "Mascarpone": 450.0,
-                                      "Cream": 250.0,
-                                      "Coffee": 40.0]
-    public static let diet = ["Vegetarian", "Vegan", "Kosher", "Lactose Free", "Gluten Free"]
-    
-}
-
 struct Order {
     var order: [Dish] = []
     
     init(loadTestData: Bool = false) {
         if loadTestData {
+            var testOrder = Order()
             let fusilliArrabiata = Dish(name: "Fusilli Arrabiata",
                                         ingredients: [(ingredient: "Fusilli", portion: 2.0),
                                                       ("Parmesan", 1.0),
@@ -136,8 +109,27 @@ struct Order {
                                 mealtype: DishParts.mealType[2],
                                 cost: 14.0)
             
-            order = [fusilliArrabiata, pizzaMargherita, lemonade, naranjada, garlicBread, tiramisu]
+            testOrder.addToOrder(dish: fusilliArrabiata)
+            testOrder.addToOrder(dish: pizzaMargherita)
+            testOrder.addToOrder(dish: lemonade)
+            testOrder.addToOrder(dish: naranjada)
+            testOrder.addToOrder(dish: garlicBread)
+            testOrder.addToOrder(dish: tiramisu)
+            order = testOrder.order
         }
+    }
+    
+    /**
+    Adds a `dish` to the order
+
+     - Parameters:
+         - dish: a`Dish` object
+
+     - Returns: Adds the `dish` to the existing order
+
+    */
+    mutating func addToOrder(dish: Dish) {
+        order.append(dish)
     }
 
     /**
@@ -149,7 +141,7 @@ struct Order {
      - Returns: Prints to the console
 
     */
-    func printSpecials(order: [Dish]) {
+    mutating func printSpecials() {
         for entry in order {
             if let special = entry.special {
                 Swift.print("===")
@@ -177,7 +169,7 @@ struct Order {
      - Returns: Prints to the console
      
      */
-    func printDietaryDishes(order: [Dish]) {
+    mutating func printDietaryDishes() {
         for entry in order {
             if let dietary = entry.dietary {
                 Swift.print("===")
@@ -203,7 +195,7 @@ struct Order {
      - Returns: `total`, the total cost of the dished in the order
      
      */
-    func totalOrder(order: [Dish]) -> Float {
+    mutating func totalOrder() -> Float {
         var total: Float = 0.0
         for entry in order {
             total += entry.cost

@@ -64,7 +64,7 @@ struct OrderView: View {
     var body: some View {
         VStack(spacing: 20.0) {
             HeaderViewOrder(orderIsShowing: $orderIsShowing)
-            Text(String(format: "Total: £%.2f", customerOrder.totalOrder(order: customerOrder.order)))
+            Text(String(format: "Total: £%.2f", customerOrder.totalOrder()))
                 .bold()
                 .padding(.leading)
                 .frame(maxWidth: .infinity, alignment: .leading)
