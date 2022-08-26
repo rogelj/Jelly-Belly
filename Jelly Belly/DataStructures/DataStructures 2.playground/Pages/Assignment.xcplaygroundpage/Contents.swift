@@ -88,8 +88,7 @@ diet.append("Gluten Free")
 
 //: ### Assignment 2 - Create an empty collection to hold a group of data from the struct `Dish`
 //:
-//: An order is a list (Array) of dishes selected by the customer. Initially it is empty.
-//: Please note that this will be superseded by the struct defined in Assignmetn 5 below.
+//: An order is a list (Array) of dishes selected by the customer. Initially it is empty
 var order: [Dish] = []
 
 //: ### Assignment 4 - Create six instances of the `Dish` struct. For 2 of the objects use `nil` for the optionals.
@@ -112,10 +111,10 @@ var pizzaMargherita = Dish(name: "Pizza Margherita",
                            ingredients: [(ingredient: "Pizza Base", portion: 1.0),
                                          ("Mozarella", 2.0),
                                          ("Pasta Sauce", 2.0)],
-                           cuisine: cuisine[0],
-                           mealtype: mealType[1],
-                           cost: 19.0,
-                           dietary: diet[0])  // Adding an optional
+                        cuisine: cuisine[0],
+                        mealtype: mealType[1],
+                        cost: 19.0,
+                        dietary: diet[0])  // Adding an optional
 
 var lemonade = Dish(name: "Lemonade",
                     ingredients: [(ingredient: "Lemon", portion: 3.0),
@@ -125,111 +124,109 @@ var lemonade = Dish(name: "Lemonade",
                     cost: 9.0)
 
 var naranjada = Dish(name: "Naranjada",
-                     ingredients: [(ingredient: "Orange", portion: 3),
-                                   ("Sugar", 0.5)],
-                     cuisine: cuisine[1],
-                     mealtype: mealType[3],
-                     cost: 12.0,
-                     special: true)  // Adding an optional
+                        ingredients: [(ingredient: "Orange", portion: 3),
+                                      ("Sugar", 0.5)],
+                        cuisine: cuisine[1],
+                        mealtype: mealType[3],
+                        cost: 12.0,
+                        special: true)  // Adding an optional
 
 var garlicBread = Dish(name: "Garlic Bread",
-                       ingredients: [(ingredient: "Garlic", portion: 1),
+                   ingredients: [(ingredient: "Garlic", portion: 1),
                                      ("Parmesan", 2),
                                      ("Bread", 2)],
-                       cuisine: cuisine[0],
-                       mealtype: mealType[0],
-                       cost: 9.0,
-                       dietary: diet[0])  // Adding an optional
+                        cuisine: cuisine[0],
+                        mealtype: mealType[0],
+                        cost: 9.0,
+                        dietary: diet[0])  // Adding an optional
 
 var tiramisu = Dish(name: "Tiramisu",
-                    ingredients: [(ingredient: "Chocolate", portion: 1),
-                                  ("Cream", 2),
-                                  ("Mascarpone", 2),
-                                  ("Coffee",1)],
-                    cuisine: cuisine[0],
-                    mealtype: mealType[2],
-                    cost: 14.0)
+                        ingredients: [(ingredient: "Chocolate", portion: 1),
+                                     ("Cream", 2),
+                                     ("Mascarpone", 2),
+                                     ("Coffee",1)],
+                        cuisine: cuisine[0],
+                        mealtype: mealType[2],
+                        cost: 14.0)
 
-//: ### Assignment 5 - Create function that takes an object as a parameter & adds the objects you created in Assignment 4 (?) to the collection in created Assignment 2.
+//: ### Assignment 5 -  function that takes an object as a parameter & adds the objects you created in Assignment 4 (?) to the collection in created Assignment 2.
 //: Use the function created above to add objects to the collection
 //:
-//: I will create a new struct that holds `Dish` items. It will also give me an opportunity to add some functionality to my `Order`. This will supersede the collection defined in assignment 2 above
+//: I would have prefered to simply use the `.append` method for my list, but I hope this covers the
+//: requirement for this assignment :]
 //:
+
+func addToOrder(dish: Dish)-> [Dish] {
+    var newOrder: [Dish] = []
+    
+    newOrder = order + [dish]
+    return newOrder           // **Nice to have**: using a `return` statement
+}
+
+order = addToOrder(dish: fusilliArrabiata)
+order = addToOrder(dish: pizzaMargherita)
+order = addToOrder(dish: lemonade)
+order = addToOrder(dish: naranjada)
+order = addToOrder(dish: garlicBread)
+order = addToOrder(dish: tiramisu)
+//print(order)
 
 //: ### Assignment 6 -  Create a function that takes a collection as a parameter & prints out all elements of the collection whose optional properties are not nil.
 //:
 //: I am implementing 2 functions as I have 2 optional objects
 
-struct Order {
-    var order: [Dish] = []
-    // Assignmment 5
-    mutating func addToOrder(dish: Dish) {
-        order.append(dish)
-    }
-    
-    // Assignment 6
-    mutating func printSpecials() {
-        for entry in order {
-            if let special = entry.special {
-                print("===")
-                print("Name: \(entry.name)")
-                print("Ingredients:")
-                for ingredient in entry.ingredients {
-                    print("- \(ingredient.0)")
-                }
-                print("Cusine: \(entry.cuisine)")
-                print("Meal Type: \(entry.mealtype)")
-                print("Cost: \(entry.cost)")
-                print("Special: \(special)")
-                print("===\n")
+func printSpecials(order: [Dish]) {
+    for entry in order {
+        if let special = entry.special {
+            print("===")
+            print("Name: \(entry.name)")
+            print("Ingredients:")
+            for ingredient in entry.ingredients {
+                print("- \(ingredient.0)")
             }
+            print("Cusine: \(entry.cuisine)")
+            print("Meal Type: \(entry.mealtype)")
+            print("Cost: \(entry.cost)")
+            print("Special: \(special)")
+            print("===\n")
         }
-    }
-    // Assignment 6 - Second entry
-    mutating func printDietaryDishes() {
-        for entry in order {
-            if let dietary = entry.dietary {
-                print("===")
-                print("Name: \(entry.name)")
-                print("Ingredients:")
-                for ingredient in entry.ingredients {
-                    print("- \(ingredient.0)")
-                }
-                print("Cusine: \(entry.cuisine)")
-                print("Meal Type: \(entry.mealtype)")
-                print("Cost: \(entry.cost)")
-                print("Dietary: \(dietary)")
-                print("===\n")
-            }
-        }
-    }
-    
-    //: ## Bonus - Calculating the total of the order - using a return statement!
-
-    mutating func totalOrder() -> Float {
-        var total: Float = 0.0
-        for entry in order {
-            total += entry.cost
-        }
-        return total
     }
 }
 
-//: ## Looking at the results of the `Order` implementation
-    //:
-var myOrder = Order()
-myOrder.addToOrder(dish: fusilliArrabiata)
-myOrder.addToOrder(dish: fusilliArrabiata)
-myOrder.addToOrder(dish: pizzaMargherita)
-myOrder.addToOrder(dish: lemonade)
-myOrder.addToOrder(dish: naranjada)
-myOrder.addToOrder(dish: garlicBread)
-myOrder.addToOrder(dish: tiramisu)
+func printDietaryDishes(order: [Dish]) {
+    for entry in order {
+        if let dietary = entry.dietary {
+            print("===")
+            print("Name: \(entry.name)")
+            print("Ingredients:")
+            for ingredient in entry.ingredients {
+                print("- \(ingredient.0)")
+            }
+            print("Cusine: \(entry.cuisine)")
+            print("Meal Type: \(entry.mealtype)")
+            print("Cost: \(entry.cost)")
+            print("Dietary: \(dietary)")
+            print("===\n")
+        }
+    }
+}
 
-print(myOrder.order)
+//: ## Looking at results
+//: First printing the Specials and the dishes with dietary requirements
+printSpecials(order: order)
+printDietaryDishes(order: order)
 
-myOrder.printSpecials()
-myOrder.printDietaryDishes()
+//: Calculating the calorie content for one of the dishes
+print(fusilliArrabiata.getCalories())
 
-print(myOrder.totalOrder())
+//: ## Bonus - Calculating the total of the order
 
+func totalOrder(order: [Dish]) -> Float {
+    var total: Float = 0.0
+    for entry in order {
+        total += entry.cost
+    }
+    return total
+}
+
+print(totalOrder(order: order))
