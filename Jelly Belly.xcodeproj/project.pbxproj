@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		46A1B01D28AFD8FF00302426 /* TextViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A1B01C28AFD8FF00302426 /* TextViews.swift */; };
+		46A1B01F28AFD91D00302426 /* RoundViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A1B01E28AFD91D00302426 /* RoundViews.swift */; };
+		46A1B02128AFD93800302426 /* HomeBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A1B02028AFD93800302426 /* HomeBackgroundView.swift */; };
+		46A1B02328AFD95200302426 /* OnboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A1B02228AFD95200302426 /* OnboardView.swift */; };
+		46A1B02528AFDE2000302426 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A1B02428AFDE2000302426 /* Constants.swift */; };
 		46AAB96328AFCDDE00DE602A /* Jelly_BellyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AAB96228AFCDDE00DE602A /* Jelly_BellyApp.swift */; };
 		46AAB96528AFCDDE00DE602A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AAB96428AFCDDE00DE602A /* ContentView.swift */; };
 		46AAB96728AFCDDF00DE602A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46AAB96628AFCDDF00DE602A /* Assets.xcassets */; };
@@ -14,6 +19,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		46A1B01C28AFD8FF00302426 /* TextViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViews.swift; sourceTree = "<group>"; };
+		46A1B01E28AFD91D00302426 /* RoundViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundViews.swift; sourceTree = "<group>"; };
+		46A1B02028AFD93800302426 /* HomeBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBackgroundView.swift; sourceTree = "<group>"; };
+		46A1B02228AFD95200302426 /* OnboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardView.swift; sourceTree = "<group>"; };
+		46A1B02428AFDE2000302426 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		46AAB95F28AFCDDE00DE602A /* Jelly Belly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Jelly Belly.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		46AAB96228AFCDDE00DE602A /* Jelly_BellyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Jelly_BellyApp.swift; sourceTree = "<group>"; };
 		46AAB96428AFCDDE00DE602A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -33,6 +43,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		46A1B01928AFD7D600302426 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				46AAB96428AFCDDE00DE602A /* ContentView.swift */,
+				46A1B01C28AFD8FF00302426 /* TextViews.swift */,
+				46A1B01E28AFD91D00302426 /* RoundViews.swift */,
+				46A1B02028AFD93800302426 /* HomeBackgroundView.swift */,
+				46A1B02228AFD95200302426 /* OnboardView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		46A1B01A28AFD7F400302426 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				46AAB96228AFCDDE00DE602A /* Jelly_BellyApp.swift */,
+				46AAB96628AFCDDF00DE602A /* Assets.xcassets */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		46A1B01B28AFD7FC00302426 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				46A1B02428AFDE2000302426 /* Constants.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		46AAB95628AFCDDE00DE602A = {
 			isa = PBXGroup;
 			children = (
@@ -52,9 +91,9 @@
 		46AAB96128AFCDDE00DE602A /* Jelly Belly */ = {
 			isa = PBXGroup;
 			children = (
-				46AAB96228AFCDDE00DE602A /* Jelly_BellyApp.swift */,
-				46AAB96428AFCDDE00DE602A /* ContentView.swift */,
-				46AAB96628AFCDDF00DE602A /* Assets.xcassets */,
+				46A1B01A28AFD7F400302426 /* App */,
+				46A1B01928AFD7D600302426 /* Views */,
+				46A1B01B28AFD7FC00302426 /* Models */,
 				46AAB96828AFCDDF00DE602A /* Jelly_Belly.entitlements */,
 				46AAB96928AFCDDF00DE602A /* Preview Content */,
 			);
@@ -139,8 +178,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46A1B02128AFD93800302426 /* HomeBackgroundView.swift in Sources */,
 				46AAB96528AFCDDE00DE602A /* ContentView.swift in Sources */,
+				46A1B01F28AFD91D00302426 /* RoundViews.swift in Sources */,
 				46AAB96328AFCDDE00DE602A /* Jelly_BellyApp.swift in Sources */,
+				46A1B02528AFDE2000302426 /* Constants.swift in Sources */,
+				46A1B02328AFD95200302426 /* OnboardView.swift in Sources */,
+				46A1B01D28AFD8FF00302426 /* TextViews.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,6 +313,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Jelly Belly";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -279,7 +324,6 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 12.5;
@@ -307,6 +351,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Jelly Belly";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -317,7 +362,6 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 12.5;
