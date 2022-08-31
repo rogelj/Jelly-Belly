@@ -10,7 +10,7 @@ import UIKit
 
 /**
  `Dish` struct to hold dishes that are served at the restaurant.
- 
+
  The dish class will comprise:
     - `name: String`
     - `ingredients`: `Array` of `Tuples` `[(item, portion)]`
@@ -34,7 +34,7 @@ struct Dish {
     var cost: Double
     var special: Bool?       // ### Assignment 3 - Making at least one property optional
     var dietary: String?     // ### Assignment 3 - Making at least one property optional
-    
+
     // Implementing a method to calculate the calories of the dish - Not bad!!
     /**
     It calculates the calorie content of a `Dish` object
@@ -60,7 +60,7 @@ struct Dish {
 
 struct Order {
     var order: [Dish] = []
-    
+
     init(loadTestData: Bool = false) {
         if loadTestData {
             var testOrder = Order()
@@ -72,7 +72,7 @@ struct Order {
                                         mealType: DishParts.mealType[1],
                                         cost: 15.0,
                                         special: true)
-            
+
             let pizzaMargherita = Dish(name: "Pizza Margherita",
                                        ingredients: [Ingredients(ingredient: "Pizza Base", portion: 1.0),
                                                      Ingredients(ingredient: "Mozarella", portion: 2.0),
@@ -81,14 +81,14 @@ struct Order {
                                        mealType: DishParts.mealType[1],
                                        cost: 19.0,
                                        dietary: DishParts.diet[0])
-            
+
             let lemonade = Dish(name: "Lemonade",
                                 ingredients: [Ingredients(ingredient: "Lemon", portion: 3.0),
                                               Ingredients(ingredient:"Sugar", portion: 1.0)],
                                 cuisine: DishParts.cuisine[2],
                                 mealType: DishParts.mealType[3],
                                 cost: 9.0)
-            
+
             let naranjada = Dish(name: "Naranjada",
                                  ingredients: [Ingredients(ingredient: "Orange", portion: 3),
                                                Ingredients(ingredient: "Sugar", portion: 0.5)],
@@ -96,7 +96,7 @@ struct Order {
                                  mealType: DishParts.mealType[3],
                                  cost: 12.0,
                                  special: true)
-            
+
             let garlicBread = Dish(name: "Garlic Bread",
                                    ingredients: [Ingredients(ingredient: "Garlic", portion: 1),
                                                  Ingredients(ingredient: "Parmesan", portion: 2),
@@ -105,7 +105,7 @@ struct Order {
                                    mealType: DishParts.mealType[0],
                                    cost: 9.0,
                                    dietary: DishParts.diet[0])
-            
+
             let tiramisu = Dish(name: "Tiramisu",
                                 ingredients: [Ingredients(ingredient: "Chocolate", portion: 1),
                                               Ingredients(ingredient: "Cream", portion: 2),
@@ -114,7 +114,7 @@ struct Order {
                                 cuisine: DishParts.cuisine[0],
                                 mealType: DishParts.mealType[2],
                                 cost: 14.0)
-            
+
             testOrder.addToOrder(dish: fusilliArrabiata)
             testOrder.addToOrder(dish: pizzaMargherita)
             testOrder.addToOrder(dish: lemonade)
@@ -124,7 +124,7 @@ struct Order {
             order = testOrder.order
         }
     }
-    
+
     /**
     Adds a `dish` to the order
 
@@ -164,16 +164,16 @@ struct Order {
             }
         }
     }
-        
-        
+
+
     /**
      Prints the dishes that are marked as having a dietary requirement in an order
-     
+
      - Parameters:
      - order: an Array of `Dish` objects
-     
+
      - Returns: Prints to the console
-     
+
      */
     mutating func printDietaryDishes() {
         for entry in order {
@@ -194,12 +194,12 @@ struct Order {
     }
     /**
      Calculates the total cost of an `order`
-     
+
      - Parameters:
      - order: an Array of `Dish` objects
-     
+
      - Returns: `total`, the total cost of the dished in the order
-     
+
      */
     mutating func totalOrder() -> Double {
         var total: Double = 0.0
