@@ -20,7 +20,7 @@ based on holiday season.
 
 **Need to have:**
 
-**Assignment 1: Function**
+- [x] **Assignment 1: Function**
 
 - Create a function with 2 parameters: `totalAmount` and `discountPercentage` (5%, 10% and so on).
 
@@ -28,7 +28,7 @@ based on holiday season.
 
 - Return the `totalAmountAfterDiscount`.
 
-**Assignment 2: Function**
+- [x] **Assignment 2: Function**
 
 - Modify the function above to now take in a default discount percentage that will be applied by default to all. Hint: Use function overloading.
 
@@ -36,8 +36,7 @@ based on holiday season.
 
 - Create a typealias for a function type that takes in `totalAmount `and
 `discount `type as parameters. It returns the `totalAmountAfterDiscount`. Hint: `(Double, String) -> Double`
-
-Now create a `printDiscount `function to print the `totalAmountAfterDiscount `for all discount types. It takes function (typealias) as a parameter:
+- Now create a `printDiscount` function to print the `totalAmountAfterDiscount` for all discount types. It takes function (typealias) as a parameter
 
 **Assignment 4: Closure**
 
@@ -57,8 +56,7 @@ Now create a `printDiscount `function to print the `totalAmountAfterDiscount `fo
 
 - Use enums for discount types.
 
-- Create a function printDiscount to print the value for discount
-types. Use switch cases and enums to do this.
+- Create a function printDiscount to print the value for discount types. Use switch cases and enums to do this.
 
 **Assignment 8: Computed property**
 
