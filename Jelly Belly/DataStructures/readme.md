@@ -28,19 +28,19 @@ For an app like Jelly Belly,  some ideas include:
 - [x]  **Assignment 4:** 
   - Create Six instances/objects using the struct or class you created in Assignment 1.
   - For 2 of the objects created above provide the value as nil for the property you marked as optionals in Assignment 3.
-- [ ]  **Assignment 5:**
+- [x]  **Assignment 5:**
   - Create a function that takes an object as a parameter & adds the objects you created in Assignment 3 & 4 to the collection in created Assignment 2.
   - Use the function created above to add objects to the collection.  
-- [ ]  **Assignment 6:**
+- [x]  **Assignment 6:**
   - Create a function that takes a collection as a parameter & prints out all elements of the collection whose optional properties are not nil. 
   - Use the function created above to print out data from your collection. 
-- [ ]  **Assignment 7:**
+- [x]  **Assignment 7:**
   - Transfer the code from the playground to an appropriately named model file in your app code base.
   - Successfully build the app. 
 
 **Nice to have:**
 
-- [ ]  Display the data on the iPhone simulator.
-- [ ] Create more than one collection.
-- [ ] Use a return statement
+- [x]  Display the data on the iPhone simulator.
+- [x] Create more than one collection.
+- [x] Use a return statement
 
