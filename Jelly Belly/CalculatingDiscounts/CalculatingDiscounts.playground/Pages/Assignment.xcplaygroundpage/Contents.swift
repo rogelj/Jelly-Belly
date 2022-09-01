@@ -301,9 +301,26 @@ class SeasonalDiscount: Discount {
     }
 }
 
+//: Assignment 12: Extension
+//:
+//: - Create an extension that rounds off the `totalDiscountedAmount`. Rounding to closest integer...
+
+extension Double {
+    func roundNearest() -> Double {
+        return self.rounded()
+    }
+}
+
+
 let christmas = SeasonalDiscount(discountType: "Christmas", discountPercentage: 0.15)
 
-christmas.calculateDiscount(totalAmount: 100.0)
+let discount1 = christmas.calculateDiscount(totalAmount: 100.45)
+print("Your dish costs £\(discount1) after discount")
+print("Rounded to £\(discount1.roundNearest())")
+
+let discount2 = christmas.calculateDiscount(totalAmount: 100.67)
+print("Your dish costs £\(discount2) after discount")
+print("Rounded to £\(discount2.roundNearest())")
 
 
 //: [Next](@next)

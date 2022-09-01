@@ -72,15 +72,15 @@ based on holiday season.
 
 - Create a method that calculates and returns `totalAmountAfterDiscount`. Hint: Method belongs to a class/ struct/ enum.
 
-**Assignment 11: Protocol**
+- [x] **Assignment 11: Protocol**
 
 - Create a protocol and class for Discount that has DiscountType and DiscountPercentage and a method to calculate discount.
 
 **Assignment 12: Extension**
 
-- Create an extension that rounds off the totalDiscountedAmount.
+- Create an extension that rounds off the `totalDiscountedAmount`.
 
-  For example: Apply a logic if the totalDiscountedAmount = 50.6, it rounds off to 51 (decimal >=0.5) and if the totalDiscountedAmount < 0.5, it rounds off to 50 (decimal < 0.5) Hint: Double amount is rounded off to a closest int.
+  For example: Apply a logic if the `totalDiscountedAmount` = 50.6, it rounds off to 51 (decimal >=0.5) and if the `totalDiscountedAmount` < 0.5, it rounds off to 50 (decimal < 0.5) Hint: Double amount is rounded off to a closest int.
 
 **Mandatory:**
 
