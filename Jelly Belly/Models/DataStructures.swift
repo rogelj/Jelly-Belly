@@ -18,14 +18,20 @@ import UIKit
     - `mealType: String`
     - `special: Bool` (optional) - Is the dish a special this month?
     - `dietary: Array` (optional) - Dietary restriction
-    - `cost: Float`
+    - `cost: Double`
 */
+
+struct Ingredients {
+    var ingredient: String
+    var portion: Double
+}
+
 struct Dish {
     let name: String
-    var ingredients: [(ingredient: String, portion: Float)]
+    var ingredients: [Ingredients]
     var cuisine: String
     var mealType: (String, String)
-    var cost: Float
+    var cost: Double
     var special: Bool?       // ### Assignment 3 - Making at least one property optional
     var dietary: String?     // ### Assignment 3 - Making at least one property optional
     
@@ -41,8 +47,8 @@ struct Dish {
      - Returns: Calorie content of a dish
 
     */
-    func getCalories() -> Float {
-        var calories: Float = 0.0
+    func getCalories() -> Double {
+        var calories: Double = 0.0
         for ingredient in ingredients {
             if let calorieVal = DishParts.calorieValue[ingredient.ingredient] {
                 calories += ingredient.portion * calorieVal
@@ -59,52 +65,52 @@ struct Order {
         if loadTestData {
             var testOrder = Order()
             let fusilliArrabiata = Dish(name: "Fusilli Arrabiata",
-                                        ingredients: [(ingredient: "Fusilli", portion: 2.0),
-                                                      ("Parmesan", 1.0),
-                                                      ("Pasta Sauce", 1.0)],
+                                        ingredients: [Ingredients(ingredient: "Fusilli", portion: 2.0),
+                                                      Ingredients(ingredient: "Parmesan", portion: 1.0),
+                                                      Ingredients(ingredient: "Pasta Sauce", portion: 1.0)],
                                         cuisine: DishParts.cuisine[0],
                                         mealType: DishParts.mealType[1],
                                         cost: 15.0,
                                         special: true)
             
             let pizzaMargherita = Dish(name: "Pizza Margherita",
-                                       ingredients: [(ingredient: "Pizza Base", portion: 1.0),
-                                                     ("Mozarella", 2.0),
-                                                     ("Pasta Sauce", 2.0)],
+                                       ingredients: [Ingredients(ingredient: "Pizza Base", portion: 1.0),
+                                                     Ingredients(ingredient: "Mozarella", portion: 2.0),
+                                                     Ingredients(ingredient: "Pasta Sauce", portion: 2.0)],
                                        cuisine: DishParts.cuisine[0],
                                        mealType: DishParts.mealType[1],
                                        cost: 19.0,
                                        dietary: DishParts.diet[0])
             
             let lemonade = Dish(name: "Lemonade",
-                                ingredients: [(ingredient: "Lemon", portion: 3.0),
-                                              ("Sugar", 1.0)],
+                                ingredients: [Ingredients(ingredient: "Lemon", portion: 3.0),
+                                              Ingredients(ingredient:"Sugar", portion: 1.0)],
                                 cuisine: DishParts.cuisine[2],
                                 mealType: DishParts.mealType[3],
                                 cost: 9.0)
             
             let naranjada = Dish(name: "Naranjada",
-                                 ingredients: [(ingredient: "Orange", portion: 3),
-                                               ("Sugar", 0.5)],
+                                 ingredients: [Ingredients(ingredient: "Orange", portion: 3),
+                                               Ingredients(ingredient: "Sugar", portion: 0.5)],
                                  cuisine: DishParts.cuisine[1],
                                  mealType: DishParts.mealType[3],
                                  cost: 12.0,
                                  special: true)
             
             let garlicBread = Dish(name: "Garlic Bread",
-                                   ingredients: [(ingredient: "Garlic", portion: 1),
-                                                 ("Parmesan", 2),
-                                                 ("Bread", 2)],
+                                   ingredients: [Ingredients(ingredient: "Garlic", portion: 1),
+                                                 Ingredients(ingredient: "Parmesan", portion: 2),
+                                                 Ingredients(ingredient: "Bread", portion: 2)],
                                    cuisine: DishParts.cuisine[0],
                                    mealType: DishParts.mealType[0],
                                    cost: 9.0,
                                    dietary: DishParts.diet[0])
             
             let tiramisu = Dish(name: "Tiramisu",
-                                ingredients: [(ingredient: "Chocolate", portion: 1),
-                                              ("Cream", 2),
-                                              ("Mascarpone", 2),
-                                              ("Coffee",1)],
+                                ingredients: [Ingredients(ingredient: "Chocolate", portion: 1),
+                                              Ingredients(ingredient: "Cream", portion: 2),
+                                              Ingredients(ingredient: "Mascarpone", portion:  2),
+                                              Ingredients(ingredient: "Coffee", portion: 1)],
                                 cuisine: DishParts.cuisine[0],
                                 mealType: DishParts.mealType[2],
                                 cost: 14.0)
@@ -148,7 +154,7 @@ struct Order {
                 Swift.print("Name: \(entry.name)")
                 Swift.print("Ingredients:")
                 for ingredient in entry.ingredients {
-                    Swift.print("- \(ingredient.0)")
+                    Swift.print("- \(ingredient.ingredient)")
                 }
                 Swift.print("Cusine: \(entry.cuisine)")
                 Swift.print("Meal Type: \(entry.mealType)")
@@ -176,7 +182,7 @@ struct Order {
                 Swift.print("Name: \(entry.name)")
                 Swift.print("Ingredients:")
                 for ingredient in entry.ingredients {
-                    print("- \(ingredient.0)")
+                    print("- \(ingredient.ingredient)")
                 }
                 Swift.print("Cusine: \(entry.cuisine)")
                 Swift.print("Meal Type: \(entry.mealType)")
@@ -195,8 +201,8 @@ struct Order {
      - Returns: `total`, the total cost of the dished in the order
      
      */
-    mutating func totalOrder() -> Float {
-        var total: Float = 0.0
+    mutating func totalOrder() -> Double {
+        var total: Double = 0.0
         for entry in order {
             total += entry.cost
         }

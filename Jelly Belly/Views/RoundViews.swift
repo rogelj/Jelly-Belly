@@ -130,7 +130,7 @@ struct DishView: View {
                     DishItemText(text: "Ingredients:")
                         .bold()
                     ForEach(dish.ingredients.indices, id: \.self) {
-                        i in DishItemText(text: "\(dish.ingredients[i].0)")
+                        i in DishItemText(text: "\(dish.ingredients[i].ingredient)")
                     }
                 }
                 VStack{
@@ -172,9 +172,9 @@ struct DishView: View {
     
 struct RoundViews: View {
     let testDish = Dish(name: "Fusilli Arrabiata",
-                                ingredients: [(ingredient: "Fusilli", portion: 2.0),
-                                              ("Parmesan", 1.0),
-                                              ("Pasta Sauce", 1.0)],
+                                ingredients: [Ingredients(ingredient: "Fusilli", portion: 2.0),
+                                              Ingredients(ingredient:"Parmesan", portion: 1.0),
+                                              Ingredients(ingredient:"Pasta Sauce", portion: 1.0)],
                                 cuisine: DishParts.cuisine[0],
                                 mealType: DishParts.mealType[1],
                                 cost: 15.0,

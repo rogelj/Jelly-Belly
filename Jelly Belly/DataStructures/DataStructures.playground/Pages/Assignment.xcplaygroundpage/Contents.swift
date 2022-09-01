@@ -11,20 +11,20 @@
 //:   - `mealType: String`
 //:   - `special: Bool` (optional) - Is the dish a special this month?
 //:   - `dietary: Array` (optional) - Dietary restriction
-//:   - `cost: Float`
+//:   - `cost: Double`
 
 struct Dish {
     let name: String
-    var ingredients: [(ingredient: String, portion: Float)]
+    var ingredients: [(ingredient: String, portion: Double)]
     var cuisine: String
     var mealType: String
-    var cost: Float
+    var cost: Double
     var special: Bool?       // ### Assignment 3 - Making at least one property optional
     var dietary: String?     // ### Assignment 3 - Making at least one property optional
     
     // Implementing a method to calculate the calories of the dish - Not bad!!
-    func getCalories() -> Float {
-        var calories: Float = 0.0
+    func getCalories() -> Double {
+        var calories: Double = 0.0
         for ingredient in ingredients {
             if let calorieVal = calorieValue[ingredient.ingredient] {
                 calories += ingredient.portion * calorieVal
@@ -57,7 +57,7 @@ let mealType: [String] = ["starter", "main", "dessert", "beverage"]
 //: The calorie values per potion of ingredient are stored in a dictionary.
 //: At this stage I am not 100% convinced this is the most sustainable way to show this in the app. However, it
 //: gives me an opportunity to play with this data structure as this stage.
-var calorieValue: [String: Float] = [:]
+var calorieValue: [String: Double] = [:]
 calorieValue["Fusilli"] = 450
 calorieValue["Mozarella"] = 400
 calorieValue["Pasta Sauce"] = 180
@@ -206,8 +206,8 @@ struct Order {
     
     //: ## Bonus - Calculating the total of the order - using a return statement!
 
-    mutating func totalOrder() -> Float {
-        var total: Float = 0.0
+    mutating func totalOrder() -> Double {
+        var total: Double = 0.0
         for entry in order {
             total += entry.cost
         }

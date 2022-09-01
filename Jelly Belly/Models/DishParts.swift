@@ -17,7 +17,7 @@ import UIKit
 enum DishParts {
     public static let cuisine = ["Italian", "Mexican", "American", "Japanese", "French"]
     public static let mealType = [("Starter", "🥗"), ("Main", "🍽"), ("Dessert", "🍰"), ("Beverage", "🥤")]
-    public static let calorieValue: [String: Float] = ["Fusilli": 450.0,
+    public static let calorieValue: [String: Double] = ["Fusilli": 450.0,
                                       "Mozarella": 400.0,
                                       "Pasta Sauce": 180.0,
                                       "Pizza Base": 500.0,
