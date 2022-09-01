@@ -203,14 +203,15 @@ struct selectedDish {
     }
     
     // Code for Assignment 9 - Lazy Property
-    // Not a very realistic thing to do, but here we go - Offering a max Discount selected at random up to 20%...
+    // Not a very realistic thing to do, but here we go - Offering a max Discount for next purchase selected at random up to 20%...
     // The rounding can be done with the extension for Assignment 12. Leaving this as is to show progress.
     lazy var maxDiscount =  Double(100 * Double.random(in: 0.0...0.2)).rounded() / 100.0
+
 }
 
 let pasta = selectedDish(name: "Pasta", itemPrice: 10.0)
 
-print("Hohoho! Your dish has a gift and the current discounted amount is \(pasta.currentDiscountedAmount)!")
+print("Hohoho! Your dish is part of our seasonal promotion. Pay only £\(pasta.currentDiscountedAmount)!")
 
 // Trying now to replicate the idea of getting a list of `itemPrices`
 var dish1 = selectedDish(name: "Dish 1", itemPrice: 12.3)
@@ -229,6 +230,52 @@ let currentDiscountAmounts = dishes.map { (dish) -> Double in
 
 print("The current discounted amount for your dishes are: \(currentDiscountAmounts)")
 
-print("Spin the wheel and see if you get a surprise discount.\n Congratulations your \(dish1.name) has a discount of \(dish1.maxDiscount * 100)%. Claim it now!")
+print("Spin the wheel and see if you get a surprise discount...\n Congratulations your \(dish1.name) has a voucher of \(dish1.maxDiscount * 100)% for your next purchase!")
+
+//: Assignment 10: Method
+//:
+//: - Create a method that calculates and returns `totalAmountAfterDiscount`. Hint: Method belongs to a class/ struct/ enum.
+
+// To make this more suitable to my existing use case I am thinking of my `Order` struct. I create a minimal example here
+
+struct Order {
+    var order: [selectedDish] = []
+
+    /**
+     Calculates the total cost of an `order`
+
+     - Parameters:
+     - order: an Array of `Dish` objects
+
+     - Returns: `total`, the total cost of the dished in the order
+
+     */
+    mutating func totalOrder() -> Double {
+        var total: Double = 0.0
+        for entry in order {
+            total += entry.itemPrice
+        }
+        return total
+    }
+    
+    mutating func totalOrderDiscounted() -> Double {
+        var partialTotal = totalOrder()
+        return calculateDiscount(totalAmount: partialTotal, discountPercentage: currentSeason)
+    }
+
+}
+
+var myOrder = Order()
+myOrder.order.append(dish1)
+myOrder.order.append(dish2)
+myOrder.order.append(dish3)
+myOrder.order.append(dish4)
+myOrder.order.append(dish5)
+myOrder.order.append(dish6)
+myOrder.order.append(dish7)
+
+myOrder.totalOrder()
+
+myOrder.totalOrderDiscounted()
 
 //: [Next](@next)
