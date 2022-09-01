@@ -42,7 +42,7 @@ based on holiday season.
 
 - Create a closure that calculates the discount. Closures takes parameters as: total amount, discount type and subtracts discounted amount from total amount and prints the total amount.
 
-**Assignment 5: Map**
+- [x] **Assignment 5: Map**
 
 - Take itemPrices. Let's say the prices of all of these items are to be increased by 50%. Multiply each element in an array with 0.5. Print the new item price.
 

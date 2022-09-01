@@ -18,6 +18,7 @@
 enum Discount {
     // Defining a defaultDiscount to be used in the app
     public static let defaultDiscount: Double = 0.05
+    
     public static let itemPrices: [Double] = [12.3, 11.5, 7.8, 9.5, 4.75, 8.9, 20.0]
     
     // Defining a dictionary here to be used for Assignment 6
@@ -115,6 +116,20 @@ var discountClosure: GetDiscount = { (totalAmount: Double, discountType: String)
 var testDiscountClosure = discountClosure(100, "Christmas")
 print(testDiscountClosure)
 
+//: Assignment 5: Map
+//:
+//: - Take `itemPrices`. Let's say the prices of all of these items are to be increased by 50%. Multiply each element in an array with 0.5. Print the new item price.
+//:
+//:  For example: Price of item 1 is $100. Price of item 1 is to be increased by 50% (that's $100 * 0.5 = $50). The new price of item 1 is now $150. Hint: Use Swift's map
 
+let increaseAmount = 0.5
+
+print(Discount.itemPrices)
+
+var increasedItemPrices = Discount.itemPrices.map { (price) -> Double in
+    price * ( 1 + increaseAmount)
+}
+
+print(increasedItemPrices)
 
 //: [Next](@next)
