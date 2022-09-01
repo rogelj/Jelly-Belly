@@ -230,7 +230,7 @@ let currentDiscountAmounts = dishes.map { (dish) -> Double in
 
 print("The current discounted amount for your dishes are: \(currentDiscountAmounts)")
 
-print("Spin the wheel and see if you get a surprise discount...\n Congratulations your \(dish1.name) has a voucher of \(dish1.maxDiscount * 100)% for your next purchase!")
+print("Spin the wheel and see if you get a surprise discount...\nCongratulations your \(dish1.name) has a voucher of \(dish1.maxDiscount * 100)% for your next purchase!")
 
 //: Assignment 10: Method
 //:
@@ -241,15 +241,7 @@ print("Spin the wheel and see if you get a surprise discount...\n Congratulation
 struct Order {
     var order: [selectedDish] = []
 
-    /**
-     Calculates the total cost of an `order`
-
-     - Parameters:
-     - order: an Array of `Dish` objects
-
-     - Returns: `total`, the total cost of the dished in the order
-
-     */
+    // Method 1 - Same as the one used in my HW for week 2
     mutating func totalOrder() -> Double {
         var total: Double = 0.0
         for entry in order {
@@ -258,6 +250,7 @@ struct Order {
         return total
     }
     
+    // New method - so as to comply with this week's HW :]
     mutating func totalOrderDiscounted() -> Double {
         var partialTotal = totalOrder()
         return calculateDiscount(totalAmount: partialTotal, discountPercentage: currentSeason)
@@ -277,5 +270,40 @@ myOrder.order.append(dish7)
 myOrder.totalOrder()
 
 myOrder.totalOrderDiscounted()
+
+//: Assignment 11: Protocol
+//:
+//: - Create a protocol and class for Discount that has discountType and discountPercentage and a method to calculate discount.
+
+protocol Discount {
+    var discountType: String { get }
+    var discountPercentage: Double { get }
+    
+    init(discountType: String, discountPercentage: Double)
+    
+    func calculateDiscount(totalAmount: Double) -> Double
+}
+
+
+class SeasonalDiscount: Discount {
+    var discountType: String
+    var discountPercentage: Double
+    
+    required init(discountType: String, discountPercentage: Double) {
+        self.discountType = discountType
+        self.discountPercentage = discountPercentage
+    }
+    
+    func calculateDiscount(totalAmount: Double) -> Double {
+        let totalAmountAfterDiscount: Double
+        totalAmountAfterDiscount = totalAmount * ( 1 -  discountPercentage )
+        return totalAmountAfterDiscount
+    }
+}
+
+let christmas = SeasonalDiscount(discountType: "Christmas", discountPercentage: 0.15)
+
+christmas.calculateDiscount(totalAmount: 100.0)
+
 
 //: [Next](@next)
