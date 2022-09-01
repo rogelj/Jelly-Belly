@@ -58,21 +58,19 @@ based on holiday season.
 
 - Create a function printDiscount to print the value for discount types. Use switch cases and enums to do this.
 
-**Assignment 8: Computed property**
+- [x] **Assignment 8: Computed property**
 
-- Create a computed property: currentDiscountedAmount that returns the
-  current discounted amount that you apply on the itemPrices. 
+- Create a computed property: `currentDiscountedAmount` that returns the current discounted amount that you apply on the `itemPrices`. 
+  
+  For example: you have a subset of itemPrices that the user chooses to buy (of course, at a later point, you can hardcode this chosen itemPrices subset for now). Based on the season - let's say right now, there is a Christmas sale going on and a discount (of 15%) is applied to the `itemPrices` in this season. Then the `currentDiscountedAmount = totalAmountAfterDiscount`.
 
-  For example: you have a subset of itemPrices that the user chooses to buy (of course, at a later point, you can hardcode this chosen itemPrices subset for now). Based on the season - let's say right now, there is a Christmas sale going on and a discount (of 15%) is applied to the itemPrices in this season. Then the currentDiscountedAmount = totalAmountAfterDiscount.
+- [x] **Assignment 9: Lazy property**
 
-**Assignment 9: Lazy property**
-
-- Create a lazy property that returns the maximum discount that can be
-applied.
+- Create a lazy property that returns the maximum discount that can be applied.
 
 **Assignment 10: Method**
 
-- Create a method that calculates and returns totalAmountAfterApplyingDicount. Hint: Method belongs to a class/ struct/ enum.
+- Create a method that calculates and returns `totalAmountAfterApplyingDiscount`. Hint: Method belongs to a class/ struct/ enum.
 
 **Assignment 11: Protocol**
 

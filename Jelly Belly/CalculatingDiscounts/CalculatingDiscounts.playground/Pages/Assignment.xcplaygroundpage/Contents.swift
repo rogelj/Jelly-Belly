@@ -182,6 +182,53 @@ func printDiscount(for discountType: DiscountTypes) {
     }
 }
 
-printDiscount(for: .defaultDiscount)
+printDiscount(for: .newYear)
+
+//: Assignment 8: Computed property
+//: Create a computed property: `currentDiscountedAmount` that returns the current discounted amount that you apply on the `itemPrices`.
+
+//: Since a computed property belongs to a named type I am going to create a struct called `selectedDishes`
+
+//: Assignment 9: Lazy Property
+//: - I am using the implementation from Assignment 8. I will point out the additions in the code below
+
+let currentSeason = DiscountTypes.christmas.rawValue
+
+struct selectedDish {
+    let name: String
+    var itemPrice: Double
+    
+    var currentDiscountedAmount: Double {
+        return calculateDiscount(totalAmount: itemPrice, discountPercentage: currentSeason)
+    }
+    
+    // Code for Assignment 9 - Lazy Property
+    // Not a very realistic thing to do, but here we go - Offering a max Discount selected at random up to 20%...
+    // The rounding can be done with the extension for Assignment 12. Leaving this as is to show progress.
+    lazy var maxDiscount =  Double(100 * Double.random(in: 0.0...0.2)).rounded() / 100.0
+}
+
+let pasta = selectedDish(name: "Pasta", itemPrice: 10.0)
+
+print("Hohoho! Your dish has a gift and the current discounted amount is \(pasta.currentDiscountedAmount)!")
+
+// Trying now to replicate the idea of getting a list of `itemPrices`
+var dish1 = selectedDish(name: "Dish 1", itemPrice: 12.3)
+var dish2 = selectedDish(name: "Dish 2", itemPrice: 11.5)
+var dish3 = selectedDish(name: "Dish 3", itemPrice: 7.8)
+var dish4 = selectedDish(name: "Dish 4", itemPrice: 9.5)
+var dish5 = selectedDish(name: "Dish 5", itemPrice: 4.75)
+var dish6 = selectedDish(name: "Dish 6", itemPrice: 8.9)
+var dish7 = selectedDish(name: "Dish 7", itemPrice: 20.0)
+
+let dishes = [dish1, dish2, dish3, dish4, dish5, dish6, dish7]
+
+let currentDiscountAmounts = dishes.map { (dish) -> Double in
+    dish.currentDiscountedAmount
+}
+
+print("The current discounted amount for your dishes are: \(currentDiscountAmounts)")
+
+print("Spin the wheel and see if you get a surprise discount.\n Congratulations your \(dish1.name) has a discount of \(dish1.maxDiscount * 100)%. Claim it now!")
 
 //: [Next](@next)
