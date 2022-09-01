@@ -43,7 +43,7 @@ struct HeaderViewOrder: View {
                 RoundLogoView(imageSize: Constants.Logo.logoViewSizeSmall)
                 Spacer()
                 Button(action: {
-                    orderIsShowing = false
+                    orderIsShowing.toggle()
                 }) {
                     Text("Done")
                         .bold()
