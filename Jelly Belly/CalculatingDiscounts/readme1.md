@@ -48,7 +48,7 @@ based on holiday season.
 
   For example: Price of item 1 is \$100. Price of item 1 is to be increased by 50% (that's \$100 * 0.5 = $50). The new price of item 1 is now \$150. Hint: Use Swift's map
 
-**Assignment 6: Sorted**
+- [x] **Assignment 6: Sorted**
 
 - Create a Discount type dictionary (with discount type and percentage amount). Sort this dictionary from highest discount to lowest discount. Hint: Use Swift's sorted.
 
@@ -92,6 +92,6 @@ applied.
 
 **Nice to have:**
 
-- Showcase the progression of the usage of a closure from the longest syntax to the shortest possible syntax (You can use the closure that you created in assignment 4.) **OR**
+- [x] - Showcase the progression of the usage of a closure from the longest syntax to the shortest possible syntax (You can use the closure that you created in assignment 4.) **OR**
 
 - Display a date or a string (preferably a long string) in a nice readable format using NSAttributedString. Use your creativity and make the date/ string look appealing using different fonts/ colors.
