@@ -14,10 +14,14 @@
 //: - `totalAmountAfterDiscount`: `totalAmount - discountedAmount`.
 
 
-//: [JRogel]: Creating an `enum` to hold the prerequisites. Actually, as I was going through the task I realised my `discounts` dictionary is
+//: [JRogel]: Creating an `enum` to hold the prerequisites.
 enum Discount {
+    // Defining a defaultDiscount to be used in the app
+    public static let defaultDiscount: Double = 0.05
     public static let itemPrices: [Double] = [12.3, 11.5, 7.8, 9.5, 4.75, 8.9, 20.0]
-    public static let discounts: [String:Double] = ["Default": 0.05, "Thanksgiving": 0.1, "Christmas": 0.15, "New Year": 0.2]
+    
+    // Defining a dictionary here to be used for Assignment 6
+    public static let discounts: [String:Double] = ["Default": defaultDiscount, "Thanksgiving": 0.1, "Christmas": 0.15, "New Year": 0.2]
 }
 
 //: ## Assignment 1: Function
@@ -43,7 +47,7 @@ calculateDiscount(for: 100, discountPercentage: Discount.discounts["Christmas"] 
 //:
 //: - Modify the function above to now take in a default discount percentage that will be applied by default to all. Hint: Use function overloading.
 
-func calculateDiscount(totalAmount: Double, discountPercentage: Double = Discount.discounts["Default"] ?? 0.05) -> Double {
+func calculateDiscount(totalAmount: Double, discountPercentage: Double =  Discount.defaultDiscount) -> Double {
     let discountedAmount: Double
     let totalAmountAfterDiscount: Double
     
@@ -104,11 +108,12 @@ var discountClosure: GetDiscount = { (totalAmount: Double, discountType: String)
     let totalAmountAfterDiscount: Double
     
     totalAmountAfterDiscount = totalAmount * (1 - (Discount.discounts[discountType] ?? 0.0) )
-
+    print("The discounted amount for \(discountType) is \(totalAmountAfterDiscount).")
     return totalAmountAfterDiscount
 }
 
-print(discountClosure(100, "Christmas"))
+var testDiscountClosure = discountClosure(100, "Christmas")
+print(testDiscountClosure)
 
 
 

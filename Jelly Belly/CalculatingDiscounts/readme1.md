@@ -38,7 +38,7 @@ based on holiday season.
 `discount `type as parameters. It returns the `totalAmountAfterDiscount`. Hint: `(Double, String) -> Double`
 - Now create a `printDiscount` function to print the `totalAmountAfterDiscount` for all discount types. It takes function (typealias) as a parameter
 
-**Assignment 4: Closure**
+- [x] **Assignment 4: Closure**
 
 - Create a closure that calculates the discount. Closures takes parameters as: total amount, discount type and subtracts discounted amount from total amount and prints the total amount.
 
