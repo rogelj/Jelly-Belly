@@ -13,19 +13,21 @@
 //: - `discountedAmount`: Amount after applying `discount` on `totalAmount`. Formula: `totalAmount * 0.5` (if a discount of 5% is applied).
 //: - `totalAmountAfterDiscount`: `totalAmount - discountedAmount`.
 
+
+//: [JRogel]: Creating an `enum` to hold the prerequisites. Actually, as I was going through the task I realised my `discounts` dictionary is 
 enum Discount {
     public static let itemPrices: [Double] = [12.3, 11.5, 7.8, 9.5, 4.75, 8.9, 20.0]
     public static let discounts: [String:Double] = ["Default": 0.05, "Thanksgiving": 0.1, "Christmas": 0.15, "New Year": 0.2]
 }
 
-//: ## Assignment 1: Function**
+//: ## Assignment 1: Function
 //:
 //: - Create a function with 2 parameters: `totalAmount` and `discountPercentage` (5%, 10% and so on).
 //: - Calculate the `discountedAmount `and subtract this from the `totalAmount` (using formulae above).
 //: - Return the `totalAmountAfterDiscount`.
 
-// Naming this function `calculateDiscount_1` to enable for the overloading shown in Assignment 2 below
-func calculateDiscount_1(for totalAmount: Double, discountPercentage: Double) -> Double {
+// Naming this function `calculateDiscount`. If necessary comment this code out.
+func calculateDiscount(for totalAmount: Double, discountPercentage: Double) -> Double {
     var discountedAmount: Double
     var totalAmountAfterDiscount: Double
     
@@ -35,7 +37,7 @@ func calculateDiscount_1(for totalAmount: Double, discountPercentage: Double) ->
     return totalAmountAfterDiscount
 }
 
-calculateDiscount_1(for: 100, discountPercentage: Discount.discounts["Christmas"] ?? 0.0 )
+calculateDiscount(for: 100, discountPercentage: Discount.discounts["Christmas"] ?? 0.0 )
 
 //: ## Assignment 2: Function
 //:
@@ -58,9 +60,12 @@ calculateDiscount(totalAmount: 100, discountPercentage: 0.5)
 //:
 //: - Create a `typealias` for a function type that takes in `totalAmount` and `discountType` as parameters. It returns the `totalAmountAfterDiscount`. Hint: (Double, String) -> Double
 
+//: [JRogel]: I read this as having to create a function that returns the `totalAmointAfterDiscount` but uses the typealias as the signature of the function.
+//: Here we go:
+
 typealias GetDiscount = (Double, String) -> Double
 
-// Bonus - Let us use the  typealias to overload our `calculateDiscount` function with the help of the following function:
+// Let us now use the typealias to overload our `calculateDiscount` function with the help of the following function:
 func holidayDiscount(totalAmount: Double, discountType: String) -> Double {
     totalAmount * (1 - (Discount.discounts[discountType] ?? 0.0) )
 }
@@ -75,15 +80,17 @@ calculateDiscount(holidayDiscount, 100, "Thanksgiving")
 
 //: - Now create a `printDiscountfunction` to print the `totalAmountAfterDiscount` for all discount types. It takes function (typealias) as a parameter
 
+//: [JRogel]: I read this as creating a function that then I can use to print the `totalAmountAfterDiscount` upon request:
+
 func printDiscount(_ discount: GetDiscount, _ totalAmount: Double, _ discountType: String) {
     let result = discount(totalAmount, discountType)
     print("The discounted amount for \(discountType) is \(result).")
 }
 
-// testing:
+//: Testing:
 printDiscount(holidayDiscount, 100, "Christmas")
 
-// Printing the `totalAmountAfterDiscount` for all discount types:
+//:  Printing the `totalAmountAfterDiscount` for all discount types. I am using `forEach` to do this:
 Discount.discounts.keys.forEach { holiday in
     printDiscount(holidayDiscount, 100, holiday)
 }
