@@ -8,7 +8,7 @@
 //:   - `name: String`
 //:   - `ingredients`: `Array` of `Tuples` `[(item, portion)]`
 //:   - `cusine: String`
-//:   - `mealtype: String`
+//:   - `mealType: String`
 //:   - `special: Bool` (optional) - Is the dish a special this month?
 //:   - `dietary: Array` (optional) - Dietary restriction
 //:   - `cost: Float`
@@ -17,7 +17,7 @@ struct Dish {
     let name: String
     var ingredients: [(ingredient: String, portion: Float)]
     var cuisine: String
-    var mealtype: String
+    var mealType: String
     var cost: Float
     var special: Bool?       // ### Assignment 3 - Making at least one property optional
     var dietary: String?     // ### Assignment 3 - Making at least one property optional
@@ -104,7 +104,7 @@ var fusilliArrabiata = Dish(name: "Fusilli Arrabiata",
                                           ("Parmesan", 1.0),
                                           ("Pasta Sauce", 1.0)],
                             cuisine: cuisine[0],
-                            mealtype: mealType[1],
+                            mealType: mealType[1],
                             cost: 15.0,
                             special: true)  // Adding an optional
 
@@ -113,7 +113,7 @@ var pizzaMargherita = Dish(name: "Pizza Margherita",
                                          ("Mozarella", 2.0),
                                          ("Pasta Sauce", 2.0)],
                            cuisine: cuisine[0],
-                           mealtype: mealType[1],
+                           mealType: mealType[1],
                            cost: 19.0,
                            dietary: diet[0])  // Adding an optional
 
@@ -121,14 +121,14 @@ var lemonade = Dish(name: "Lemonade",
                     ingredients: [(ingredient: "Lemon", portion: 3.0),
                                   ("Sugar", 1.0)],
                     cuisine: cuisine[2],
-                    mealtype: mealType[3],
+                    mealType: mealType[3],
                     cost: 9.0)
 
 var naranjada = Dish(name: "Naranjada",
                      ingredients: [(ingredient: "Orange", portion: 3),
                                    ("Sugar", 0.5)],
                      cuisine: cuisine[1],
-                     mealtype: mealType[3],
+                     mealType: mealType[3],
                      cost: 12.0,
                      special: true)  // Adding an optional
 
@@ -137,7 +137,7 @@ var garlicBread = Dish(name: "Garlic Bread",
                                      ("Parmesan", 2),
                                      ("Bread", 2)],
                        cuisine: cuisine[0],
-                       mealtype: mealType[0],
+                       mealType: mealType[0],
                        cost: 9.0,
                        dietary: diet[0])  // Adding an optional
 
@@ -147,7 +147,7 @@ var tiramisu = Dish(name: "Tiramisu",
                                   ("Mascarpone", 2),
                                   ("Coffee",1)],
                     cuisine: cuisine[0],
-                    mealtype: mealType[2],
+                    mealType: mealType[2],
                     cost: 14.0)
 
 //: ### Assignment 5 - Create function that takes an object as a parameter & adds the objects you created in Assignment 4 (?) to the collection in created Assignment 2.
@@ -178,7 +178,7 @@ struct Order {
                     print("- \(ingredient.0)")
                 }
                 print("Cusine: \(entry.cuisine)")
-                print("Meal Type: \(entry.mealtype)")
+                print("Meal Type: \(entry.mealType)")
                 print("Cost: \(entry.cost)")
                 print("Special: \(special)")
                 print("===\n")
@@ -196,7 +196,7 @@ struct Order {
                     print("- \(ingredient.0)")
                 }
                 print("Cusine: \(entry.cuisine)")
-                print("Meal Type: \(entry.mealtype)")
+                print("Meal Type: \(entry.mealType)")
                 print("Cost: \(entry.cost)")
                 print("Dietary: \(dietary)")
                 print("===\n")

@@ -122,7 +122,7 @@ struct DishView: View {
                         .font(.title3)
                     Spacer()
                 }
-                Text(dish.mealtype.1)
+                Text(dish.mealType.1)
                     .font(.title)
             }
             HStack(alignment: .top) {
@@ -176,7 +176,7 @@ struct RoundViews: View {
                                               ("Parmesan", 1.0),
                                               ("Pasta Sauce", 1.0)],
                                 cuisine: DishParts.cuisine[0],
-                                mealtype: DishParts.mealType[1],
+                                mealType: DishParts.mealType[1],
                                 cost: 15.0,
                                 special: true,
                                 dietary: DishParts.diet[0])

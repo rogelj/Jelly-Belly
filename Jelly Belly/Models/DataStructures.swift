@@ -15,7 +15,7 @@ import UIKit
     - `name: String`
     - `ingredients`: `Array` of `Tuples` `[(item, portion)]`
     - `cusine: String`
-    - `mealtype: String`
+    - `mealType: String`
     - `special: Bool` (optional) - Is the dish a special this month?
     - `dietary: Array` (optional) - Dietary restriction
     - `cost: Float`
@@ -24,7 +24,7 @@ struct Dish {
     let name: String
     var ingredients: [(ingredient: String, portion: Float)]
     var cuisine: String
-    var mealtype: (String, String)
+    var mealType: (String, String)
     var cost: Float
     var special: Bool?       // ### Assignment 3 - Making at least one property optional
     var dietary: String?     // ### Assignment 3 - Making at least one property optional
@@ -63,7 +63,7 @@ struct Order {
                                                       ("Parmesan", 1.0),
                                                       ("Pasta Sauce", 1.0)],
                                         cuisine: DishParts.cuisine[0],
-                                        mealtype: DishParts.mealType[1],
+                                        mealType: DishParts.mealType[1],
                                         cost: 15.0,
                                         special: true)
             
@@ -72,7 +72,7 @@ struct Order {
                                                      ("Mozarella", 2.0),
                                                      ("Pasta Sauce", 2.0)],
                                        cuisine: DishParts.cuisine[0],
-                                       mealtype: DishParts.mealType[1],
+                                       mealType: DishParts.mealType[1],
                                        cost: 19.0,
                                        dietary: DishParts.diet[0])
             
@@ -80,14 +80,14 @@ struct Order {
                                 ingredients: [(ingredient: "Lemon", portion: 3.0),
                                               ("Sugar", 1.0)],
                                 cuisine: DishParts.cuisine[2],
-                                mealtype: DishParts.mealType[3],
+                                mealType: DishParts.mealType[3],
                                 cost: 9.0)
             
             let naranjada = Dish(name: "Naranjada",
                                  ingredients: [(ingredient: "Orange", portion: 3),
                                                ("Sugar", 0.5)],
                                  cuisine: DishParts.cuisine[1],
-                                 mealtype: DishParts.mealType[3],
+                                 mealType: DishParts.mealType[3],
                                  cost: 12.0,
                                  special: true)
             
@@ -96,7 +96,7 @@ struct Order {
                                                  ("Parmesan", 2),
                                                  ("Bread", 2)],
                                    cuisine: DishParts.cuisine[0],
-                                   mealtype: DishParts.mealType[0],
+                                   mealType: DishParts.mealType[0],
                                    cost: 9.0,
                                    dietary: DishParts.diet[0])
             
@@ -106,7 +106,7 @@ struct Order {
                                               ("Mascarpone", 2),
                                               ("Coffee",1)],
                                 cuisine: DishParts.cuisine[0],
-                                mealtype: DishParts.mealType[2],
+                                mealType: DishParts.mealType[2],
                                 cost: 14.0)
             
             testOrder.addToOrder(dish: fusilliArrabiata)
@@ -151,7 +151,7 @@ struct Order {
                     Swift.print("- \(ingredient.0)")
                 }
                 Swift.print("Cusine: \(entry.cuisine)")
-                Swift.print("Meal Type: \(entry.mealtype)")
+                Swift.print("Meal Type: \(entry.mealType)")
                 Swift.print("Cost: \(entry.cost)")
                 Swift.print("Special: \(special)")
                 Swift.print("===\n")
@@ -179,7 +179,7 @@ struct Order {
                     print("- \(ingredient.0)")
                 }
                 Swift.print("Cusine: \(entry.cuisine)")
-                Swift.print("Meal Type: \(entry.mealtype)")
+                Swift.print("Meal Type: \(entry.mealType)")
                 Swift.print("Cost: \(entry.cost)")
                 Swift.print("Dietary: \(dietary)")
                 Swift.print("===\n")
