@@ -68,9 +68,9 @@ based on holiday season.
 
 - Create a lazy property that returns the maximum discount that can be applied.
 
-**Assignment 10: Method**
+- [x]  **Assignment 10: Method**
 
-- Create a method that calculates and returns `totalAmountAfterApplyingDiscount`. Hint: Method belongs to a class/ struct/ enum.
+- Create a method that calculates and returns `totalAmountAfterDiscount`. Hint: Method belongs to a class/ struct/ enum.
 
 **Assignment 11: Protocol**
 
