@@ -52,7 +52,7 @@ based on holiday season.
 
 - Create a Discount type dictionary (with discount type and percentage amount). Sort this dictionary from highest discount to lowest discount. Hint: Use Swift's sorted.
 
-**Assignment 7: Enums and Switch cases**
+- [x] **Assignment 7: Enums and Switch cases**
 
 - Use enums for discount types.
 

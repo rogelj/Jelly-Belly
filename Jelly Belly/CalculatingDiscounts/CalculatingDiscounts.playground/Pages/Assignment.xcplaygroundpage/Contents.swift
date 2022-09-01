@@ -162,6 +162,26 @@ sortedDiscountTypes.forEach { dt in
 //: - Use enums for discount types.
 //: - Create a function printDiscount to print the value for discount types. Use switch cases and enums to do this.
 
+enum DiscountTypes: Double {
+    case defaultDiscount = 0.05
+    case thanksgiving = 0.1
+    case christmas = 0.15
+    case newYear = 0.2
+}
 
+func printDiscount(for discountType: DiscountTypes) {
+    switch discountType {
+    case .defaultDiscount:
+        print(discountType.rawValue)
+    case .thanksgiving:
+        print(discountType.rawValue)
+    case .christmas:
+        print(discountType.rawValue)
+    case .newYear:
+        print(discountType.rawValue)
+    }
+}
+
+printDiscount(for: .defaultDiscount)
 
 //: [Next](@next)
