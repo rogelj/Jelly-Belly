@@ -20,7 +20,7 @@ based on holiday season.
 
 **Need to have:**
 
-- [x] **Assignment 1: Function**
+- [x]  **Assignment 1: Function**
 
 - Create a function with 2 parameters: `totalAmount` and `discountPercentage` (5%, 10% and so on).
 
@@ -28,11 +28,11 @@ based on holiday season.
 
 - Return the `totalAmountAfterDiscount`.
 
-- [x] **Assignment 2: Function**
+- [x]  **Assignment 2: Function**
 
 - Modify the function above to now take in a default discount percentage that will be applied by default to all. Hint: Use function overloading.
 
-**Assignment 3: typealias**
+- [x]  **Assignment 3: typealias**
 
 - Create a typealias for a function type that takes in `totalAmount `and
 `discount `type as parameters. It returns the `totalAmountAfterDiscount`. Hint: `(Double, String) -> Double`

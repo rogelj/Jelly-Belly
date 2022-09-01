@@ -14,7 +14,7 @@
 //: - `totalAmountAfterDiscount`: `totalAmount - discountedAmount`.
 
 
-//: [JRogel]: Creating an `enum` to hold the prerequisites. Actually, as I was going through the task I realised my `discounts` dictionary is 
+//: [JRogel]: Creating an `enum` to hold the prerequisites. Actually, as I was going through the task I realised my `discounts` dictionary is
 enum Discount {
     public static let itemPrices: [Double] = [12.3, 11.5, 7.8, 9.5, 4.75, 8.9, 20.0]
     public static let discounts: [String:Double] = ["Default": 0.05, "Thanksgiving": 0.1, "Christmas": 0.15, "New Year": 0.2]
@@ -94,6 +94,22 @@ printDiscount(holidayDiscount, 100, "Christmas")
 Discount.discounts.keys.forEach { holiday in
     printDiscount(holidayDiscount, 100, holiday)
 }
+
+//: Assignment 4: Closure
+//:
+//: - Create a closure that calculates the discount. Closures takes parameters as: total amount, discount type and subtracts discounted amount from total amount and prints the total amount.
+
+//: Starting with a long closure syntax - NICE TO HAVE!!
+var discountClosure: GetDiscount = { (totalAmount: Double, discountType: String) -> Double in
+    let totalAmountAfterDiscount: Double
+    
+    totalAmountAfterDiscount = totalAmount * (1 - (Discount.discounts[discountType] ?? 0.0) )
+
+    return totalAmountAfterDiscount
+}
+
+print(discountClosure(100, "Christmas"))
+
 
 
 //: [Next](@next)
