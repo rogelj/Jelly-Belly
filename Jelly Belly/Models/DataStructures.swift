@@ -9,31 +9,58 @@ import Foundation
 import UIKit
 
 /**
- `Dish` struct to hold dishes that are served at the restaurant.
+ `Ingredients` struct to hold an ingredient and the portion used for a dish
 
  The dish class will comprise:
-    - `name: String`
-    - `ingredients`: `Array` of `Tuples` `[(item, portion)]`
-    - `cusine: String`
-    - `mealType: String`
-    - `special: Bool` (optional) - Is the dish a special this month?
-    - `dietary: Array` (optional) - Dietary restriction
-    - `cost: Double`
+    - `ingredient: String`
+    - `portion`: `Double`
 */
-
 struct Ingredients {
     var ingredient: String
     var portion: Double
 }
 
+/**
+ `Dish` struct to hold dishes that are served at the restaurant.
+
+ The dish class will comprise:
+    - `name: String`
+    - `ingredients`: `Array` of `Ingredients`
+    - `cusine: String`
+    - `mealType: String`
+    - `special: Bool?` (optional) - Is the dish a special this month?
+    - `dietary: String?` (optional) - Dietary restriction
+    - `cost: Double`
+    - `discountable: Bool?` (optional) - can the dish be discounted?
+    - `discountFactor: Double` - Lazy property
+    - `finalCost: Double` - Computed property - based on the discountFactor (if dish is discountable)
+ 
+*/
 struct Dish {
     let name: String
     var ingredients: [Ingredients]
     var cuisine: String
     var mealType: (String, String)
     var cost: Double
-    var special: Bool?       // ### Assignment 3 - Making at least one property optional
-    var dietary: String?     // ### Assignment 3 - Making at least one property optional
+    var special: Bool?
+    var dietary: String?
+    var discountable: Bool?
+    
+    // Implementing a lazy property to get the level of discount for the season
+    lazy var discountFactor: Double = Constants.General.currentSeason.rawValue
+    
+    // Implementing a computed property to get the level of discount for the season
+    var finalCost: Double {
+        mutating get {
+            var result: Double = cost
+            if let discountable = discountable {
+                if discountable {
+                    result = cost * (1 - discountFactor)
+                }
+            }
+            return result
+        }
+    }
 
     // Implementing a method to calculate the calories of the dish - Not bad!!
     /**
