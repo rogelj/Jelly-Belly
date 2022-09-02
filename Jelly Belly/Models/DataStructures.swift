@@ -93,7 +93,7 @@ class Dish {
                 calories += ingredient.portion * calorieVal
             }
         }
-        return calories  // **Nice to have** - implementing a method with `return`
+        return calories.roundNearest()  // **Nice to have** - implementing a method with `return`
     }
 }
 
@@ -255,6 +255,18 @@ struct Order {
         }
         return total
     }
-    
+}
 
+extension Double {
+    func roundNearest() -> Double {
+        let intPart: Int = Int(self)
+        let decimalPart: Double = self - Double(intPart)
+        if decimalPart >= 0.5 {
+            return Double(intPart) + 1.0
+        } else {
+            return Double(intPart)
+        }
+        // The block inside the extension could be replaced by:
+        // return self.rounded()
+    }
 }
