@@ -55,7 +55,7 @@ func calculateDiscount(totalAmount: Double, discountPercentage: Double =  Discou
     
     discountedAmount = totalAmount * discountPercentage
     totalAmountAfterDiscount = totalAmount - discountedAmount
-
+    
     return totalAmountAfterDiscount
 }
 
@@ -207,7 +207,7 @@ struct selectedDish {
     // Not a very realistic thing to do, but here we go - Offering a max Discount for next purchase selected at random up to 20%...
     // The rounding can be done with the extension for Assignment 12. Leaving this as is to show progress.
     lazy var maxDiscount =  Double(100 * Double.random(in: 0.0...0.2)).rounded() / 100.0
-
+    
 }
 
 let pasta = selectedDish(name: "Pasta", itemPrice: 10.0)
@@ -241,7 +241,7 @@ print("Spin the wheel and see if you get a surprise discount...\nCongratulations
 
 struct Order {
     var order: [selectedDish] = []
-
+    
     // Method 1 - Same as the one used in my HW for week 2
     mutating func totalOrder() -> Double {
         var total: Double = 0.0
@@ -256,7 +256,7 @@ struct Order {
         let partialTotal = totalOrder()
         return calculateDiscount(totalAmount: partialTotal, discountPercentage: currentSeason)
     }
-
+    
 }
 
 var myOrder = Order()
@@ -335,13 +335,51 @@ print("Rounded to £\(discount2.roundNearest())")
 //:
 //: Display a date or a string (preferably a long string) in a nice readable format using NSAttributedString.
 
-func greet(name: String) -> NSAttributedString {
-    let attributes = [NSAttributedString.Key.foregroundColor : UIColor.red]
-      let message = NSAttributedString(string: "Hello " + name, attributes: attributes)
-      return message
+func welcome(name: String) -> NSAttributedString {
+    let jellyColour = UIColor(red: CGFloat(183)/CGFloat(255), green: CGFloat(43)/CGFloat(255), blue: CGFloat(211)/CGFloat(255), alpha: 1)
+
+    let jellyShadow = NSShadow()
+    jellyShadow.shadowColor = jellyColour
+    jellyShadow.shadowBlurRadius = 5
+    let attributes: [NSAttributedString.Key: Any] = [
+        .font: UIFont.systemFont(ofSize: 20),
+        .foregroundColor: UIColor.white,
+        .shadow: jellyShadow
+    ]
+    let message = NSAttributedString(string: "Welcome to Jelly Belly \(name)!", attributes: attributes)
+//    let message2 = NSAttributedString(string: "Ready to order?", attributes: attributes2)
+
+    return message
 }
 
-greet(name: "Jay")
+func visitDate() -> NSAttributedString {
+    let bellyColour = UIColor(red: CGFloat(31)/CGFloat(255), green: CGFloat(42)/CGFloat(255), blue: CGFloat(221)/CGFloat(255), alpha: 1)
+    
+    let bellyShadow = NSShadow()
+    bellyShadow.shadowColor = bellyColour
+    bellyShadow.shadowBlurRadius = 12
+    let attributes2: [NSAttributedString.Key: Any] = [
+        .font: UIFont.systemFont(ofSize: 18),
+        .foregroundColor: UIColor.white,
+        .shadow: bellyShadow
+    ]
+    
+    let formattedToday = Date().formatted(
+        .dateTime
+            .day().month(.wide).year()
+            .hour().minute()
+    )
+    
+    let message = NSAttributedString(string: "Thanks for your visit on \(formattedToday)", attributes: attributes2)
+    return message
+    
+}
+
+welcome(name: "Jay")
+visitDate()
+
+
+
 
 //: [Next](@next)
 

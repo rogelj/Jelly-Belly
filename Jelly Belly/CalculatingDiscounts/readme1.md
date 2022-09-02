@@ -91,5 +91,4 @@ based on holiday season.
 **Nice to have:**
 
 - [x] - Showcase the progression of the usage of a closure from the longest syntax to the shortest possible syntax (You can use the closure that you created in assignment 4.) **OR**
-
-- Display a date or a string (preferably a long string) in a nice readable format using NSAttributedString. Use your creativity and make the date/ string look appealing using different fonts/ colors.
+- [x] - Display a date or a string (preferably a long string) in a nice readable format using NSAttributedString. Use your creativity and make the date/ string look appealing using different fonts/ colors.
