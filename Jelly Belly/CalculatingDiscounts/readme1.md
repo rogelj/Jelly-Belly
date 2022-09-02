@@ -76,7 +76,7 @@ based on holiday season.
 
 - Create a protocol and class for Discount that has DiscountType and DiscountPercentage and a method to calculate discount.
 
-**Assignment 12: Extension**
+- [x]  **Assignment 12: Extension**
 
 - Create an extension that rounds off the `totalDiscountedAmount`.
 

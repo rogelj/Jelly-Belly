@@ -1,3 +1,5 @@
+import UIKit
+
 //: # Week 3 - Calculating Discounts
 //:
 //: Students will work on calculating discounts this week. There can be different ways of doing the same thing. For example: one could use a function/ computed property/ closure/ method to calculate discount. The idea of this week’s assignment is to grasp all these concepts well as they form the core logic of an app. Students can use a playground to play around with these concepts. As a final step, the code that best fits in the app goes there. The focus of this week’s assignment is to create & display data from a collection. Using types, optionals, collections & iterations. One could use a Tuple, Array, Set, or Dictionary to group data.

@@ -1,3 +1,4 @@
+import UIKit
 //: [Previous](@previous)
 
 //: Pre-requisites
@@ -252,7 +253,7 @@ struct Order {
     
     // New method - so as to comply with this week's HW :]
     mutating func totalOrderDiscounted() -> Double {
-        var partialTotal = totalOrder()
+        let partialTotal = totalOrder()
         return calculateDiscount(totalAmount: partialTotal, discountPercentage: currentSeason)
     }
 
@@ -303,11 +304,19 @@ class SeasonalDiscount: Discount {
 
 //: Assignment 12: Extension
 //:
-//: - Create an extension that rounds off the `totalDiscountedAmount`. Rounding to closest integer...
+//: - Create an extension that rounds off the `totalDiscountedAmount`. Rounding to closest integer... using the logic described in the assignment sheet
 
 extension Double {
     func roundNearest() -> Double {
-        return self.rounded()
+        let intPart: Int = Int(self)
+        let decimalPart: Double = self - Double(intPart)
+        if decimalPart >= 0.5 {
+            return Double(intPart) + 1.0
+        } else {
+            return Double(intPart)
+        }
+        // The block inside the extension could be replaced by:
+        // return self.rounded()
     }
 }
 
@@ -322,5 +331,17 @@ let discount2 = christmas.calculateDiscount(totalAmount: 100.67)
 print("Your dish costs £\(discount2) after discount")
 print("Rounded to £\(discount2.roundNearest())")
 
+//: ## NICE TO HAVE
+//:
+//: Display a date or a string (preferably a long string) in a nice readable format using NSAttributedString.
+
+func greet(name: String) -> NSAttributedString {
+    let attributes = [NSAttributedString.Key.foregroundColor : UIColor.red]
+      let message = NSAttributedString(string: "Hello " + name, attributes: attributes)
+      return message
+}
+
+greet(name: "Jay")
 
 //: [Next](@next)
+
