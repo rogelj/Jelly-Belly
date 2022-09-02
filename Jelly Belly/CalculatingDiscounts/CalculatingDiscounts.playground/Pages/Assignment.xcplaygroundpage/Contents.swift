@@ -1,6 +1,4 @@
 import UIKit
-//: [Previous](@previous)
-
 //: Pre-requisites
 //:
 //: - `itemPrices`: An array containing prices of 7 (or any number of) items.
@@ -101,7 +99,7 @@ DiscountConstants.discounts.keys.forEach { holiday in
     printDiscount(holidayDiscount, 100, holiday)
 }
 
-//: Assignment 4: Closure
+//: ## Assignment 4: Closure
 //:
 //: - Create a closure that calculates the discount. Closures takes parameters as: total amount, discount type and subtracts discounted amount from total amount and prints the total amount.
 
@@ -127,7 +125,7 @@ var shortDiscountClosure: GetDiscount = {
 shortDiscountClosure(100, "Christmas")
 
 
-//: Assignment 5: Map
+//: ## Assignment 5: Map
 //:
 //: - Take `itemPrices`. Let's say the prices of all of these items are to be increased by 50%. Multiply each element in an array with 0.5. Print the new item price.
 //:
@@ -142,7 +140,7 @@ var increasedItemPrices = DiscountConstants.itemPrices.map { (price) -> Double i
 print("Before discount: \(DiscountConstants.itemPrices)")
 print("After discount: \(increasedItemPrices)")
 
-//: Assignment 6: Sorted
+//: ## Assignment 6: Sorted
 //:
 //: - Create a Discount type dictionary (with discount type and percentage amount). Sort this dictionary from highest discount to lowest discount. Hint: Use Swift's sorted.
 
@@ -158,7 +156,7 @@ sortedDiscountTypes.forEach { dt in
     print("The discount for \(dt.key) is \(dt.value)")
 }
 
-//: Assignment 7: Enums and Switch cases
+//: ## Assignment 7: Enums and Switch cases
 //:
 //: - Use enums for discount types.
 //: - Create a function printDiscount to print the value for discount types. Use switch cases and enums to do this.
@@ -185,12 +183,12 @@ func printDiscount(for discountType: DiscountTypes) {
 
 printDiscount(for: .newYear)
 
-//: Assignment 8: Computed property
+//: ## Assignment 8: Computed property
 //: Create a computed property: `currentDiscountedAmount` that returns the current discounted amount that you apply on the `itemPrices`.
 
 //: Since a computed property belongs to a named type I am going to create a struct called `selectedDishes`
 
-//: Assignment 9: Lazy Property
+//: ## Assignment 9: Lazy Property
 //: - I am using the implementation from Assignment 8. I will point out the additions in the code below
 
 let currentSeason = DiscountTypes.christmas.rawValue
@@ -233,7 +231,7 @@ print("The current discounted amount for your dishes are: \(currentDiscountAmoun
 
 print("Spin the wheel and see if you get a surprise discount...\nCongratulations your \(dish1.name) has a voucher of \(dish1.maxDiscount * 100)% for your next purchase!")
 
-//: Assignment 10: Method
+//: ## Assignment 10: Method
 //:
 //: - Create a method that calculates and returns `totalAmountAfterDiscount`. Hint: Method belongs to a class/ struct/ enum.
 
@@ -272,7 +270,7 @@ myOrder.totalOrder()
 
 myOrder.totalOrderDiscounted()
 
-//: Assignment 11: Protocol
+//: ## Assignment 11: Protocol
 //:
 //: - Create a protocol and class for Discount that has discountType and discountPercentage and a method to calculate discount.
 
@@ -302,7 +300,7 @@ class SeasonalDiscount: Discount {
     }
 }
 
-//: Assignment 12: Extension
+//: ## Assignment 12: Extension
 //:
 //: - Create an extension that rounds off the `totalDiscountedAmount`. Rounding to closest integer... using the logic described in the assignment sheet
 
