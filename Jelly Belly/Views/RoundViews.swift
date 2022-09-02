@@ -125,6 +125,14 @@ struct DishView: View {
                 Text(dish.mealType.1)
                     .font(.title)
             }
+            HStack {
+                if dish.discountable != nil && dish.discountable == true {
+                    Text("Seasonal discount available")
+                        .foregroundColor(Color("Belly"))
+                        .font(.headline)
+                }
+                Spacer()
+            }
             HStack(alignment: .top) {
                 VStack {
                     DishItemText(text: "Ingredients:")
@@ -141,24 +149,37 @@ struct DishView: View {
             }
             Spacer()
                 .frame(height: 5.0)
-            VStack {
-                if let isDietary = dish.dietary {
-                    VStack{
-                        DishItemText(text: "Dietary Requirement:")
-                            .bold()
-                        DishItemText(text: isDietary)
-                        Spacer()
-                            .frame(height: 5.0)
+            HStack(alignment: .top) {
+                VStack {
+                    DishItemText(text: "Calories:")
+                        .bold()
+                    DishItemText(text: "\(dish.getCalories())")
+                }
+                VStack {
+                    if let isDietary = dish.dietary {
+                        VStack{
+                            DishItemText(text: "Dietary Requirement:")
+                                .bold()
+                            DishItemText(text: isDietary)
+                            Spacer()
+                                .frame(height: 5.0)
+                        }
                     }
                 }
             }
-            HStack {
-                DishItemText(text: "Calories:")
-                    .bold()
-                DishItemText(text: "\(dish.getCalories())")
-                DishItemText(text: "Cost:")
-                    .bold()
-                DishItemText(text: "£\(dish.cost)")
+            HStack(alignment: .top) {
+                VStack {
+                    DishItemText(text: "Cost:")
+                        .bold()
+                    DishItemText(text: "£\(dish.cost)")
+                }
+                VStack {
+                    if dish.discountable != nil && dish.discountable == true {
+                        DishItemText(text: "Discounted Cost")
+                            .bold()
+                        DishItemText(text: "£\(dish.finalCost)")
+                    }
+                }
             }
             
         }
@@ -179,7 +200,8 @@ struct RoundViews: View {
                                 mealType: DishParts.mealType[1],
                                 cost: 15.0,
                                 special: true,
-                                dietary: DishParts.diet[0])
+                                dietary: DishParts.diet[0],
+                                discountable: true)
     
     var body: some View {
         VStack(spacing: 10.0) {

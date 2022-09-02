@@ -62,9 +62,13 @@ struct OrderView: View {
     @Binding var customerOrder: Order
     
     var body: some View {
-        VStack(spacing: 20.0) {
+        VStack(spacing: 5.0) {
             HeaderViewOrder(orderIsShowing: $orderIsShowing)
-            Text(String(format: "Total: £%.2f", customerOrder.totalOrder()))
+            Text(String(format: "Total for Order: £%.2f", customerOrder.totalOrder(discounted: false)))
+                .bold()
+                .padding(.leading)
+                .frame(maxWidth: .infinity, alignment: .leading)
+            Text(String(format: "Discounted: £%.2f", customerOrder.totalOrder(discounted: true)))
                 .bold()
                 .padding(.leading)
                 .frame(maxWidth: .infinity, alignment: .leading)

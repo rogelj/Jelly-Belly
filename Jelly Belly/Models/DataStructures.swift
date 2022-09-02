@@ -21,7 +21,7 @@ struct Ingredients {
 }
 
 /**
- `Dish` struct to hold dishes that are served at the restaurant.
+ `Dish` class to hold dishes that are served at the restaurant.
 
  The dish class will comprise:
     - `name: String`
@@ -36,7 +36,7 @@ struct Ingredients {
     - `finalCost: Double` - Computed property - based on the discountFactor (if dish is discountable)
  
 */
-struct Dish {
+class Dish {
     let name: String
     var ingredients: [Ingredients]
     var cuisine: String
@@ -51,7 +51,7 @@ struct Dish {
     
     // Implementing a computed property to get the level of discount for the season
     var finalCost: Double {
-        mutating get {
+//        mutating get {
             var result: Double = cost
             if let discountable = discountable {
                 if discountable {
@@ -59,7 +59,19 @@ struct Dish {
                 }
             }
             return result
-        }
+//        }
+    }
+    
+    init(name: String, ingredients: [Ingredients], cuisine: String, mealType: (String, String),
+         cost: Double, special: Bool? = nil, dietary: String? = nil, discountable: Bool? = nil) {
+        self.name = name
+        self.ingredients = ingredients
+        self.cuisine = cuisine
+        self.mealType = mealType
+        self.cost = cost
+        self.special = special
+        self.dietary = dietary
+        self.discountable = discountable
     }
 
     // Implementing a method to calculate the calories of the dish - Not bad!!
@@ -98,7 +110,8 @@ struct Order {
                                         cuisine: DishParts.cuisine[0],
                                         mealType: DishParts.mealType[1],
                                         cost: 15.0,
-                                        special: true)
+                                        special: true,
+                                        discountable: true)
 
             let pizzaMargherita = Dish(name: "Pizza Margherita",
                                        ingredients: [Ingredients(ingredient: "Pizza Base", portion: 1.0),
@@ -107,7 +120,8 @@ struct Order {
                                        cuisine: DishParts.cuisine[0],
                                        mealType: DishParts.mealType[1],
                                        cost: 19.0,
-                                       dietary: DishParts.diet[0])
+                                       dietary: DishParts.diet[0],
+                                       discountable: false)
 
             let lemonade = Dish(name: "Lemonade",
                                 ingredients: [Ingredients(ingredient: "Lemon", portion: 3.0),
@@ -131,7 +145,8 @@ struct Order {
                                    cuisine: DishParts.cuisine[0],
                                    mealType: DishParts.mealType[0],
                                    cost: 9.0,
-                                   dietary: DishParts.diet[0])
+                                   dietary: DishParts.diet[0],
+                                   discountable: true)
 
             let tiramisu = Dish(name: "Tiramisu",
                                 ingredients: [Ingredients(ingredient: "Chocolate", portion: 1),
@@ -140,7 +155,8 @@ struct Order {
                                               Ingredients(ingredient: "Coffee", portion: 1)],
                                 cuisine: DishParts.cuisine[0],
                                 mealType: DishParts.mealType[2],
-                                cost: 14.0)
+                                cost: 14.0,
+                                discountable: false)
 
             testOrder.addToOrder(dish: fusilliArrabiata)
             testOrder.addToOrder(dish: pizzaMargherita)
@@ -220,20 +236,25 @@ struct Order {
         }
     }
     /**
-     Calculates the total cost of an `order`
+     Calculates the total cost of an `order` based on actual cost
 
      - Parameters:
-     - order: an Array of `Dish` objects
+     - discounted: Bool - Use discounted prices
 
      - Returns: `total`, the total cost of the dished in the order
 
      */
-    mutating func totalOrder() -> Double {
+    mutating func totalOrder(discounted: Bool) -> Double {
         var total: Double = 0.0
         for entry in order {
-            total += entry.cost
+            if discounted {
+                total += entry.finalCost
+            } else {
+                total += entry.cost
+            }
         }
         return total
     }
+    
 
 }
