@@ -11,8 +11,8 @@
 		46613C6F28CB39BF00A70504 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46613C6E28CB39BF00A70504 /* Main.storyboard */; };
 		46613C7228CB3AC100A70504 /* MenuItemTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46613C7128CB3AC100A70504 /* MenuItemTableViewController.swift */; };
 		46613C7428CB3CDF00A70504 /* Dishes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46613C7328CB3CDF00A70504 /* Dishes.swift */; };
-		46613C7B28CB4E5000A70504 /* MenuList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46613C7A28CB4E5000A70504 /* MenuList.swift */; };
 		46613C8428CB9D2400A70504 /* MenuLister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46613C8328CB9D2400A70504 /* MenuLister.swift */; };
+		46613C8628CBADC300A70504 /* MenuListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46613C8528CBADC300A70504 /* MenuListView.swift */; };
 		4696886728B8E5B4004E8B53 /* DishParts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4696886628B8E5B4004E8B53 /* DishParts.swift */; };
 		469BB5E528BFF088004BB435 /* readme1.md in Resources */ = {isa = PBXBuildFile; fileRef = 469BB5E428BFF088004BB435 /* readme1.md */; };
 		46A1B01D28AFD8FF00302426 /* TextViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A1B01C28AFD8FF00302426 /* TextViews.swift */; };
@@ -33,8 +33,8 @@
 		46613C6E28CB39BF00A70504 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		46613C7128CB3AC100A70504 /* MenuItemTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemTableViewController.swift; sourceTree = "<group>"; };
 		46613C7328CB3CDF00A70504 /* Dishes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dishes.swift; sourceTree = "<group>"; };
-		46613C7A28CB4E5000A70504 /* MenuList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuList.swift; sourceTree = "<group>"; };
 		46613C8328CB9D2400A70504 /* MenuLister.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuLister.swift; path = "../../../../../../../Library/Mobile Documents/com~apple~CloudDocs/.Trash/MenuLister.swift"; sourceTree = "<group>"; };
+		46613C8528CBADC300A70504 /* MenuListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuListView.swift; sourceTree = "<group>"; };
 		4696886628B8E5B4004E8B53 /* DishParts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishParts.swift; sourceTree = "<group>"; };
 		469BB5E328BFED30004BB435 /* CalculatingDiscounts.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = CalculatingDiscounts.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		469BB5E428BFF088004BB435 /* readme1.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = readme1.md; sourceTree = "<group>"; };
@@ -92,7 +92,7 @@
 				46A1B02028AFD93800302426 /* HomeBackgroundView.swift */,
 				46A1B02228AFD95200302426 /* OnboardView.swift */,
 				46525CA528B6443B00D90956 /* OrderView.swift */,
-				46613C7A28CB4E5000A70504 /* MenuList.swift */,
+				46613C8528CBADC300A70504 /* MenuListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -245,7 +245,7 @@
 				4696886728B8E5B4004E8B53 /* DishParts.swift in Sources */,
 				46AAB96328AFCDDE00DE602A /* Jelly_BellyApp.swift in Sources */,
 				46A1B02528AFDE2000302426 /* Constants.swift in Sources */,
-				46613C7B28CB4E5000A70504 /* MenuList.swift in Sources */,
+				46613C8628CBADC300A70504 /* MenuListView.swift in Sources */,
 				46525CA628B6443B00D90956 /* OrderView.swift in Sources */,
 				46E4379228B62061004FCB53 /* DataStructures.swift in Sources */,
 				46A1B02328AFD95200302426 /* OnboardView.swift in Sources */,

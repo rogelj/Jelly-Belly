@@ -33,7 +33,9 @@ struct TopView: View {
             }
             .sheet(isPresented: $orderIsShowing, onDismiss: {}, content: {
 //                OrderView(orderIsShowing: $orderIsShowing, customerOrder: $customerOrder)
-                MenuItemTableRepresentable()
+//                // Using the Storyboard
+//                MenuItemTableRepresentable()
+                MenuListView()
             })
             .padding()
         }
