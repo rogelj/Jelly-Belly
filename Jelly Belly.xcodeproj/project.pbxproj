@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		46525CA628B6443B00D90956 /* OrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46525CA528B6443B00D90956 /* OrderView.swift */; };
+		46613C6F28CB39BF00A70504 /* MenuItemsView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46613C6E28CB39BF00A70504 /* MenuItemsView.storyboard */; };
+		46613C7228CB3AC100A70504 /* MenuItemTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46613C7128CB3AC100A70504 /* MenuItemTableViewController.swift */; };
+		46613C7428CB3CDF00A70504 /* Dishes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46613C7328CB3CDF00A70504 /* Dishes.swift */; };
 		4696886728B8E5B4004E8B53 /* DishParts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4696886628B8E5B4004E8B53 /* DishParts.swift */; };
 		469BB5E528BFF088004BB435 /* readme1.md in Resources */ = {isa = PBXBuildFile; fileRef = 469BB5E428BFF088004BB435 /* readme1.md */; };
 		46A1B01D28AFD8FF00302426 /* TextViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A1B01C28AFD8FF00302426 /* TextViews.swift */; };
@@ -25,6 +28,9 @@
 
 /* Begin PBXFileReference section */
 		46525CA528B6443B00D90956 /* OrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderView.swift; sourceTree = "<group>"; };
+		46613C6E28CB39BF00A70504 /* MenuItemsView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MenuItemsView.storyboard; sourceTree = "<group>"; };
+		46613C7128CB3AC100A70504 /* MenuItemTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemTableViewController.swift; sourceTree = "<group>"; };
+		46613C7328CB3CDF00A70504 /* Dishes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dishes.swift; sourceTree = "<group>"; };
 		4696886628B8E5B4004E8B53 /* DishParts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishParts.swift; sourceTree = "<group>"; };
 		469BB5E328BFED30004BB435 /* CalculatingDiscounts.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = CalculatingDiscounts.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		469BB5E428BFF088004BB435 /* readme1.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = readme1.md; sourceTree = "<group>"; };
@@ -55,6 +61,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		46613C7028CB3A0600A70504 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				46613C7128CB3AC100A70504 /* MenuItemTableViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
 		469BB5E228BFED10004BB435 /* CalculatingDiscounts */ = {
 			isa = PBXGroup;
 			children = (
@@ -92,6 +106,7 @@
 				46A1B02428AFDE2000302426 /* Constants.swift */,
 				46E4379128B62061004FCB53 /* DataStructures.swift */,
 				4696886628B8E5B4004E8B53 /* DishParts.swift */,
+				46613C7328CB3CDF00A70504 /* Dishes.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -115,12 +130,14 @@
 		46AAB96128AFCDDE00DE602A /* Jelly Belly */ = {
 			isa = PBXGroup;
 			children = (
-				469BB5E228BFED10004BB435 /* CalculatingDiscounts */,
-				46B4943928B4E462003D910B /* DataStructures */,
+				46613C6E28CB39BF00A70504 /* MenuItemsView.storyboard */,
+				46613C7028CB3A0600A70504 /* ViewControllers */,
 				46A1B01A28AFD7F400302426 /* App */,
 				46A1B01928AFD7D600302426 /* Views */,
 				46A1B01B28AFD7FC00302426 /* Models */,
 				46AAB96828AFCDDF00DE602A /* Jelly_Belly.entitlements */,
+				469BB5E228BFED10004BB435 /* CalculatingDiscounts */,
+				46B4943928B4E462003D910B /* DataStructures */,
 				46AAB96928AFCDDF00DE602A /* Preview Content */,
 			);
 			path = "Jelly Belly";
@@ -204,6 +221,7 @@
 				46AAB96B28AFCDDF00DE602A /* Preview Assets.xcassets in Resources */,
 				46B4943B28B4E4B8003D910B /* readme.md in Resources */,
 				469BB5E528BFF088004BB435 /* readme1.md in Resources */,
+				46613C6F28CB39BF00A70504 /* MenuItemsView.storyboard in Resources */,
 				46AAB96728AFCDDF00DE602A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -225,6 +243,8 @@
 				46E4379228B62061004FCB53 /* DataStructures.swift in Sources */,
 				46A1B02328AFD95200302426 /* OnboardView.swift in Sources */,
 				46A1B01D28AFD8FF00302426 /* TextViews.swift in Sources */,
+				46613C7228CB3AC100A70504 /* MenuItemTableViewController.swift in Sources */,
+				46613C7428CB3CDF00A70504 /* Dishes.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
