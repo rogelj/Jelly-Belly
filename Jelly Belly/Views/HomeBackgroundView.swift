@@ -30,8 +30,10 @@ struct TopView: View {
                 orderIsShowing = true
             }) {
                 RoundedImageView(systemName: "fork.knife")
-            }.sheet(isPresented: $orderIsShowing, onDismiss: {}, content: {
-                OrderView(orderIsShowing: $orderIsShowing, customerOrder: $customerOrder)
+            }
+            .sheet(isPresented: $orderIsShowing, onDismiss: {}, content: {
+//                OrderView(orderIsShowing: $orderIsShowing, customerOrder: $customerOrder)
+                MenuItemTableRepresentable()
             })
             .padding()
         }
