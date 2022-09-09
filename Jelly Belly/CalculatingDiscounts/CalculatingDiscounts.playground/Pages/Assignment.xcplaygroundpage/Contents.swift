@@ -32,10 +32,9 @@ enum DiscountConstants {
 
 // Naming this function `calculateDiscount`. If necessary comment this code out.
 func calculateDiscount(for totalAmount: Double, discountPercentage: Double) -> Double {
-    var discountedAmount: Double
     var totalAmountAfterDiscount: Double
     
-    discountedAmount = totalAmount * discountPercentage
+    let discountedAmount = totalAmount * discountPercentage
     totalAmountAfterDiscount = totalAmount - discountedAmount
     
     return totalAmountAfterDiscount
