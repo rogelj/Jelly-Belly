@@ -60,11 +60,18 @@ struct BodyText: View {
     }
 }
 
+func greet(name: String) -> NSAttributedString {
+    let attributes = [NSAttributedString.Key.foregroundColor : UIColor.red]
+      let message = NSAttributedString(string: "Hello " + name, attributes: attributes)
+      return message
+}
 
 struct TextViews: View {
+    let hey = greet(name: "Hey there")
     var body: some View {
         VStack(spacing: 10) {
             BigBoldText(text: "Welcome\n John Appleseed")
+            Text("\(hey)")
             BigText(text: "Jelly Belly")
             BodyText(text: "This is an example of the features in the app")
             DishItemText(text: "Pasta")

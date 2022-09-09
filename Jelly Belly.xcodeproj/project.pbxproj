@@ -3,12 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 55;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		46525CA628B6443B00D90956 /* OrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46525CA528B6443B00D90956 /* OrderView.swift */; };
 		4696886728B8E5B4004E8B53 /* DishParts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4696886628B8E5B4004E8B53 /* DishParts.swift */; };
+		469BB5E528BFF088004BB435 /* readme1.md in Resources */ = {isa = PBXBuildFile; fileRef = 469BB5E428BFF088004BB435 /* readme1.md */; };
 		46A1B01D28AFD8FF00302426 /* TextViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A1B01C28AFD8FF00302426 /* TextViews.swift */; };
 		46A1B01F28AFD91D00302426 /* RoundViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A1B01E28AFD91D00302426 /* RoundViews.swift */; };
 		46A1B02128AFD93800302426 /* HomeBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A1B02028AFD93800302426 /* HomeBackgroundView.swift */; };
@@ -25,6 +26,8 @@
 /* Begin PBXFileReference section */
 		46525CA528B6443B00D90956 /* OrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderView.swift; sourceTree = "<group>"; };
 		4696886628B8E5B4004E8B53 /* DishParts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishParts.swift; sourceTree = "<group>"; };
+		469BB5E328BFED30004BB435 /* CalculatingDiscounts.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = CalculatingDiscounts.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		469BB5E428BFF088004BB435 /* readme1.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = readme1.md; sourceTree = "<group>"; };
 		46A1B01C28AFD8FF00302426 /* TextViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViews.swift; sourceTree = "<group>"; };
 		46A1B01E28AFD91D00302426 /* RoundViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundViews.swift; sourceTree = "<group>"; };
 		46A1B02028AFD93800302426 /* HomeBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBackgroundView.swift; sourceTree = "<group>"; };
@@ -52,6 +55,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		469BB5E228BFED10004BB435 /* CalculatingDiscounts */ = {
+			isa = PBXGroup;
+			children = (
+				469BB5E328BFED30004BB435 /* CalculatingDiscounts.playground */,
+				469BB5E428BFF088004BB435 /* readme1.md */,
+			);
+			path = CalculatingDiscounts;
+			sourceTree = "<group>";
+		};
 		46A1B01928AFD7D600302426 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -103,6 +115,7 @@
 		46AAB96128AFCDDE00DE602A /* Jelly Belly */ = {
 			isa = PBXGroup;
 			children = (
+				469BB5E228BFED10004BB435 /* CalculatingDiscounts */,
 				46B4943928B4E462003D910B /* DataStructures */,
 				46A1B01A28AFD7F400302426 /* App */,
 				46A1B01928AFD7D600302426 /* Views */,
@@ -166,7 +179,7 @@
 				};
 			};
 			buildConfigurationList = 46AAB95A28AFCDDE00DE602A /* Build configuration list for PBXProject "Jelly Belly" */;
-			compatibilityVersion = "Xcode 14.0";
+			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -190,6 +203,7 @@
 			files = (
 				46AAB96B28AFCDDF00DE602A /* Preview Assets.xcassets in Resources */,
 				46B4943B28B4E4B8003D910B /* readme.md in Resources */,
+				469BB5E528BFF088004BB435 /* readme1.md in Resources */,
 				46AAB96728AFCDDF00DE602A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -267,6 +281,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -319,6 +334,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -332,6 +348,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Jelly Belly/Jelly_Belly.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Jelly Belly/Preview Content\"";
@@ -346,18 +363,20 @@
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 12.5;
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jrogel.rogueloop.Jelly-Belly";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -370,6 +389,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Jelly Belly/Jelly_Belly.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Jelly Belly/Preview Content\"";
@@ -384,18 +404,20 @@
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 12.5;
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jrogel.rogueloop.Jelly-Belly";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

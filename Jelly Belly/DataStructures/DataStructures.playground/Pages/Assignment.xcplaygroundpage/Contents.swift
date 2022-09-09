@@ -21,7 +21,7 @@ struct Dish {
     var cost: Double
     var special: Bool?       // ### Assignment 3 - Making at least one property optional
     var dietary: String?     // ### Assignment 3 - Making at least one property optional
-    
+
     // Implementing a method to calculate the calories of the dish - Not bad!!
     func getCalories() -> Double {
         var calories: Double = 0.0
@@ -30,7 +30,7 @@ struct Dish {
                 calories += ingredient.portion * calorieVal
             }
         }
-        return calories  // **Nice to have** - implementing a method with `return` 
+        return calories  // **Nice to have** - implementing a method with `return`
     }
 }
 //: Let us now implement some of the components for the Dish class to be built later on.
@@ -166,7 +166,7 @@ struct Order {
     mutating func addToOrder(dish: Dish) {
         order.append(dish)
     }
-    
+
     // Assignment 6
     mutating func printSpecials() {
         for entry in order {
@@ -203,7 +203,7 @@ struct Order {
             }
         }
     }
-    
+
     //: ## Bonus - Calculating the total of the order - using a return statement!
 
     mutating func totalOrder() -> Double {
@@ -232,4 +232,3 @@ myOrder.printSpecials()
 myOrder.printDietaryDishes()
 
 print(myOrder.totalOrder())
-
