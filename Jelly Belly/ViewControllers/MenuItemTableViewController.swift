@@ -8,6 +8,7 @@
 import UIKit
 import SwiftUI
 
+// Used fof the TableViewController in the Main.stroyboard file
 class MenuItemTableViewController: UITableViewController {
     
     var menuItems = [Dish]()
