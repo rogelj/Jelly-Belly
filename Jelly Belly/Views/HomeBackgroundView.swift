@@ -33,10 +33,6 @@ struct TopView: View {
             }
             .fullScreenCover(isPresented: $menuExamplesIsShowing, onDismiss: {}, content: {
                 MenuExamples(menuExamplesIsShowing: $menuExamplesIsShowing, customerOrder: $customerOrder)
-//                OrderView(orderIsShowing: $orderIsShowing, customerOrder: $customerOrder)
-//                // Using the Storyboard
-//                MenuItemTableRepresentable()
-//                MenuUIListView()
             })
             .padding()
         }

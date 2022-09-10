@@ -43,6 +43,8 @@ class MenuItemTableViewController: UITableViewController {
 }
 
 struct MenuItemTableRepresentable: UIViewRepresentable {
+    @Binding var menuStoryIsShowing: Bool
+    
     func makeUIView(context: Context) -> UIView {
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         let tbView = storyboard.instantiateInitialViewController()
