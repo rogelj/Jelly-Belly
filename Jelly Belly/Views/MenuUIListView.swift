@@ -8,12 +8,14 @@
 import SwiftUI
 
 struct MenuUIListView: View {
+    @Binding var menuUIKitIsShowing: Bool
+    
     var body: some View {
         VStack {
             HStack {
                 Spacer()
                 Button(action: {
-                    //                orderIsShowing.toggle()
+                    menuUIKitIsShowing.toggle()
                 }) {
                     Text("Done")
                         .bold()
@@ -34,7 +36,9 @@ struct MenuUIListView: View {
 
 
 struct MenuUIListView_Previews: PreviewProvider {
+    static private var menuUIKitIsShowing = Binding.constant(false)
+    
     static var previews: some View {
-        MenuUIListView()
+        MenuUIListView(menuUIKitIsShowing: menuUIKitIsShowing)
     }
 }
