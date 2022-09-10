@@ -12,7 +12,7 @@ import SwiftUI
  */
 struct TopView: View {
     @State private var onboardingIsShowing = false
-    @State private var orderIsShowing = false
+    @State private var menuExamplesIsShowing = false
     @Binding var customerOrder: Order
     
     var body: some View {
@@ -27,15 +27,16 @@ struct TopView: View {
             .padding()
             Spacer()
             Button( action: {
-                orderIsShowing = true
+                menuExamplesIsShowing = true
             }) {
                 RoundedImageView(systemName: "fork.knife")
             }
-            .sheet(isPresented: $orderIsShowing, onDismiss: {}, content: {
+            .fullScreenCover(isPresented: $menuExamplesIsShowing, onDismiss: {}, content: {
+                MenuExamples(menuExamplesIsShowing: $menuExamplesIsShowing, customerOrder: $customerOrder)
 //                OrderView(orderIsShowing: $orderIsShowing, customerOrder: $customerOrder)
 //                // Using the Storyboard
 //                MenuItemTableRepresentable()
-                MenuListView()
+//                MenuUIListView()
             })
             .padding()
         }

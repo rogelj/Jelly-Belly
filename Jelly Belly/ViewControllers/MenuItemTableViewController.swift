@@ -36,6 +36,7 @@ class MenuItemTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MenuItemCell", for: indexPath)
         cell.textLabel?.text = "\(menuItems[indexPath.row].name)"
+        cell.imageView?.image = UIImage(named: "JellyBelly")
         return cell
     }
 

@@ -52,7 +52,7 @@ struct UIList: UIViewRepresentable {
             let view = Text(rows[indexPath.row].mealType.1 + " " + rows[indexPath.row].name)
                 .frame(height: 50)
                 .padding(.leading)
-                .foregroundColor(Color("Jelly"))
+                .foregroundColor(Color("Belly"))
             
             // create & setup hosting controller only once
             if tableViewCell.host == nil {

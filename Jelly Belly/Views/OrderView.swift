@@ -43,10 +43,11 @@ struct HeaderViewOrder: View {
                 RoundLogoView(imageSize: Constants.Logo.logoViewSizeSmall)
                 Spacer()
                 Button(action: {
-                    orderIsShowing.toggle()
+                    orderIsShowing = false
                 }) {
                     Text("Done")
                         .bold()
+                        .foregroundColor(Color("Belly"))
                 }
                 .padding(.trailing)
             }
