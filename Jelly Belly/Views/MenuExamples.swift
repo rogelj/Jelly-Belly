@@ -11,6 +11,7 @@ struct MenuExamples: View {
     @State private var orderIsShowing = false
     @State private var menuUIKitIsShowing = false
     @State private var menuStoryIsShowing = false
+    @State private var menuSwiftUIIsShowing = false
     
     @Binding var menuExamplesIsShowing: Bool
     @Binding var customerOrder: Order
@@ -50,13 +51,13 @@ struct MenuExamples: View {
                         MenuUIListView(menuUIKitIsShowing: $menuUIKitIsShowing)
                     })
                     Button( action: {
-                        orderIsShowing = true
+                        menuSwiftUIIsShowing = true
                     }) {
                         Text("Menu - SwiftUI")
                             .bold()
                             .foregroundColor(Color("Jelly"))
-                    }.sheet(isPresented: $orderIsShowing, onDismiss: {}, content: {
-                        OrderView(orderIsShowing: $orderIsShowing, customerOrder: $customerOrder)
+                    }.sheet(isPresented: $menuSwiftUIIsShowing, onDismiss: {}, content: {
+                        MenuSwiftUIView(menuSwiftUIIsShowing: $menuSwiftUIIsShowing)
                     })
                     Button( action: {
                         menuStoryIsShowing = true

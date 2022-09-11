@@ -61,14 +61,14 @@ struct HeaderViewMenu: View {
 struct MenuSwiftUIView: View {
     @State var menuDishes = dishes
     @Binding var menuSwiftUIIsShowing: Bool
-    @Binding var customerOrder: Order
+//    @Binding var customerOrder: Order
     
     var body: some View {
         VStack {
             HeaderViewMenu(menuSwiftUIIsShowing: $menuSwiftUIIsShowing)
             NavigationView {
                 List(menuDishes) { dish in
-                    NavigationLink(destination: Text(dish.name)) {
+                    NavigationLink(destination: MenuSwiftUIDetailedView(dish: dish)) {
                         MenuRowView(dish: dish)
                     }
                 }
@@ -83,12 +83,12 @@ struct MenuSwiftUIView_Previews: PreviewProvider {
     static private var testOrder = Binding.constant(Order(loadTestData: true))
     
     static var previews: some View {
-        MenuSwiftUIView(menuSwiftUIIsShowing: menuSwiftUIIsShowing, customerOrder: testOrder)
-        MenuSwiftUIView(menuSwiftUIIsShowing: menuSwiftUIIsShowing, customerOrder: testOrder)
+        MenuSwiftUIView(menuSwiftUIIsShowing: menuSwiftUIIsShowing)
+        MenuSwiftUIView(menuSwiftUIIsShowing: menuSwiftUIIsShowing)
             .preferredColorScheme(.dark)
-        MenuSwiftUIView(menuSwiftUIIsShowing: menuSwiftUIIsShowing, customerOrder: testOrder)
+        MenuSwiftUIView(menuSwiftUIIsShowing: menuSwiftUIIsShowing)
             .previewInterfaceOrientation(.landscapeLeft)
-        MenuSwiftUIView(menuSwiftUIIsShowing: menuSwiftUIIsShowing, customerOrder: testOrder)
+        MenuSwiftUIView(menuSwiftUIIsShowing: menuSwiftUIIsShowing)
             .previewInterfaceOrientation(.landscapeLeft)
             .preferredColorScheme(.dark)
     }
