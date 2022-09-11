@@ -217,11 +217,7 @@ struct MenuRowView: View {
                     .font(.title)
             }
         }
-        .padding()
-        .frame(maxWidth: .infinity)
-        .background(Color("BackgroundColor"))
-        .cornerRadius(Constants.General.roudedRectCornerRadius)
-        .shadow(radius: 10, x: 5, y: 5)
+        .frame(minHeight: 40)
     }
 }
     

@@ -12,6 +12,7 @@
 		46613C7228CB3AC100A70504 /* MenuItemTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46613C7128CB3AC100A70504 /* MenuItemTableViewController.swift */; };
 		46613C7428CB3CDF00A70504 /* Dishes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46613C7328CB3CDF00A70504 /* Dishes.swift */; };
 		46613C8628CBADC300A70504 /* MenuUIListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46613C8528CBADC300A70504 /* MenuUIListView.swift */; };
+		4689A9D528CE28D30091ABB2 /* MenuSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4689A9D428CE28D30091ABB2 /* MenuSwiftUIView.swift */; };
 		4696886728B8E5B4004E8B53 /* DishParts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4696886628B8E5B4004E8B53 /* DishParts.swift */; };
 		469BB5E528BFF088004BB435 /* readme1.md in Resources */ = {isa = PBXBuildFile; fileRef = 469BB5E428BFF088004BB435 /* readme1.md */; };
 		46A1B01D28AFD8FF00302426 /* TextViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A1B01C28AFD8FF00302426 /* TextViews.swift */; };
@@ -35,6 +36,7 @@
 		46613C7128CB3AC100A70504 /* MenuItemTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemTableViewController.swift; sourceTree = "<group>"; };
 		46613C7328CB3CDF00A70504 /* Dishes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dishes.swift; sourceTree = "<group>"; };
 		46613C8528CBADC300A70504 /* MenuUIListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuUIListView.swift; sourceTree = "<group>"; };
+		4689A9D428CE28D30091ABB2 /* MenuSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuSwiftUIView.swift; sourceTree = "<group>"; };
 		4696886628B8E5B4004E8B53 /* DishParts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishParts.swift; sourceTree = "<group>"; };
 		469BB5E328BFED30004BB435 /* CalculatingDiscounts.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = CalculatingDiscounts.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		469BB5E428BFF088004BB435 /* readme1.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = readme1.md; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 				46AAB96428AFCDDE00DE602A /* ContentView.swift */,
 				46A1B02228AFD95200302426 /* OnboardView.swift */,
 				46525CA528B6443B00D90956 /* OrderView.swift */,
+				4689A9D428CE28D30091ABB2 /* MenuSwiftUIView.swift */,
 				46E0E5CA28CCFB8500D2E6AD /* MenuExamples.swift */,
 				46613C8528CBADC300A70504 /* MenuUIListView.swift */,
 				46A1B02028AFD93800302426 /* HomeBackgroundView.swift */,
@@ -253,6 +256,7 @@
 				46613C8628CBADC300A70504 /* MenuUIListView.swift in Sources */,
 				46525CA628B6443B00D90956 /* OrderView.swift in Sources */,
 				46E4379228B62061004FCB53 /* DataStructures.swift in Sources */,
+				4689A9D528CE28D30091ABB2 /* MenuSwiftUIView.swift in Sources */,
 				46A1B02328AFD95200302426 /* OnboardView.swift in Sources */,
 				46A1B01D28AFD8FF00302426 /* TextViews.swift in Sources */,
 				46613C7228CB3AC100A70504 /* MenuItemTableViewController.swift in Sources */,

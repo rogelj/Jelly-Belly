@@ -40,5 +40,7 @@ struct MenuUIListView_Previews: PreviewProvider {
     
     static var previews: some View {
         MenuUIListView(menuUIKitIsShowing: menuUIKitIsShowing)
+        MenuUIListView(menuUIKitIsShowing: menuUIKitIsShowing)
+            .preferredColorScheme(.dark)
     }
 }
