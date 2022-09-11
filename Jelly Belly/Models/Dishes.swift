@@ -64,3 +64,13 @@ let dishes: [Dish] = [
          discountable: false)
 ]
 
+let testDish = Dish(name: "Fusilli Arrabiata",
+                    ingredients: [Ingredients(ingredient: "Fusilli", portion: 2.0),
+                                  Ingredients(ingredient:"Parmesan", portion: 1.0),
+                                  Ingredients(ingredient:"Pasta Sauce", portion: 1.0)],
+                    cuisine: DishParts.cuisine[0],
+                    mealType: DishParts.mealType[1],
+                    cost: 15.0,
+                    special: true,
+                    dietary: DishParts.diet[0],
+                    discountable: true)
