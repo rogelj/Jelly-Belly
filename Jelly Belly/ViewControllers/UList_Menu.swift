@@ -14,8 +14,7 @@ class HostingCell: UITableViewCell { // just to hold hosting controller
 struct UIList: UIViewRepresentable {
     
     var rows: [Dish]
-    
-//    let jellyColour = UIColor(red: CGFloat(183)/CGFloat(255), green: CGFloat(43)/CGFloat(255), blue: CGFloat(211)/CGFloat(255), alpha: 1)
+
     
     func makeUIView(context: Context) -> UITableView {
         let collectionView = UITableView(frame: .zero, style: .plain)

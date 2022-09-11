@@ -32,6 +32,8 @@ struct MenuExamples: View {
             Spacer()
             ZStack {
                 VStack(spacing: 12) {
+                    
+                    // Existing Order View
                     Button( action: {
                         orderIsShowing = true
                     }) {
@@ -41,15 +43,8 @@ struct MenuExamples: View {
                     }.sheet(isPresented: $orderIsShowing, onDismiss: {}, content: {
                         OrderView(orderIsShowing: $orderIsShowing, customerOrder: $customerOrder)
                     })
-                    Button( action: {
-                        menuUIKitIsShowing = true
-                    }) {
-                        Text("Menu - UIKit")
-                            .bold()
-                            .foregroundColor(Color("Jelly"))
-                    }.sheet(isPresented: $menuUIKitIsShowing, onDismiss: {}, content: {
-                        MenuUIListView(menuUIKitIsShowing: $menuUIKitIsShowing)
-                    })
+                    
+                    // SwiftUI
                     Button( action: {
                         menuSwiftUIIsShowing = true
                     }) {
@@ -59,6 +54,8 @@ struct MenuExamples: View {
                     }.sheet(isPresented: $menuSwiftUIIsShowing, onDismiss: {}, content: {
                         MenuSwiftUIView(menuSwiftUIIsShowing: $menuSwiftUIIsShowing)
                     })
+                    
+                    // Storyboard
                     Button( action: {
                         menuStoryIsShowing = true
                     }) {
@@ -67,6 +64,17 @@ struct MenuExamples: View {
                             .foregroundColor(Color("Jelly"))
                     }.sheet(isPresented: $menuStoryIsShowing, onDismiss: {}, content: {
                         MenuItemTableRepresentable(menuStoryIsShowing: $menuStoryIsShowing)
+                    })
+                    
+                    // Programmatic
+                    Button( action: {
+                        menuUIKitIsShowing = true
+                    }) {
+                        Text("Menu - UIKit Programmatic")
+                            .bold()
+                            .foregroundColor(Color("Jelly"))
+                    }.sheet(isPresented: $menuUIKitIsShowing, onDismiss: {}, content: {
+                        MenuUIListView(menuUIKitIsShowing: $menuUIKitIsShowing)
                     })
                 }
             }
