@@ -13,6 +13,8 @@
 		46613C7428CB3CDF00A70504 /* Dishes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46613C7328CB3CDF00A70504 /* Dishes.swift */; };
 		46613C8628CBADC300A70504 /* MenuUIListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46613C8528CBADC300A70504 /* MenuUIListView.swift */; };
 		4689A9D528CE28D30091ABB2 /* MenuSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4689A9D428CE28D30091ABB2 /* MenuSwiftUIView.swift */; };
+		4689A9D728CE36D70091ABB2 /* MenuSwiftUIDetailedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4689A9D628CE36D70091ABB2 /* MenuSwiftUIDetailedView.swift */; };
+		4689A9D928CE37C10091ABB2 /* Dishes.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4689A9D828CE37C10091ABB2 /* Dishes.xcassets */; };
 		4696886728B8E5B4004E8B53 /* DishParts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4696886628B8E5B4004E8B53 /* DishParts.swift */; };
 		469BB5E528BFF088004BB435 /* readme1.md in Resources */ = {isa = PBXBuildFile; fileRef = 469BB5E428BFF088004BB435 /* readme1.md */; };
 		46A1B01D28AFD8FF00302426 /* TextViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A1B01C28AFD8FF00302426 /* TextViews.swift */; };
@@ -37,6 +39,8 @@
 		46613C7328CB3CDF00A70504 /* Dishes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dishes.swift; sourceTree = "<group>"; };
 		46613C8528CBADC300A70504 /* MenuUIListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuUIListView.swift; sourceTree = "<group>"; };
 		4689A9D428CE28D30091ABB2 /* MenuSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuSwiftUIView.swift; sourceTree = "<group>"; };
+		4689A9D628CE36D70091ABB2 /* MenuSwiftUIDetailedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuSwiftUIDetailedView.swift; sourceTree = "<group>"; };
+		4689A9D828CE37C10091ABB2 /* Dishes.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Dishes.xcassets; sourceTree = "<group>"; };
 		4696886628B8E5B4004E8B53 /* DishParts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishParts.swift; sourceTree = "<group>"; };
 		469BB5E328BFED30004BB435 /* CalculatingDiscounts.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = CalculatingDiscounts.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		469BB5E428BFF088004BB435 /* readme1.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = readme1.md; sourceTree = "<group>"; };
@@ -94,6 +98,7 @@
 				46A1B02228AFD95200302426 /* OnboardView.swift */,
 				46525CA528B6443B00D90956 /* OrderView.swift */,
 				4689A9D428CE28D30091ABB2 /* MenuSwiftUIView.swift */,
+				4689A9D628CE36D70091ABB2 /* MenuSwiftUIDetailedView.swift */,
 				46E0E5CA28CCFB8500D2E6AD /* MenuExamples.swift */,
 				46613C8528CBADC300A70504 /* MenuUIListView.swift */,
 				46A1B02028AFD93800302426 /* HomeBackgroundView.swift */,
@@ -119,6 +124,7 @@
 				46E4379128B62061004FCB53 /* DataStructures.swift */,
 				4696886628B8E5B4004E8B53 /* DishParts.swift */,
 				46613C7328CB3CDF00A70504 /* Dishes.swift */,
+				4689A9D828CE37C10091ABB2 /* Dishes.xcassets */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -233,6 +239,7 @@
 				46AAB96B28AFCDDF00DE602A /* Preview Assets.xcassets in Resources */,
 				46B4943B28B4E4B8003D910B /* readme.md in Resources */,
 				469BB5E528BFF088004BB435 /* readme1.md in Resources */,
+				4689A9D928CE37C10091ABB2 /* Dishes.xcassets in Resources */,
 				46613C6F28CB39BF00A70504 /* Main.storyboard in Resources */,
 				46AAB96728AFCDDF00DE602A /* Assets.xcassets in Resources */,
 			);
@@ -251,6 +258,7 @@
 				46E0E5CB28CCFB8500D2E6AD /* MenuExamples.swift in Sources */,
 				4696886728B8E5B4004E8B53 /* DishParts.swift in Sources */,
 				46AAB96328AFCDDE00DE602A /* Jelly_BellyApp.swift in Sources */,
+				4689A9D728CE36D70091ABB2 /* MenuSwiftUIDetailedView.swift in Sources */,
 				46E0E5C928CCF67400D2E6AD /* UList_Menu.swift in Sources */,
 				46A1B02528AFDE2000302426 /* Constants.swift in Sources */,
 				46613C8628CBADC300A70504 /* MenuUIListView.swift in Sources */,
