@@ -19,7 +19,6 @@
 		468DE39428CE505B00DA3838 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468DE38F28CE505B00DA3838 /* SceneDelegate.swift */; };
 		468DE39528CE505B00DA3838 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468DE39028CE505B00DA3838 /* ViewController.swift */; };
 		468DE39628CE505B00DA3838 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 468DE39128CE505B00DA3838 /* Main.storyboard */; };
-		468DE39728CE505B00DA3838 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 468DE39228CE505B00DA3838 /* LaunchScreen.storyboard */; };
 		4696886728B8E5B4004E8B53 /* DishParts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4696886628B8E5B4004E8B53 /* DishParts.swift */; };
 		469BB5E528BFF088004BB435 /* readme1.md in Resources */ = {isa = PBXBuildFile; fileRef = 469BB5E428BFF088004BB435 /* readme1.md */; };
 		46A1B01D28AFD8FF00302426 /* TextViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A1B01C28AFD8FF00302426 /* TextViews.swift */; };
@@ -50,7 +49,6 @@
 		468DE38F28CE505B00DA3838 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		468DE39028CE505B00DA3838 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		468DE39128CE505B00DA3838 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		468DE39228CE505B00DA3838 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4696886628B8E5B4004E8B53 /* DishParts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishParts.swift; sourceTree = "<group>"; };
 		469BB5E328BFED30004BB435 /* CalculatingDiscounts.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = CalculatingDiscounts.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		469BB5E428BFF088004BB435 /* readme1.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = readme1.md; sourceTree = "<group>"; };
@@ -159,7 +157,6 @@
 			isa = PBXGroup;
 			children = (
 				468DE38E28CE505B00DA3838 /* AppDelegate.swift */,
-				468DE39228CE505B00DA3838 /* LaunchScreen.storyboard */,
 				468DE39128CE505B00DA3838 /* Main.storyboard */,
 				468DE38F28CE505B00DA3838 /* SceneDelegate.swift */,
 				468DE39028CE505B00DA3838 /* ViewController.swift */,
@@ -252,7 +249,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				468DE39628CE505B00DA3838 /* Main.storyboard in Resources */,
-				468DE39728CE505B00DA3838 /* LaunchScreen.storyboard in Resources */,
 				46AAB96B28AFCDDF00DE602A /* Preview Assets.xcassets in Resources */,
 				46B4943B28B4E4B8003D910B /* readme.md in Resources */,
 				469BB5E528BFF088004BB435 /* readme1.md in Resources */,

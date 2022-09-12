@@ -12,29 +12,31 @@ let bellyColour = UIColor(red: CGFloat(31)/CGFloat(255), green: CGFloat(42)/CGFl
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var tableView: UITableView!
-    
+
     let swiftBlogs = ["Ray Wenderlich", "NSHipster", "iOS Developer Tips", "Jameson Quave", "Natasha The Robot", "Coding Explorer", "That Thing In Swift", "Andrew Bancroft", "iAchieved.it", "Airspeed Velocity"]
-    
+
     var menuItems: [Dish] = dishes
 
     let textCellIdentifier = "TextCell"
     
+    let menuSegueIdentifier = "ShowDetailMenu"
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         tableView.delegate = self
         tableView.dataSource = self
     }
-    
+
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return menuItems.count
 //        return swiftBlogs.count
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: textCellIdentifier, for: indexPath)
 
@@ -42,13 +44,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         cell.textLabel?.text = menuItems[row].name
         cell.imageView?.image = UIImage(named: menuItems[row].name)
         cell.textLabel?.textColor = bellyColour
-        
+
 
 
         return cell
     }
-    
-    
+
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
 
@@ -56,6 +58,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         print(menuItems[row].name)
 //        print(swiftBlogs[row])
     }
+    
 
 }
+
 
