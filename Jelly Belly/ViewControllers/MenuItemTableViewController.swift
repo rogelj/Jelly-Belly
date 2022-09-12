@@ -10,14 +10,14 @@ import SwiftUI
 
 // Used fof the TableViewController in the Main.stroyboard file
 class MenuItemTableViewController: UITableViewController {
-    
-    var menuItems = [Dish]()
+
+    var menuItems: [Dish] = dishes
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         // Using my test data here
-        menuItems = dishes
+//        menuItems = dishes
 
     }
 
@@ -25,18 +25,19 @@ class MenuItemTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        1
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        menuItems.count
+        return menuItems.count
     }
-    
+
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MenuItemCell", for: indexPath)
         cell.textLabel?.text = "\(menuItems[indexPath.row].name)"
-        cell.imageView?.image = UIImage(named: "JellyBelly")
+//        cell.imageView?.image = UIImage(named: "JellyBelly")
+        cell.imageView?.image = UIImage(named: menuItems[indexPath.row].name)
         return cell
     }
 

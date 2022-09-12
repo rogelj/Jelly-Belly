@@ -1,86 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QI5-oM-0qy">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ve3-Px-P1X">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Jelly Belly Menu-->
+        <scene sceneID="oOx-Hj-PPu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Jelly_Belly" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                <tableViewController title="Jelly Belly Menu" id="iua-Nq-HPo" customClass="MenuItemTableViewController" customModule="Jelly_Belly" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="N04-Pl-Yhg">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="qpR-al-t88">
-                                <rect key="frame" x="38" y="131" width="314" height="627"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TextCell" textLabel="woN-MU-y9X" style="IBUITableViewCellStyleDefault" id="alf-FK-XBi">
-                                        <rect key="frame" x="0.0" y="50" width="314" height="49.666667938232422"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="alf-FK-XBi" id="qns-Pf-2Em">
-                                            <rect key="frame" x="0.0" y="0.0" width="287.66666666666669" height="49.666667938232422"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="woN-MU-y9X">
-                                                    <rect key="frame" x="16" y="0.0" width="263.66666666666669" height="49.666667938232422"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
-                                                    <color key="textColor" name="Belly"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="qpR-al-t88" secondAttribute="trailing" constant="38" id="8EL-3w-GT1"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="qpR-al-t88" secondAttribute="bottom" constant="52" id="PeC-jQ-guJ"/>
-                            <constraint firstItem="qpR-al-t88" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="ZfJ-60-0HC"/>
-                            <constraint firstItem="qpR-al-t88" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="38" id="r2m-Bh-zTM"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="eTQ-zg-WIW"/>
-                    <connections>
-                        <outlet property="tableView" destination="qpR-al-t88" id="ZkD-0j-r01"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="MenuItemCell" textLabel="FkL-IO-nKL" style="IBUITableViewCellStyleDefault" id="Vht-qO-lqd">
+                                <rect key="frame" x="0.0" y="50" width="390" height="49.666667938232422"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Vht-qO-lqd" id="6cD-g7-6AB">
+                                    <rect key="frame" x="0.0" y="0.0" width="359.66666666666669" height="49.666667938232422"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="FkL-IO-nKL">
+                                            <rect key="frame" x="20" y="0.0" width="331.66666666666669" height="49.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                                            <color key="textColor" name="Jelly"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="iua-Nq-HPo" id="Nuc-2Y-aE8"/>
+                            <outlet property="delegate" destination="iua-Nq-HPo" id="1io-ac-J6R"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Jelly Belly Menu" id="uBN-HD-nwA"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fcF-C0-R0q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="981.53846153846155" y="-2.1327014218009479"/>
+            <point key="canvasLocation" x="866.15384615384608" y="-262.32227488151659"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="zJZ-dL-XSL">
+        <scene sceneID="CUh-ZD-ZSe">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="QI5-oM-0qy" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ve3-Px-P1X" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ysu-sP-hAo">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="rlO-4E-2jH">
                         <rect key="frame" x="0.0" y="47" width="390" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Lgr-Hx-0mJ"/>
+                        <segue destination="iua-Nq-HPo" kind="relationship" relationship="rootViewController" id="ANW-Nz-hl5"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Xgj-c6-qcr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fso-2w-dPm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="52.307692307692307" y="-2.1327014218009479"/>
+            <point key="canvasLocation" x="-63.076923076923073" y="-262.32227488151659"/>
         </scene>
     </scenes>
     <resources>
-        <namedColor name="Belly">
-            <color red="0.12156862745098039" green="0.16470588235294117" blue="0.8666666666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="Jelly">
+            <color red="0.71764705882352942" green="0.16862745098039217" blue="0.82745098039215681" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
