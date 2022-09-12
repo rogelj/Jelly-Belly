@@ -8,14 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		46525CA628B6443B00D90956 /* OrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46525CA528B6443B00D90956 /* OrderView.swift */; };
-		46613C6F28CB39BF00A70504 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46613C6E28CB39BF00A70504 /* Main.storyboard */; };
 		46613C7228CB3AC100A70504 /* MenuItemTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46613C7128CB3AC100A70504 /* MenuItemTableViewController.swift */; };
 		46613C7428CB3CDF00A70504 /* Dishes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46613C7328CB3CDF00A70504 /* Dishes.swift */; };
 		46613C8628CBADC300A70504 /* MenuUIListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46613C8528CBADC300A70504 /* MenuUIListView.swift */; };
-		46678A6328CF32AB00AD20D5 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46678A6028CF32AB00AD20D5 /* GameView.swift */; };
 		46678A6428CF32AB00AD20D5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46678A6128CF32AB00AD20D5 /* ViewController.swift */; };
 		46678A6528CF32AB00AD20D5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46678A6228CF32AB00AD20D5 /* AppDelegate.swift */; };
 		46678A6728CF345300AD20D5 /* UITableShow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46678A6628CF345300AD20D5 /* UITableShow.swift */; };
+		46678A6928CF465000AD20D5 /* MenuUITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46678A6828CF465000AD20D5 /* MenuUITableView.swift */; };
 		4689A9D528CE28D30091ABB2 /* MenuSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4689A9D428CE28D30091ABB2 /* MenuSwiftUIView.swift */; };
 		4689A9D728CE36D70091ABB2 /* MenuSwiftUIDetailedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4689A9D628CE36D70091ABB2 /* MenuSwiftUIDetailedView.swift */; };
 		4689A9D928CE37C10091ABB2 /* Dishes.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4689A9D828CE37C10091ABB2 /* Dishes.xcassets */; };
@@ -38,14 +37,13 @@
 
 /* Begin PBXFileReference section */
 		46525CA528B6443B00D90956 /* OrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderView.swift; sourceTree = "<group>"; };
-		46613C6E28CB39BF00A70504 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		46613C7128CB3AC100A70504 /* MenuItemTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemTableViewController.swift; sourceTree = "<group>"; };
 		46613C7328CB3CDF00A70504 /* Dishes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dishes.swift; sourceTree = "<group>"; };
 		46613C8528CBADC300A70504 /* MenuUIListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuUIListView.swift; sourceTree = "<group>"; };
-		46678A6028CF32AB00AD20D5 /* GameView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		46678A6128CF32AB00AD20D5 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		46678A6228CF32AB00AD20D5 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		46678A6628CF345300AD20D5 /* UITableShow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableShow.swift; sourceTree = "<group>"; };
+		46678A6828CF465000AD20D5 /* MenuUITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuUITableView.swift; sourceTree = "<group>"; };
 		4689A9D428CE28D30091ABB2 /* MenuSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuSwiftUIView.swift; sourceTree = "<group>"; };
 		4689A9D628CE36D70091ABB2 /* MenuSwiftUIDetailedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuSwiftUIDetailedView.swift; sourceTree = "<group>"; };
 		4689A9D828CE37C10091ABB2 /* Dishes.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Dishes.xcassets; sourceTree = "<group>"; };
@@ -84,6 +82,8 @@
 		46613C7028CB3A0600A70504 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				46678A6228CF32AB00AD20D5 /* AppDelegate.swift */,
+				46678A6128CF32AB00AD20D5 /* ViewController.swift */,
 				46613C7128CB3AC100A70504 /* MenuItemTableViewController.swift */,
 				46678A6628CF345300AD20D5 /* UITableShow.swift */,
 				46E0E5C828CCF67400D2E6AD /* UList_Menu.swift */,
@@ -110,6 +110,7 @@
 				4689A9D628CE36D70091ABB2 /* MenuSwiftUIDetailedView.swift */,
 				46E0E5CA28CCFB8500D2E6AD /* MenuExamples.swift */,
 				46613C8528CBADC300A70504 /* MenuUIListView.swift */,
+				46678A6828CF465000AD20D5 /* MenuUITableView.swift */,
 				46A1B02028AFD93800302426 /* HomeBackgroundView.swift */,
 				46A1B01C28AFD8FF00302426 /* TextViews.swift */,
 				46A1B01E28AFD91D00302426 /* RoundViews.swift */,
@@ -157,10 +158,6 @@
 		46AAB96128AFCDDE00DE602A /* Jelly Belly */ = {
 			isa = PBXGroup;
 			children = (
-				46678A6228CF32AB00AD20D5 /* AppDelegate.swift */,
-				46678A6028CF32AB00AD20D5 /* GameView.swift */,
-				46678A6128CF32AB00AD20D5 /* ViewController.swift */,
-				46613C6E28CB39BF00A70504 /* Main.storyboard */,
 				46613C7028CB3A0600A70504 /* ViewControllers */,
 				46A1B01A28AFD7F400302426 /* App */,
 				46A1B01928AFD7D600302426 /* Views */,
@@ -252,7 +249,6 @@
 				46B4943B28B4E4B8003D910B /* readme.md in Resources */,
 				469BB5E528BFF088004BB435 /* readme1.md in Resources */,
 				4689A9D928CE37C10091ABB2 /* Dishes.xcassets in Resources */,
-				46613C6F28CB39BF00A70504 /* Main.storyboard in Resources */,
 				46AAB96728AFCDDF00DE602A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -270,10 +266,10 @@
 				46AAB96528AFCDDE00DE602A /* ContentView.swift in Sources */,
 				46A1B01F28AFD91D00302426 /* RoundViews.swift in Sources */,
 				46E0E5CB28CCFB8500D2E6AD /* MenuExamples.swift in Sources */,
-				46678A6328CF32AB00AD20D5 /* GameView.swift in Sources */,
 				4696886728B8E5B4004E8B53 /* DishParts.swift in Sources */,
 				46AAB96328AFCDDE00DE602A /* Jelly_BellyApp.swift in Sources */,
 				46678A6528CF32AB00AD20D5 /* AppDelegate.swift in Sources */,
+				46678A6928CF465000AD20D5 /* MenuUITableView.swift in Sources */,
 				4689A9D728CE36D70091ABB2 /* MenuSwiftUIDetailedView.swift in Sources */,
 				46E0E5C928CCF67400D2E6AD /* UList_Menu.swift in Sources */,
 				46A1B02528AFDE2000302426 /* Constants.swift in Sources */,
@@ -426,7 +422,7 @@
 				INFOPLIST_KEY_UIStatusBarStyle = "";
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
@@ -466,7 +462,7 @@
 				INFOPLIST_KEY_UIStatusBarStyle = "";
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";

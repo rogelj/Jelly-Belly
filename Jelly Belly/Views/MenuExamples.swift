@@ -59,19 +59,18 @@ struct MenuExamples: View {
                     Button( action: {
                         menuStoryIsShowing = true
                     }) {
-                        Text("Menu - StoryBoard")
+                        Text("Menu - UIKIT")
                             .bold()
                             .foregroundColor(Color("Jelly"))
                     }.sheet(isPresented: $menuStoryIsShowing, onDismiss: {}, content: {
-//                        MenuItemTableRepresentable(menuStoryIsShowing: $menuStoryIsShowing)
-                        UITableShow()
+                        MenuUITableView(menuStoryIsShowing: $menuStoryIsShowing)
                     })
                     
                     // Programmatic
                     Button( action: {
                         menuUIKitIsShowing = true
                     }) {
-                        Text("Menu - UIKit Programmatic")
+                        Text("Menu - UIKit UList")
                             .bold()
                             .foregroundColor(Color("Jelly"))
                     }.sheet(isPresented: $menuUIKitIsShowing, onDismiss: {}, content: {
