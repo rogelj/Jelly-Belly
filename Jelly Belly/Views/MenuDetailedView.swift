@@ -1,5 +1,5 @@
 //
-//  MenuSwiftUIDetailedView.swift
+//  MenuDetailedView.swift
 //  Jelly Belly
 //
 //  Created by J Rogel PhD on 11/09/2022.
@@ -81,7 +81,7 @@ struct DishInformation: View {
     }
 }
 
-struct MenuSwiftUIDetailedView: View {
+struct MenuDetailedView: View {
     var dish: Dish
     
     var body: some View {
@@ -107,8 +107,8 @@ struct MenuSwiftUIDetailedView: View {
     }
 }
 
-struct MenuSwiftUIDetailedView_Previews: PreviewProvider {
+struct MenuDetailedView_Previews: PreviewProvider {
     static var previews: some View {
-        MenuSwiftUIDetailedView(dish: testDish)
+        MenuDetailedView(dish: testDish)
     }
 }

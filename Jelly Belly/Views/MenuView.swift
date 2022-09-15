@@ -1,5 +1,5 @@
 //
-//  DishView.swift
+//  MenuView.swift
 //  Jelly Belly
 //
 //  Created by J Rogel PhD on 11/09/2022.
@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct HeaderViewMenu: View {
-    @Binding var menuSwiftUIIsShowing: Bool
+    @Binding var menuIsShowing: Bool
     
     @Environment(\.verticalSizeClass) var verticalSizeClass
     @Environment(\.horizontalSizeClass) var horizontalSizeClass
@@ -19,7 +19,7 @@ struct HeaderViewMenu: View {
             HStack {
                 Spacer()
                 Button(action: {
-                    menuSwiftUIIsShowing = false
+                    menuIsShowing = false
                 }) {
                     Text("Done")
                         .bold()
@@ -43,7 +43,7 @@ struct HeaderViewMenu: View {
                 RoundLogoView(imageSize: Constants.Logo.logoViewSizeSmall)
                 Spacer()
                 Button(action: {
-                    menuSwiftUIIsShowing = false
+                    menuIsShowing = false
                 }) {
                     Text("Done")
                         .bold()
@@ -58,17 +58,17 @@ struct HeaderViewMenu: View {
 /**
  Main Order view
  */
-struct MenuSwiftUIView: View {
+struct MenuView: View {
     @State var menuDishes = dishes
     @Binding var menuSwiftUIIsShowing: Bool
 //    @Binding var customerOrder: Order
     
     var body: some View {
         VStack {
-            HeaderViewMenu(menuSwiftUIIsShowing: $menuSwiftUIIsShowing)
+            HeaderViewMenu(menuIsShowing: $menuSwiftUIIsShowing)
             NavigationView {
                 List(menuDishes) { dish in
-                    NavigationLink(destination: MenuSwiftUIDetailedView(dish: dish)) {
+                    NavigationLink(destination: MenuDetailedView(dish: dish)) {
                         MenuRowView(dish: dish)
                     }
                 }
@@ -78,17 +78,17 @@ struct MenuSwiftUIView: View {
     }
 }
 
-struct MenuSwiftUIView_Previews: PreviewProvider {
+struct MenuView_Previews: PreviewProvider {
     static private var menuSwiftUIIsShowing = Binding.constant(false)
     static private var testOrder = Binding.constant(Order(loadTestData: true))
     
     static var previews: some View {
-        MenuSwiftUIView(menuSwiftUIIsShowing: menuSwiftUIIsShowing)
-        MenuSwiftUIView(menuSwiftUIIsShowing: menuSwiftUIIsShowing)
+        MenuView(menuSwiftUIIsShowing: menuSwiftUIIsShowing)
+        MenuView(menuSwiftUIIsShowing: menuSwiftUIIsShowing)
             .preferredColorScheme(.dark)
-        MenuSwiftUIView(menuSwiftUIIsShowing: menuSwiftUIIsShowing)
+        MenuView(menuSwiftUIIsShowing: menuSwiftUIIsShowing)
             .previewInterfaceOrientation(.landscapeLeft)
-        MenuSwiftUIView(menuSwiftUIIsShowing: menuSwiftUIIsShowing)
+        MenuView(menuSwiftUIIsShowing: menuSwiftUIIsShowing)
             .previewInterfaceOrientation(.landscapeLeft)
             .preferredColorScheme(.dark)
     }
