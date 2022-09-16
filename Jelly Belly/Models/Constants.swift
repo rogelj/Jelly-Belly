@@ -19,6 +19,7 @@ enum Constants {
     enum Logo {
         public static let logoViewSize: CGFloat = 100.0
         public static let logoViewSizeSmall: CGFloat = 75.0
+        public static let logoViewSizeTiny: CGFloat = 40.0
     }
     
     enum DiscountTypes: Double {

@@ -10,7 +10,7 @@ import SwiftUI
 struct WelcomeView: View {
     @State private var customerOrder = Order()
     
-    let userName = "John Appleseed"
+    let userName = "Jelly Belly"
     
     var body: some View {
         ZStack {
@@ -39,9 +39,9 @@ func greeting(userName: String) -> String {
     @Environment(\.horizontalSizeClass) var horizontalSizeClass
     
     if verticalSizeClass == .regular && horizontalSizeClass == .compact {
-        return "Welcome\n\(userName)"
+        return "Welcome to\n\(userName)"
     } else {
-        return "Welcome \(userName)"
+        return "Welcome to \(userName)"
  
     }
 }

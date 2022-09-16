@@ -58,6 +58,7 @@ struct DishItemText: View {
     
     var body: some View {
         Text("\(text)")
+            .font(.body)
             .frame(maxWidth: .infinity, alignment: .leading)
     }
 }
@@ -90,7 +91,7 @@ struct TextViews: View {
             BigText(text: "Jelly Belly")
             MediumText(text: "Jelly Belly")
             BodyText(text: "This is an example of the features in the app")
-            DishItemText(text: "Pasta")
+            DishItemText(text: "Dish Item text Pasta")
         }
     }
 }

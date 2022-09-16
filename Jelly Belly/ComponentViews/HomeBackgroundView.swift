@@ -26,15 +26,15 @@ struct TopView: View {
             })
             .padding()
             Spacer()
-            Button( action: {
-                menuExamplesIsShowing = true
-            }) {
-                RoundedImageView(systemName: "fork.knife")
-            }
-            .fullScreenCover(isPresented: $menuExamplesIsShowing, onDismiss: {}, content: {
-                MenuExamples(menuExamplesIsShowing: $menuExamplesIsShowing, customerOrder: $customerOrder)
-            })
-            .padding()
+//            Button( action: {
+//                menuExamplesIsShowing = true
+//            }) {
+//                RoundedImageView(systemName: "fork.knife")
+//            }
+//            .fullScreenCover(isPresented: $menuExamplesIsShowing, onDismiss: {}, content: {
+//                MenuExamples(menuExamplesIsShowing: $menuExamplesIsShowing, customerOrder: $customerOrder)
+//            })
+//            .padding()
         }
     }
 }

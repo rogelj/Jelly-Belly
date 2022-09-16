@@ -60,14 +60,18 @@ struct HeaderViewMenu: View {
  */
 struct MenuView: View {
     @State var menuDishes = dishes
-    @Binding var menuSwiftUIIsShowing: Bool
-    //    @Binding var customerOrder: Order
-
     
     var body: some View {
-        VStack {
-            HeaderViewMenu(menuIsShowing: $menuSwiftUIIsShowing)
-            NavigationView {
+        NavigationView {
+            VStack {
+                HStack {
+                    BigText(text: "Jelly Belly Menu")
+                        .padding()
+                    Spacer()
+                    RoundLogoView(imageSize: Constants.Logo.logoViewSizeTiny )
+                        .padding()
+                    
+                }
                 ScrollView {
                     LazyVStack(alignment: .leading, pinnedViews: [.sectionHeaders]) {
                         ForEach(DishParts.MealCategory.allCases, id: \.self) { category in
@@ -103,12 +107,12 @@ struct MenuView_Previews: PreviewProvider {
     static private var testOrder = Binding.constant(Order(loadTestData: true))
     
     static var previews: some View {
-        MenuView(menuSwiftUIIsShowing: menuSwiftUIIsShowing)
-        MenuView(menuSwiftUIIsShowing: menuSwiftUIIsShowing)
+        MenuView()
+        MenuView()
             .preferredColorScheme(.dark)
-        MenuView(menuSwiftUIIsShowing: menuSwiftUIIsShowing)
+        MenuView()
             .previewInterfaceOrientation(.landscapeLeft)
-        MenuView(menuSwiftUIIsShowing: menuSwiftUIIsShowing)
+        MenuView()
             .previewInterfaceOrientation(.landscapeLeft)
             .preferredColorScheme(.dark)
     }

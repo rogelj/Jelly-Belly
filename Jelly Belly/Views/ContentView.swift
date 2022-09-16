@@ -8,22 +8,24 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var tabSelection = 1
     
     var body: some View {
-        TabView {
-            Text("Home Tab")
-                .font(.system(size: 30, weight: .bold, design: .rounded))
+        TabView(selection: $tabSelection) {
+            WelcomeView()
                 .tabItem {
                     Image(systemName: "house")
                     Text("Home")
                 }
+                .tag(0)
          
-            Text("Menu Tab")
+            MenuView()
                 .font(.system(size: 30, weight: .bold, design: .rounded))
                 .tabItem {
                     Image(systemName: "fork.knife")
                     Text("Menu")
                 }
+                .tag(1)
          
             Text("Discounts")
                 .font(.system(size: 30, weight: .bold, design: .rounded))
@@ -31,6 +33,7 @@ struct ContentView: View {
                     Image(systemName: "gift")
                     Text("Discounts")
                 }
+                .tag(2)
          
             Text("Order")
                 .font(.system(size: 30, weight: .bold, design: .rounded))
@@ -38,6 +41,7 @@ struct ContentView: View {
                     Image(systemName: "cart")
                     Text("Order")
                 }
+                .tag(3)
         }
         .accentColor(Color("Belly"))
     }

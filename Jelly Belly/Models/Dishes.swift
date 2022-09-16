@@ -14,7 +14,7 @@ extension Dish: Identifiable { }
 // Moving my test data into a separate file so I can reuse it elsewhere
 let dishes: [Dish] = [
     Dish(
-      name: "Fussili Arrabiata",
+      name: "Fusilli Arrabiata",
       ingredients: [
          Ingredients(ingredient: "Fusilli", portion:2),
          Ingredients(ingredient: "Parmesan", portion:1),
