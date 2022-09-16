@@ -34,6 +34,7 @@
 		46E4379228B62061004FCB53 /* DataStructures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E4379128B62061004FCB53 /* DataStructures.swift */; };
 		46F4D9FF28D4D2460088D91D /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F4D9FE28D4D2460088D91D /* WelcomeView.swift */; };
 		46F4DA0128D4DCAE0088D91D /* DiscountGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F4DA0028D4DCAE0088D91D /* DiscountGridView.swift */; };
+		46F4DA0328D4EADD0088D91D /* DishInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F4DA0228D4EADD0088D91D /* DishInformation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +69,7 @@
 		46E4379128B62061004FCB53 /* DataStructures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStructures.swift; sourceTree = "<group>"; };
 		46F4D9FE28D4D2460088D91D /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		46F4DA0028D4DCAE0088D91D /* DiscountGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscountGridView.swift; sourceTree = "<group>"; };
+		46F4DA0228D4EADD0088D91D /* DishInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishInformation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,6 +194,7 @@
 			isa = PBXGroup;
 			children = (
 				46A1B02028AFD93800302426 /* HomeBackgroundView.swift */,
+				46F4DA0228D4EADD0088D91D /* DishInformation.swift */,
 				46A1B01C28AFD8FF00302426 /* TextViews.swift */,
 				46A1B01E28AFD91D00302426 /* RoundViews.swift */,
 			);
@@ -275,6 +278,7 @@
 				46A1B02128AFD93800302426 /* HomeBackgroundView.swift in Sources */,
 				46678A6428CF32AB00AD20D5 /* ViewController.swift in Sources */,
 				46AAB96528AFCDDE00DE602A /* ContentView.swift in Sources */,
+				46F4DA0328D4EADD0088D91D /* DishInformation.swift in Sources */,
 				46A1B01F28AFD91D00302426 /* RoundViews.swift in Sources */,
 				46E0E5CB28CCFB8500D2E6AD /* MenuExamples.swift in Sources */,
 				4696886728B8E5B4004E8B53 /* DishParts.swift in Sources */,

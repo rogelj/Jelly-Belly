@@ -50,7 +50,18 @@ struct DishImage: View {
     
     var body: some View {
         VStack{
-            DishCircle(dishName: dishName)
+            GeometryReader { proxy in
+                ZStack(alignment: .topTrailing) {
+                    DishCircle(dishName: dishName)
+                    Image(systemName: "exclamationmark.bubble.fill")
+                        .font(.largeTitle)
+                        .foregroundColor(Color("Belly"))
+                        .background(Color.white.opacity(0.5))
+                        .frame(width: proxy.size.width / 4, height: proxy.size.height / 5)
+                        .padding(proxy.size.width / 30)
+                }
+            }
+            .frame(width: 100, height: 100)
             Text(dishName)
                 .font(.body)
                 .foregroundColor(Color("Belly"))

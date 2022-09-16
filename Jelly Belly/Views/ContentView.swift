@@ -10,6 +10,8 @@ import SwiftUI
 struct ContentView: View {
     @State private var tabSelection = 1
     
+    var menuDishes = dishes
+
     var body: some View {
         TabView(selection: $tabSelection) {
             WelcomeView()
@@ -20,7 +22,6 @@ struct ContentView: View {
                 .tag(0)
          
             MenuView()
-                .font(.system(size: 30, weight: .bold, design: .rounded))
                 .tabItem {
                     Image(systemName: "fork.knife")
                     Text("Menu")
@@ -28,7 +29,6 @@ struct ContentView: View {
                 .tag(1)
          
             DiscountGridView()
-                .font(.system(size: 30, weight: .bold, design: .rounded))
                 .tabItem {
                     Image(systemName: "gift")
                     Text("Discounts")
@@ -48,6 +48,8 @@ struct ContentView: View {
 }
 
 struct ContentView_Previews: PreviewProvider {
+    static private var testOrder = Binding.constant(Order(loadTestData: true))
+    
     static var previews: some View {
         ContentView()
         ContentView()

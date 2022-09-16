@@ -9,6 +9,7 @@ import SwiftUI
 
 @main
 struct Jelly_BellyApp: App {
+    
     var body: some Scene {
         WindowGroup {
             ContentView()

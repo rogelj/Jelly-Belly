@@ -100,27 +100,6 @@ struct WideBellyButton: ButtonStyle {
     }
 }
 
-struct DishView: View {
-    var dish: Dish
-    
-    var body: some View {
-        VStack(spacing: 3) {
-            HStack {
-                Text(dish.name.uppercased())
-                    .bold()
-                    .font(.title3)
-                Spacer()
-            }
-            DishInformation(dish: dish)
-        }
-        .padding()
-        .frame(maxWidth: .infinity)
-        .background(Color("BackgroundColor"))
-        .cornerRadius(Constants.General.roudedRectCornerRadius)
-        .shadow(radius: 10, x: 5, y: 5)
-    }
-}
-
 struct MenuRowView: View {
     var dish: Dish
     

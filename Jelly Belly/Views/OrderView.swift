@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct HeaderViewOrder: View {
-    @Binding var orderIsShowing: Bool
+//    @Binding var orderIsShowing: Bool
     
     @Environment(\.verticalSizeClass) var verticalSizeClass
     @Environment(\.horizontalSizeClass) var horizontalSizeClass
@@ -19,7 +19,7 @@ struct HeaderViewOrder: View {
             HStack {
                 Spacer()
                 Button(action: {
-                    orderIsShowing = false
+//                    orderIsShowing = false
                 }) {
                     Text("Done")
                         .bold()
@@ -43,7 +43,7 @@ struct HeaderViewOrder: View {
                 RoundLogoView(imageSize: Constants.Logo.logoViewSizeSmall)
                 Spacer()
                 Button(action: {
-                    orderIsShowing = false
+//                    orderIsShowing = false
                 }) {
                     Text("Done")
                         .bold()
@@ -59,12 +59,12 @@ struct HeaderViewOrder: View {
  Main Order view
  */
 struct OrderView: View {
-    @Binding var orderIsShowing: Bool
+//    @Binding var orderIsShowing: Bool
     @Binding var customerOrder: Order
     
     var body: some View {
         VStack(spacing: 5.0) {
-            HeaderViewOrder(orderIsShowing: $orderIsShowing)
+            HeaderViewOrder()
             Text(String(format: "Total for Order: £%.2f", customerOrder.totalOrder(discounted: false)))
                 .bold()
                 .padding(.leading)
@@ -78,10 +78,10 @@ struct OrderView: View {
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding(.leading)
             ScrollView {
-                VStack(spacing: 10) {
+                VStack() {
                     ForEach(customerOrder.order.indices, id: \.self) {
                         i in
-                        DishView(dish: customerOrder.order[i])
+                        DishOrderView(dish: customerOrder.order[i])
                             .padding(.trailing)
                             .padding(.leading)
                     }
@@ -94,16 +94,15 @@ struct OrderView: View {
 }
 
 struct OrderView_Previews: PreviewProvider {
-    static private var orderIsShowing = Binding.constant(false)
     static private var testOrder = Binding.constant(Order(loadTestData: true))
     
     static var previews: some View {
-        OrderView(orderIsShowing: orderIsShowing, customerOrder: testOrder)
-        OrderView(orderIsShowing: orderIsShowing, customerOrder: testOrder)
+        OrderView(customerOrder: testOrder)
+        OrderView(customerOrder: testOrder)
             .preferredColorScheme(.dark)
-        OrderView(orderIsShowing: orderIsShowing, customerOrder: testOrder)
+        OrderView(customerOrder: testOrder)
             .previewInterfaceOrientation(.landscapeLeft)
-        OrderView(orderIsShowing: orderIsShowing, customerOrder: testOrder)
+        OrderView(customerOrder: testOrder)
             .previewInterfaceOrientation(.landscapeLeft)
             .preferredColorScheme(.dark)
     }

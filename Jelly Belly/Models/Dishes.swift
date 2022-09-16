@@ -311,3 +311,6 @@ let testDish = Dish(name: "Fusilli Arrabiata",
                     special: true,
                     dietary: DishParts.diet[0],
                     discountable: true)
+
+var myOrder = Order()
+
