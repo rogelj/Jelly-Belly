@@ -27,7 +27,7 @@ struct ContentView: View {
                 }
                 .tag(1)
          
-            Text("Discounts")
+            DiscountGridView()
                 .font(.system(size: 30, weight: .bold, design: .rounded))
                 .tabItem {
                     Image(systemName: "gift")

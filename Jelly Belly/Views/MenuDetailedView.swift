@@ -86,15 +86,7 @@ struct MenuDetailedView: View {
     
     var body: some View {
         VStack {
-            Image(dish.name)
-                .clipShape(Circle())
-                .overlay(
-                    Circle().stroke(Color("Jelly"), lineWidth: 4)
-                )
-                .shadow(radius: 10)
-            Text(dish.name)
-                .font(.title)
-                .foregroundColor(Color("Belly"))
+            DishCircle(dishName: dish.name)
             DishInformation(dish: dish)
 
         }
@@ -106,6 +98,7 @@ struct MenuDetailedView: View {
         .padding().navigationBarTitle(Text(dish.name), displayMode: .inline)
     }
 }
+
 
 struct MenuDetailedView_Previews: PreviewProvider {
     static var previews: some View {

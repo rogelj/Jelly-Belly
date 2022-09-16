@@ -105,6 +105,13 @@ extension Dish {
             dish.mealCategory == mealCategory
         }
     }
+    
+    static func getDiscountDishes(by mealCategory: DishParts.MealCategory) -> [Dish] {
+        dishes.filter { dish in
+            dish.mealCategory == mealCategory && dish.discountable == true
+        }
+    }
+    
 }
 
 struct Order {

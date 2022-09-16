@@ -152,6 +152,21 @@ struct MenuRowView: View {
         .frame(minHeight: 40)
     }
 }
+
+struct DishCircle: View {
+    var dishName: String
+    
+    var body: some View {
+        VStack {
+            Image(dishName)
+                .clipShape(Circle())
+                .overlay(
+                    Circle().stroke(Color("Jelly"), lineWidth: 4)
+                )
+                .shadow(radius: 10)
+        }
+    }
+}
     
 struct RoundViews: View {
     var body: some View {
@@ -161,6 +176,7 @@ struct RoundViews: View {
             RoundLogoView(imageSize: Constants.Logo.logoViewSize)
             JellyBellyButton(message: "OK")
             DishView(dish: testDish)
+            DishCircle(dishName: "Fusilli Arrabiata")
         }
     }
 }

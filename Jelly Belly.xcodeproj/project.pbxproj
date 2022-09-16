@@ -33,6 +33,7 @@
 		46E0E5CB28CCFB8500D2E6AD /* MenuExamples.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E0E5CA28CCFB8500D2E6AD /* MenuExamples.swift */; };
 		46E4379228B62061004FCB53 /* DataStructures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E4379128B62061004FCB53 /* DataStructures.swift */; };
 		46F4D9FF28D4D2460088D91D /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F4D9FE28D4D2460088D91D /* WelcomeView.swift */; };
+		46F4DA0128D4DCAE0088D91D /* DiscountGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F4DA0028D4DCAE0088D91D /* DiscountGridView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +67,7 @@
 		46E0E5CA28CCFB8500D2E6AD /* MenuExamples.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuExamples.swift; sourceTree = "<group>"; };
 		46E4379128B62061004FCB53 /* DataStructures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStructures.swift; sourceTree = "<group>"; };
 		46F4D9FE28D4D2460088D91D /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
+		46F4DA0028D4DCAE0088D91D /* DiscountGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscountGridView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,8 +98,9 @@
 				46A1B02228AFD95200302426 /* OnboardView.swift */,
 				4689A9D428CE28D30091ABB2 /* MenuView.swift */,
 				4689A9D628CE36D70091ABB2 /* MenuDetailedView.swift */,
-				46E0E5CA28CCFB8500D2E6AD /* MenuExamples.swift */,
+				46F4DA0028D4DCAE0088D91D /* DiscountGridView.swift */,
 				46525CA528B6443B00D90956 /* OrderView.swift */,
+				46E0E5CA28CCFB8500D2E6AD /* MenuExamples.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -277,6 +280,7 @@
 				4696886728B8E5B4004E8B53 /* DishParts.swift in Sources */,
 				46AAB96328AFCDDE00DE602A /* Jelly_BellyApp.swift in Sources */,
 				46678A6928CF465000AD20D5 /* MenuUITableView.swift in Sources */,
+				46F4DA0128D4DCAE0088D91D /* DiscountGridView.swift in Sources */,
 				4689A9D728CE36D70091ABB2 /* MenuDetailedView.swift in Sources */,
 				46E0E5C928CCF67400D2E6AD /* UList_Menu.swift in Sources */,
 				46A1B02528AFDE2000302426 /* Constants.swift in Sources */,

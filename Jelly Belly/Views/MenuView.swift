@@ -56,7 +56,7 @@ struct HeaderViewMenu: View {
 }
 
 /**
- Main Order view
+ Menu view
  */
 struct MenuView: View {
     @State var menuDishes = dishes
