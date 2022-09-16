@@ -16,7 +16,15 @@ import UIKit
 */
 enum DishParts {
     public static let cuisine = ["Italian", "Mexican", "American", "Japanese", "French"]
-    public static let mealType = [("Starter", "🥗"), ("Main", "🍽"), ("Dessert", "🍰"), ("Drink", "🥤")]
+//    public static let mealType = [("Starter", "🥗"), ("Main", "🍽"), ("Dessert", "🍰"), ("Drink", "🥤")]
+    
+    enum MealCategory: String, CaseIterable {
+        case starter = "Starter"
+        case main = "Main"
+        case dessert = "Dessert"
+        case drink = "Drink"
+    }
+    
     public static let calorieValue: [String: Double] = [
         "Alcohol": 250.0,
         "Beef": 300.0,

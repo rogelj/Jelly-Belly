@@ -32,6 +32,7 @@
 		46E0E5C928CCF67400D2E6AD /* UList_Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E0E5C828CCF67400D2E6AD /* UList_Menu.swift */; };
 		46E0E5CB28CCFB8500D2E6AD /* MenuExamples.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E0E5CA28CCFB8500D2E6AD /* MenuExamples.swift */; };
 		46E4379228B62061004FCB53 /* DataStructures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E4379128B62061004FCB53 /* DataStructures.swift */; };
+		46F4D9FF28D4D2460088D91D /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F4D9FE28D4D2460088D91D /* WelcomeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +65,7 @@
 		46E0E5C828CCF67400D2E6AD /* UList_Menu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UList_Menu.swift; sourceTree = "<group>"; };
 		46E0E5CA28CCFB8500D2E6AD /* MenuExamples.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuExamples.swift; sourceTree = "<group>"; };
 		46E4379128B62061004FCB53 /* DataStructures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStructures.swift; sourceTree = "<group>"; };
+		46F4D9FE28D4D2460088D91D /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				46AAB96428AFCDDE00DE602A /* ContentView.swift */,
+				46F4D9FE28D4D2460088D91D /* WelcomeView.swift */,
 				46A1B02228AFD95200302426 /* OnboardView.swift */,
 				4689A9D428CE28D30091ABB2 /* MenuView.swift */,
 				4689A9D628CE36D70091ABB2 /* MenuDetailedView.swift */,
@@ -139,7 +142,6 @@
 		46AAB96128AFCDDE00DE602A /* Jelly Belly */ = {
 			isa = PBXGroup;
 			children = (
-				46B55AF228D37FDB00678814 /* UIKit_Files */,
 				46A1B01A28AFD7F400302426 /* App */,
 				46B55AF328D3814100678814 /* ComponentViews */,
 				46A1B01928AFD7D600302426 /* Views */,
@@ -147,6 +149,7 @@
 				46AAB96828AFCDDF00DE602A /* Jelly_Belly.entitlements */,
 				469BB5E228BFED10004BB435 /* CalculatingDiscounts */,
 				46B4943928B4E462003D910B /* DataStructures */,
+				46B55AF228D37FDB00678814 /* UIKit_Files */,
 				46AAB96928AFCDDF00DE602A /* Preview Content */,
 			);
 			path = "Jelly Belly";
@@ -278,6 +281,7 @@
 				46E0E5C928CCF67400D2E6AD /* UList_Menu.swift in Sources */,
 				46A1B02528AFDE2000302426 /* Constants.swift in Sources */,
 				46613C8628CBADC300A70504 /* MenuUIListView.swift in Sources */,
+				46F4D9FF28D4D2460088D91D /* WelcomeView.swift in Sources */,
 				46525CA628B6443B00D90956 /* OrderView.swift in Sources */,
 				46E4379228B62061004FCB53 /* DataStructures.swift in Sources */,
 				4689A9D528CE28D30091ABB2 /* MenuView.swift in Sources */,

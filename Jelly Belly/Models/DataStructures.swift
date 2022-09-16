@@ -27,7 +27,8 @@ struct Ingredients {
     - `name: String`
     - `ingredients`: `Array` of `Ingredients`
     - `cusine: String`
-    - `mealType: String`
+    //- `mealType: String`
+    - `mealCategory: DisParts.MealCategory`
     - `special: Bool?` (optional) - Is the dish a special this month?
     - `dietary: String?` (optional) - Dietary restriction
     - `cost: Double`
@@ -41,7 +42,7 @@ class Dish {
     let name: String
     var ingredients: [Ingredients]
     var cuisine: String
-    var mealType: (String, String)
+    var mealCategory: DishParts.MealCategory
     var cost: Double
     var special: Bool?
     var dietary: String?
@@ -63,12 +64,12 @@ class Dish {
 //        }
     }
     
-    init(name: String, ingredients: [Ingredients], cuisine: String, mealType: (String, String),
+    init(name: String, ingredients: [Ingredients], cuisine: String, mealCategory: DishParts.MealCategory,
          cost: Double, special: Bool? = nil, dietary: String? = nil, discountable: Bool? = nil) {
         self.name = name
         self.ingredients = ingredients
         self.cuisine = cuisine
-        self.mealType = mealType
+        self.mealCategory = mealCategory
         self.cost = cost
         self.special = special
         self.dietary = dietary
@@ -95,6 +96,14 @@ class Dish {
             }
         }
         return calories.roundNearest()  // **Nice to have** - implementing a method with `return`
+    }
+}
+
+extension Dish {
+    static func getDishes(by mealCategory: DishParts.MealCategory) -> [Dish] {
+        dishes.filter { dish in
+            dish.mealCategory == mealCategory
+        }
     }
 }
 
@@ -140,7 +149,6 @@ struct Order {
                     Swift.print("- \(ingredient.ingredient)")
                 }
                 Swift.print("Cusine: \(entry.cuisine)")
-                Swift.print("Meal Type: \(entry.mealType)")
                 Swift.print("Cost: \(entry.cost)")
                 Swift.print("Special: \(special)")
                 Swift.print("===\n")
@@ -168,7 +176,6 @@ struct Order {
                     print("- \(ingredient.ingredient)")
                 }
                 Swift.print("Cusine: \(entry.cuisine)")
-                Swift.print("Meal Type: \(entry.mealType)")
                 Swift.print("Cost: \(entry.cost)")
                 Swift.print("Dietary: \(dietary)")
                 Swift.print("===\n")

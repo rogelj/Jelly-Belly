@@ -61,22 +61,42 @@ struct HeaderViewMenu: View {
 struct MenuView: View {
     @State var menuDishes = dishes
     @Binding var menuSwiftUIIsShowing: Bool
-//    @Binding var customerOrder: Order
+    //    @Binding var customerOrder: Order
+
     
     var body: some View {
         VStack {
             HeaderViewMenu(menuIsShowing: $menuSwiftUIIsShowing)
             NavigationView {
-                List(menuDishes) { dish in
-                    NavigationLink(destination: MenuDetailedView(dish: dish)) {
-                        MenuRowView(dish: dish)
+                ScrollView {
+                    LazyVStack(alignment: .leading, pinnedViews: [.sectionHeaders]) {
+                        ForEach(DishParts.MealCategory.allCases, id: \.self) { category in
+                            Section(header: MenuHeaderView(title: category.rawValue)) {
+                                ForEach(Dish.getDishes(by: category)) { dish in
+                                    NavigationLink(destination: MenuDetailedView(dish: dish)) {
+                                        MenuRowView(dish: dish)
+                                            .padding(.leading)
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
             }
-            .navigationViewStyle(StackNavigationViewStyle())
         }
     }
 }
+
+struct MenuHeaderView: View {
+    var title: String
+    
+    var body: some View {
+        MediumText(text: title)
+            .frame(maxWidth: .infinity)
+            .background(.ultraThinMaterial)
+    }
+}
+
 
 struct MenuView_Previews: PreviewProvider {
     static private var menuSwiftUIIsShowing = Binding.constant(false)

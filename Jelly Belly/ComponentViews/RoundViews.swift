@@ -110,8 +110,6 @@ struct DishView: View {
                     .bold()
                     .font(.title3)
                 Spacer()
-                Text(dish.mealType.1)
-                    .font(.title)
             }
             DishInformation(dish: dish)
         }
@@ -145,8 +143,10 @@ struct MenuRowView: View {
                         .font(.title3)
                     Spacer()
                 }
-                Text(dish.mealType.1)
-                    .font(.title)
+                Image(systemName: "chevron.right")
+                    .font(.title2)
+                    .foregroundColor(.gray)
+                    .padding(.trailing)
             }
         }
         .frame(minHeight: 40)

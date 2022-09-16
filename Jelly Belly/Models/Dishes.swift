@@ -21,7 +21,7 @@ let dishes: [Dish] = [
          Ingredients(ingredient: "Pasta Sauce ", portion:1)
       ],
       cuisine: DishParts.cuisine[0],
-      mealType: DishParts.mealType[1],
+      mealCategory: .main,
       cost: 15,
       special: true,
       discountable: true
@@ -34,7 +34,7 @@ let dishes: [Dish] = [
          Ingredients(ingredient: "Pasta Sauce ", portion:2)
       ],
       cuisine: DishParts.cuisine[0],
-      mealType: DishParts.mealType[1],
+      mealCategory: .main,
       cost: 19,
       dietary: DishParts.diet[0]
    ),
@@ -45,7 +45,7 @@ let dishes: [Dish] = [
          Ingredients(ingredient: "Sugar", portion:1)
       ],
       cuisine: DishParts.cuisine[2],
-      mealType: DishParts.mealType[3],
+      mealCategory: .drink,
       cost: 9,
       dietary: DishParts.diet[1]
    ),
@@ -56,7 +56,7 @@ let dishes: [Dish] = [
          Ingredients(ingredient: "Sugar", portion:0.5)
       ],
       cuisine: DishParts.cuisine[1],
-      mealType: DishParts.mealType[3],
+      mealCategory: .drink,
       cost: 12,
       dietary: DishParts.diet[1],
       discountable: true
@@ -69,7 +69,7 @@ let dishes: [Dish] = [
          Ingredients(ingredient: "Bread", portion:2)
       ],
       cuisine: DishParts.cuisine[0],
-      mealType: DishParts.mealType[0],
+      mealCategory: .starter,
       cost: 9,
       dietary: "",
       discountable: true
@@ -83,7 +83,7 @@ let dishes: [Dish] = [
          Ingredients(ingredient: "Coffee", portion:1)
       ],
       cuisine: DishParts.cuisine[0],
-      mealType: DishParts.mealType[2],
+      mealCategory: .dessert,
       cost: 14,
       special: true,
       discountable: true
@@ -97,7 +97,7 @@ let dishes: [Dish] = [
          Ingredients(ingredient: "Tomato", portion:1)
       ],
       cuisine: DishParts.cuisine[2],
-      mealType: DishParts.mealType[1],
+      mealCategory: .main,
       cost: 19
    ),
     Dish(
@@ -109,7 +109,7 @@ let dishes: [Dish] = [
          Ingredients(ingredient: "Cheddar", portion:1)
       ],
       cuisine: DishParts.cuisine[1],
-      mealType: DishParts.mealType[1],
+      mealCategory: .main,
       cost: 18
    ),
     Dish(
@@ -119,7 +119,7 @@ let dishes: [Dish] = [
          Ingredients(ingredient: "Rice", portion:5)
       ],
       cuisine: DishParts.cuisine[3],
-      mealType: DishParts.mealType[1],
+      mealCategory: .main,
       cost: 25,
       dietary: DishParts.diet[4],
       discountable: true
@@ -130,7 +130,7 @@ let dishes: [Dish] = [
          Ingredients(ingredient: "Alcohol", portion:1)
       ],
       cuisine: DishParts.cuisine[4],
-      mealType: DishParts.mealType[3],
+      mealCategory: .drink,
       cost: 12,
       special: true
    ),
@@ -140,7 +140,7 @@ let dishes: [Dish] = [
          Ingredients(ingredient: "Alcohol", portion:1)
       ],
       cuisine: DishParts.cuisine[4],
-      mealType: DishParts.mealType[3],
+      mealCategory: .drink,
       cost: 12
    ),
     Dish(
@@ -149,7 +149,7 @@ let dishes: [Dish] = [
          Ingredients(ingredient: "Water", portion:1)
       ],
       cuisine: DishParts.cuisine[4],
-      mealType: DishParts.mealType[3],
+      mealCategory: .drink,
       cost: 6,
       discountable: true
    ),
@@ -162,7 +162,7 @@ let dishes: [Dish] = [
          Ingredients(ingredient: "Cream", portion:2)
       ],
       cuisine: DishParts.cuisine[1],
-      mealType: DishParts.mealType[0],
+      mealCategory: .starter,
       cost: 10
    ),
     Dish(
@@ -172,7 +172,7 @@ let dishes: [Dish] = [
          Ingredients(ingredient: "Emmental", portion:2)
       ],
       cuisine: DishParts.cuisine[4],
-      mealType: DishParts.mealType[0],
+      mealCategory: .starter,
       cost: 9,
       special: true,
       dietary: DishParts.diet[0]
@@ -183,7 +183,7 @@ let dishes: [Dish] = [
          Ingredients(ingredient: "Edamame", portion:3)
       ],
       cuisine: DishParts.cuisine[3],
-      mealType: DishParts.mealType[0],
+      mealCategory: .starter,
       cost: 8,
       dietary: DishParts.diet[1],
       discountable: true
@@ -194,7 +194,7 @@ let dishes: [Dish] = [
          Ingredients(ingredient: "Olives", portion:3)
       ],
       cuisine: DishParts.cuisine[0],
-      mealType: DishParts.mealType[0],
+      mealCategory: .starter,
       cost: 9
    ),
     Dish(
@@ -205,7 +205,7 @@ let dishes: [Dish] = [
          Ingredients(ingredient: "Sugar", portion:2)
       ],
       cuisine: DishParts.cuisine[4],
-      mealType: DishParts.mealType[2],
+      mealCategory: .dessert,
       cost: 12,
       discountable: true
    ),
@@ -217,7 +217,7 @@ let dishes: [Dish] = [
          Ingredients(ingredient: "Corn flour", portion:1)
       ],
       cuisine: DishParts.cuisine[3],
-      mealType: DishParts.mealType[2],
+      mealCategory: .dessert,
       cost: 8,
       dietary: DishParts.diet[2]
    ),
@@ -230,7 +230,7 @@ let dishes: [Dish] = [
          Ingredients(ingredient: "Milk", portion:1)
       ],
       cuisine: DishParts.cuisine[0],
-      mealType: DishParts.mealType[2],
+      mealCategory: .dessert,
       cost: 8,
       special: true
    ),
@@ -243,7 +243,7 @@ let dishes: [Dish] = [
          Ingredients(ingredient: "Milk", portion:2)
       ],
       cuisine: DishParts.cuisine[2],
-      mealType: DishParts.mealType[2],
+      mealCategory: .dessert,
       cost: 10,
       discountable: true
    )
@@ -255,7 +255,7 @@ let dishes1: [Dish] = [
                        Ingredients(ingredient: "Parmesan", portion: 1.0),
                        Ingredients(ingredient: "Pasta Sauce", portion: 1.0)],
          cuisine: DishParts.cuisine[0],
-         mealType: DishParts.mealType[1],
+         mealCategory: .main,
          cost: 15.0,
          special: true,
          discountable: true),
@@ -264,7 +264,7 @@ let dishes1: [Dish] = [
                        Ingredients(ingredient: "Mozarella", portion: 2.0),
                        Ingredients(ingredient: "Pasta Sauce", portion: 2.0)],
          cuisine: DishParts.cuisine[0],
-         mealType: DishParts.mealType[1],
+         mealCategory: .main,
          cost: 19.0,
          dietary: DishParts.diet[0],
          discountable: false),
@@ -272,13 +272,13 @@ let dishes1: [Dish] = [
          ingredients: [Ingredients(ingredient: "Lemon", portion: 3.0),
                        Ingredients(ingredient:"Sugar", portion: 1.0)],
          cuisine: DishParts.cuisine[2],
-         mealType: DishParts.mealType[3],
+         mealCategory: .drink,
          cost: 9.0),
     Dish(name: "Naranjada",
          ingredients: [Ingredients(ingredient: "Orange", portion: 3),
                        Ingredients(ingredient: "Sugar", portion: 0.5)],
          cuisine: DishParts.cuisine[1],
-         mealType: DishParts.mealType[3],
+         mealCategory: .drink,
          cost: 12.0,
          special: true),
     Dish(name: "Garlic Bread",
@@ -286,7 +286,7 @@ let dishes1: [Dish] = [
                        Ingredients(ingredient: "Parmesan", portion: 2),
                        Ingredients(ingredient: "Bread", portion: 2)],
          cuisine: DishParts.cuisine[0],
-         mealType: DishParts.mealType[0],
+         mealCategory: .starter,
          cost: 9.0,
          dietary: DishParts.diet[0],
          discountable: true),
@@ -296,7 +296,7 @@ let dishes1: [Dish] = [
                        Ingredients(ingredient: "Mascarpone", portion:  2),
                        Ingredients(ingredient: "Coffee", portion: 1)],
          cuisine: DishParts.cuisine[0],
-         mealType: DishParts.mealType[2],
+         mealCategory: .dessert,
          cost: 14.0,
          discountable: false)
 ]
@@ -306,7 +306,7 @@ let testDish = Dish(name: "Fusilli Arrabiata",
                                   Ingredients(ingredient:"Parmesan", portion: 1.0),
                                   Ingredients(ingredient:"Pasta Sauce", portion: 1.0)],
                     cuisine: DishParts.cuisine[0],
-                    mealType: DishParts.mealType[1],
+                    mealCategory: .main,
                     cost: 15.0,
                     special: true,
                     dietary: DishParts.diet[0],

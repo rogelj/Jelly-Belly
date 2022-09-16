@@ -48,7 +48,7 @@ struct UIList: UIViewRepresentable {
             
             let tableViewCell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! HostingCell
             
-            let view = Text(rows[indexPath.row].mealType.1 + " " + rows[indexPath.row].name)
+            let view = Text(rows[indexPath.row].name)
                 .frame(height: 50)
                 .padding(.leading)
                 .foregroundColor(Color("Belly"))
