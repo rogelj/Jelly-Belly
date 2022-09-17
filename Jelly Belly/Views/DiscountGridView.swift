@@ -56,7 +56,7 @@ struct DishImage: View {
                     Image(systemName: "exclamationmark.bubble.fill")
                         .font(.largeTitle)
                         .foregroundColor(Color("Belly"))
-                        .background(Color.white.opacity(0.5))
+                        .background(Color.white.opacity(0.25))
                         .frame(width: proxy.size.width / 4, height: proxy.size.height / 5)
                         .padding(proxy.size.width / 30)
                 }
@@ -72,5 +72,7 @@ struct DishImage: View {
 struct DiscountGridView_Previews: PreviewProvider {
     static var previews: some View {
         DiscountGridView()
+        DiscountGridView()
+            .preferredColorScheme(.dark)
     }
 }
