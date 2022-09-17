@@ -60,7 +60,7 @@ struct HeaderViewMenu: View {
  */
 struct MenuView: View {
     @State var menuDishes = dishes
-    @Binding var customerOrder: Order
+    @EnvironmentObject var customerOrder: Order
     
     var body: some View {
         NavigationView {
@@ -78,7 +78,7 @@ struct MenuView: View {
                         ForEach(DishParts.MealCategory.allCases, id: \.self) { category in
                             Section(header: MenuHeaderView(title: category.rawValue)) {
                                 ForEach(Dish.getDishes(by: category)) { dish in
-                                    NavigationLink(destination: MenuDetailedView(dish: dish, customerOrder: $customerOrder)) {
+                                    NavigationLink(destination: MenuDetailedView(dish: dish)) {
                                         MenuRowView(dish: dish)
                                             .padding(.leading)
                                     }
@@ -108,12 +108,12 @@ struct MenuView_Previews: PreviewProvider {
     static private var testOrder = Binding.constant(Order(loadTestData: true))
     
     static var previews: some View {
-        MenuView(customerOrder: testOrder)
-        MenuView(customerOrder: testOrder)
+        MenuView()
+        MenuView()
             .preferredColorScheme(.dark)
-        MenuView(customerOrder: testOrder)
+        MenuView()
             .previewInterfaceOrientation(.landscapeLeft)
-        MenuView(customerOrder: testOrder)
+        MenuView()
             .previewInterfaceOrientation(.landscapeLeft)
             .preferredColorScheme(.dark)
     }

@@ -114,8 +114,8 @@ extension Dish {
     
 }
 
-class Order {
-    var order: [Dish] = []
+class Order: ObservableObject {
+    @Published var order: [Dish] = []
     
     init(order: [Dish]) {
         self.order = order

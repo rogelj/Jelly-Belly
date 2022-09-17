@@ -38,7 +38,7 @@ struct HeaderViewOrder: View {
  Main Order view
  */
 struct OrderView: View {
-    @Binding var customerOrder: Order
+    @EnvironmentObject var customerOrder: Order
     
     var body: some View {
         VStack(spacing: 5.0) {
@@ -75,12 +75,12 @@ struct OrderView_Previews: PreviewProvider {
     static private var testOrder = Binding.constant(Order(loadTestData: true))
     
     static var previews: some View {
-        OrderView(customerOrder: testOrder)
-        OrderView(customerOrder: testOrder)
+        OrderView()
+        OrderView()
             .preferredColorScheme(.dark)
-        OrderView(customerOrder: testOrder)
+        OrderView()
             .previewInterfaceOrientation(.landscapeLeft)
-        OrderView(customerOrder: testOrder)
+        OrderView()
             .previewInterfaceOrientation(.landscapeLeft)
             .preferredColorScheme(.dark)
     }

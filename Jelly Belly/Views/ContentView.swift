@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var tabSelection = 1
-    @State var customerOrder = Order()
+    @StateObject var customerOrder = Order()
     
     var menuDishes = dishes
 
@@ -22,7 +22,8 @@ struct ContentView: View {
                 }
                 .tag(0)
          
-            MenuView(customerOrder: $customerOrder)
+            MenuView()
+                .environmentObject(customerOrder)
                 .tabItem {
                     Image(systemName: "fork.knife")
                     Text("Menu")
@@ -30,13 +31,15 @@ struct ContentView: View {
                 .tag(1)
          
             DiscountGridView()
+                .environmentObject(customerOrder)
                 .tabItem {
                     Image(systemName: "gift")
                     Text("Discounts")
                 }
                 .tag(2)
          
-            OrderView(customerOrder: $customerOrder)
+            OrderView()
+                .environmentObject(customerOrder)
                 .tabItem {
                     Image(systemName: "cart")
                     Text("Order")

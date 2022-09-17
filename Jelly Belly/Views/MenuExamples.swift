@@ -41,7 +41,7 @@ struct MenuExamples: View {
                             .bold()
                             .foregroundColor(Color("Jelly"))
                     }.sheet(isPresented: $orderIsShowing, onDismiss: {}, content: {
-                        OrderView(customerOrder: $customerOrder)
+                        OrderView()
                     })
                     
                     // SwiftUI

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MenuDetailedView: View {
     var dish: Dish
-    @Binding var customerOrder: Order
+    @EnvironmentObject var customerOrder: Order
     
     var body: some View {
         VStack {
@@ -36,7 +36,7 @@ struct MenuDetailedView_Previews: PreviewProvider {
     static private var customerOrder = Binding.constant(Order(loadTestData: true))
     
     static var previews: some View {
-        MenuDetailedView(dish: testDish, customerOrder: customerOrder)
+        MenuDetailedView(dish: testDish)
 //        MenuDetailedView(dish: testDish)
     }
 }
