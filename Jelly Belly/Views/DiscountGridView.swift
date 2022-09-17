@@ -30,10 +30,10 @@ struct DiscountGridView: View {
                             ForEach(DishParts.MealCategory.allCases, id: \.self) { category in
                                 Section(header: MenuHeaderView(title: category.rawValue)) {
                                     ForEach(Dish.getDiscountDishes(by: category)) { dish in
-//                                        NavigationLink(destination: MenuDetailedView(dish: dish)) {
-//                                            DishImage(dishName: dish.name)
-//                                                .padding(.leading)
-//                                        }
+                                        NavigationLink(destination: MenuDetailedView(dish: dish)) {
+                                            DishImage(dishName: dish.name)
+                                                .padding(.leading)
+                                        }
                                     }
                                 }
                             }
