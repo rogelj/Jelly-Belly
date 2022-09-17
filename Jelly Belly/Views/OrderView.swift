@@ -41,32 +41,39 @@ struct OrderView: View {
     @EnvironmentObject var customerOrder: Order
     
     var body: some View {
-        VStack(spacing: 5.0) {
-            HeaderViewOrder()
-            Text(String(format: "Total for Order: £%.2f", customerOrder.totalOrder(discounted: false)))
-                .bold()
-                .padding(.leading)
-                .frame(maxWidth: .infinity, alignment: .leading)
-            Text(String(format: "Discounted: £%.2f", customerOrder.totalOrder(discounted: true)))
-                .bold()
-                .padding(.leading)
-                .frame(maxWidth: .infinity, alignment: .leading)
-            Text("Enjoy your meal!")
-                .bold()
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .padding(.leading)
-            ScrollView {
-                VStack() {
-                    ForEach(customerOrder.order.indices, id: \.self) {
-                        i in
-                        DishOrderView(dish: customerOrder.order[i])
-                            .padding(.trailing)
-                            .padding(.leading)
+        if customerOrder.order.isEmpty {
+            VStack {
+                BigText(text: "Order something and make your belly happy\n🥳🍽")
+                    .padding()
+            }
+        } else {
+            VStack(spacing: 5.0) {
+                HeaderViewOrder()
+                Text(String(format: "Total for Order: £%.2f", customerOrder.totalOrder(discounted: false)))
+                    .bold()
+                    .padding(.leading)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                Text(String(format: "Discounted: £%.2f", customerOrder.totalOrder(discounted: true)))
+                    .bold()
+                    .padding(.leading)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                Text("Enjoy your meal!")
+                    .bold()
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.leading)
+                ScrollView {
+                    VStack() {
+                        ForEach(customerOrder.order.indices, id: \.self) {
+                            i in
+                            DishOrderView(dish: customerOrder.order[i])
+                                .padding(.trailing)
+                                .padding(.leading)
+                        }
                     }
                 }
+                Spacer()
+                    .frame(height: 0.1)
             }
-            Spacer()
-                .frame(height: 0.1)
         }
     }
 }
