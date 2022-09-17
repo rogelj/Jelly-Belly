@@ -114,9 +114,13 @@ extension Dish {
     
 }
 
-struct Order {
+class Order {
     var order: [Dish] = []
-
+    
+    init(order: [Dish]) {
+        self.order = order
+    }
+    
     init(loadTestData: Bool = false) {
         if loadTestData {
             // Loading test data - now stored in `Dishes.swift`
@@ -133,10 +137,27 @@ struct Order {
      - Returns: Adds the `dish` to the existing order
 
     */
-    mutating func addToOrder(dish: Dish) {
+    func addToOrder(dish: Dish) {
         order.append(dish)
     }
+    
+    /**
+    Prints the dishes in the order
 
+     - Parameters:
+         - order: an Array of `Dish` objects
+
+     - Returns: Prints to the console
+
+    */
+    func printOrder() {
+        Swift.print("=== YOUR ORDER ===")
+        for entry in order {
+            Swift.print("Name: \(entry.name)")
+        }
+        Swift.print("===\n")
+    }
+    
     /**
     Prints the dishes that are marked as `special` in an order
 
@@ -146,7 +167,7 @@ struct Order {
      - Returns: Prints to the console
 
     */
-    mutating func printSpecials() {
+    func printSpecials() {
         for entry in order {
             if let special = entry.special {
                 Swift.print("===")
@@ -173,7 +194,7 @@ struct Order {
      - Returns: Prints to the console
 
      */
-    mutating func printDietaryDishes() {
+    func printDietaryDishes() {
         for entry in order {
             if let dietary = entry.dietary {
                 Swift.print("===")
@@ -198,7 +219,7 @@ struct Order {
      - Returns: `total`, the total cost of the dished in the order
 
      */
-    mutating func totalOrder(discounted: Bool) -> Double {
+    func totalOrder(discounted: Bool) -> Double {
         var total: Double = 0.0
         for entry in order {
             if discounted {

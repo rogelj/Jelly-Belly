@@ -8,25 +8,12 @@
 import SwiftUI
 
 struct HeaderViewOrder: View {
-//    @Binding var orderIsShowing: Bool
-    
     @Environment(\.verticalSizeClass) var verticalSizeClass
     @Environment(\.horizontalSizeClass) var horizontalSizeClass
     
     var body: some View {
         
         if verticalSizeClass == .regular && horizontalSizeClass == .compact {
-            HStack {
-                Spacer()
-                Button(action: {
-//                    orderIsShowing = false
-                }) {
-                    Text("Done")
-                        .bold()
-                        .foregroundColor(Color("Belly"))
-                }
-                .padding(.all)
-            }
             HStack(spacing: 20.0) {
                 BigText(text: "Your Order")
                 Spacer()
@@ -42,14 +29,6 @@ struct HeaderViewOrder: View {
                 Spacer()
                 RoundLogoView(imageSize: Constants.Logo.logoViewSizeSmall)
                 Spacer()
-                Button(action: {
-//                    orderIsShowing = false
-                }) {
-                    Text("Done")
-                        .bold()
-                        .foregroundColor(Color("Belly"))
-                }
-                .padding(.trailing)
             }
         }
     }
@@ -59,7 +38,6 @@ struct HeaderViewOrder: View {
  Main Order view
  */
 struct OrderView: View {
-//    @Binding var orderIsShowing: Bool
     @Binding var customerOrder: Order
     
     var body: some View {

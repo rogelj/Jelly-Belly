@@ -44,7 +44,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // UIKit > SwiftUI
         selectedItemName = menuItems[indexPath.row]
-        let vc = UIHostingController(rootView: MenuDetailedView(dish: selectedItemName))
-        self.present(vc, animated: true)
+//        let vc = UIHostingController(rootView: MenuDetailedView(dish: selectedItemName))
+//        self.present(vc, animated: true)
     }
 }

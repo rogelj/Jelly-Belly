@@ -9,12 +9,18 @@ import SwiftUI
 
 struct MenuDetailedView: View {
     var dish: Dish
+    @Binding var customerOrder: Order
     
     var body: some View {
         VStack {
             DishCircle(dishName: dish.name)
             DishInformation(dish: dish)
-
+            Spacer()
+                .frame(height: 30.0)
+            Button("Add to Order") {
+                customerOrder.addToOrder(dish: dish)
+                customerOrder.printOrder()
+            }
         }
         .padding()
         .frame(maxWidth: .infinity)
@@ -27,7 +33,10 @@ struct MenuDetailedView: View {
 
 
 struct MenuDetailedView_Previews: PreviewProvider {
+    static private var customerOrder = Binding.constant(Order(loadTestData: true))
+    
     static var previews: some View {
-        MenuDetailedView(dish: testDish)
+        MenuDetailedView(dish: testDish, customerOrder: customerOrder)
+//        MenuDetailedView(dish: testDish)
     }
 }

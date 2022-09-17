@@ -52,7 +52,7 @@ struct MenuExamples: View {
                             .bold()
                             .foregroundColor(Color("Jelly"))
                     }.sheet(isPresented: $menuSwiftUIIsShowing, onDismiss: {}, content: {
-                        MenuView()
+//                        MenuView()
                     })
                     
                     // Storyboard
