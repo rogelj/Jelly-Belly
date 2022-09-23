@@ -69,7 +69,7 @@ struct OrderView: View {
                     VStack() {
                         ForEach(orderCaretaker.order.indices, id: \.self) {
                             i in
-                            DishOrderView(dish: orderCaretaker.order[i])
+                            DishOrderView(dish: orderCaretaker.order[i], orderCaretaker: orderCaretaker)
                                 .padding(.trailing)
                                 .padding(.leading)
                         }

@@ -11,7 +11,7 @@ import Combine
 class OrderOriginator {
     @Published private(set) var orderState = [Dish]()
     
-    func removeDish() {
+    func removeLastDish() {
         guard !orderState.isEmpty else {
             return
         }
@@ -22,8 +22,14 @@ class OrderOriginator {
         orderState = []
     }
     
-    func addOrderItem(dish: Dish) {
+    func addDish(dish: Dish) {
         orderState.append(dish)
+    }
+    
+    func removeDish(dish: Dish) {
+        if let index = orderState.firstIndex(where: {$0.id == dish.id }) {
+            orderState.remove(at: index)
+        }
     }
         
     func createMemento() -> OrderMemento {

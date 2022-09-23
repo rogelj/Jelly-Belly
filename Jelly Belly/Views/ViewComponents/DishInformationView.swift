@@ -144,6 +144,7 @@ struct DishView: View {
 
 struct DishOrderView: View {
     var dish: Dish
+    @ObservedObject var orderCaretaker: OrderCaretaker
     
     var body: some View {
         
@@ -163,6 +164,12 @@ struct DishOrderView: View {
                 } else {
                     Text(String(format: "£%.2f", dish.cost))
             }
+            Spacer()
+            Button( action: {
+                removeFromOrder(orderCaretaker: orderCaretaker, dish: dish)
+            }) {
+                Image(systemName: "minus.circle")
+            }
         }
         .padding()
         .frame(maxWidth: .infinity)
@@ -172,8 +179,10 @@ struct DishOrderView: View {
 
 
 struct DishInformation_Previews: PreviewProvider {
+    static private var orderCaretaker = OrderCaretaker()
+    
     static var previews: some View {
         DishView(dish: testDish)
-        DishOrderView(dish: testDish)
+        DishOrderView(dish: testDish, orderCaretaker: orderCaretaker)
     }
 }

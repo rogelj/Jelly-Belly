@@ -24,15 +24,7 @@ class OrderCaretaker: ObservableObject {
 
     
     func addOrderItem(dish: Dish) {
-        orderOriginator.addOrderItem(dish: dish)
-        
-        let orderMemento = orderOriginator.createMemento()
-        
-        orderMementoStack.append(orderMemento)
-    }
-    
-    func removeRandomCartItem() {
-        orderOriginator.removeDish()
+        orderOriginator.addDish(dish: dish)
         
         let orderMemento = orderOriginator.createMemento()
         
@@ -40,7 +32,7 @@ class OrderCaretaker: ObservableObject {
     }
     
     func removeOrderItem(dish: Dish) {
-        orderOriginator.removeDish()
+        orderOriginator.removeDish(dish: dish)
         
         let orderMemento = orderOriginator.createMemento()
         
