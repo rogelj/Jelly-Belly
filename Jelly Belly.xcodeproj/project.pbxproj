@@ -10,6 +10,8 @@
 		46092F7828DDB170002E6F44 /* WelcomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46092F7728DDB170002E6F44 /* WelcomeViewModel.swift */; };
 		46092F7A28DDB302002E6F44 /* MenuDetailedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46092F7928DDB302002E6F44 /* MenuDetailedViewModel.swift */; };
 		46092F7C28DDB6AA002E6F44 /* Dish.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46092F7B28DDB6AA002E6F44 /* Dish.swift */; };
+		46092F7F28DDC2AA002E6F44 /* OrderOriginator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46092F7E28DDC2AA002E6F44 /* OrderOriginator.swift */; };
+		46092F8128DDC48C002E6F44 /* OrderCaretaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46092F8028DDC48C002E6F44 /* OrderCaretaker.swift */; };
 		46525CA628B6443B00D90956 /* OrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46525CA528B6443B00D90956 /* OrderView.swift */; };
 		46613C7228CB3AC100A70504 /* MenuItemTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46613C7128CB3AC100A70504 /* MenuItemTableViewController.swift */; };
 		46613C7428CB3CDF00A70504 /* SampleDishes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46613C7328CB3CDF00A70504 /* SampleDishes.swift */; };
@@ -44,6 +46,8 @@
 		46092F7728DDB170002E6F44 /* WelcomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewModel.swift; sourceTree = "<group>"; };
 		46092F7928DDB302002E6F44 /* MenuDetailedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuDetailedViewModel.swift; sourceTree = "<group>"; };
 		46092F7B28DDB6AA002E6F44 /* Dish.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dish.swift; sourceTree = "<group>"; };
+		46092F7E28DDC2AA002E6F44 /* OrderOriginator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderOriginator.swift; sourceTree = "<group>"; };
+		46092F8028DDC48C002E6F44 /* OrderCaretaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCaretaker.swift; sourceTree = "<group>"; };
 		46525CA528B6443B00D90956 /* OrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderView.swift; sourceTree = "<group>"; };
 		46613C7128CB3AC100A70504 /* MenuItemTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemTableViewController.swift; sourceTree = "<group>"; };
 		46613C7328CB3CDF00A70504 /* SampleDishes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleDishes.swift; sourceTree = "<group>"; };
@@ -100,6 +104,15 @@
 			path = ViewComponents;
 			sourceTree = "<group>";
 		};
+		46092F7D28DDC286002E6F44 /* OrderMemento */ = {
+			isa = PBXGroup;
+			children = (
+				46092F7E28DDC2AA002E6F44 /* OrderOriginator.swift */,
+				46092F8028DDC48C002E6F44 /* OrderCaretaker.swift */,
+			);
+			path = OrderMemento;
+			sourceTree = "<group>";
+		};
 		469BB5E228BFED10004BB435 /* CalculatingDiscounts */ = {
 			isa = PBXGroup;
 			children = (
@@ -130,6 +143,7 @@
 		46A1B01B28AFD7FC00302426 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				46092F7D28DDC286002E6F44 /* OrderMemento */,
 				46A1B02428AFDE2000302426 /* Constants.swift */,
 				46092F7B28DDB6AA002E6F44 /* Dish.swift */,
 				46E4379128B62061004FCB53 /* Order.swift */,
@@ -288,6 +302,7 @@
 				46A1B02128AFD93800302426 /* HomeBackgroundView.swift in Sources */,
 				46678A6428CF32AB00AD20D5 /* ViewController.swift in Sources */,
 				46AAB96528AFCDDE00DE602A /* ContentView.swift in Sources */,
+				46092F7F28DDC2AA002E6F44 /* OrderOriginator.swift in Sources */,
 				46F4DA0328D4EADD0088D91D /* DishInformationView.swift in Sources */,
 				46A1B01F28AFD91D00302426 /* RoundViews.swift in Sources */,
 				46E0E5CB28CCFB8500D2E6AD /* MenuExamples.swift in Sources */,
@@ -299,6 +314,7 @@
 				4689A9D728CE36D70091ABB2 /* MenuDetailedView.swift in Sources */,
 				46E0E5C928CCF67400D2E6AD /* UList_Menu.swift in Sources */,
 				46A1B02528AFDE2000302426 /* Constants.swift in Sources */,
+				46092F8128DDC48C002E6F44 /* OrderCaretaker.swift in Sources */,
 				46613C8628CBADC300A70504 /* MenuUIListView.swift in Sources */,
 				46F4D9FF28D4D2460088D91D /* WelcomeView.swift in Sources */,
 				46525CA628B6443B00D90956 /* OrderView.swift in Sources */,

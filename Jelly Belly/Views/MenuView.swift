@@ -60,7 +60,8 @@ struct HeaderViewMenu: View {
  */
 struct MenuView: View {
     @State var menuDishes = dishes
-    @EnvironmentObject var customerOrder: Order
+//    @EnvironmentObject var customerOrder: Order
+    @ObservedObject var orderCaretaker: OrderCaretaker
     
     var body: some View {
         NavigationView {
@@ -78,7 +79,7 @@ struct MenuView: View {
                         ForEach(DishParts.MealCategory.allCases, id: \.self) { category in
                             Section(header: MenuHeaderView(title: category.rawValue)) {
                                 ForEach(Dish.getDishes(by: category)) { dish in
-                                    NavigationLink(destination: MenuDetailedView(dish: dish)) {
+                                    NavigationLink(destination: MenuDetailedView(dish: dish, orderCaretaker: orderCaretaker)) {
                                         MenuRowView(dish: dish)
                                             .padding(.leading)
                                     }
@@ -104,16 +105,17 @@ struct MenuHeaderView: View {
 
 
 struct MenuView_Previews: PreviewProvider {
-    static private var menuSwiftUIIsShowing = Binding.constant(false)
-    static private var testOrder = Binding.constant(Order(loadTestData: true))
+//    static private var menuSwiftUIIsShowing = Binding.constant(false)
+//    static private var testOrder = Binding.constant(Order(loadTestData: true))
+    static private var orderCaretaker = OrderCaretaker()
     
     static var previews: some View {
-        MenuView()
-        MenuView()
+        MenuView(orderCaretaker: orderCaretaker)
+        MenuView(orderCaretaker: orderCaretaker)
             .preferredColorScheme(.dark)
-        MenuView()
+        MenuView(orderCaretaker: orderCaretaker)
             .previewInterfaceOrientation(.landscapeLeft)
-        MenuView()
+        MenuView(orderCaretaker: orderCaretaker)
             .previewInterfaceOrientation(.landscapeLeft)
             .preferredColorScheme(.dark)
     }

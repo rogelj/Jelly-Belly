@@ -7,7 +7,8 @@
 
 import UIKit
 
-func addToOrder(customerOrder: Order, dish: Dish) {
-    customerOrder.addToOrder(dish: dish)
-    customerOrder.printOrder()
+func addToOrder(orderCaretaker: OrderCaretaker, dish: Dish) {
+    orderCaretaker.addOrderItem(dish: dish)
+    orderCaretaker.printOrder()
+    
 }

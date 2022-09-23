@@ -10,6 +10,7 @@ import SwiftUI
 struct DiscountGridView: View {
     
     @State var menuDishes = dishes
+    @ObservedObject var orderCaretaker: OrderCaretaker
     
     var body: some View {
         NavigationView {
@@ -30,7 +31,7 @@ struct DiscountGridView: View {
                             ForEach(DishParts.MealCategory.allCases, id: \.self) { category in
                                 Section(header: MenuHeaderView(title: category.rawValue)) {
                                     ForEach(Dish.getDiscountDishes(by: category)) { dish in
-                                        NavigationLink(destination: MenuDetailedView(dish: dish)) {
+                                        NavigationLink(destination: MenuDetailedView(dish: dish, orderCaretaker: orderCaretaker)) {
                                             DishImage(dishName: dish.name)
                                                 .padding(.leading)
                                         }
@@ -70,9 +71,11 @@ struct DishImage: View {
 }
 
 struct DiscountGridView_Previews: PreviewProvider {
+    static private var orderCaretaker = OrderCaretaker()
+    
     static var previews: some View {
-        DiscountGridView()
-        DiscountGridView()
+        DiscountGridView(orderCaretaker: orderCaretaker)
+        DiscountGridView(orderCaretaker: orderCaretaker)
             .preferredColorScheme(.dark)
     }
 }
