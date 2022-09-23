@@ -79,15 +79,19 @@ struct OrderView: View {
 }
 
 struct OrderView_Previews: PreviewProvider {
-    static private var testOrder = Binding.constant(Order(loadTestData: true))
+    static private var testOrder = Order(loadTestData: true)
     
     static var previews: some View {
         OrderView()
+            .environmentObject(testOrder)
         OrderView()
+            .environmentObject(testOrder)
             .preferredColorScheme(.dark)
         OrderView()
+            .environmentObject(testOrder)
             .previewInterfaceOrientation(.landscapeLeft)
         OrderView()
+            .environmentObject(testOrder)
             .previewInterfaceOrientation(.landscapeLeft)
             .preferredColorScheme(.dark)
     }
