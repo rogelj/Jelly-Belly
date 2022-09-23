@@ -36,6 +36,5 @@ struct MenuDetailedView_Previews: PreviewProvider {
     
     static var previews: some View {
         MenuDetailedView(dish: testDish)
-//        MenuDetailedView(dish: testDish)
     }
 }

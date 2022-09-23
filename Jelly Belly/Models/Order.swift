@@ -8,6 +8,10 @@
 import Foundation
 import UIKit
 
+// I am using the Observer pattern in my Order class. The class is marked as an observable object and contains a
+// a variable called `order` that using the @Published property wrapper so that it can be observed from
+// within views elsewhere in the project. In this case the MenuDetailedView that adds items to an order,
+// and the OrderView that displays the contents of the order itself.
 class Order: ObservableObject {
     @Published var order: [Dish] = []
     
