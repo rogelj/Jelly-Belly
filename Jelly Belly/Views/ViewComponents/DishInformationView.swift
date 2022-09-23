@@ -148,21 +148,25 @@ struct DishOrderView: View {
     
     var body: some View {
         
-        HStack {
+        HStack(spacing: 10) {
             if dish.discountable != nil && dish.discountable == true {
-                Text(dish.name.uppercased() + "\n(Discount)")
-                    .bold()
-                    .font(.title3)
+                VStack(alignment: .leading) {
+                    Text(dish.name.uppercased())
+                        .bold()
+                        .font(.title3)
+                    Spacer()
+                        .frame(height: 5.0)
+                    Text(String(format: "£%.2f (with discount)", dish.finalCost))
+                }
             } else {
-                Text(dish.name.uppercased())
-                    .bold()
-                    .font(.title3)
-            }
-            Spacer()
-                if dish.discountable != nil && dish.discountable == true {
-                    Text(String(format: "£%.2f", dish.finalCost))
-                } else {
+                VStack(alignment: .leading) {
+                    Text(dish.name.uppercased())
+                        .bold()
+                        .font(.title3)
+                    Spacer()
+                        .frame(height: 5.0)
                     Text(String(format: "£%.2f", dish.cost))
+                }
             }
             Spacer()
             Button( action: {

@@ -21,7 +21,13 @@ class OrderCaretaker: ObservableObject {
             .$orderState
             .assign(to: \.order, on: self)
     }
-
+    
+    init(loadTestData: Bool = false) {
+        if loadTestData {
+            // Loading test data - now stored in `Dishes.swift`
+            order = dishes
+        }
+    }
     
     func addOrderItem(dish: Dish) {
         orderOriginator.addDish(dish: dish)
@@ -40,6 +46,12 @@ class OrderCaretaker: ObservableObject {
     }
     
     func clear() {
+        orderOriginator.resetState()
+        let orderMemento = orderOriginator.createMemento()
+        orderMementoStack.append(orderMemento)
+    }
+    
+    func undo() {
         guard !orderMementoStack.isEmpty else {
             return
         }

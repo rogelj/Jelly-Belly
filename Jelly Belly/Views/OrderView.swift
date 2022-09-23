@@ -51,20 +51,33 @@ struct OrderView: View {
         } else {
             VStack(spacing: 5.0) {
                 HeaderViewOrder()
-                Text(String(format: "Total for Order: £%.2f",
-                            orderCaretaker.totalOrder(discounted: false)))
-                .bold()
-                .padding(.leading)
-                .frame(maxWidth: .infinity, alignment: .leading)
-                Text(String(format: "Discounted: £%.2f",
-                            orderCaretaker.totalOrder(discounted: true)))
-                .bold()
-                .padding(.leading)
-                .frame(maxWidth: .infinity, alignment: .leading)
-                Text("Enjoy your meal!")
-                    .bold()
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding(.leading)
+                HStack {
+                    VStack(spacing: 5.0) {
+                        Text(String(format: "Total for Order: £%.2f",
+                                    orderCaretaker.totalOrder(discounted: false)))
+                        .bold()
+                        .padding(.leading)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        Text(String(format: "Discounted: £%.2f",
+                                    orderCaretaker.totalOrder(discounted: true)))
+                        .bold()
+                        .padding(.leading)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        Text("Enjoy your meal!")
+                            .bold()
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .padding(.leading)
+                    }
+                    Button(action: {
+                        orderCaretaker.clear()
+                    }) {
+                        Text("Clear Order")
+                            .foregroundColor(Color("Belly"))
+                            .bold()
+                    }
+                    .padding(.trailing)
+                }
+                
                 ScrollView {
                     VStack() {
                         ForEach(orderCaretaker.order.indices, id: \.self) {
@@ -84,20 +97,16 @@ struct OrderView: View {
 
 struct OrderView_Previews: PreviewProvider {
     static private var testOrder = Order(loadTestData: true)
-    static private var orderCaretaker = OrderCaretaker()
+    static private var orderCaretaker = OrderCaretaker(loadTestData: true)
 //    let orderCaretaker.order = dishes
     
     static var previews: some View {
         OrderView(orderCaretaker: orderCaretaker)
-            .environmentObject(testOrder)
         OrderView(orderCaretaker: orderCaretaker)
-            .environmentObject(testOrder)
             .preferredColorScheme(.dark)
         OrderView(orderCaretaker: orderCaretaker)
-            .environmentObject(testOrder)
             .previewInterfaceOrientation(.landscapeLeft)
         OrderView(orderCaretaker: orderCaretaker)
-            .environmentObject(testOrder)
             .previewInterfaceOrientation(.landscapeLeft)
             .preferredColorScheme(.dark)
     }
