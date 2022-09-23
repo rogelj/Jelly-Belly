@@ -10,8 +10,6 @@ import SwiftUI
 struct WelcomeView: View {
     @State private var customerOrder = Order()
     
-    let userName = "Jelly Belly"
-    
     var body: some View {
         ZStack {
             HomeBackgroundView(customerOrder: $customerOrder)
@@ -19,7 +17,8 @@ struct WelcomeView: View {
                 Spacer()
                     .frame(height: 30.0)
                 HStack {
-                    BigBoldText(text: greeting(userName: userName))
+                    // Using the constant declared for a username 
+                    BigBoldText(text: greeting(userName: userNameJB))
                         .padding(.leading, 30.0)
                         .padding(.trailing, 30.0)
                 }
@@ -30,21 +29,6 @@ struct WelcomeView: View {
     }
 }
 
-/**
- Greeting generates a welcoming message for the user name provided.
- It takes into account the orientation of the device.
- */
-func greeting(userName: String) -> String {
-    @Environment(\.verticalSizeClass) var verticalSizeClass
-    @Environment(\.horizontalSizeClass) var horizontalSizeClass
-    
-    if verticalSizeClass == .regular && horizontalSizeClass == .compact {
-        return "Welcome to\n\(userName)"
-    } else {
-        return "Welcome to \(userName)"
- 
-    }
-}
 
 struct WelcomeView_Previews: PreviewProvider {
     static var previews: some View {

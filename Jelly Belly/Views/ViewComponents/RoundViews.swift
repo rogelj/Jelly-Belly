@@ -154,7 +154,6 @@ struct RoundViews: View {
             RoundedImageView(systemName: "fork.knife")
             RoundLogoView(imageSize: Constants.Logo.logoViewSize)
             JellyBellyButton(message: "OK")
-            DishView(dish: testDish)
             DishCircle(dishName: "Fusilli Arrabiata")
         }
     }

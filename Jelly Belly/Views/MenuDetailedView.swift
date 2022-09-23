@@ -14,12 +14,11 @@ struct MenuDetailedView: View {
     var body: some View {
         VStack {
             DishCircle(dishName: dish.name)
-            DishInformation(dish: dish)
+            DishInformationView(dish: dish)
             Spacer()
                 .frame(height: 30.0)
             Button("Add to Order") {
-                customerOrder.addToOrder(dish: dish)
-                customerOrder.printOrder()
+                addToOrder(customerOrder: customerOrder, dish: dish)
             }
         }
         .padding()

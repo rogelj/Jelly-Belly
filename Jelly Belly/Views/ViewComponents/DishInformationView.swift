@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct DishInformation: View {
+struct DishInformationView: View {
     var dish: Dish
     var body: some View {
         VStack(spacing: 3) {
@@ -132,7 +132,7 @@ struct DishView: View {
                     .font(.title3)
                 Spacer()
             }
-            DishInformation(dish: dish)
+            DishInformationView(dish: dish)
         }
         .padding()
         .frame(maxWidth: .infinity)

@@ -82,13 +82,6 @@ struct RowViewOnboarding: View {
 struct OnboardView: View {
     @Binding var onboardingIsShowing: Bool
     
-    let featuresToBuild = ["The app shows a menu as a list",
-                       "Menu list is fetched from an API and saved in the app",
-                       "Users can choose menu items and add them to their order",
-                       "Upon placing an order, users can select or add a tip",
-                       "Upon checkout, total amount will be calculated",
-                       "Users can write a review of the menu item and add a photo of the dish"]
-    
     var body: some View {
         VStack(spacing: 20.0) {
             HeaderViewOnboarding(onboardingIsShowing: $onboardingIsShowing)

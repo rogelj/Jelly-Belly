@@ -5,6 +5,8 @@
 //  Created by J Rogel PhD on 19/08/2022.
 //
 
+// This folder contains constants that are used throughout the app
+
 import Foundation
 import UIKit
 
@@ -32,3 +34,14 @@ enum Constants {
 
 let jellyColour = UIColor(red: CGFloat(183)/CGFloat(255), green: CGFloat(43)/CGFloat(255), blue: CGFloat(211)/CGFloat(255), alpha: 1)
 let bellyColour = UIColor(red: CGFloat(87)/CGFloat(255), green: CGFloat(96)/CGFloat(255), blue: CGFloat(255)/CGFloat(255), alpha: 1)
+
+// Used in the welcome view
+let userNameJB = "Jelly Belly"
+
+// Used in the OnboardView
+let featuresToBuild = ["The app shows a menu as a list",
+                   "Menu list is fetched from an API and saved in the app",
+                   "Users can choose menu items and add them to their order",
+                   "Upon placing an order, users can select or add a tip",
+                   "Upon checkout, total amount will be calculated",
+                   "Users can write a review of the menu item and add a photo of the dish"]
