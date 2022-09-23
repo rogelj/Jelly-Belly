@@ -38,12 +38,10 @@ struct HeaderViewOrder: View {
  Main Order view
  */
 struct OrderView: View {
-//    @EnvironmentObject var customerOrder: Order
     @ObservedObject var orderCaretaker: OrderCaretaker
     
     var body: some View {
         if orderCaretaker.order.isEmpty {
-//        if customerOrder.order.isEmpty {
             VStack {
                 BigText(text: "Order something and make your belly happy\n🥳🍽")
                     .padding()

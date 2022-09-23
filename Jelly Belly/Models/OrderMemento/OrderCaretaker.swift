@@ -8,7 +8,12 @@
 import SwiftUI
 import Combine
 
-
+// I am using the Observer pattern in my OrderCaretaker class. The class is marked as an observable object and contains a
+// a variable called `order` that using the @Published property wrapper so that it can be observed from
+// within views elsewhere in the project.
+// In this case the ContentView marks an object of class OrderCaretaker as State Object, and this is observed by
+// MenuView, MenuDetailedView and OrderView to be able to adds items to an order, get items out or clear things
+// with the a Memento Pattern implementation. 
 class OrderCaretaker: ObservableObject {
     
     @Published private(set) var order = [Dish]()

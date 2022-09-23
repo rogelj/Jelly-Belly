@@ -9,7 +9,6 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var tabSelection = 1
-//    @StateObject var customerOrder = Order()
     @StateObject var orderCaretaker = OrderCaretaker()
     
     var menuDishes = dishes
@@ -24,7 +23,6 @@ struct ContentView: View {
                 .tag(0)
          
             MenuView(orderCaretaker: orderCaretaker)
-//                .environmentObject(customerOrder)
                 .tabItem {
                     Image(systemName: "fork.knife")
                     Text("Menu")
@@ -32,7 +30,6 @@ struct ContentView: View {
                 .tag(1)
          
             DiscountGridView(orderCaretaker: orderCaretaker)
-//                .environmentObject(customerOrder)
                 .tabItem {
                     Image(systemName: "gift")
                     Text("Discounts")
@@ -40,7 +37,6 @@ struct ContentView: View {
                 .tag(2)
          
             OrderView(orderCaretaker: orderCaretaker)
-//                .environmentObject(customerOrder)
                 .tabItem {
                     Image(systemName: "cart")
                     Text("Order")

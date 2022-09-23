@@ -9,7 +9,6 @@ import SwiftUI
 
 struct MenuDetailedView: View {
     var dish: Dish
-//    @EnvironmentObject var customerOrder: Order
     @ObservedObject var orderCaretaker: OrderCaretaker
     
     var body: some View {

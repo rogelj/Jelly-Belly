@@ -8,14 +8,13 @@
 import Foundation
 import UIKit
 
+// I am using a Memento pattern to be able to add, remove and clear the order stack.
+// The Originator is implemented in Models > OrderMemento > OrderOriginator.swift
+// The Caretaker is implemented in Models > OrderMemento > OrderCaretakes.swift 
 protocol OrderMemento {}
 
-// I am using the Observer pattern in my Order class. The class is marked as an observable object and contains a
-// a variable called `order` that using the @Published property wrapper so that it can be observed from
-// within views elsewhere in the project. In this case the MenuDetailedView that adds items to an order,
-// and the OrderView that displays the contents of the order itself.
-class Order: ObservableObject, OrderMemento {
-    @Published var order: [Dish] = []
+class Order: OrderMemento {
+    var order: [Dish] = []
     
     init(order: [Dish]) {
         self.order = order
