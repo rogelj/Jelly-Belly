@@ -111,7 +111,12 @@ extension Dish {
     - `ingredient: String`
     - `portion`: `Double`
 */
-struct Ingredients {
+struct Ingredients: Hashable {
     var ingredient: String
     var portion: Double
+}
+
+struct PizzaIngredients: Hashable {
+    var ingredients: Ingredients
+    var cost: Double
 }
