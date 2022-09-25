@@ -8,6 +8,13 @@
 import SwiftUI
 
 // PRODUCT - DISH, Builder - PizzaBuilder, Director - View
+
+// I have implemented a Builder pattern for users to be able to build their own pizza.
+// They can chose the ingredients from Proteins, Sauces, Cheeses and Vegetables. Note
+// that for the first three they can only choose at most one, whereas they can pick as many
+// vegetables as they want.
+// The Director is the JBPizzaView, the builder is presented below and the product is an
+// instance of the Dish class which can be added to an order.
 enum Proteins: String, CaseIterable, Identifiable {
     case none = "Pick one"
     case chicken
@@ -135,10 +142,4 @@ public class JBPizzaBuilder {
     }
 }
 
-//let builder = JBPizzaBuilder()
-//builder.setProtein(1)
-//builder.setSauce(2)
-//builder.setCheese(0)
-//builder.addVegetable([2,4,5])
-//builder.build()
 
