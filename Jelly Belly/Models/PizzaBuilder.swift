@@ -32,7 +32,7 @@ enum Cheeses: String, CaseIterable, Identifiable {
     case none = "Pick one"
     case mozarella
     case goatsCheese = "Goat's Cheese"
-    case gorgonxola
+    case gorgonzola
     case sheese
     
     var id: String { self.rawValue }
@@ -41,7 +41,7 @@ enum Cheeses: String, CaseIterable, Identifiable {
         case .none: return PizzaIngredients(ingredients: Ingredients(ingredient: "", portion: 0.0), cost: 0.0)
         case .mozarella: return PizzaIngredients(ingredients: Ingredients(ingredient: "Mozarella", portion: 1.0), cost: 2.0)
         case .goatsCheese: return PizzaIngredients(ingredients: Ingredients(ingredient: "Goat's Cheese", portion: 2.0), cost: 3.0)
-        case .gorgonxola: return PizzaIngredients(ingredients: Ingredients(ingredient: "Gotgonzola", portion: 1.0), cost: 3.0)
+        case .gorgonzola: return PizzaIngredients(ingredients: Ingredients(ingredient: "Gotgonzola", portion: 1.0), cost: 3.0)
         case .sheese: return PizzaIngredients(ingredients: Ingredients(ingredient: "Sheese", portion: 1.0), cost: 2.0)
         }
     }
@@ -65,19 +65,37 @@ enum Sauces: String, CaseIterable, Identifiable {
     }
 }
 
-var vegetableIngredients: [PizzaIngredients] = [
-    PizzaIngredients(ingredients: Ingredients(ingredient: "Mushrooms", portion: 1.0), cost: 2.0),
-    PizzaIngredients(ingredients: Ingredients(ingredient: "Pepperoni", portion: 1.0), cost: 2.0),
-    PizzaIngredients(ingredients: Ingredients(ingredient: "Olives", portion: 1.0), cost: 2.0),
-    PizzaIngredients(ingredients: Ingredients(ingredient: "Jalapeño", portion: 1.0), cost: 2.0),
-    PizzaIngredients(ingredients: Ingredients(ingredient: "Green Peppers", portion: 1.0), cost: 2.0),
-    PizzaIngredients(ingredients: Ingredients(ingredient: "Sweet Peppers", portion: 1.0), cost: 2.0),
-    PizzaIngredients(ingredients: Ingredients(ingredient: "Caramelised Onion", portion: 1.0), cost: 2.0),
-    PizzaIngredients(ingredients: Ingredients(ingredient: "Spinach", portion: 1.0), cost: 2.0),
-    PizzaIngredients(ingredients: Ingredients(ingredient: "Roasted Peppers", portion: 1.0), cost: 2.0),
-    PizzaIngredients(ingredients: Ingredients(ingredient: "Jackfruit", portion: 1.0), cost: 2.0),
-    PizzaIngredients(ingredients: Ingredients(ingredient: "Tomatoes", portion: 1.0), cost: 2.0)
-]
+enum Vegetables: String, CaseIterable, Identifiable {
+    case mushrooms
+    case pepperoni
+    case olives
+    case jalapeño
+    case greenPeppers = "Green peppers"
+    case sweetPeppers = "Sweet peppers"
+    case roastedPeppers = "Roasted peppers"
+    case caremelisedOnion = "Caramelised onion"
+    case spinach
+    case jackfruit
+    case tomatoes
+    
+    var id: String { self.rawValue }
+    
+    var vegetableIngredients: PizzaIngredients {
+        switch self {
+        case .mushrooms : return PizzaIngredients(ingredients: Ingredients(ingredient: "Mushrooms", portion: 1.0), cost: 2.0)
+        case .pepperoni : return PizzaIngredients(ingredients: Ingredients(ingredient: "Pepperoni", portion: 1.0), cost: 2.0)
+        case .olives : return PizzaIngredients(ingredients: Ingredients(ingredient: "Olives", portion: 1.0), cost: 2.0)
+        case .jalapeño : return PizzaIngredients(ingredients: Ingredients(ingredient: "Jalapeño", portion: 1.0), cost: 2.0)
+        case .greenPeppers : return PizzaIngredients(ingredients: Ingredients(ingredient: "Green Peppers", portion: 1.0), cost: 2.0)
+        case .sweetPeppers : return PizzaIngredients(ingredients: Ingredients(ingredient: "Sweet Peppers", portion: 1.0), cost: 2.0)
+        case .roastedPeppers : return PizzaIngredients(ingredients: Ingredients(ingredient: "Roasted Peppers", portion: 1.0), cost: 2.0)
+        case .caremelisedOnion : return PizzaIngredients(ingredients: Ingredients(ingredient: "Caramelised Onion", portion: 1.0), cost: 2.0)
+        case .spinach : return PizzaIngredients(ingredients: Ingredients(ingredient: "Spinach", portion: 1.0), cost: 2.0)
+        case .jackfruit : return PizzaIngredients(ingredients: Ingredients(ingredient: "Jackfruit", portion: 1.0), cost: 2.0)
+        case .tomatoes : return PizzaIngredients(ingredients: Ingredients(ingredient: "Tomatoes", portion: 1.0), cost: 2.0)
+        }
+    }
+}
 
 
 public class JBPizzaBuilder {
@@ -103,15 +121,15 @@ public class JBPizzaBuilder {
         self.cost += sauce.saugeIngredients.cost
     }
     
-    func addVegetable(_ vegetable: [Int]) {
+    func addVegetable(_ vegetable: [Vegetables]) {
         for veggie in vegetable {
-            self.ingredients.append(vegetableIngredients[veggie].ingredients)
-            self.cost += vegetableIngredients[veggie].cost
+            self.ingredients.append(veggie.vegetableIngredients.ingredients)
+            self.cost += veggie.vegetableIngredients.cost
         }
     }
     
     func build() -> Dish {
-        let name = "JB Pizza"
+        let name = "Your Jelly Belly Pizza"
     
         return  Dish(name: name, ingredients: ingredients, cuisine: DishParts.cuisine[0], mealCategory: DishParts.MealCategory.main, cost: cost)
     }

@@ -11,8 +11,8 @@ struct JBPizzaView: View {
     @State private var selectedProtein: Proteins = .none
     @State private var selectedSauce: Sauces = .none
     @State private var selectedCheese: Cheeses = .mozarella
-//    @State private var selectedVegetable: Int
-//
+    @State private var selectedVeggies: [Vegetables] = []
+
     var body: some View {
         NavigationView {
             VStack {
@@ -22,49 +22,68 @@ struct JBPizzaView: View {
                     Spacer()
                     RoundLogoView(imageSize: Constants.Logo.logoViewSizeTiny )
                         .padding()
-                    
                 }
+                
                 ScrollView {
                     LazyVStack(alignment: .leading, pinnedViews: [.sectionHeaders]) {
-                        VStack {
-                            MenuHeaderView(title:"Protein")
+                        HStack {
+                            BuilderHeaderView(title: "Protein")
                             Picker(selection: $selectedProtein, label: Text("Protein")) {
                                 ForEach(Proteins.allCases, content: { protein in
                                     Text(protein.rawValue.capitalized).tag(protein)
                                 })
-
                             }
-                        }.padding()
+                            Spacer()
+                        }
+                        .padding()
                         
-                        VStack {
-                            MenuHeaderView(title:"Sauce")
+                        HStack {
+                            BuilderHeaderView(title:"Sauce")
                             Picker(selection: $selectedSauce, label: Text("Sauce")) {
                                 ForEach(Sauces.allCases, content: { sauce in
-                                    Text(sauce.rawValue.capitalized)
+                                    Text(sauce.rawValue.capitalized).tag(sauce)
                                 })
-
+                            Spacer()
                             }
-                        }.padding()
-
-                        VStack {
-                            MenuHeaderView(title: "Cheese")
+                        }
+                        .padding()
+                        
+                        HStack {
+                            BuilderHeaderView(title: "Cheese")
                             Picker(selection: $selectedCheese, label: Text("Cheese")) {
                                 ForEach(Cheeses.allCases, content: { cheese in
                                     Text(cheese.rawValue.capitalized).tag(cheese)
                                 })
-
+                                
                             }
-                        }.padding()
-
+                        }
+                        .padding()
+                        
                         Section(header: MenuHeaderView(title: "Vegetables")) {
-                            ForEach(vegetableIngredients, id:\.self) { dish in
-                                Text(dish.ingredients.ingredient)
-                            }
-                        }.padding(.leading)
+                            LazyVGrid(
+                                columns: [.init(.adaptive(minimum: 150))]
+                            ) {
+                                ForEach(Vegetables.allCases) { veggie in
+                                    GridRow(item: veggie, items: $selectedVeggies)
+                                }
+                            }.padding()
+                        }
                     }
                 }
             }
         }
+    }
+}
+
+struct BuilderHeaderView: View {
+    var title: String
+    
+    var body: some View {
+        Text(title)
+            .foregroundColor(Color("Belly"))
+            .font(.title2)
+            .bold()
+            .multilineTextAlignment(.center)
     }
 }
 

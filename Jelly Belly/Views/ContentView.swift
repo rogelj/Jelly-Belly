@@ -38,7 +38,7 @@ struct ContentView: View {
             
             JBPizzaView()
                 .tabItem {
-                    Image(systemName: "plus.circle")
+                    Image(systemName: "chart.pie")
                     Text("JB Pizza")
                 }
                 .tag(3)

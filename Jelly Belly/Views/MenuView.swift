@@ -103,7 +103,6 @@ struct MenuHeaderView: View {
     }
 }
 
-
 struct MenuView_Previews: PreviewProvider {
 //    static private var menuSwiftUIIsShowing = Binding.constant(false)
 //    static private var testOrder = Binding.constant(Order(loadTestData: true))
