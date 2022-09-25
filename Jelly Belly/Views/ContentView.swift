@@ -35,13 +35,20 @@ struct ContentView: View {
                     Text("Discounts")
                 }
                 .tag(2)
+            
+            JBPizzaView()
+                .tabItem {
+                    Image(systemName: "plus.circle")
+                    Text("JB Pizza")
+                }
+                .tag(3)
          
             OrderView(orderCaretaker: orderCaretaker)
                 .tabItem {
                     Image(systemName: "cart")
                     Text("Order")
                 }
-                .tag(3)
+                .tag(4)
         }
         .accentColor(Color("Belly"))
     }

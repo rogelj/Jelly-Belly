@@ -8,14 +8,16 @@
 import SwiftUI
 
 struct JBPizzaView: View {
-    private var colors = ["Red", "Green", "Blue"]
-    @State private var selectedColorIndex: Int?
-    
+    @State private var selectedProtein: Proteins = .none
+    @State private var selectedSauce: Sauces = .none
+    @State private var selectedCheese: Cheeses = .mozarella
+//    @State private var selectedVegetable: Int
+//
     var body: some View {
         NavigationView {
             VStack {
                 HStack {
-                    BigText(text: "Jelly Belly Menu")
+                    BigText(text: "Jelly Belly Pizza")
                         .padding()
                     Spacer()
                     RoundLogoView(imageSize: Constants.Logo.logoViewSizeTiny )
@@ -25,40 +27,36 @@ struct JBPizzaView: View {
                 ScrollView {
                     LazyVStack(alignment: .leading, pinnedViews: [.sectionHeaders]) {
                         VStack {
-                            MenuHeaderView(title:"Protein: ")
-                            Picker(selection: $selectedColorIndex, label: Text("Protein")) {
-                                Text("(Can choose 1)")
-                                ForEach(proteinIngredients, id: \.self, content: { protein in
-                                    Text(protein.ingredients.ingredient)
+                            MenuHeaderView(title:"Protein")
+                            Picker(selection: $selectedProtein, label: Text("Protein")) {
+                                ForEach(Proteins.allCases, content: { protein in
+                                    Text(protein.rawValue.capitalized).tag(protein)
                                 })
-                                
-                            }
-                        }.padding()
-                        
-                        VStack {
-                            MenuHeaderView(title:"Sauce: ")
-                            Picker(selection: $selectedColorIndex, label: Text("Sauce")) {
-                                Text("(Can choose 1)")
-                                ForEach(sauceIngredients, id: \.self, content: { sauce in
-                                    Text(sauce.ingredients.ingredient)
-                                })
-                                
-                            }
-                        }.padding()
-                        
-                        VStack {
-                            MenuHeaderView(title: "Cheese: ")
-                            Picker(selection: $selectedColorIndex, label: Text("Cheese")) {
-                                Text("(Can choose 1)")
-                                ForEach(cheeseIngredients, id: \.self, content: { cheese in
-                                    Text(cheese.ingredients.ingredient)
-                                })
-                                
-                            }
-                        }.padding()
-                        
 
-                        Section(header: MenuHeaderView(title: "Vegetable")) {
+                            }
+                        }.padding()
+                        
+                        VStack {
+                            MenuHeaderView(title:"Sauce")
+                            Picker(selection: $selectedSauce, label: Text("Sauce")) {
+                                ForEach(Sauces.allCases, content: { sauce in
+                                    Text(sauce.rawValue.capitalized)
+                                })
+
+                            }
+                        }.padding()
+
+                        VStack {
+                            MenuHeaderView(title: "Cheese")
+                            Picker(selection: $selectedCheese, label: Text("Cheese")) {
+                                ForEach(Cheeses.allCases, content: { cheese in
+                                    Text(cheese.rawValue.capitalized).tag(cheese)
+                                })
+
+                            }
+                        }.padding()
+
+                        Section(header: MenuHeaderView(title: "Vegetables")) {
                             ForEach(vegetableIngredients, id:\.self) { dish in
                                 Text(dish.ingredients.ingredient)
                             }
@@ -72,6 +70,11 @@ struct JBPizzaView: View {
 
 struct JBPizzaView_Previews: PreviewProvider {
     static var previews: some View {
+//        static private var selectedProtein = Binding.constant(0)
+//        static private var selectedSauce = Binding.constant(0)
+//        static private var selectedCheese = Binding.constant(0)
+//        static private var selectedVegetable = Binding.constant(0)
+        
         JBPizzaView()
     }
 }
