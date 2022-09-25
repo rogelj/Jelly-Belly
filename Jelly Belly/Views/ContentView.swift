@@ -36,7 +36,7 @@ struct ContentView: View {
                 }
                 .tag(2)
             
-            JBPizzaView()
+            JBPizzaView(orderCaretaker: orderCaretaker)
                 .tabItem {
                     Image(systemName: "chart.pie")
                     Text("JB Pizza")

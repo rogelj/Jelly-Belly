@@ -6,6 +6,23 @@
 //
 import SwiftUI
 
+func buildJBPizza(protein: Proteins, sauce: Sauces, cheese: Cheeses, veggies: [Vegetables], orderCaretaker: OrderCaretaker) {
+    
+    let builder = JBPizzaBuilder()
+    if protein != .none {
+        builder.setProtein(protein)
+    }
+    if sauce != .none {
+        builder.setSauce(sauce)
+    }
+    builder.setCheese(cheese)
+    builder.addVegetable(veggies)
+    
+    let JBPizza = builder.build()
+
+    addToOrder(orderCaretaker: orderCaretaker, dish: JBPizza)
+}
+
 struct GridRow: View {
     let item: Vegetables
     
