@@ -25,11 +25,11 @@ struct JBPizzaView: View {
                     RoundLogoView(imageSize: Constants.Logo.logoViewSizeTiny )
                         .padding()
                 }
-                Spacer()
-                    .frame(height: 30.0)
-                Button("Add to Order") {
-                    buildJBPizza(protein: selectedProtein, sauce: selectedSauce, cheese: selectedCheese, veggies: selectedVeggies, orderCaretaker: orderCaretaker)
-                }
+//                Spacer()
+//                    .frame(height: 30.0)
+//                Button("Add to Order") {
+//                    buildJBPizza(protein: selectedProtein, sauce: selectedSauce, cheese: selectedCheese, veggies: selectedVeggies, orderCaretaker: orderCaretaker)
+//                }
                 ScrollViewReader { scrollProxy in
                     ScrollView {
                         LazyVStack(alignment: .leading, pinnedViews: [.sectionHeaders]) {
@@ -76,6 +76,12 @@ struct JBPizzaView: View {
                             }
                         }
                     }
+                    Button("Add to Order") {
+                        buildJBPizza(protein: selectedProtein, sauce: selectedSauce, cheese: selectedCheese, veggies: selectedVeggies, orderCaretaker: orderCaretaker)
+                    }
+                    .padding()
+                    Spacer()
+                        .frame(height: 10.0)
                 }
             }
         }

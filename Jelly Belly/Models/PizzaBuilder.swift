@@ -106,10 +106,7 @@ enum Vegetables: String, CaseIterable, Identifiable {
 
 
 public class JBPizzaBuilder {
-    private(set) var protein: Int?
-    private(set) var cheese: Int = 0
-    private(set) var vegetables: [Int] = []
-    private(set) var sauce: Int = 0
+
     var ingredients: [Ingredients] = [Ingredients(ingredient: "Pizza Base", portion: 1.0)]
     var cost: Double = 5.0
     
