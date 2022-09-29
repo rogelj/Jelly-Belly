@@ -9,8 +9,6 @@ import Foundation
 
 import SwiftUI
 
-extension Dish: Identifiable { }
-
 // Moving my test data into a separate file so I can reuse it elsewhere
 let dishes: [Dish] = [
     Dish(
@@ -311,7 +309,5 @@ let testDish = Dish(name: "Fusilli Arrabiata",
                     special: true,
                     dietary: DishParts.diet[0],
                     discountable: true)
-
-var myOrder = Order()
 
 

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct DishInformation: View {
+struct DishInformationView: View {
     var dish: Dish
     var body: some View {
         VStack(spacing: 3) {
@@ -132,7 +132,7 @@ struct DishView: View {
                     .font(.title3)
                 Spacer()
             }
-            DishInformation(dish: dish)
+            DishInformationView(dish: dish)
         }
         .padding()
         .frame(maxWidth: .infinity)
@@ -144,24 +144,35 @@ struct DishView: View {
 
 struct DishOrderView: View {
     var dish: Dish
+    @ObservedObject var orderCaretaker: OrderCaretaker
     
     var body: some View {
         
-        HStack {
+        HStack(spacing: 10) {
             if dish.discountable != nil && dish.discountable == true {
-                Text(dish.name.uppercased() + "\n(Discount)")
-                    .bold()
-                    .font(.title3)
+                VStack(alignment: .leading) {
+                    Text(dish.name.uppercased())
+                        .bold()
+                        .font(.title3)
+                    Spacer()
+                        .frame(height: 5.0)
+                    Text(String(format: "£%.2f (with discount)", dish.finalCost))
+                }
             } else {
-                Text(dish.name.uppercased())
-                    .bold()
-                    .font(.title3)
+                VStack(alignment: .leading) {
+                    Text(dish.name.uppercased())
+                        .bold()
+                        .font(.title3)
+                    Spacer()
+                        .frame(height: 5.0)
+                    Text(String(format: "£%.2f", dish.cost))
+                }
             }
             Spacer()
-                if dish.discountable != nil && dish.discountable == true {
-                    Text(String(format: "£%.2f", dish.finalCost))
-                } else {
-                    Text(String(format: "£%.2f", dish.cost))
+            Button( action: {
+                removeFromOrder(orderCaretaker: orderCaretaker, dish: dish)
+            }) {
+                Image(systemName: "minus.circle")
             }
         }
         .padding()
@@ -172,8 +183,10 @@ struct DishOrderView: View {
 
 
 struct DishInformation_Previews: PreviewProvider {
+    static private var orderCaretaker = OrderCaretaker()
+    
     static var previews: some View {
         DishView(dish: testDish)
-        DishOrderView(dish: testDish)
+        DishOrderView(dish: testDish, orderCaretaker: orderCaretaker)
     }
 }

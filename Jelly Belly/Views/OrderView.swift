@@ -38,10 +38,10 @@ struct HeaderViewOrder: View {
  Main Order view
  */
 struct OrderView: View {
-    @EnvironmentObject var customerOrder: Order
+    @ObservedObject var orderCaretaker: OrderCaretaker
     
     var body: some View {
-        if customerOrder.order.isEmpty {
+        if orderCaretaker.order.isEmpty {
             VStack {
                 BigText(text: "Order something and make your belly happy\n🥳🍽")
                     .padding()
@@ -49,23 +49,38 @@ struct OrderView: View {
         } else {
             VStack(spacing: 5.0) {
                 HeaderViewOrder()
-                Text(String(format: "Total for Order: £%.2f", customerOrder.totalOrder(discounted: false)))
-                    .bold()
-                    .padding(.leading)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                Text(String(format: "Discounted: £%.2f", customerOrder.totalOrder(discounted: true)))
-                    .bold()
-                    .padding(.leading)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                Text("Enjoy your meal!")
-                    .bold()
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding(.leading)
+                HStack {
+                    VStack(spacing: 5.0) {
+                        Text(String(format: "Total for Order: £%.2f",
+                                    orderCaretaker.totalOrder(discounted: false)))
+                        .bold()
+                        .padding(.leading)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        Text(String(format: "Discounted: £%.2f",
+                                    orderCaretaker.totalOrder(discounted: true)))
+                        .bold()
+                        .padding(.leading)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        Text("Enjoy your meal!")
+                            .bold()
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .padding(.leading)
+                    }
+                    Button(action: {
+                        orderCaretaker.clear()
+                    }) {
+                        Text("Clear Order")
+                            .foregroundColor(Color("Belly"))
+                            .bold()
+                    }
+                    .padding(.trailing)
+                }
+                
                 ScrollView {
                     VStack() {
-                        ForEach(customerOrder.order.indices, id: \.self) {
+                        ForEach(orderCaretaker.order.indices, id: \.self) {
                             i in
-                            DishOrderView(dish: customerOrder.order[i])
+                            DishOrderView(dish: orderCaretaker.order[i], orderCaretaker: orderCaretaker)
                                 .padding(.trailing)
                                 .padding(.leading)
                         }
@@ -79,15 +94,17 @@ struct OrderView: View {
 }
 
 struct OrderView_Previews: PreviewProvider {
-    static private var testOrder = Binding.constant(Order(loadTestData: true))
+    static private var testOrder = Order(loadTestData: true)
+    static private var orderCaretaker = OrderCaretaker(loadTestData: true)
+//    let orderCaretaker.order = dishes
     
     static var previews: some View {
-        OrderView()
-        OrderView()
+        OrderView(orderCaretaker: orderCaretaker)
+        OrderView(orderCaretaker: orderCaretaker)
             .preferredColorScheme(.dark)
-        OrderView()
+        OrderView(orderCaretaker: orderCaretaker)
             .previewInterfaceOrientation(.landscapeLeft)
-        OrderView()
+        OrderView(orderCaretaker: orderCaretaker)
             .previewInterfaceOrientation(.landscapeLeft)
             .preferredColorScheme(.dark)
     }

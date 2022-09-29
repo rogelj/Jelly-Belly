@@ -26,21 +26,12 @@ struct TopView: View {
             })
             .padding()
             Spacer()
-//            Button( action: {
-//                menuExamplesIsShowing = true
-//            }) {
-//                RoundedImageView(systemName: "fork.knife")
-//            }
-//            .fullScreenCover(isPresented: $menuExamplesIsShowing, onDismiss: {}, content: {
-//                MenuExamples(menuExamplesIsShowing: $menuExamplesIsShowing, customerOrder: $customerOrder)
-//            })
-//            .padding()
         }
     }
 }
 
 /**
- A  view to with a bacground in the `BackgroundColorAccent` color
+ A  view to with a background in the `BackgroundColorAccent` color
  */
 struct BackgroundView: View {
     var body: some View {

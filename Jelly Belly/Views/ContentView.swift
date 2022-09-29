@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var tabSelection = 1
-    @StateObject var customerOrder = Order()
+    @StateObject var orderCaretaker = OrderCaretaker()
     
     var menuDishes = dishes
 
@@ -22,29 +22,33 @@ struct ContentView: View {
                 }
                 .tag(0)
          
-            MenuView()
-                .environmentObject(customerOrder)
+            MenuView(orderCaretaker: orderCaretaker)
                 .tabItem {
                     Image(systemName: "fork.knife")
                     Text("Menu")
                 }
                 .tag(1)
          
-            DiscountGridView()
-                .environmentObject(customerOrder)
+            DiscountGridView(orderCaretaker: orderCaretaker)
                 .tabItem {
                     Image(systemName: "gift")
                     Text("Discounts")
                 }
                 .tag(2)
+            
+            JBPizzaView(orderCaretaker: orderCaretaker)
+                .tabItem {
+                    Image(systemName: "chart.pie")
+                    Text("JB Pizza")
+                }
+                .tag(3)
          
-            OrderView()
-                .environmentObject(customerOrder)
+            OrderView(orderCaretaker: orderCaretaker)
                 .tabItem {
                     Image(systemName: "cart")
                     Text("Order")
                 }
-                .tag(3)
+                .tag(4)
         }
         .accentColor(Color("Belly"))
     }

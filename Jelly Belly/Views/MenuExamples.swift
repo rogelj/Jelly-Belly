@@ -15,6 +15,7 @@ struct MenuExamples: View {
     
     @Binding var menuExamplesIsShowing: Bool
     @Binding var customerOrder: Order
+    @ObservedObject var orderCaretaker: OrderCaretaker
     
     var body: some View {
         VStack {
@@ -41,7 +42,7 @@ struct MenuExamples: View {
                             .bold()
                             .foregroundColor(Color("Jelly"))
                     }.sheet(isPresented: $orderIsShowing, onDismiss: {}, content: {
-                        OrderView()
+                        OrderView(orderCaretaker: orderCaretaker)
                     })
                     
                     // SwiftUI
@@ -86,14 +87,15 @@ struct MenuExamples: View {
 struct MenuExamples_Previews: PreviewProvider {
     static private var menuExamplesIsShowing = Binding.constant(false)
     static private var testOrder = Binding.constant(Order(loadTestData: true))
+    static private var orderCaretaker = OrderCaretaker()
     
     static var previews: some View {
-        MenuExamples(menuExamplesIsShowing: menuExamplesIsShowing, customerOrder: testOrder)
-        MenuExamples(menuExamplesIsShowing: menuExamplesIsShowing, customerOrder: testOrder)
+        MenuExamples(menuExamplesIsShowing: menuExamplesIsShowing, customerOrder: testOrder, orderCaretaker: orderCaretaker)
+        MenuExamples(menuExamplesIsShowing: menuExamplesIsShowing, customerOrder: testOrder, orderCaretaker: orderCaretaker)
             .preferredColorScheme(.dark)
-        MenuExamples(menuExamplesIsShowing: menuExamplesIsShowing, customerOrder: testOrder)
+        MenuExamples(menuExamplesIsShowing: menuExamplesIsShowing, customerOrder: testOrder, orderCaretaker: orderCaretaker)
             .previewInterfaceOrientation(.landscapeLeft)
-        MenuExamples(menuExamplesIsShowing: menuExamplesIsShowing, customerOrder: testOrder)
+        MenuExamples(menuExamplesIsShowing: menuExamplesIsShowing, customerOrder: testOrder, orderCaretaker: orderCaretaker)
             .previewInterfaceOrientation(.landscapeLeft)
             .preferredColorScheme(.dark)
     }
