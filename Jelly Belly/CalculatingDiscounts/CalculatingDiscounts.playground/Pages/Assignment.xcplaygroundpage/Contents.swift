@@ -334,7 +334,7 @@ print("Rounded to £\(discount2.roundNearest())")
 
 func welcome(name: String) -> NSAttributedString {
     let jellyColour = UIColor(red: CGFloat(183)/CGFloat(255), green: CGFloat(43)/CGFloat(255), blue: CGFloat(211)/CGFloat(255), alpha: 1)
-
+    
     let jellyShadow = NSShadow()
     jellyShadow.shadowColor = jellyColour
     jellyShadow.shadowBlurRadius = 5

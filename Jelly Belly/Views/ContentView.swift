@@ -8,45 +8,51 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var customerOrder = Order()
+    @State private var tabSelection = 1
+    @StateObject var customerOrder = Order()
     
-    let userName = "John Appleseed"
-    
-    var body: some View {
-        ZStack {
-            HomeBackgroundView(customerOrder: $customerOrder)
-            VStack {
-                Spacer()
-                    .frame(height: 30.0)
-                HStack {
-                    BigBoldText(text: greeting(userName: userName))
-                        .padding(.leading, 30.0)
-                        .padding(.trailing, 30.0)
-                }
-            .padding(.bottom, 300)
-            }
-            RoundLogoView(imageSize: Constants.Logo.logoViewSize)
-        }
-    }
-}
+    var menuDishes = dishes
 
-/**
- Greeting generates a welcoming message for the user name provided.
- It takes into account the orientation of the device.
- */
-func greeting(userName: String) -> String {
-    @Environment(\.verticalSizeClass) var verticalSizeClass
-    @Environment(\.horizontalSizeClass) var horizontalSizeClass
-    
-    if verticalSizeClass == .regular && horizontalSizeClass == .compact {
-        return "Welcome\n\(userName)"
-    } else {
-        return "Welcome \(userName)"
- 
+    var body: some View {
+        TabView(selection: $tabSelection) {
+            WelcomeView()
+                .tabItem {
+                    Image(systemName: "house")
+                    Text("Home")
+                }
+                .tag(0)
+         
+            MenuView()
+                .environmentObject(customerOrder)
+                .tabItem {
+                    Image(systemName: "fork.knife")
+                    Text("Menu")
+                }
+                .tag(1)
+         
+            DiscountGridView()
+                .environmentObject(customerOrder)
+                .tabItem {
+                    Image(systemName: "gift")
+                    Text("Discounts")
+                }
+                .tag(2)
+         
+            OrderView()
+                .environmentObject(customerOrder)
+                .tabItem {
+                    Image(systemName: "cart")
+                    Text("Order")
+                }
+                .tag(3)
+        }
+        .accentColor(Color("Belly"))
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
+    static private var testOrder = Binding.constant(Order(loadTestData: true))
+    
     static var previews: some View {
         ContentView()
         ContentView()

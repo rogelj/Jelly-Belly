@@ -27,7 +27,8 @@ struct Ingredients {
     - `name: String`
     - `ingredients`: `Array` of `Ingredients`
     - `cusine: String`
-    - `mealType: String`
+    //- `mealType: String`
+    - `mealCategory: DisParts.MealCategory`
     - `special: Bool?` (optional) - Is the dish a special this month?
     - `dietary: String?` (optional) - Dietary restriction
     - `cost: Double`
@@ -37,10 +38,11 @@ struct Ingredients {
  
 */
 class Dish {
+    let id = UUID()
     let name: String
     var ingredients: [Ingredients]
     var cuisine: String
-    var mealType: (String, String)
+    var mealCategory: DishParts.MealCategory
     var cost: Double
     var special: Bool?
     var dietary: String?
@@ -62,12 +64,12 @@ class Dish {
 //        }
     }
     
-    init(name: String, ingredients: [Ingredients], cuisine: String, mealType: (String, String),
+    init(name: String, ingredients: [Ingredients], cuisine: String, mealCategory: DishParts.MealCategory,
          cost: Double, special: Bool? = nil, dietary: String? = nil, discountable: Bool? = nil) {
         self.name = name
         self.ingredients = ingredients
         self.cuisine = cuisine
-        self.mealType = mealType
+        self.mealCategory = mealCategory
         self.cost = cost
         self.special = special
         self.dietary = dietary
@@ -97,74 +99,32 @@ class Dish {
     }
 }
 
-struct Order {
-    var order: [Dish] = []
+extension Dish {
+    static func getDishes(by mealCategory: DishParts.MealCategory) -> [Dish] {
+        dishes.filter { dish in
+            dish.mealCategory == mealCategory
+        }
+    }
+    
+    static func getDiscountDishes(by mealCategory: DishParts.MealCategory) -> [Dish] {
+        dishes.filter { dish in
+            dish.mealCategory == mealCategory && dish.discountable == true
+        }
+    }
+    
+}
 
+class Order: ObservableObject {
+    @Published var order: [Dish] = []
+    
+    init(order: [Dish]) {
+        self.order = order
+    }
+    
     init(loadTestData: Bool = false) {
         if loadTestData {
-            var testOrder = Order()
-            let fusilliArrabiata = Dish(name: "Fusilli Arrabiata",
-                                        ingredients: [Ingredients(ingredient: "Fusilli", portion: 2.0),
-                                                      Ingredients(ingredient: "Parmesan", portion: 1.0),
-                                                      Ingredients(ingredient: "Pasta Sauce", portion: 1.0)],
-                                        cuisine: DishParts.cuisine[0],
-                                        mealType: DishParts.mealType[1],
-                                        cost: 15.0,
-                                        special: true,
-                                        discountable: true)
-
-            let pizzaMargherita = Dish(name: "Pizza Margherita",
-                                       ingredients: [Ingredients(ingredient: "Pizza Base", portion: 1.0),
-                                                     Ingredients(ingredient: "Mozarella", portion: 2.0),
-                                                     Ingredients(ingredient: "Pasta Sauce", portion: 2.0)],
-                                       cuisine: DishParts.cuisine[0],
-                                       mealType: DishParts.mealType[1],
-                                       cost: 19.0,
-                                       dietary: DishParts.diet[0],
-                                       discountable: false)
-
-            let lemonade = Dish(name: "Lemonade",
-                                ingredients: [Ingredients(ingredient: "Lemon", portion: 3.0),
-                                              Ingredients(ingredient:"Sugar", portion: 1.0)],
-                                cuisine: DishParts.cuisine[2],
-                                mealType: DishParts.mealType[3],
-                                cost: 9.0)
-
-            let naranjada = Dish(name: "Naranjada",
-                                 ingredients: [Ingredients(ingredient: "Orange", portion: 3),
-                                               Ingredients(ingredient: "Sugar", portion: 0.5)],
-                                 cuisine: DishParts.cuisine[1],
-                                 mealType: DishParts.mealType[3],
-                                 cost: 12.0,
-                                 special: true)
-
-            let garlicBread = Dish(name: "Garlic Bread",
-                                   ingredients: [Ingredients(ingredient: "Garlic", portion: 1),
-                                                 Ingredients(ingredient: "Parmesan", portion: 2),
-                                                 Ingredients(ingredient: "Bread", portion: 2)],
-                                   cuisine: DishParts.cuisine[0],
-                                   mealType: DishParts.mealType[0],
-                                   cost: 9.0,
-                                   dietary: DishParts.diet[0],
-                                   discountable: true)
-
-            let tiramisu = Dish(name: "Tiramisu",
-                                ingredients: [Ingredients(ingredient: "Chocolate", portion: 1),
-                                              Ingredients(ingredient: "Cream", portion: 2),
-                                              Ingredients(ingredient: "Mascarpone", portion:  2),
-                                              Ingredients(ingredient: "Coffee", portion: 1)],
-                                cuisine: DishParts.cuisine[0],
-                                mealType: DishParts.mealType[2],
-                                cost: 14.0,
-                                discountable: false)
-
-            testOrder.addToOrder(dish: fusilliArrabiata)
-            testOrder.addToOrder(dish: pizzaMargherita)
-            testOrder.addToOrder(dish: lemonade)
-            testOrder.addToOrder(dish: naranjada)
-            testOrder.addToOrder(dish: garlicBread)
-            testOrder.addToOrder(dish: tiramisu)
-            order = testOrder.order
+            // Loading test data - now stored in `Dishes.swift`
+            order = dishes
         }
     }
 
@@ -177,10 +137,27 @@ struct Order {
      - Returns: Adds the `dish` to the existing order
 
     */
-    mutating func addToOrder(dish: Dish) {
+    func addToOrder(dish: Dish) {
         order.append(dish)
     }
+    
+    /**
+    Prints the dishes in the order
 
+     - Parameters:
+         - order: an Array of `Dish` objects
+
+     - Returns: Prints to the console
+
+    */
+    func printOrder() {
+        Swift.print("=== YOUR ORDER ===")
+        for entry in order {
+            Swift.print("Name: \(entry.name)")
+        }
+        Swift.print("===\n")
+    }
+    
     /**
     Prints the dishes that are marked as `special` in an order
 
@@ -190,7 +167,7 @@ struct Order {
      - Returns: Prints to the console
 
     */
-    mutating func printSpecials() {
+    func printSpecials() {
         for entry in order {
             if let special = entry.special {
                 Swift.print("===")
@@ -200,7 +177,6 @@ struct Order {
                     Swift.print("- \(ingredient.ingredient)")
                 }
                 Swift.print("Cusine: \(entry.cuisine)")
-                Swift.print("Meal Type: \(entry.mealType)")
                 Swift.print("Cost: \(entry.cost)")
                 Swift.print("Special: \(special)")
                 Swift.print("===\n")
@@ -218,7 +194,7 @@ struct Order {
      - Returns: Prints to the console
 
      */
-    mutating func printDietaryDishes() {
+    func printDietaryDishes() {
         for entry in order {
             if let dietary = entry.dietary {
                 Swift.print("===")
@@ -228,7 +204,6 @@ struct Order {
                     print("- \(ingredient.ingredient)")
                 }
                 Swift.print("Cusine: \(entry.cuisine)")
-                Swift.print("Meal Type: \(entry.mealType)")
                 Swift.print("Cost: \(entry.cost)")
                 Swift.print("Dietary: \(dietary)")
                 Swift.print("===\n")
@@ -244,7 +219,7 @@ struct Order {
      - Returns: `total`, the total cost of the dished in the order
 
      */
-    mutating func totalOrder(discounted: Bool) -> Double {
+    func totalOrder(discounted: Bool) -> Double {
         var total: Double = 0.0
         for entry in order {
             if discounted {

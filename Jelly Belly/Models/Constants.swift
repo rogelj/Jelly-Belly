@@ -19,6 +19,7 @@ enum Constants {
     enum Logo {
         public static let logoViewSize: CGFloat = 100.0
         public static let logoViewSizeSmall: CGFloat = 75.0
+        public static let logoViewSizeTiny: CGFloat = 40.0
     }
     
     enum DiscountTypes: Double {
@@ -28,3 +29,6 @@ enum Constants {
         case newYear = 0.2
     }
 }
+
+let jellyColour = UIColor(red: CGFloat(183)/CGFloat(255), green: CGFloat(43)/CGFloat(255), blue: CGFloat(211)/CGFloat(255), alpha: 1)
+let bellyColour = UIColor(red: CGFloat(87)/CGFloat(255), green: CGFloat(96)/CGFloat(255), blue: CGFloat(255)/CGFloat(255), alpha: 1)

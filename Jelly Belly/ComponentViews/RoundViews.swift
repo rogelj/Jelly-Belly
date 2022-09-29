@@ -64,7 +64,7 @@ struct RoundLogoView: View {
 }
 
 /**
- A  view to create a custom button
+ An example on how  to create a custom button
  */
 struct JellyBellyButton: View {
     var message: String
@@ -100,7 +100,7 @@ struct WideBellyButton: ButtonStyle {
     }
 }
 
-struct DishView: View {
+struct MenuRowView: View {
     var dish: Dish
     
     var body: some View {
@@ -122,87 +122,32 @@ struct DishView: View {
                         .font(.title3)
                     Spacer()
                 }
-                Text(dish.mealType.1)
-                    .font(.title)
+                Image(systemName: "chevron.right")
+                    .font(.title2)
+                    .foregroundColor(.gray)
+                    .padding(.trailing)
             }
-            HStack {
-                if dish.discountable != nil && dish.discountable == true {
-                    Text("Seasonal discount available")
-                        .foregroundColor(Color("Belly"))
-                        .font(.headline)
-                }
-                Spacer()
-            }
-            HStack(alignment: .top) {
-                VStack {
-                    DishItemText(text: "Ingredients:")
-                        .bold()
-                    ForEach(dish.ingredients.indices, id: \.self) {
-                        i in DishItemText(text: "\(dish.ingredients[i].ingredient)")
-                    }
-                }
-                VStack{
-                    DishItemText(text: "Cuisine:")
-                        .bold()
-                    DishItemText(text: dish.cuisine)
-                }
-            }
-            Spacer()
-                .frame(height: 5.0)
-            HStack(alignment: .top) {
-                VStack {
-                    DishItemText(text: "Calories:")
-                        .bold()
-                    DishItemText(text: "\(dish.getCalories())")
-                }
-                VStack {
-                    if let isDietary = dish.dietary {
-                        VStack{
-                            DishItemText(text: "Dietary Requirement:")
-                                .bold()
-                            DishItemText(text: isDietary)
-                            Spacer()
-                                .frame(height: 5.0)
-                        }
-                    }
-                }
-            }
-            HStack(alignment: .top) {
-                VStack {
-                    DishItemText(text: "Cost:")
-                        .bold()
-                    DishItemText(text: "£\(dish.cost)")
-                }
-                VStack {
-                    if dish.discountable != nil && dish.discountable == true {
-                        DishItemText(text: "Discounted Cost")
-                            .bold()
-                        DishItemText(text: "£\(dish.finalCost)")
-                    }
-                }
-            }
-            
         }
-        .padding()
-        .frame(maxWidth: .infinity)
-        .background(Color("BackgroundColor"))
-        .cornerRadius(Constants.General.roudedRectCornerRadius)
-        .shadow(radius: 10, x: 5, y: 5)
+        .frame(minHeight: 40)
+    }
+}
+
+struct DishCircle: View {
+    var dishName: String
+    
+    var body: some View {
+        VStack {
+            Image(dishName)
+                .clipShape(Circle())
+                .overlay(
+                    Circle().stroke(Color("Jelly"), lineWidth: 4)
+                )
+                .shadow(radius: 10)
+        }
     }
 }
     
 struct RoundViews: View {
-    let testDish = Dish(name: "Fusilli Arrabiata",
-                                ingredients: [Ingredients(ingredient: "Fusilli", portion: 2.0),
-                                              Ingredients(ingredient:"Parmesan", portion: 1.0),
-                                              Ingredients(ingredient:"Pasta Sauce", portion: 1.0)],
-                                cuisine: DishParts.cuisine[0],
-                                mealType: DishParts.mealType[1],
-                                cost: 15.0,
-                                special: true,
-                                dietary: DishParts.diet[0],
-                                discountable: true)
-    
     var body: some View {
         VStack(spacing: 10.0) {
             RoundedTextView(text: "1")
@@ -210,6 +155,7 @@ struct RoundViews: View {
             RoundLogoView(imageSize: Constants.Logo.logoViewSize)
             JellyBellyButton(message: "OK")
             DishView(dish: testDish)
+            DishCircle(dishName: "Fusilli Arrabiata")
         }
     }
 }
@@ -217,6 +163,7 @@ struct RoundViews: View {
 struct RoundViews_Previews: PreviewProvider {
     static var previews: some View {
         RoundViews()
+        MenuRowView(dish: testDish)
         RoundViews()
             .preferredColorScheme(.dark)
         RoundViews()

@@ -38,11 +38,27 @@ struct BigText: View {
     }
 }
 
+/**
+ A text view to create big big text as used in the onboarding page.
+ */
+struct MediumText: View {
+    let text: String
+    
+    var body: some View {
+        Text(text)
+            .foregroundColor(Color("Jelly"))
+            .font(.title2)
+            .bold()
+            .multilineTextAlignment(.center)
+    }
+}
+
 struct DishItemText: View {
     let text: String
     
     var body: some View {
         Text("\(text)")
+            .font(.body)
             .frame(maxWidth: .infinity, alignment: .leading)
     }
 }
@@ -73,8 +89,9 @@ struct TextViews: View {
             BigBoldText(text: "Welcome\n John Appleseed")
             Text("\(hey)")
             BigText(text: "Jelly Belly")
+            MediumText(text: "Jelly Belly")
             BodyText(text: "This is an example of the features in the app")
-            DishItemText(text: "Pasta")
+            DishItemText(text: "Dish Item text Pasta")
         }
     }
 }
