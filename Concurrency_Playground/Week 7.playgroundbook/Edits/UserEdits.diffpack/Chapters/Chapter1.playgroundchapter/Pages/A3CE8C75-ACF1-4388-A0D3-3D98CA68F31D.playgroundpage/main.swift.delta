@@ -24,7 +24,7 @@
 		</dict>
 		<dict>
 			<key>ModifiedContent</key>
-			<string>// To get rid of the deadlock I have made the `bondQueue` run asynchronoulsy. Since `writerQueue` is dispatched synchronously at the beginning of the block below, it would be expecting to finish before it can do anything else. We can let Bond order his drink by doing so asynchronoulsy - letting the current queue continue immediately to the next task.
+			<string>// To get rid of the deadlock I have made the `bondQueue` run asynchronously. Since `writerQueue` is dispatched synchronously at the beginning of the block below, it would be expecting to finish before it can do anything else. We can let Bond order his drink by doing so asynchronously - letting the current queue continue immediately to the next task.
 </string>
 			<key>ModifiedRange</key>
 			<string>{380, 353}</string>

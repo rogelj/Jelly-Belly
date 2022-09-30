@@ -73,7 +73,7 @@ DispatchQueue.global().sync {
 		<dict>
 			<key>ModifiedContent</key>
 			<string>// Question: why is the Movie task completed yet the dispatch work item has been cancelled?
-    // When we call `cancel()` on a work item there are a couple of things that are checked. If the task has not started, it gets romoved. However, it it is executing, we need to check the `isCancelled` property to take action. Otherwise the flag is toggled, but the execution can continue. 
+    // When we call `cancel()` on a work item there are a couple of things that are checked. If the task has not started, it gets removed. However, it it is executing, we need to check the `isCancelled` property to take action. Otherwise the flag is toggled, but the execution can continue. 
 </string>
 			<key>ModifiedRange</key>
 			<string>{1052, 384}</string>

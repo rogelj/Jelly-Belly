@@ -43,7 +43,7 @@ class ImageLoader: ObservableObject {
 //                            self.data = data
 //                        }
             
-            // I now add the required operations to print and download the desired image.
+            // I now add the required operations to my OperationQueue to print and download the desired image.
             downloadQueue.addOperation { 
                 print("Using an OperationQueue")
                 print(Thread.isMainThread ? "Execution on Main Thread" : "Execution on other Thread" )
@@ -88,7 +88,7 @@ let view = ImageView(withURL: "https://www.swiftbysundell.com/images/discover/sw
 PlaygroundPage.current.setLiveView(view)
 </string>
 			<key>ModifiedRange</key>
-			<string>{1, 2771}</string>
+			<string>{1, 2792}</string>
 			<key>OriginalContent</key>
 			<string></string>
 			<key>OriginalRange</key>
