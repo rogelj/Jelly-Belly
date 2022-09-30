@@ -7,24 +7,30 @@
 		<dict>
 			<key>ModifiedContent</key>
 			<string>
+// Below are the functions from a MovieApp.
 </string>
 			<key>ModifiedRange</key>
-			<string>{100, 1}</string>
+			<string>{100, 45}</string>
 			<key>OriginalContent</key>
-			<string></string>
+			<string>// Below are the funcitons from a MovieApp.
+</string>
 			<key>OriginalRange</key>
-			<string>{100, 0}</string>
+			<string>{100, 44}</string>
 		</dict>
 		<dict>
 			<key>ModifiedContent</key>
 			<string>// Create a work item for both tasks. 
 
 // Add the getActorTask and getMovieTask to the Dispatch Work Item created. 
+let workItem = DispatchWorkItem {
+    getActorTask()
+    getMovieTask()
+}
 
 // Cancel the work item after 10 seconds using the asyncAfter provided. 
 </string>
 			<key>ModifiedRange</key>
-			<string>{487, 191}</string>
+			<string>{487, 265}</string>
 			<key>OriginalContent</key>
 			<string>
 // create a work item for both task 
@@ -41,34 +47,36 @@
 		</dict>
 		<dict>
 			<key>ModifiedContent</key>
-			<string>.</string>
-			<key>ModifiedRange</key>
-			<string>{817, 1}</string>
-			<key>OriginalContent</key>
-			<string></string>
-			<key>OriginalRange</key>
-			<string>{817, 0}</string>
-		</dict>
-		<dict>
-			<key>ModifiedContent</key>
-			<string>// Call perform on the work item. 
+			<string>    // Add Code to cancel workItem here.
+    workItem.cancel()
+}
+
+
+// Call perform on the work item. 
+DispatchQueue.global().sync {
+    workItem.perform()
+}
 </string>
 			<key>ModifiedRange</key>
-			<string>{822, 35}</string>
+			<string>{852, 157}</string>
 			<key>OriginalContent</key>
-			<string>
+			<string>    // Add Code to cancel workItem here
+}
+
+
 // call perform on the workitem 
 
 </string>
 			<key>OriginalRange</key>
-			<string>{821, 35}</string>
+			<string>{778, 78}</string>
 		</dict>
 		<dict>
 			<key>ModifiedContent</key>
 			<string>// Question: why is the Movie task completed yet the dispatch work item has been cancelled?
+    // When we call `cancel()` on a work item there are a couple of things that are checked. If the task has not started, it gets romoved. However, it it is executing, we need to check the `isCancelled` property to take action. Otherwise the flag is toggled, but the execution can continue. 
 </string>
 			<key>ModifiedRange</key>
-			<string>{900, 92}</string>
+			<string>{1052, 384}</string>
 			<key>OriginalContent</key>
 			<string>
 // Qestion: why is the Movie task completed yet the dispatch work item has been cancelled ?
