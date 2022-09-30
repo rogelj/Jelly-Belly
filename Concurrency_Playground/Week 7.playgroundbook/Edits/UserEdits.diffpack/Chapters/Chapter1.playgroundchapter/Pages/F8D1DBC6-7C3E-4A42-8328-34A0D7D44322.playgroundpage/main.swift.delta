@@ -24,6 +24,8 @@ class ImageLoader: ObservableObject {
     }
     // I start by defining an OperationQueue to be used in my code. I am using the main thread as per the original DispatchQueue. 
     let downloadQueue = OperationQueue.main
+    // I can use the following to use a different queue:
+    // let downloadQueue = OperationQueue()
     
     // The code below downloads an image from the popular blog Swift by Sundell
     // Using DispatchQueue.
@@ -86,7 +88,7 @@ let view = ImageView(withURL: "https://www.swiftbysundell.com/images/discover/sw
 PlaygroundPage.current.setLiveView(view)
 </string>
 			<key>ModifiedRange</key>
-			<string>{1, 2670}</string>
+			<string>{1, 2771}</string>
 			<key>OriginalContent</key>
 			<string></string>
 			<key>OriginalRange</key>
