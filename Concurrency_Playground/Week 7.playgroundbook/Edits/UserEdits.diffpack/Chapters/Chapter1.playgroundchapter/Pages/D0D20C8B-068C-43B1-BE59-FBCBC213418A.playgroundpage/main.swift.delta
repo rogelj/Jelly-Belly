@@ -107,23 +107,69 @@
 		</dict>
 		<dict>
 			<key>ModifiedContent</key>
-			<string> </string>
+			<string>// Commenting the code provided - don't want to lose it 
+
+//dataProcessQueue.addOperation {
+//    performDownload()
+//}
+//
+//dataProcessQueue.addOperation {
+//    performJSONParsing()
+//}
+//
+//dataProcessQueue.addOperation {
+//    performDBUpdate()
+//}
+
+// Using BlockOperations fix the order of data processing. 
+
+// 1. Create the download operation and add a completion block
+let downloadOp = BlockOperation() 
+downloadOp.completionBlock = {
+    print("Download completed")
+}
+
+// 4. Create the update DB operation and add a completion block
+let updateDBOp = BlockOperation()
+updateDBOp.completionBlock = {
+    print("DB Update completed")
+}
+
+// 2 &amp; 3 - Add the performDownload() and performJSONParsing to the download op
+downloadOp.addExecutionBlock { performDownload() }
+downloadOp.addExecutionBlock { performJSONParsing() }
+// 5 - Add the performDBUpdate to the update DB op
+updateDBOp.addExecutionBlock { performDBUpdate() }
+// 6 = Adding the download operation as a dependency to the update DB op
+updateDBOp.addDependency(downloadOp)
+
+// 7 - Adding both operations to the dataProcess queue using waitUntilFinished set to false 
+dataProcessQueue.addOperations([downloadOp, updateDBOp], waitUntilFinished: false)
+
+
+
+
+
+</string>
 			<key>ModifiedRange</key>
-			<string>{902, 1}</string>
+			<string>{726, 1222}</string>
 			<key>OriginalContent</key>
-			<string></string>
+			<string>dataProcessQueue.addOperation {
+    performDownload()
+}
+
+dataProcessQueue.addOperation {
+    performJSONParsing()
+}
+
+dataProcessQueue.addOperation {
+    performDBUpdate()
+}
+
+//Using BlockOperations fix the order of Data processing. 
+</string>
 			<key>OriginalRange</key>
-			<string>{900, 0}</string>
-		</dict>
-		<dict>
-			<key>ModifiedContent</key>
-			<string>d</string>
-			<key>ModifiedRange</key>
-			<string>{942, 1}</string>
-			<key>OriginalContent</key>
-			<string>D</string>
-			<key>OriginalRange</key>
-			<string>{939, 1}</string>
+			<string>{724, 233}</string>
 		</dict>
 	</array>
 	<key>FormatVersion</key>
