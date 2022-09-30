@@ -46,9 +46,25 @@
 		</dict>
 		<dict>
 			<key>ModifiedContent</key>
+			<string>// To change the priority we use `qos` to let the CPU know which queue is more important. In this case I am using the `.userInitiated` priority (second after main) for the avocado toast and `.background` for the pinapple pizza.
+// ASSIGNMENT QUESTION: The quality of service is not a static setting for operations. Some times the priority is raised by from a lower to a higher QoS this is whay sometimes the CPU does not "obey" the QoS pririty. 
+let pineapplePizzaQueue = DispatchQueue(label: "com.raywenderlich.queue1", qos: .background)
+let avocadoToastQueue = DispatchQueue(label: "com.raywenderlich.queue2", qos: .userInitiated)
+</string>
+			<key>ModifiedRange</key>
+			<string>{186, 633}</string>
+			<key>OriginalContent</key>
+			<string>let pineapplePizzaQueue = DispatchQueue(label: "com.raywenderlich.queue1")
+let avocadoToastQueue = DispatchQueue(label: "com.raywenderlich.queue2")
+</string>
+			<key>OriginalRange</key>
+			<string>{184, 148}</string>
+		</dict>
+		<dict>
+			<key>ModifiedContent</key>
 			<string>2</string>
 			<key>ModifiedRange</key>
-			<string>{380, 1}</string>
+			<string>{865, 1}</string>
 			<key>OriginalContent</key>
 			<string>1</string>
 			<key>OriginalRange</key>
@@ -58,7 +74,7 @@
 			<key>ModifiedContent</key>
 			<string>2</string>
 			<key>ModifiedRange</key>
-			<string>{463, 1}</string>
+			<string>{948, 1}</string>
 			<key>OriginalContent</key>
 			<string>1</string>
 			<key>OriginalRange</key>
@@ -68,7 +84,7 @@
 			<key>ModifiedContent</key>
 			<string></string>
 			<key>ModifiedRange</key>
-			<string>{503, 0}</string>
+			<string>{988, 0}</string>
 			<key>OriginalContent</key>
 			<string>
 
