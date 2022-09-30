@@ -22,6 +22,27 @@
 			<key>OriginalRange</key>
 			<string>{143, 229}</string>
 		</dict>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>// To get rid of the deadlock I have made the `bondQueue` run asynchronoulsy. Since `writerQueue` is dispatched synchronously at the beginning of the block below, it would be expecting to finish before it can do anything else. We can let Bond order his drink by doing so asynchronoulsy - letting the current queue continue immediately to the next task.
+</string>
+			<key>ModifiedRange</key>
+			<string>{380, 353}</string>
+			<key>OriginalContent</key>
+			<string></string>
+			<key>OriginalRange</key>
+			<string>{373, 0}</string>
+		</dict>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>a</string>
+			<key>ModifiedRange</key>
+			<string>{823, 1}</string>
+			<key>OriginalContent</key>
+			<string></string>
+			<key>OriginalRange</key>
+			<string>{463, 0}</string>
+		</dict>
 	</array>
 	<key>FormatVersion</key>
 	<integer>2</integer>
