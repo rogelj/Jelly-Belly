@@ -22,6 +22,8 @@ class ImageLoader: ObservableObject {
             didChange.send(data)
         }
     }
+    // I start by defining an OperationQueue to be used in my code. I am using the main thread as per the original DispatchQueue. 
+    let downloadQueue = OperationQueue.main
     
     // The code below downloads an image from the popular blog Swift by Sundell
     // Using DispatchQueue.
@@ -29,15 +31,22 @@ class ImageLoader: ObservableObject {
     
     init(urlString:String) {
         guard let url = URL(string: urlString) else { return }
-        let task = URLSession.shared.dataTask(with: url) { data, response, error in
+        let task = URLSession.shared.dataTask(with: url) { [self] data, response, error in
             guard let data = data else { return }
             print("Image data Downloaded \(data)")
             
             //........................................//
-            DispatchQueue.main.async {
+//                        DispatchQueue.main.async {
+//                            print(Thread.isMainThread ? "Execution on Main Thread" : "Execution on other Thread" )
+//                            self.data = data
+//                        }
+            
+            // I now add the required operations to print and download the desired image.
+            downloadQueue.addOperation { 
+                print("Using an OperationQueue")
                 print(Thread.isMainThread ? "Execution on Main Thread" : "Execution on other Thread" )
-                self.data = data
-            }
+                self.data = data }
+            
             //........................................//
         }
         
@@ -77,12 +86,11 @@ let view = ImageView(withURL: "https://www.swiftbysundell.com/images/discover/sw
 PlaygroundPage.current.setLiveView(view)
 </string>
 			<key>ModifiedRange</key>
-			<string>{0, 2087}</string>
+			<string>{1, 2670}</string>
 			<key>OriginalContent</key>
-			<string>
-</string>
+			<string></string>
 			<key>OriginalRange</key>
-			<string>{0, 1}</string>
+			<string>{1, 0}</string>
 		</dict>
 	</array>
 	<key>FormatVersion</key>
