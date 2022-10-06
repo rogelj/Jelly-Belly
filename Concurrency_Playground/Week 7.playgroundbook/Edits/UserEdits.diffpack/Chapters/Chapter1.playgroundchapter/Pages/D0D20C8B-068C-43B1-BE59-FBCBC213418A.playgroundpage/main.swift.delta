@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Diffs</key>
+	<array>
+		<dict>
+			<key>ModifiedContent</key>
+			<string></string>
+			<key>ModifiedRange</key>
+			<string>{121, 0}</string>
+			<key>OriginalContent</key>
+			<string>i</string>
+			<key>OriginalRange</key>
+			<string>{121, 1}</string>
+		</dict>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>i</string>
+			<key>ModifiedRange</key>
+			<string>{122, 1}</string>
+			<key>OriginalContent</key>
+			<string></string>
+			<key>OriginalRange</key>
+			<string>{123, 0}</string>
+		</dict>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>d</string>
+			<key>ModifiedRange</key>
+			<string>{132, 1}</string>
+			<key>OriginalContent</key>
+			<string>D</string>
+			<key>OriginalRange</key>
+			<string>{132, 1}</string>
+		</dict>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>a</string>
+			<key>ModifiedRange</key>
+			<string>{148, 1}</string>
+			<key>OriginalContent</key>
+			<string>A</string>
+			<key>OriginalRange</key>
+			<string>{148, 1}</string>
+		</dict>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>P</string>
+			<key>ModifiedRange</key>
+			<string>{186, 1}</string>
+			<key>OriginalContent</key>
+			<string>p</string>
+			<key>OriginalRange</key>
+			<string>{186, 1}</string>
+		</dict>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>.</string>
+			<key>ModifiedRange</key>
+			<string>{207, 1}</string>
+			<key>OriginalContent</key>
+			<string></string>
+			<key>OriginalRange</key>
+			<string>{207, 0}</string>
+		</dict>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>.</string>
+			<key>ModifiedRange</key>
+			<string>{331, 1}</string>
+			<key>OriginalContent</key>
+			<string></string>
+			<key>OriginalRange</key>
+			<string>{330, 0}</string>
+		</dict>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>U</string>
+			<key>ModifiedRange</key>
+			<string>{431, 1}</string>
+			<key>OriginalContent</key>
+			<string>u</string>
+			<key>OriginalRange</key>
+			<string>{429, 1}</string>
+		</dict>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>.</string>
+			<key>ModifiedRange</key>
+			<string>{445, 1}</string>
+			<key>OriginalContent</key>
+			<string></string>
+			<key>OriginalRange</key>
+			<string>{443, 0}</string>
+		</dict>
+		<dict>
+			<key>ModifiedContent</key>
+			<string></string>
+			<key>ModifiedRange</key>
+			<string>{510, 0}</string>
+			<key>OriginalContent</key>
+			<string>
+</string>
+			<key>OriginalRange</key>
+			<string>{507, 1}</string>
+		</dict>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>// Commenting the code provided - don't want to lose it 
+
+//dataProcessQueue.addOperation {
+//    performDownload()
+//}
+//
+//dataProcessQueue.addOperation {
+//    performJSONParsing()
+//}
+//
+//dataProcessQueue.addOperation {
+//    performDBUpdate()
+//}
+
+// Using BlockOperations fix the order of data processing. 
+
+// 1. Create the download operation and add a completion block
+let downloadOp = BlockOperation() 
+downloadOp.completionBlock = {
+    print("Download completed")
+}
+
+// 4. Create the update DB operation and add a completion block
+let updateDBOp = BlockOperation()
+updateDBOp.completionBlock = {
+    print("DB Update completed")
+}
+
+// 2 &amp; 3 - Add the performDownload() and performJSONParsing to the download op
+downloadOp.addExecutionBlock { performDownload() }
+downloadOp.addExecutionBlock { performJSONParsing() }
+// 5 - Add the performDBUpdate to the update DB op
+updateDBOp.addExecutionBlock { performDBUpdate() }
+// 6 = Adding the download operation as a dependency to the update DB op
+updateDBOp.addDependency(downloadOp)
+
+// 7 - Adding both operations to the dataProcess queue using waitUntilFinished set to false 
+dataProcessQueue.addOperations([downloadOp, updateDBOp], waitUntilFinished: false)
+
+
+
+
+
+</string>
+			<key>ModifiedRange</key>
+			<string>{726, 1222}</string>
+			<key>OriginalContent</key>
+			<string>dataProcessQueue.addOperation {
+    performDownload()
+}
+
+dataProcessQueue.addOperation {
+    performJSONParsing()
+}
+
+dataProcessQueue.addOperation {
+    performDBUpdate()
+}
+
+//Using BlockOperations fix the order of Data processing. 
+</string>
+			<key>OriginalRange</key>
+			<string>{724, 233}</string>
+		</dict>
+	</array>
+	<key>FormatVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>
