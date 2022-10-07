@@ -50,7 +50,6 @@ struct RoundLogoView: View {
     @Environment(\.colorScheme) var colorScheme
     
     var imageSize: CGFloat
-    var imageLogo: String = "JellyBelly"
     
     var body: some View {
         let imageLogo = colorScheme == .dark ? "JellyBellyDark" : "JellyBelly"

@@ -40,6 +40,7 @@
 		46C15E1D28E0BF1800786E2F /* JBPizzaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C15E1C28E0BF1800786E2F /* JBPizzaViewModel.swift */; };
 		46E0E5C928CCF67400D2E6AD /* UList_Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E0E5C828CCF67400D2E6AD /* UList_Menu.swift */; };
 		46E0E5CB28CCFB8500D2E6AD /* MenuExamples.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E0E5CA28CCFB8500D2E6AD /* MenuExamples.swift */; };
+		46E1FBDC28F02C7500F95505 /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E1FBDB28F02C7500F95505 /* SplashScreen.swift */; };
 		46E4379228B62061004FCB53 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E4379128B62061004FCB53 /* Order.swift */; };
 		46F4D9FF28D4D2460088D91D /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F4D9FE28D4D2460088D91D /* WelcomeView.swift */; };
 		46F4DA0128D4DCAE0088D91D /* DiscountGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F4DA0028D4DCAE0088D91D /* DiscountGridView.swift */; };
@@ -84,6 +85,7 @@
 		46C15E1C28E0BF1800786E2F /* JBPizzaViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JBPizzaViewModel.swift; sourceTree = "<group>"; };
 		46E0E5C828CCF67400D2E6AD /* UList_Menu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UList_Menu.swift; sourceTree = "<group>"; };
 		46E0E5CA28CCFB8500D2E6AD /* MenuExamples.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuExamples.swift; sourceTree = "<group>"; };
+		46E1FBDB28F02C7500F95505 /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
 		46E4379128B62061004FCB53 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		46F4D9FE28D4D2460088D91D /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		46F4DA0028D4DCAE0088D91D /* DiscountGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscountGridView.swift; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 				46E0E5CA28CCFB8500D2E6AD /* MenuExamples.swift */,
 				46AAB96628AFCDDF00DE602A /* Assets.xcassets */,
 				46092F7628DDAE70002E6F44 /* ViewComponents */,
+				46E1FBDB28F02C7500F95505 /* SplashScreen.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -315,6 +318,7 @@
 				46678A6428CF32AB00AD20D5 /* ViewController.swift in Sources */,
 				46AAB96528AFCDDE00DE602A /* ContentView.swift in Sources */,
 				46092F7F28DDC2AA002E6F44 /* OrderOriginator.swift in Sources */,
+				46E1FBDC28F02C7500F95505 /* SplashScreen.swift in Sources */,
 				46F4DA0328D4EADD0088D91D /* DishInformationView.swift in Sources */,
 				46A1B01F28AFD91D00302426 /* RoundViews.swift in Sources */,
 				46E0E5CB28CCFB8500D2E6AD /* MenuExamples.swift in Sources */,
