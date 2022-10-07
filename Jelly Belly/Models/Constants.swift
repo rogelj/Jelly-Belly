@@ -30,6 +30,14 @@ enum Constants {
         case christmas = 0.15
         case newYear = 0.2
     }
+
+    enum Animation {
+        public static let eLineWidth: CGFloat = 4
+        public static let uZoomFactor: CGFloat = 1.4
+        public static let lineWidth:  CGFloat = 50
+        public static let lineHeight: CGFloat = 4
+        public static let eCircleRadius: CGFloat = 10
+    }
 }
 
 let jellyColour = UIColor(red: CGFloat(183)/CGFloat(255), green: CGFloat(43)/CGFloat(255), blue: CGFloat(211)/CGFloat(255), alpha: 1)

@@ -3,13 +3,6 @@ import SwiftUI
 
 struct SplashScreen: View {
     static var shouldAnimate = true
-    let jelly = Color("Jelly")
-    let belly = Color("Belly")
-    let eLineWidth: CGFloat = 4
-    let uZoomFactor: CGFloat = 1.4
-    let lineWidth:  CGFloat = 50
-    let lineHeight: CGFloat = 4
-    let eCircleRadius: CGFloat = 10
 
     @State var percent = 0.0
     @State var eScale: CGFloat = 1
@@ -18,7 +11,7 @@ struct SplashScreen: View {
     @State var lineScale: CGFloat = 1
     @State var textAlpha = 0.0
     @State var textScale: CGFloat = 1
-    @State var coverCircleScale: CGFloat = 1
+    @State var coverScale: CGFloat = 1
     @State var coverCircleAlpha = 0.0
 
     @Environment(\.colorScheme) var colorScheme
@@ -32,11 +25,11 @@ struct SplashScreen: View {
                 .opacity(textAlpha)
                 .scaleEffect(textScale)
 
-            Circle()
-                .fill(belly)
+            Rectangle()
+                .fill(Color("Belly"))
                 .frame(width: 1, height: 1,
                        alignment: .center)
-                .scaleEffect(coverCircleScale)
+                .scaleEffect(coverScale)
                 .opacity(coverCircleAlpha)
 
             Text("J     llyBelly")
@@ -47,36 +40,36 @@ struct SplashScreen: View {
                 .scaleEffect(textScale)
 
             LetterE(percent: percent)
-                .stroke(Color.white, lineWidth: eLineWidth)
+                .stroke(Color.white, lineWidth: Constants.Animation.eLineWidth)
                 .rotationEffect(.degrees(-90))
                 .aspectRatio(1, contentMode: .fit)
                 .padding(20)
                 .onAppear() {
                     self.handleAnimations()
                 }
-                .scaleEffect(eScale * uZoomFactor)
+                .scaleEffect(eScale * Constants.Animation.uZoomFactor)
                 .frame(width: 45, height: 45,
                        alignment: .center)
 
             Circle()
                 .fill(eLetterColor)
-                .scaleEffect(eLetterScale * uZoomFactor)
-                .frame(width: eCircleRadius, height: eCircleRadius,
+                .scaleEffect(eLetterScale * Constants.Animation.uZoomFactor)
+                .frame(width: Constants.Animation.eCircleRadius, height: Constants.Animation.eCircleRadius,
                        alignment: .center)
                 .onAppear() {
-                    self.eLetterColor = self.belly
+                    self.eLetterColor = Color("Belly")
                 }
 
             Rectangle()
-                .fill(jelly)
+                .fill(Color("Jelly"))
                 .scaleEffect(lineScale, anchor: .bottom)
-                .frame(width: lineWidth, height: lineHeight,
+                .frame(width: Constants.Animation.lineWidth, height: Constants.Animation.lineHeight,
                        alignment: .center)
                 .offset(x: 30, y: 0)
 
             Spacer()
         }
-        .background(jelly)
+        .background(Color("Jelly"))
         .edgesIgnoringSafeArea(.all)
     }
 }
@@ -120,7 +113,7 @@ extension SplashScreen {
             }
 
             withAnimation(Animation.spring()) {
-                self.textScale = self.uZoomFactor
+                self.textScale = Constants.Animation.uZoomFactor
             }
         }
     }
@@ -132,7 +125,7 @@ extension SplashScreen {
             self.eLetterScale = 1
             withAnimation(.easeOut(duration: self.fadeAnimationDuration)) {
                 self.coverCircleAlpha = 1
-                self.coverCircleScale = 1000
+                self.coverScale = 1000
             }
         }
     }
@@ -141,7 +134,7 @@ extension SplashScreen {
         DispatchQueue.main.asyncAfter(deadline: .now() + 2*eAnimationDuration) {
             withAnimation(.easeIn(duration: self.finalAnimationDuration)) {
                 self.textAlpha = 0
-                self.eLetterColor = self.jelly
+                self.eLetterColor = Color("Jelly")
             }
         }
     }
@@ -152,7 +145,7 @@ extension SplashScreen {
             self.percent = 0
             self.textScale = 1
             self.coverCircleAlpha = 0
-            self.coverCircleScale = 1
+            self.coverScale = 1
             self.handleAnimations()
         }
     }
