@@ -26,6 +26,8 @@ class MenuItems: ObservableObject {
     }
 
     func loadData() async throws {
+        // Assignment 4 _ I have added the handling for HTTP in the Info.plist.
+        // This means that I can change the url here to to http and still get a response
         guard let url = URL(string: "https://foodbukka.herokuapp.com/api/v1/menu") else {
             // Assignment 3 - Printing informative error messages to the console
             print("Invalid URL")
