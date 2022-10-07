@@ -1,7 +1,8 @@
 
 import SwiftUI
 
-// Assignment 1 - Splash screen with animation
+
+// Assignment 1 - A splash screen with an animation
 struct SplashScreen: View {
     static var shouldAnimate = true
 

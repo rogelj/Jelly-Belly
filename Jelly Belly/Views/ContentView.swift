@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ContentView: View {
+    @ObservedObject private var downloader = MenuItems()
+
     @State private var showSplash = true
     @State private var tabSelection = 1
     @StateObject var orderCaretaker = OrderCaretaker()
@@ -57,13 +59,18 @@ struct ContentView: View {
             SplashScreen()
                 .opacity(showSplash ? 1 : 0)
                 .onAppear {
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
                         SplashScreen.shouldAnimate = false
                         withAnimation() {
                             self.showSplash = false
                         }
                     }
                 }
+                .onAppear(perform: {
+                    Task {
+                        try await downloader.loadData()
+                    }
+                })
         }
     }
 }
