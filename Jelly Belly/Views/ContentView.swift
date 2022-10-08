@@ -9,9 +9,6 @@ import SwiftUI
 
 struct ContentView: View {
     @ObservedObject private var downloader = MenuItems()
-    @ObservedObject private var cookier = CookieItems()
-//    @ObservedObject private var myCookie = CookieView()
-
 
     @State private var showSplash = true
     @State private var tabSelection = 1
@@ -74,12 +71,6 @@ struct ContentView: View {
                         try await downloader.loadData()
                     }
                 })
-//                .onAppear(perform: {
-//                    Task {
-//                        try await myCookie.getCookiesTapped()
-//
-//                    }
-//                })
         }
     }
 }

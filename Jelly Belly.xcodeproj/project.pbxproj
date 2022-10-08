@@ -14,8 +14,6 @@
 		46092F8128DDC48C002E6F44 /* OrderCaretaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46092F8028DDC48C002E6F44 /* OrderCaretaker.swift */; };
 		46092F9F28DE0F3E002E6F44 /* OrderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46092F9E28DE0F3E002E6F44 /* OrderViewModel.swift */; };
 		460BFFBB28F0814300E1016E /* MenuItemsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460BFFBA28F0814300E1016E /* MenuItemsViewModel.swift */; };
-		460BFFC028F0877000E1016E /* CookieModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460BFFBF28F0877000E1016E /* CookieModelView.swift */; };
-		460BFFC228F08B3000E1016E /* CookieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460BFFC128F08B3000E1016E /* CookieView.swift */; };
 		46525CA628B6443B00D90956 /* OrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46525CA528B6443B00D90956 /* OrderView.swift */; };
 		46613C7228CB3AC100A70504 /* MenuItemTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46613C7128CB3AC100A70504 /* MenuItemTableViewController.swift */; };
 		46613C7428CB3CDF00A70504 /* SampleDishes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46613C7328CB3CDF00A70504 /* SampleDishes.swift */; };
@@ -59,8 +57,6 @@
 		46092F9E28DE0F3E002E6F44 /* OrderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewModel.swift; sourceTree = "<group>"; };
 		460BFFBA28F0814300E1016E /* MenuItemsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemsViewModel.swift; sourceTree = "<group>"; };
 		460BFFBE28F0846A00E1016E /* Jelly-Belly-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Jelly-Belly-Info.plist"; sourceTree = SOURCE_ROOT; };
-		460BFFBF28F0877000E1016E /* CookieModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookieModelView.swift; sourceTree = "<group>"; };
-		460BFFC128F08B3000E1016E /* CookieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookieView.swift; sourceTree = "<group>"; };
 		46525CA528B6443B00D90956 /* OrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderView.swift; sourceTree = "<group>"; };
 		46613C7128CB3AC100A70504 /* MenuItemTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemTableViewController.swift; sourceTree = "<group>"; };
 		46613C7328CB3CDF00A70504 /* SampleDishes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleDishes.swift; sourceTree = "<group>"; };
@@ -155,7 +151,6 @@
 				46AAB96628AFCDDF00DE602A /* Assets.xcassets */,
 				46092F7628DDAE70002E6F44 /* ViewComponents */,
 				46E1FBDB28F02C7500F95505 /* SplashScreen.swift */,
-				460BFFC128F08B3000E1016E /* CookieView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -245,7 +240,6 @@
 				46092F9E28DE0F3E002E6F44 /* OrderViewModel.swift */,
 				46C15E1C28E0BF1800786E2F /* JBPizzaViewModel.swift */,
 				460BFFBA28F0814300E1016E /* MenuItemsViewModel.swift */,
-				460BFFBF28F0877000E1016E /* CookieModelView.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -323,7 +317,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				460BFFC228F08B3000E1016E /* CookieView.swift in Sources */,
 				46678A6728CF345300AD20D5 /* UITableShow.swift in Sources */,
 				46092F7828DDB170002E6F44 /* WelcomeViewModel.swift in Sources */,
 				46A1B02128AFD93800302426 /* HomeBackgroundView.swift in Sources */,
@@ -348,7 +341,6 @@
 				46F4D9FF28D4D2460088D91D /* WelcomeView.swift in Sources */,
 				46525CA628B6443B00D90956 /* OrderView.swift in Sources */,
 				46E4379228B62061004FCB53 /* Order.swift in Sources */,
-				460BFFC028F0877000E1016E /* CookieModelView.swift in Sources */,
 				46C15E1D28E0BF1800786E2F /* JBPizzaViewModel.swift in Sources */,
 				4689A9D528CE28D30091ABB2 /* MenuView.swift in Sources */,
 				4695086A28DF6B6C007D2F89 /* JBPizzaView.swift in Sources */,
