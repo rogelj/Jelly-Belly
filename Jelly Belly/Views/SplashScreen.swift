@@ -76,54 +76,6 @@ struct SplashScreen: View {
         }
         .background(Color("Jelly"))
         .edgesIgnoringSafeArea(.all)
-
-        let _ = Swift.print("Cookie name: \(cookieName ?? "-")")
-        let _ = Swift.print("Cookie value: \(cookieValue ?? "-")")
-    }
-
-    // MARK: Functions
-    func getCookiesTapped() async throws {
-        func setCookies(name: String? = nil, value: String? = nil) {
-            Task { @MainActor in
-                cookieName = name ?? "N/A"
-                cookieValue = value ?? "N/A"
-            }
-        }
-
-        guard let url = URL(string: "https://raywenderlich.com") else {
-            setCookies()
-            return
-        }
-
-        do {
-            let (_, response) = try await URLSession.shared.data(from: url)
-
-            guard let httpResponse = response as? HTTPURLResponse,
-                  let fields = httpResponse.allHeaderFields as? [String: String],
-                  let cookie = HTTPCookie.cookies(withResponseHeaderFields: fields, for: url).first
-            else {
-                setCookies()
-
-                return
-            }
-
-            setCookies(name: cookie.name, value: cookie.value)
-
-            var cookieProperties: [HTTPCookiePropertyKey: Any] = [:]
-            cookieProperties[.name] = cookie.name
-            cookieProperties[.value] = cookie.value
-            cookieProperties[.domain] = cookie.domain
-
-            if let myCookie = HTTPCookie(properties: cookieProperties) {
-                HTTPCookieStorage.shared.setCookie(myCookie)
-                HTTPCookieStorage.shared.deleteCookie(cookie)
-            }
-
-        } catch {
-            setCookies()
-
-        }
-
     }
 }
 
@@ -139,9 +91,6 @@ extension SplashScreen {
         animationP1()
         animationP2()
         animationP3()
-        Task {
-            try await self.getCookiesTapped()
-        }
         if SplashScreen.shouldAnimate {
             restartAnimation()
         }

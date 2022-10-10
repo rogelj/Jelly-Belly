@@ -14,6 +14,7 @@ class MenuItems: ObservableObject {
     enum MenuItemError: Error {
         case invalidResponse
         case invalidURL
+        case errorGettingCookies
     }
 
     private let session: URLSession
@@ -45,6 +46,28 @@ class MenuItems: ObservableObject {
             }
             // Printing the amount of data to the console
             print("Data Downloaded: \(data)")
+        }
+    }
+
+    // Assignment 5 - Getting a cookie from raywenderlich.com
+    func getRayCookie() async throws {
+        guard let url = URL(string: "https://www.raywenderlich.com") else {
+            throw MenuItemError.errorGettingCookies
+        }
+
+        do {
+            let (_, responseCookie) = try await session.data(from: url)
+
+            guard let httpResponse = responseCookie as? HTTPURLResponse,
+                  let fields = httpResponse.allHeaderFields as? [String: String],
+                  let cookie = HTTPCookie.cookies(withResponseHeaderFields: fields, for: url).first
+            else {
+                throw MenuItemError.invalidResponse
+            }
+            print("Cookie Name: \(cookie.name)")
+            print("Cookie Value: \(cookie.value)")
+        } catch {
+            throw MenuItemError.errorGettingCookies
         }
     }
 }

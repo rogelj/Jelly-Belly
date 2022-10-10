@@ -69,6 +69,7 @@ struct ContentView: View {
                 .onAppear(perform: {
                     Task {
                         try await downloader.loadData()
+                        try await downloader.getRayCookie()
                     }
                 })
         }
