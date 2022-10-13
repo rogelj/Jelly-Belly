@@ -15,6 +15,8 @@ class MenuItems: ObservableObject {
         case invalidResponse
         case invalidURL
         case errorGettingCookies
+        case unauthorized
+        case notFound
     }
 
     private let session: URLSession
@@ -36,16 +38,32 @@ class MenuItems: ObservableObject {
         }
 
         Task {
-            let (data, response) = try await session.data(from: url)
+            do {
+                let (data, response) = try await session.data(from: url)
 
-            guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
-                // Assignment 3 - Printing informative error messages to the console
+//                guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
+                if let httpResponse = response as? HTTPURLResponse {
+                    // Assignment 3 - Printing informative error messages to the console
+                    let code = httpResponse.statusCode
+                    switch code {
+                    case 200...299:
+                        print("Success Code \(code): OK")
+                    case 401:
+                        print("Error Code \(code): Unauthorized")
+                        throw MenuItemError.unauthorized
+                    case 404:
+                        print("Error Code \(code): Not Found")
+                        throw MenuItemError.notFound
+                    default:
+                        print("Unknown Error \(code)")
+                        throw MenuItemError.invalidResponse
+                    }
+                }
+                // Printing the amount of data to the console
+                print("Data Downloaded: \(data)")
+            } catch {
                 print("Error!")
-                throw MenuItemError.invalidResponse
-
             }
-            // Printing the amount of data to the console
-            print("Data Downloaded: \(data)")
         }
     }
 
