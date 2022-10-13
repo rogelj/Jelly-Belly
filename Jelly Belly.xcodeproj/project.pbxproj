@@ -38,7 +38,7 @@
 		46AAB96728AFCDDF00DE602A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46AAB96628AFCDDF00DE602A /* Assets.xcassets */; };
 		46AAB96B28AFCDDF00DE602A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46AAB96A28AFCDDF00DE602A /* Preview Assets.xcassets */; };
 		46B4943B28B4E4B8003D910B /* readme.md in Resources */ = {isa = PBXBuildFile; fileRef = 46B4943A28B4E4B8003D910B /* readme.md */; };
-		46B52F5028F810360051881D /* MenuData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B52F4F28F810360051881D /* MenuData.swift */; };
+		46B52F5028F810360051881D /* MenuAPIData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B52F4F28F810360051881D /* MenuAPIData.swift */; };
 		46B52F5328F811BD0051881D /* MenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B52F5228F811BD0051881D /* MenuViewModel.swift */; };
 		46B52F5528F812480051881D /* MenuAPIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B52F5428F812480051881D /* MenuAPIView.swift */; };
 		46C15E1D28E0BF1800786E2F /* JBPizzaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C15E1C28E0BF1800786E2F /* JBPizzaViewModel.swift */; };
@@ -88,7 +88,7 @@
 		46AAB96A28AFCDDF00DE602A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		46B4943A28B4E4B8003D910B /* readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = readme.md; sourceTree = "<group>"; };
 		46B4943C28B4E4F0003D910B /* DataStructures.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = DataStructures.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		46B52F4F28F810360051881D /* MenuData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuData.swift; sourceTree = "<group>"; };
+		46B52F4F28F810360051881D /* MenuAPIData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuAPIData.swift; sourceTree = "<group>"; };
 		46B52F5228F811BD0051881D /* MenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewModel.swift; sourceTree = "<group>"; };
 		46B52F5428F812480051881D /* MenuAPIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuAPIView.swift; sourceTree = "<group>"; };
 		46C15E1C28E0BF1800786E2F /* JBPizzaViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JBPizzaViewModel.swift; sourceTree = "<group>"; };
@@ -173,7 +173,7 @@
 				4696886628B8E5B4004E8B53 /* DishParts.swift */,
 				46613C7328CB3CDF00A70504 /* SampleDishes.swift */,
 				4689A9D828CE37C10091ABB2 /* Dishes.xcassets */,
-				46B52F4F28F810360051881D /* MenuData.swift */,
+				46B52F4F28F810360051881D /* MenuAPIData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -347,7 +347,7 @@
 				46E0E5CB28CCFB8500D2E6AD /* MenuExamples.swift in Sources */,
 				4696886728B8E5B4004E8B53 /* DishParts.swift in Sources */,
 				46AAB96328AFCDDE00DE602A /* Jelly_BellyApp.swift in Sources */,
-				46B52F5028F810360051881D /* MenuData.swift in Sources */,
+				46B52F5028F810360051881D /* MenuAPIData.swift in Sources */,
 				46678A6928CF465000AD20D5 /* MenuUITableView.swift in Sources */,
 				46092F7C28DDB6AA002E6F44 /* Dish.swift in Sources */,
 				46F4DA0128D4DCAE0088D91D /* DiscountGridView.swift in Sources */,

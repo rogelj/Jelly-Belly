@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @ObservedObject private var downloader = MenuItems()
+    @ObservedObject var downloader = MenuItems()
 
     @State private var showSplash = true
     @State private var tabSelection = 1
@@ -34,8 +34,7 @@ struct ContentView: View {
                     .tag(1)
                 
 //                DiscountGridView(orderCaretaker: orderCaretaker)
-                MenuAPIView()
-//                TSwift()
+                MenuAPIView(downloader: downloader)
                     .tabItem {
                         Image(systemName: "gift")
                         Text("Discounts")

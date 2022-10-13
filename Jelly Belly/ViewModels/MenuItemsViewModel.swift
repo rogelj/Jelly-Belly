@@ -6,10 +6,37 @@
 //
 
 import Foundation
+import SwiftUI
 
-
-// Assignment 2 - Retrieve data from the API and printing the amount of data to the console
 class MenuItems: ObservableObject {
+
+    @Published var myResult = [Result]()
+
+    // MARK: - FoodBukkaMenu
+    struct FoodBukkaMenu: Codable {
+        let totalMenu: Int
+        let result: [Result]
+
+        enum CodingKeys: String, CodingKey {
+            case totalMenu = "Total Menu"
+            case result = "Result"
+        }
+    }
+
+    // MARK: - Result
+    struct Result: Codable {
+        let images: [String]
+        let id, menuname, resultDescription: String
+        let v: Int
+
+        enum CodingKeys: String, CodingKey {
+            case images
+            case id = "_id"
+            case menuname
+            case resultDescription = "description"
+            case v = "__v"
+        }
+    }
 
     enum MenuItemError: Error {
         case invalidResponse
@@ -22,17 +49,13 @@ class MenuItems: ObservableObject {
     private let session: URLSession
     private let sessionConfiguration: URLSessionConfiguration
 
-    // Assignment 3 - Handling errors gracefully
     init() {
         self.sessionConfiguration = URLSessionConfiguration.default
         self.session = URLSession(configuration: sessionConfiguration)
     }
 
     func loadData() async throws {
-        // Assignment 4 _ I have added the handling for HTTP in the Info.plist.
-        // This means that I can change the url here  to http and still get a response
         guard let url = URL(string: "http://foodbukka.herokuapp.com/api/v1/menu") else {
-            // Assignment 3 - Printing informative error messages to the console
             print("Invalid URL")
             throw MenuItemError.invalidURL
         }
@@ -41,9 +64,7 @@ class MenuItems: ObservableObject {
             do {
                 let (data, response) = try await session.data(from: url)
 
-//                guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
-                if let httpResponse = response as? HTTPURLResponse {
-                    // Assignment 3 - Printing informative error messages to the console
+                if let httpResponse = response as? HTTPURLResponse, let decodedResponse = try? JSONDecoder().decode(FoodBukkaMenu.self, from: data)  {
                     let code = httpResponse.statusCode
                     switch code {
                     case 200...299:
@@ -58,13 +79,16 @@ class MenuItems: ObservableObject {
                         print("Unknown Error \(code)")
                         throw MenuItemError.invalidResponse
                     }
-                }
-                // Printing the amount of data to the console
+                    myResult = decodedResponse.result
+                    print("Here!!")
+                    print("\(myResult)")
+                    }
                 print("Data Downloaded: \(data)")
             } catch {
                 print("Error!")
             }
         }
+
     }
 
     // Assignment 5 - Getting a cookie from raywenderlich.com
