@@ -28,7 +28,7 @@ struct MenuUIListView: View {
                 .foregroundColor(Color("Jelly"))
                 .font(.title)
             VStack {
-                UIList(rows: dishes)
+//                UIList(rows: dishes)
             }
         }
     }

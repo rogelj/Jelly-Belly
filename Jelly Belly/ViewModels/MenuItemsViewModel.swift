@@ -11,6 +11,7 @@ import SwiftUI
 class MenuItems: ObservableObject {
 
     @Published var myResult = [Result]()
+    @Published var myMenuDishes = [Dish]()
 
     // MARK: - FoodBukkaMenu
     struct FoodBukkaMenu: Codable {
@@ -81,7 +82,7 @@ class MenuItems: ObservableObject {
                     }
                     DispatchQueue.main.async {
                         self.myResult = decodedResponse.result
-                        self.mappingData(dwnLst: self.myResult)
+                        self.myMenuDishes = self.mappingData(dwnLst: self.myResult)
                     }
                 }
                 print("Data Downloaded: \(data)")
@@ -114,8 +115,10 @@ class MenuItems: ObservableObject {
         }
     }
 
-    private func mappingData(dwnLst: [Result]) {
+    private func mappingData(dwnLst: [Result]) -> [Dish] {
         print("\(dwnLst)")
+
+        var createdDishes: [Dish] = []
         for res in dwnLst {
             let item = Dish(
                 name: res.menuname,
@@ -133,7 +136,9 @@ class MenuItems: ObservableObject {
             for it in item.ingredients {
                 print(it)
             }
+            createdDishes.append(item)
         }
+        return createdDishes
     }
 }
 

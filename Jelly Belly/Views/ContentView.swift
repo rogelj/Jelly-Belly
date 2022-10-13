@@ -24,7 +24,7 @@ struct ContentView: View {
                     }
                     .tag(0)
                 
-                MenuView(orderCaretaker: orderCaretaker)
+                MenuView(downloader: downloader, orderCaretaker: orderCaretaker)
                     .tabItem {
                         Image(systemName: "fork.knife")
                         Text("Menu")

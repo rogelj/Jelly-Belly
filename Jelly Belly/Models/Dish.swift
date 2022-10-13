@@ -93,13 +93,13 @@ class Dish {
 
 extension Dish {
     static func getDishes(by mealCategory: DishParts.MealCategory) -> [Dish] {
-        dishes.filter { dish in
+        dishes1.filter { dish in
             dish.mealCategory == mealCategory
         }
     }
     
     static func getDiscountDishes(by mealCategory: DishParts.MealCategory) -> [Dish] {
-        dishes.filter { dish in
+        dishes1.filter { dish in
             dish.mealCategory == mealCategory && dish.discountable == true
         }
     }

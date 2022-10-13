@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct HeaderViewMenu: View {
+
     @Binding var menuIsShowing: Bool
     
     @Environment(\.verticalSizeClass) var verticalSizeClass
@@ -59,13 +60,14 @@ struct HeaderViewMenu: View {
  Menu view
  */
 struct MenuView: View {
-    @State var menuDishes = dishes
 
+    var downloader: MenuItems
     
 //    @EnvironmentObject var customerOrder: Order
     @ObservedObject var orderCaretaker: OrderCaretaker
     
     var body: some View {
+//        var menuDishes = downloader.myMenuDishes
         NavigationView {
             VStack {
                 HStack {
@@ -108,15 +110,16 @@ struct MenuHeaderView: View {
 struct MenuView_Previews: PreviewProvider {
 //    static private var menuSwiftUIIsShowing = Binding.constant(false)
 //    static private var testOrder = Binding.constant(Order(loadTestData: true))
+    static private var downloader = MenuItems()
     static private var orderCaretaker = OrderCaretaker()
-    
+
     static var previews: some View {
-        MenuView(orderCaretaker: orderCaretaker)
-        MenuView(orderCaretaker: orderCaretaker)
+        MenuView(downloader: downloader, orderCaretaker: orderCaretaker)
+        MenuView(downloader: downloader,orderCaretaker: orderCaretaker)
             .preferredColorScheme(.dark)
-        MenuView(orderCaretaker: orderCaretaker)
+        MenuView(downloader: downloader,orderCaretaker: orderCaretaker)
             .previewInterfaceOrientation(.landscapeLeft)
-        MenuView(orderCaretaker: orderCaretaker)
+        MenuView(downloader: downloader,orderCaretaker: orderCaretaker)
             .previewInterfaceOrientation(.landscapeLeft)
             .preferredColorScheme(.dark)
     }
