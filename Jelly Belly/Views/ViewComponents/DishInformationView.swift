@@ -77,6 +77,13 @@ struct DishInformationView: View {
                     }
                 }
             }
+            Spacer()
+                .frame(height: 5.0)
+            VStack {
+                DishItemText(text: "Description:")
+                    .bold()
+                DishItemText(text: "\(dish.description)")
+            }
         }
     }
 }

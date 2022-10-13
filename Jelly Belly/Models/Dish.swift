@@ -37,6 +37,7 @@ class Dish {
     var special: Bool?
     var dietary: String?
     var discountable: Bool?
+    var description: String
     
     // Implementing a lazy property to get the level of discount for the season
     lazy var discountFactor: Double = Constants.General.currentSeason.rawValue
@@ -55,7 +56,7 @@ class Dish {
     }
     
     init(name: String, ingredients: [Ingredients], cuisine: String, mealCategory: DishParts.MealCategory,
-         cost: Double, special: Bool? = nil, dietary: String? = nil, discountable: Bool? = nil) {
+         cost: Double, special: Bool? = nil, dietary: String? = nil, discountable: Bool? = nil, description: String) {
         self.name = name
         self.ingredients = ingredients
         self.cuisine = cuisine
@@ -64,6 +65,7 @@ class Dish {
         self.special = special
         self.dietary = dietary
         self.discountable = discountable
+        self.description = description
     }
 
     // Implementing a method to calculate the calories of the dish - Not bad!!

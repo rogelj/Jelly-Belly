@@ -33,7 +33,9 @@ struct ContentView: View {
                     }
                     .tag(1)
                 
-                DiscountGridView(orderCaretaker: orderCaretaker)
+//                DiscountGridView(orderCaretaker: orderCaretaker)
+                MenuAPIView()
+//                TSwift()
                     .tabItem {
                         Image(systemName: "gift")
                         Text("Discounts")

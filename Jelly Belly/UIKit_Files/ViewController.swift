@@ -15,7 +15,7 @@ class ViewController: UIViewController {
     var menuItems = dishes
 
     var tableView = UITableView()
-    var selectedItemName: Dish = Dish(name: "", ingredients: [], cuisine: "", mealCategory: .starter, cost: 0.0)
+    var selectedItemName: Dish = Dish(name: "", ingredients: [], cuisine: "", mealCategory: .starter, cost: 0.0, description: "")
 
     override func viewDidLoad() {
         super.viewDidLoad()

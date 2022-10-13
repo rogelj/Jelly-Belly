@@ -135,7 +135,7 @@ public class JBPizzaBuilder {
     func build() -> Dish {
         let name = "Your Jelly Belly Pizza"
     
-        return  Dish(name: name, ingredients: ingredients, cuisine: DishParts.cuisine[0], mealCategory: DishParts.MealCategory.main, cost: cost)
+        return  Dish(name: name, ingredients: ingredients, cuisine: DishParts.cuisine[0], mealCategory: DishParts.MealCategory.main, cost: cost, description: name)
     }
 }
 
