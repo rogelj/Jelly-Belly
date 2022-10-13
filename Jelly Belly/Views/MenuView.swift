@@ -82,7 +82,7 @@ struct MenuView: View {
                     LazyVStack(alignment: .leading, pinnedViews: [.sectionHeaders]) {
                         ForEach(DishParts.MealCategory.allCases, id: \.self) { category in
                             Section(header: MenuHeaderView(title: category.rawValue)) {
-                                ForEach(Dish.getDishes(by: category)) { dish in
+                                ForEach(self.getMyDishes(by: category)) { dish in
                                     NavigationLink(destination: MenuDetailedView(dish: dish, orderCaretaker: orderCaretaker)) {
                                         MenuRowView(dish: dish)
                                             .padding(.leading)
@@ -93,6 +93,12 @@ struct MenuView: View {
                     }
                 }
             }
+        }
+    }
+
+    func getMyDishes(by mealCategory: DishParts.MealCategory) -> [Dish] {
+        downloader.myMenuDishes.filter { dish in
+            dish.mealCategory == mealCategory
         }
     }
 }
