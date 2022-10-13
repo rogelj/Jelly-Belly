@@ -15,7 +15,7 @@ import UIKit
  - `diet` - Holds the diet array holds information about the type of dietary requirement the meal meets.
 */
 enum DishParts {
-    public static let cuisine = ["Italian", "Mexican", "American", "Japanese", "French"]
+    public static let cuisine = ["Italian", "Mexican", "American", "Japanese", "French", "International"]
 //    public static let mealType = [("Starter", "🥗"), ("Main", "🍽"), ("Dessert", "🍰"), ("Drink", "🥤")]
     
     enum MealCategory: String, CaseIterable {
@@ -53,7 +53,7 @@ enum DishParts {
         "Onion": 30.0,
         "Orange": 120.0,
         "Parmesan": 300.0,
-        "Pasta Sauce ": 180.0,
+        "Pasta Sauce": 180.0,
         "Pizza Base": 500.0,
         "Rice": 145.0,
         "Sugar": 250.0,
@@ -64,3 +64,41 @@ enum DishParts {
     public static let diet = ["Vegetarian", "Vegan", "Kosher", "Lactose Free", "Gluten Free"]
     
 }
+
+let myIngredients = [ Ingredients(ingredient: "Alcohol", portion: 2.0),
+                      Ingredients(ingredient: "Beef", portion: 1.0),
+                      Ingredients(ingredient: "Bread", portion: 1.0),
+                      Ingredients(ingredient: "Cheddar", portion: 2.0),
+                      Ingredients(ingredient: "Chicken", portion: 1.0),
+                      Ingredients(ingredient: "Chilli Sauce", portion: 1.0),
+                      Ingredients(ingredient: "Chillies", portion: 1.0),
+                      Ingredients(ingredient: "Chocolate", portion: 1.0),
+                      Ingredients(ingredient: "Coffee", portion: 2.0),
+                      Ingredients(ingredient: "Corn flour", portion: 2.0),
+                      Ingredients(ingredient: "Cream", portion: 2.0),
+                      Ingredients(ingredient: "Edamame", portion: 1.0),
+                      Ingredients(ingredient: "Egg", portion: 2.0),
+                      Ingredients(ingredient: "Emmental", portion: 2.0),
+                      Ingredients(ingredient: "Fish", portion: 1.0),
+                      Ingredients(ingredient: "Flour", portion: 2.0),
+                      Ingredients(ingredient: "Fusilli", portion: 2.0),
+                      Ingredients(ingredient: "Garlic", portion: 2.0),
+                      Ingredients(ingredient: "Lemon", portion: 2.0),
+                      Ingredients(ingredient: "Lettuce", portion: 2.0),
+                      Ingredients(ingredient: "Mascarpone", portion: 2.0),
+                      Ingredients(ingredient: "Milk", portion: 1.0),
+                      Ingredients(ingredient: "Mozarella", portion: 2.0),
+                      Ingredients(ingredient: "Olives", portion: 2.0),
+                      Ingredients(ingredient: "Onion", portion: 1.0),
+                      Ingredients(ingredient: "Orange", portion: 2.0),
+                      Ingredients(ingredient: "Parmesan", portion: 2.0),
+                      Ingredients(ingredient: "Pasta Sauce", portion: 1.0),
+                      Ingredients(ingredient: "Pizza Base", portion: 1.0),
+                      Ingredients(ingredient: "Rice", portion: 1.0),
+                      Ingredients(ingredient: "Sugar", portion: 1.0),
+                      Ingredients(ingredient: "Tomato", portion: 2.0),
+                      Ingredients(ingredient: "Tortillas", portion: 3.0),
+                      Ingredients(ingredient: "Water", portion: 1.0)
+                      ]
+
+

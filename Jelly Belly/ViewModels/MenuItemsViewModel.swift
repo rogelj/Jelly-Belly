@@ -79,10 +79,11 @@ class MenuItems: ObservableObject {
                         print("Unknown Error \(code)")
                         throw MenuItemError.invalidResponse
                     }
-                    myResult = decodedResponse.result
-                    print("Here!!")
-                    print("\(myResult)")
+                    DispatchQueue.main.async {
+                        self.myResult = decodedResponse.result
+                        self.mappingData(dwnLst: self.myResult)
                     }
+                }
                 print("Data Downloaded: \(data)")
             } catch {
                 print("Error!")
@@ -112,4 +113,27 @@ class MenuItems: ObservableObject {
             throw MenuItemError.errorGettingCookies
         }
     }
+
+    private func mappingData(dwnLst: [Result]) {
+        print("\(dwnLst)")
+        for res in dwnLst {
+            let item = Dish(
+                name: res.menuname,
+                ingredients: [myIngredients.randomElement()!,
+                              myIngredients.randomElement()!,
+                              myIngredients.randomElement()!],
+                cuisine: DishParts.cuisine[5],
+                mealCategory: DishParts.MealCategory.allCases.randomElement()!,
+                cost: Double.random(in: 8..<25),
+                special: Bool.random(),
+                discountable: Bool.random(),
+                description: res.resultDescription
+            )
+            print("\(item.name) \(item.mealCategory) \(item.cost)")
+            for it in item.ingredients {
+                print(it)
+            }
+        }
+    }
 }
+

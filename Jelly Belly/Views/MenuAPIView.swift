@@ -22,8 +22,6 @@ struct MenuAPIView: View {
             }
         }
     }
-
-
 }
 
 struct MenuAPIView_Previews: PreviewProvider {

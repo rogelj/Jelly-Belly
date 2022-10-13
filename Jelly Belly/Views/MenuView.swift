@@ -60,6 +60,8 @@ struct HeaderViewMenu: View {
  */
 struct MenuView: View {
     @State var menuDishes = dishes
+
+    
 //    @EnvironmentObject var customerOrder: Order
     @ObservedObject var orderCaretaker: OrderCaretaker
     

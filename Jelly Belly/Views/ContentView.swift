@@ -13,8 +13,6 @@ struct ContentView: View {
     @State private var showSplash = true
     @State private var tabSelection = 1
     @StateObject var orderCaretaker = OrderCaretaker()
-    
-    var menuDishes = dishes
 
     var body: some View {
         if !showSplash {
@@ -70,7 +68,7 @@ struct ContentView: View {
                 .onAppear(perform: {
                     Task {
                         try await downloader.loadData()
-                        try await downloader.getRayCookie()
+//                        try await downloader.getRayCookie()
                     }
                 })
         }
