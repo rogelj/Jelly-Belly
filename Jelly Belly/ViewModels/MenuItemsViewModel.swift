@@ -127,7 +127,7 @@ class MenuItems: ObservableObject {
                               myIngredients.randomElement()!],
                 cuisine: DishParts.cuisine[5],
                 mealCategory: DishParts.MealCategory.allCases.randomElement()!,
-                cost: Double.random(in: 8..<25),
+                cost: Double(Double.random(in: 8..<25)).roundNearest(),
                 special: Bool.random(),
                 discountable: Bool.random(),
                 description: res.resultDescription
