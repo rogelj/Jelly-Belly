@@ -22,7 +22,7 @@ class MenuItems: ObservableObject {
     let menuJSONURL = URL(fileURLWithPath: "JellyBellyMenuItems",
                            relativeTo: FileManager.documentsDirectoryURL).appendingPathExtension("json")
 
-    let menyPListURL = URL(fileURLWithPath: "JellyBellyMenuItems",
+    let menuPListURL = URL(fileURLWithPath: "JellyBellyMenuItems",
                             relativeTo: FileManager.documentsDirectoryURL).appendingPathExtension("plist")
 
     // MARK: - FoodBukkaMenu
@@ -65,6 +65,11 @@ class MenuItems: ObservableObject {
     init() {
         self.sessionConfiguration = URLSessionConfiguration.default
         self.session = URLSession(configuration: sessionConfiguration)
+        // Loading from local JSON file
+        // loadJSONMenu()
+
+        // Loading form local plist file
+        loadPListMenu()
     }
 
     func loadData() async throws {
@@ -144,10 +149,10 @@ class MenuItems: ObservableObject {
                 discountable: Bool.random(),
                 description: res.resultDescription
             )
-            print("\(item.name) \(item.mealCategory) \(item.cost)")
-            for it in item.ingredients {
-                print(it)
-            }
+//            print("\(item.name) \(item.mealCategory) \(item.cost)")
+//            for it in item.ingredients {
+//                print(it)
+//            }
             createdDishes.append(item)
         }
         return createdDishes
@@ -169,6 +174,25 @@ class MenuItems: ObservableObject {
         }
     }
 
+    private func loadJSONMenu() {
+        print(Bundle.main.bundleURL)
+        print(FileManager.documentsDirectoryURL)
+
+        let temporaryDirectoryURL = FileManager.default.temporaryDirectory
+        print(temporaryDirectoryURL)
+
+        print((try? FileManager.default.contentsOfDirectory(atPath: FileManager.documentsDirectoryURL.path)) ?? [])
+
+        let decoder = JSONDecoder()
+
+        do {
+            let menuData = try Data(contentsOf: menuJSONURL)
+            myMenuDishes = try decoder.decode([Dish].self, from: menuData)
+        } catch let error {
+            print(error)
+        }
+    }
+
     // Assignment 3 - Saving to PList
     private func savePListMenu() {
         let encoder = PropertyListEncoder()
@@ -177,7 +201,21 @@ class MenuItems: ObservableObject {
         do {
             let tasksData = try encoder.encode(myMenuDishes)
 
-            try tasksData.write(to: menyPListURL, options: .atomicWrite)
+            try tasksData.write(to: menuPListURL, options: .atomicWrite)
+        } catch let error {
+            print(error)
+        }
+    }
+
+    private func loadPListMenu() {
+        guard FileManager.default.fileExists(atPath: menuPListURL.path) else {
+            return
+        }
+        let decoder = PropertyListDecoder()
+
+        do {
+            let menuData = try Data(contentsOf: menuPListURL)
+            myMenuDishes = try decoder.decode([Dish].self, from: menuData)
         } catch let error {
             print(error)
         }
