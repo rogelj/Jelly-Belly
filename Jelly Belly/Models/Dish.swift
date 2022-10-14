@@ -27,7 +27,7 @@ extension Dish: Identifiable { }
     - `finalCost: Double` - Computed property - based on the discountFactor (if dish is discountable)
  
 */
-class Dish {
+class Dish: Codable {
     let id: UUID = UUID()
     let name: String
     var ingredients: [Ingredients]
@@ -113,12 +113,12 @@ extension Dish {
     - `ingredient: String`
     - `portion`: `Double`
 */
-struct Ingredients: Hashable {
+struct Ingredients: Codable, Hashable {
     var ingredient: String
     var portion: Double
 }
 
-struct PizzaIngredients: Hashable {
+struct PizzaIngredients: Codable, Hashable {
     var ingredients: Ingredients
     var cost: Double
 }

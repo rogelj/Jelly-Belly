@@ -18,7 +18,7 @@ enum DishParts {
     public static let cuisine = ["Italian", "Mexican", "American", "Japanese", "French", "International"]
 //    public static let mealType = [("Starter", "🥗"), ("Main", "🍽"), ("Dessert", "🍰"), ("Drink", "🥤")]
     
-    enum MealCategory: String, CaseIterable {
+    enum MealCategory: String, Codable, CaseIterable {
         case starter = "Starter"
         case main = "Main"
         case dessert = "Dessert"

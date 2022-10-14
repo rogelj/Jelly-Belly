@@ -14,6 +14,7 @@
 		46092F8128DDC48C002E6F44 /* OrderCaretaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46092F8028DDC48C002E6F44 /* OrderCaretaker.swift */; };
 		46092F9F28DE0F3E002E6F44 /* OrderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46092F9E28DE0F3E002E6F44 /* OrderViewModel.swift */; };
 		460BFFBB28F0814300E1016E /* MenuItemsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460BFFBA28F0814300E1016E /* MenuItemsViewModel.swift */; };
+		462896F328F9664100CB6DF5 /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462896F228F9664100CB6DF5 /* FileManager.swift */; };
 		46525CA628B6443B00D90956 /* OrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46525CA528B6443B00D90956 /* OrderView.swift */; };
 		46613C7228CB3AC100A70504 /* MenuItemTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46613C7128CB3AC100A70504 /* MenuItemTableViewController.swift */; };
 		46613C7428CB3CDF00A70504 /* SampleDishes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46613C7328CB3CDF00A70504 /* SampleDishes.swift */; };
@@ -59,6 +60,7 @@
 		46092F9E28DE0F3E002E6F44 /* OrderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewModel.swift; sourceTree = "<group>"; };
 		460BFFBA28F0814300E1016E /* MenuItemsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemsViewModel.swift; sourceTree = "<group>"; };
 		460BFFBE28F0846A00E1016E /* Jelly-Belly-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Jelly-Belly-Info.plist"; sourceTree = SOURCE_ROOT; };
+		462896F228F9664100CB6DF5 /* FileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManager.swift; sourceTree = "<group>"; };
 		46525CA528B6443B00D90956 /* OrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderView.swift; sourceTree = "<group>"; };
 		46613C7128CB3AC100A70504 /* MenuItemTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemTableViewController.swift; sourceTree = "<group>"; };
 		46613C7328CB3CDF00A70504 /* SampleDishes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleDishes.swift; sourceTree = "<group>"; };
@@ -130,6 +132,14 @@
 			path = OrderMemento;
 			sourceTree = "<group>";
 		};
+		462896F128F9662E00CB6DF5 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				462896F228F9664100CB6DF5 /* FileManager.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		469BB5E228BFED10004BB435 /* CalculatingDiscounts */ = {
 			isa = PBXGroup;
 			children = (
@@ -194,6 +204,7 @@
 		46AAB96128AFCDDE00DE602A /* Jelly Belly */ = {
 			isa = PBXGroup;
 			children = (
+				462896F128F9662E00CB6DF5 /* Extensions */,
 				46B52F5128F8119C0051881D /* Networking */,
 				460BFFBE28F0846A00E1016E /* Jelly-Belly-Info.plist */,
 				46B55AF328D3814100678814 /* ViewModels */,
@@ -350,6 +361,7 @@
 				4689A9D728CE36D70091ABB2 /* MenuDetailedView.swift in Sources */,
 				46E0E5C928CCF67400D2E6AD /* UList_Menu.swift in Sources */,
 				46B52F5528F812480051881D /* MenuAPIView.swift in Sources */,
+				462896F328F9664100CB6DF5 /* FileManager.swift in Sources */,
 				46A1B02528AFDE2000302426 /* Constants.swift in Sources */,
 				4695086828DF491C007D2F89 /* PizzaBuilder.swift in Sources */,
 				46092F8128DDC48C002E6F44 /* OrderCaretaker.swift in Sources */,

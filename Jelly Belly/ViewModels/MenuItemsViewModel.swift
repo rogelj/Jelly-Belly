@@ -6,12 +6,19 @@
 //
 
 import Foundation
+import Combine
 import SwiftUI
 
 class MenuItems: ObservableObject {
 
     @Published var myResult = [Result]()
     @Published var myMenuDishes = [Dish]()
+
+    let menuJSONURL = URL(fileURLWithPath: "JellyBellyMenuItems",
+                           relativeTo: FileManager.documentsDirectoryURL).appendingPathExtension("json")
+
+    let menyPListURL = URL(fileURLWithPath: "JellyBellyMenuItems",
+                            relativeTo: FileManager.documentsDirectoryURL).appendingPathExtension("plist")
 
     // MARK: - FoodBukkaMenu
     struct FoodBukkaMenu: Codable {
@@ -139,6 +146,19 @@ class MenuItems: ObservableObject {
             createdDishes.append(item)
         }
         return createdDishes
+    }
+
+    private func saveJSONMenu() {
+        let encoder = JSONEncoder()
+        encoder.outputFormatting = .prettyPrinted
+
+        do {
+            let tasksData = try encoder.encode(myMenuDishes)
+
+            try tasksData.write(to: menuJSONURL, options: .atomicWrite)
+        } catch let error {
+            print(error)
+        }
     }
 }
 
