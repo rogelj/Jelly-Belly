@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
+
     @ObservedObject var downloader = MenuItems()
 
     @State private var showSplash = true

@@ -1,5 +1,5 @@
 //
-//  TSwift.swift
+//  MenuAPIView.swift
 //  Jelly Belly
 //
 //  Created by J Rogel PhD on 13/10/2022.
@@ -7,8 +7,19 @@
 
 import Foundation
 import SwiftUI
+import CoreData
 
 struct MenuAPIView: View {
+
+    @Environment(\.managedObjectContext) var viewContext
+
+//    let menuFetchRequest = DishEntity.basicFetchRequest()
+//    var menuDishes: FetchedResults<DishEntity> {
+//        menuFetchRequest.wrappedValue
+//    }
+
+    @FetchRequest(entity: DishEntity.entity(), sortDescriptors: []) var menuDishes: FetchedResults<DishEntity>
+
 
     var downloader: MenuItems
 

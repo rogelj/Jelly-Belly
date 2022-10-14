@@ -15,6 +15,10 @@
 		46092F9F28DE0F3E002E6F44 /* OrderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46092F9E28DE0F3E002E6F44 /* OrderViewModel.swift */; };
 		460BFFBB28F0814300E1016E /* MenuItemsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460BFFBA28F0814300E1016E /* MenuItemsViewModel.swift */; };
 		462896F328F9664100CB6DF5 /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462896F228F9664100CB6DF5 /* FileManager.swift */; };
+		462896F628F99D6700CB6DF5 /* JBMenuItems.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 462896F428F99D6700CB6DF5 /* JBMenuItems.xcdatamodeld */; };
+		462896F828F99DD700CB6DF5 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462896F728F99DD700CB6DF5 /* Persistence.swift */; };
+		462896FF28F9BADB00CB6DF5 /* DishEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462896FD28F9BADB00CB6DF5 /* DishEntity+CoreDataClass.swift */; };
+		4628970028F9BADB00CB6DF5 /* DishEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462896FE28F9BADB00CB6DF5 /* DishEntity+CoreDataProperties.swift */; };
 		46525CA628B6443B00D90956 /* OrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46525CA528B6443B00D90956 /* OrderView.swift */; };
 		46613C7228CB3AC100A70504 /* MenuItemTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46613C7128CB3AC100A70504 /* MenuItemTableViewController.swift */; };
 		46613C7428CB3CDF00A70504 /* SampleDishes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46613C7328CB3CDF00A70504 /* SampleDishes.swift */; };
@@ -61,6 +65,10 @@
 		460BFFBA28F0814300E1016E /* MenuItemsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemsViewModel.swift; sourceTree = "<group>"; };
 		460BFFBE28F0846A00E1016E /* Jelly-Belly-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Jelly-Belly-Info.plist"; sourceTree = SOURCE_ROOT; };
 		462896F228F9664100CB6DF5 /* FileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManager.swift; sourceTree = "<group>"; };
+		462896F528F99D6700CB6DF5 /* MenuItems.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MenuItems.xcdatamodel; sourceTree = "<group>"; };
+		462896F728F99DD700CB6DF5 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		462896FD28F9BADB00CB6DF5 /* DishEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DishEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		462896FE28F9BADB00CB6DF5 /* DishEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DishEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		46525CA528B6443B00D90956 /* OrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderView.swift; sourceTree = "<group>"; };
 		46613C7128CB3AC100A70504 /* MenuItemTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemTableViewController.swift; sourceTree = "<group>"; };
 		46613C7328CB3CDF00A70504 /* SampleDishes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleDishes.swift; sourceTree = "<group>"; };
@@ -173,6 +181,8 @@
 		46A1B01B28AFD7FC00302426 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				462896FD28F9BADB00CB6DF5 /* DishEntity+CoreDataClass.swift */,
+				462896FE28F9BADB00CB6DF5 /* DishEntity+CoreDataProperties.swift */,
 				46092F7D28DDC286002E6F44 /* OrderMemento */,
 				4695086728DF491C007D2F89 /* PizzaBuilder.swift */,
 				46A1B02428AFDE2000302426 /* Constants.swift */,
@@ -181,6 +191,7 @@
 				4696886628B8E5B4004E8B53 /* DishParts.swift */,
 				46613C7328CB3CDF00A70504 /* SampleDishes.swift */,
 				4689A9D828CE37C10091ABB2 /* Dishes.xcassets */,
+				462896F728F99DD700CB6DF5 /* Persistence.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -204,6 +215,7 @@
 		46AAB96128AFCDDE00DE602A /* Jelly Belly */ = {
 			isa = PBXGroup;
 			children = (
+				462896F428F99D6700CB6DF5 /* JBMenuItems.xcdatamodeld */,
 				462896F128F9662E00CB6DF5 /* Extensions */,
 				46B52F5128F8119C0051881D /* Networking */,
 				460BFFBE28F0846A00E1016E /* Jelly-Belly-Info.plist */,
@@ -345,6 +357,7 @@
 				46678A6728CF345300AD20D5 /* UITableShow.swift in Sources */,
 				46092F7828DDB170002E6F44 /* WelcomeViewModel.swift in Sources */,
 				46A1B02128AFD93800302426 /* HomeBackgroundView.swift in Sources */,
+				462896F628F99D6700CB6DF5 /* JBMenuItems.xcdatamodeld in Sources */,
 				46B52F5328F811BD0051881D /* MenuViewModel.swift in Sources */,
 				46678A6428CF32AB00AD20D5 /* ViewController.swift in Sources */,
 				46AAB96528AFCDDE00DE602A /* ContentView.swift in Sources */,
@@ -367,13 +380,16 @@
 				46092F8128DDC48C002E6F44 /* OrderCaretaker.swift in Sources */,
 				46613C8628CBADC300A70504 /* MenuUIListView.swift in Sources */,
 				46F4D9FF28D4D2460088D91D /* WelcomeView.swift in Sources */,
+				462896FF28F9BADB00CB6DF5 /* DishEntity+CoreDataClass.swift in Sources */,
 				46525CA628B6443B00D90956 /* OrderView.swift in Sources */,
 				46E4379228B62061004FCB53 /* Order.swift in Sources */,
 				46C15E1D28E0BF1800786E2F /* JBPizzaViewModel.swift in Sources */,
 				4689A9D528CE28D30091ABB2 /* MenuView.swift in Sources */,
 				4695086A28DF6B6C007D2F89 /* JBPizzaView.swift in Sources */,
+				4628970028F9BADB00CB6DF5 /* DishEntity+CoreDataProperties.swift in Sources */,
 				46A1B02328AFD95200302426 /* OnboardView.swift in Sources */,
 				460BFFBB28F0814300E1016E /* MenuItemsViewModel.swift in Sources */,
+				462896F828F99DD700CB6DF5 /* Persistence.swift in Sources */,
 				46A1B01D28AFD8FF00302426 /* TextViews.swift in Sources */,
 				46092F7A28DDB302002E6F44 /* MenuDetailedViewModel.swift in Sources */,
 				46613C7228CB3AC100A70504 /* MenuItemTableViewController.swift in Sources */,
@@ -600,6 +616,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		462896F428F99D6700CB6DF5 /* JBMenuItems.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				462896F528F99D6700CB6DF5 /* MenuItems.xcdatamodel */,
+			);
+			currentVersion = 462896F528F99D6700CB6DF5 /* MenuItems.xcdatamodel */;
+			path = JBMenuItems.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 46AAB95728AFCDDE00DE602A /* Project object */;
 }
