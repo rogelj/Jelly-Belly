@@ -12,7 +12,12 @@ import SwiftUI
 class MenuItems: ObservableObject {
 
     @Published var myResult = [Result]()
-    @Published var myMenuDishes = [Dish]()
+    @Published var myMenuDishes = [Dish]() {
+        didSet {
+            saveJSONMenu()
+            savePListMenu()
+        }
+    }
 
     let menuJSONURL = URL(fileURLWithPath: "JellyBellyMenuItems",
                            relativeTo: FileManager.documentsDirectoryURL).appendingPathExtension("json")
@@ -148,7 +153,10 @@ class MenuItems: ObservableObject {
         return createdDishes
     }
 
+    // Assignment 2 - Saving to JSON
     private func saveJSONMenu() {
+        print(Bundle.main.bundleURL)
+        print(FileManager.documentsDirectoryURL)
         let encoder = JSONEncoder()
         encoder.outputFormatting = .prettyPrinted
 
@@ -156,6 +164,20 @@ class MenuItems: ObservableObject {
             let tasksData = try encoder.encode(myMenuDishes)
 
             try tasksData.write(to: menuJSONURL, options: .atomicWrite)
+        } catch let error {
+            print(error)
+        }
+    }
+
+    // Assignment 3 - Saving to PList
+    private func savePListMenu() {
+        let encoder = PropertyListEncoder()
+        encoder.outputFormat = .xml
+
+        do {
+            let tasksData = try encoder.encode(myMenuDishes)
+
+            try tasksData.write(to: menyPListURL, options: .atomicWrite)
         } catch let error {
             print(error)
         }
