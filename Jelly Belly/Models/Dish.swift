@@ -89,6 +89,17 @@ class Dish: Codable {
         }
         return calories.roundNearest()  // **Nice to have** - implementing a method with `return`
     }
+
+    func printDish() {
+        Swift.print("\(name)")
+        Swift.print("\(description)")
+        Swift.print("\(cuisine)")
+        Swift.print("\(mealCategory)")
+        Swift.print("\(cost)")
+        for entry in ingredients {
+            Swift.print("Name: \(entry)")
+        }
+    }
 }
 
 extension Dish {

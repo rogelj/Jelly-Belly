@@ -133,7 +133,6 @@ class MenuItems: ObservableObject {
     }
 
     private func mappingData(dwnLst: [Result]) -> [Dish] {
-        print("\(dwnLst)")
 
         var createdDishes: [Dish] = []
         for res in dwnLst {
@@ -205,6 +204,11 @@ class MenuItems: ObservableObject {
         } catch let error {
             print(error)
         }
+
+        // Printing some contents of the JSON file to the console
+        for item in myMenuDishes[0...4] {
+            item.printDish()
+        }
     }
 
     private func loadPListMenu() {
@@ -218,6 +222,11 @@ class MenuItems: ObservableObject {
             myMenuDishes = try decoder.decode([Dish].self, from: menuData)
         } catch let error {
             print(error)
+        }
+
+        // Printing some contents of the PList to the console
+        for item in myMenuDishes[0...4] {
+            item.printDish()
         }
     }
 }
