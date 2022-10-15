@@ -16,6 +16,15 @@ struct PersistenceController {
         let viewContext = result.container.viewContext
 
         // Dummy data will go here later
+        for _ in 0..<10 {
+            let newItem = DishEntity(context: viewContext)
+            newItem.name = "Dish 1"
+            newItem.dishDescription = "My new dish"
+            newItem.cost = 10.0
+            newItem.cuisine = "International"
+            newItem.special = false
+            newItem.discountable = false
+        }
 
         do {
             try viewContext.save()
@@ -46,5 +55,13 @@ struct PersistenceController {
         container.viewContext.undoManager = nil
         container.viewContext.shouldDeleteInaccessibleFaults = true
     }
+
+    private func newTaskContext() -> NSManagedObjectContext {
+        let taskContext = container.newBackgroundContext()
+        taskContext.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
+        return taskContext
+    }
+
+ 
 }
 

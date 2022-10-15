@@ -14,7 +14,7 @@ extension DishEntity {
 
     static func createWith(
         name: String,
-        cusine: String,
+        cuisine: String,
         cost: Double,
         special: Bool,
         discountable: Bool,
@@ -23,7 +23,7 @@ extension DishEntity {
     ) {
         let myMenuDish = DishEntity(context: managedObjectContext)
         myMenuDish.name = name
-        myMenuDish.cusine = cusine
+        myMenuDish.cuisine = cuisine
         myMenuDish.cost = cost
         myMenuDish.special = special
         myMenuDish.discountable = discountable
@@ -42,7 +42,7 @@ extension DishEntity {
     }
 
     @NSManaged public var name: String
-    @NSManaged public var cusine: String
+    @NSManaged public var cuisine: String
     @NSManaged public var cost: Double
     @NSManaged public var special: Bool
     @NSManaged public var discountable: Bool

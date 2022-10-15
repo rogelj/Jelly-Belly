@@ -9,6 +9,8 @@ import SwiftUI
 
 struct ContentView: View {
 
+    @Environment(\.managedObjectContext) var context
+
     @ObservedObject var downloader = MenuItems()
 
     @State private var showSplash = true
@@ -32,27 +34,32 @@ struct ContentView: View {
                     }
                     .tag(1)
                 
-//                DiscountGridView(orderCaretaker: orderCaretaker)
-                MenuAPIView(downloader: downloader)
-                    .tabItem {
-                        Image(systemName: "gift")
-                        Text("Discounts")
-                    }
-                    .tag(2)
+//                DiscountGridView(downloader: downloader, orderCaretaker: orderCaretaker)
+//                    .tabItem {
+//                        Image(systemName: "gift")
+//                        Text("Discounts")
+//                    }
+//                    .tag(1)
                 
                 JBPizzaView(orderCaretaker: orderCaretaker)
                     .tabItem {
                         Image(systemName: "chart.pie")
                         Text("JB Pizza")
                     }
-                    .tag(3)
+                    .tag(2)
+                CoreDataView()
+                    .tabItem {
+                        Image(systemName: "heart.square.fill")
+                        Text("Favourites")
+                    }
+                    .tag(1)
                 
                 OrderView(orderCaretaker: orderCaretaker)
                     .tabItem {
                         Image(systemName: "cart")
                         Text("Order")
                     }
-                    .tag(4)
+                    .tag(3)
             }
             .accentColor(Color("Belly"))
         } else {
@@ -68,7 +75,7 @@ struct ContentView: View {
                 }
                 .onAppear(perform: {
                     Task {
-                        try await downloader.loadData()
+                        try await downloader.loadData(context: context)
 //                        try await downloader.getRayCookie()
                     }
                 })

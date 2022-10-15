@@ -8,6 +8,7 @@
 import Foundation
 import Combine
 import SwiftUI
+import CoreData
 
 class MenuItems: ObservableObject {
 
@@ -72,7 +73,7 @@ class MenuItems: ObservableObject {
         loadPListMenu()
     }
 
-    func loadData() async throws {
+    func loadData(context: NSManagedObjectContext) async throws {
         guard let url = URL(string: "http://foodbukka.herokuapp.com/api/v1/menu") else {
             print("Invalid URL")
             throw MenuItemError.invalidURL
@@ -100,6 +101,7 @@ class MenuItems: ObservableObject {
                     DispatchQueue.main.async {
                         self.myResult = decodedResponse.result
                         self.myMenuDishes = self.mappingData(dwnLst: self.myResult)
+                        self.saveData(context: context)
                     }
                 }
                 print("Data Downloaded: \(data)")
@@ -227,6 +229,29 @@ class MenuItems: ObservableObject {
         // Printing some contents of the PList to the console
         for item in myMenuDishes[0...4] {
             item.printDish()
+        }
+    }
+
+    // Assignment 4 Saving JSON info to Core data
+
+    func saveData(context: NSManagedObjectContext) {
+        myMenuDishes.forEach { (data) in
+            let entity = DishEntity(context: context)
+            entity.name = data.name
+            entity.dishDescription = data.description
+            entity.cost = data.cost
+            entity.cuisine = data.cuisine
+            entity.special = data.special ?? false
+            entity.discountable = data.discountable ?? false
+        }
+
+        // saving all pending data
+        do {
+            try context.save()
+            print("Success saving JSON to core data")
+        } catch {
+            print("Error saving JSON to core data")
+            print(error.localizedDescription)
         }
     }
 }

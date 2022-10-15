@@ -8,8 +8,10 @@
 import SwiftUI
 
 struct DiscountGridView: View {
-    
-    @State var menuDishes = dishes
+
+    var downloader: MenuItems
+
+//    @State var menuDishes = dishes
     @ObservedObject var orderCaretaker: OrderCaretaker
     
     var body: some View {
@@ -30,7 +32,7 @@ struct DiscountGridView: View {
                         ) {
                             ForEach(DishParts.MealCategory.allCases, id: \.self) { category in
                                 Section(header: MenuHeaderView(title: category.rawValue)) {
-                                    ForEach(Dish.getDiscountDishes(by: category)) { dish in
+                                    ForEach(self.getDiscountDishes(by: category)) { dish in
                                         NavigationLink(destination: MenuDetailedView(dish: dish, orderCaretaker: orderCaretaker)) {
                                             DishImage(dishName: dish.name)
                                                 .padding(.leading)
@@ -42,6 +44,11 @@ struct DiscountGridView: View {
                     }
                 }
             }
+        }
+    }
+    func getDiscountDishes(by mealCategory: DishParts.MealCategory) -> [Dish] {
+        downloader.myMenuDishes.filter { dish in
+            dish.mealCategory == mealCategory && dish.discountable == true
         }
     }
 }
@@ -71,11 +78,12 @@ struct DishImage: View {
 }
 
 struct DiscountGridView_Previews: PreviewProvider {
+    static private var downloader = MenuItems()
     static private var orderCaretaker = OrderCaretaker()
     
     static var previews: some View {
-        DiscountGridView(orderCaretaker: orderCaretaker)
-        DiscountGridView(orderCaretaker: orderCaretaker)
+        DiscountGridView(downloader: downloader, orderCaretaker: orderCaretaker)
+        DiscountGridView(downloader: downloader, orderCaretaker: orderCaretaker)
             .preferredColorScheme(.dark)
     }
 }
