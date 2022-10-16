@@ -50,7 +50,7 @@ struct ContentView: View {
                 CoreDataView()
                     .tabItem {
                         Image(systemName: "heart.square.fill")
-                        Text("Favourites")
+                        Text("Specials")
                     }
                     .tag(1)
                 
