@@ -13,7 +13,13 @@ struct CoreDataView: View {
 
     @Environment(\.managedObjectContext) var context
 
-    @FetchRequest(entity: DishEntity.entity(), sortDescriptors: []) var menuDishes: FetchedResults<DishEntity>
+    @FetchRequest(entity: DishEntity.entity(),
+                  sortDescriptors:
+                    [NSSortDescriptor(key: "cost", ascending: true),
+                     NSSortDescriptor(key: "name", ascending: true)
+                    ],
+                  predicate: NSPredicate(format: "%K == %@", "special", NSNumber(value: true))
+    ) var menuDishes: FetchedResults<DishEntity>
 
     var body: some View {
         VStack {

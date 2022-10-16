@@ -37,10 +37,6 @@ extension DishEntity {
         }
     }
 
-    static func basicFetchRequest() -> FetchRequest<DishEntity> {
-        return FetchRequest<DishEntity>(entity: DishEntity.entity(), sortDescriptors: [])
-    }
-
     @NSManaged public var name: String
     @NSManaged public var cuisine: String
     @NSManaged public var cost: Double
