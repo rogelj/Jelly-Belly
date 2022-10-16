@@ -13,6 +13,8 @@ struct CoreDataView: View {
 
     @Environment(\.managedObjectContext) var context
 
+    // Assignment 3 - displaying core data contents in a separate view
+    // and sorting by cost and name, as well as filtering only for specials
     @FetchRequest(entity: DishEntity.entity(),
                   sortDescriptors:
                     [NSSortDescriptor(key: "cost", ascending: true),
@@ -46,7 +48,6 @@ struct CoreDataView_Previews: PreviewProvider {
         let newDish = DishEntity(context: context)
         newDish.name = "Pasta Bake"
         newDish.dishDescription = "A delicious pasta bake."
-//        MenuAPIView(downloader: downloader)
         return CoreDataView()
     }
 }

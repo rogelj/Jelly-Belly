@@ -167,11 +167,12 @@ class MenuItems: ObservableObject {
 
     // Assignment 2 - Saving to JSON
     private func saveJSONMenu() {
-        print(Bundle.main.bundleURL)
-        print("Docs directory:")
-        print(FileManager.documentsDirectoryURL)
-        print("file path:")
-        print(menuJSONURL.path)
+        // Checking for paths being correct 
+//        print(Bundle.main.bundleURL)
+//        print("Docs directory:")
+//        print(FileManager.documentsDirectoryURL)
+//        print("file path:")
+//        print(menuJSONURL.path)
         let encoder = JSONEncoder()
         encoder.outputFormatting = .prettyPrinted
 
@@ -203,7 +204,7 @@ class MenuItems: ObservableObject {
         }
     }
 
-    // Assignment 3 - Saving to PList
+    // Assignment 2 - Saving to PList
     private func savePListMenu() {
         let encoder = PropertyListEncoder()
         encoder.outputFormat = .xml
@@ -241,7 +242,7 @@ class MenuItems: ObservableObject {
         }
     }
 
-    // Assignment 4 Saving JSON info to Core data
+    // Assignment 3 Saving JSON info to Core data
 
     func saveData(context: NSManagedObjectContext) {
         myMenuDishes.forEach { (data) in
