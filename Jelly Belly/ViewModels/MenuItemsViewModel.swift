@@ -21,10 +21,10 @@ class MenuItems: ObservableObject {
     }
 
     let menuJSONURL = URL(fileURLWithPath: "JellyBellyMenuItems",
-                           relativeTo: FileManager.documentsDirectoryURL).appendingPathExtension("json")
+                          relativeTo: FileManager.documentsDirectoryURL.appendingPathComponent("JB")).appendingPathExtension("json")
 
     let menuPListURL = URL(fileURLWithPath: "JellyBellyMenuItems",
-                            relativeTo: FileManager.documentsDirectoryURL).appendingPathExtension("plist")
+                            relativeTo: FileManager.documentsDirectoryURL.appendingPathComponent("JB")).appendingPathExtension("plist")
 
     // MARK: - FoodBukkaMenu
     struct FoodBukkaMenu: Codable {
@@ -66,12 +66,18 @@ class MenuItems: ObservableObject {
     init() {
         self.sessionConfiguration = URLSessionConfiguration.default
         self.session = URLSession(configuration: sessionConfiguration)
+
+        if FileManager.SearchPathDirectory.documentDirectory.createSubFolder(named: "JB") {
+            print("folder successfully created")
+        }
+
         // Loading from local JSON file
         // loadJSONMenu()
 
         // Loading form local plist file
         loadPListMenu()
     }
+
 
     func loadData(context: NSManagedObjectContext) async throws {
         guard let url = URL(string: "http://foodbukka.herokuapp.com/api/v1/menu") else {
@@ -162,7 +168,10 @@ class MenuItems: ObservableObject {
     // Assignment 2 - Saving to JSON
     private func saveJSONMenu() {
         print(Bundle.main.bundleURL)
+        print("Docs directory:")
         print(FileManager.documentsDirectoryURL)
+        print("file path:")
+        print(menuJSONURL.path)
         let encoder = JSONEncoder()
         encoder.outputFormatting = .prettyPrinted
 
