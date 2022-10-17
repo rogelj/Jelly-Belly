@@ -131,6 +131,34 @@ struct MenuRowView: View {
     }
 }
 
+struct MenuCDRowView: View {
+    var dish: DishEntity
+
+    var body: some View {
+        VStack(spacing: 3) {
+            HStack {
+                if dish.special != nil && dish.special == true {
+                    VStack(alignment: .leading){
+                        Text(dish.name.uppercased())
+                            .bold()
+                            .font(.title3)
+                        Text("Special")
+                            .foregroundColor(Color("Jelly"))
+                            .font(.headline)
+                    }
+                    Spacer()
+                } else {
+                    Text(dish.name.uppercased())
+                        .bold()
+                        .font(.title3)
+                    Spacer()
+                }
+            }
+        }
+        .frame(minHeight: 40)
+    }
+}
+
 struct DishCircle: View {
     var dishName: String
     

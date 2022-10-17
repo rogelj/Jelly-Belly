@@ -47,7 +47,7 @@ struct ContentView: View {
                         Text("JB Pizza")
                     }
                     .tag(2)
-                CoreDataView()
+                CoreDataView(orderCaretaker: orderCaretaker)
                     .tabItem {
                         Image(systemName: "heart.square.fill")
                         Text("Specials")

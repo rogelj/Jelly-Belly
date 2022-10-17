@@ -30,6 +30,29 @@ struct MenuDetailedView: View {
     }
 }
 
+struct MenuCDDetailedView: View {
+    var dish: DishEntity
+    @ObservedObject var orderCaretaker: OrderCaretaker
+
+    var body: some View {
+        VStack {
+            DishCircle(dishName: dish.name)
+            DishInformationCDView(dish: dish)
+            Spacer()
+                .frame(height: 30.0)
+//            Button("Add to Order") {
+//                addToOrder(orderCaretaker: orderCaretaker, dish: dish)
+//            }
+        }
+        .padding()
+        .frame(maxWidth: .infinity)
+        .background(Color("BackgroundColor"))
+        .cornerRadius(Constants.General.roudedRectCornerRadius)
+        .shadow(radius: 10, x: 5, y: 5)
+        .padding().navigationBarTitle(Text(dish.name), displayMode: .inline)
+    }
+}
+
 
 struct MenuDetailedView_Previews: PreviewProvider {
 //    static private var customerOrder = Binding.constant(Order(loadTestData: true))
