@@ -118,7 +118,7 @@ class MenuItems: ObservableObject {
 
     }
 
-    // Assignment 5 - Getting a cookie from raywenderlich.com
+    // Getting a cookie from raywenderlich.com
     func getRayCookie() async throws {
         guard let url = URL(string: "https://www.raywenderlich.com") else {
             throw MenuItemError.errorGettingCookies
@@ -140,6 +140,7 @@ class MenuItems: ObservableObject {
         }
     }
 
+    // Part of Assignment 1 - Mapping models
     private func mappingData(dwnLst: [Result]) -> [Dish] {
 
         var createdDishes: [Dish] = []
