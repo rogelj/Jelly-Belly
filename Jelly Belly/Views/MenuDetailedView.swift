@@ -6,9 +6,11 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct MenuDetailedView: View {
     var dish: Dish
+
     @ObservedObject var orderCaretaker: OrderCaretaker
     
     var body: some View {
@@ -32,7 +34,13 @@ struct MenuDetailedView: View {
 
 struct MenuCDDetailedView: View {
     var dish: DishEntity
+
+    @State var tags: String = ""
+
     @ObservedObject var orderCaretaker: OrderCaretaker
+
+    @Environment(\.dismiss) var dismiss
+    @Environment(\.managedObjectContext) var context
 
     var body: some View {
         VStack {
@@ -40,6 +48,29 @@ struct MenuCDDetailedView: View {
             DishInformationCDView(dish: dish)
             Spacer()
                 .frame(height: 30.0)
+
+            TextField("Tags", text: $tags)
+//            Text("\(dish.tags)")
+
+            Spacer()
+            Button(action: {
+                let tags = Set(self.tags.split(separator: ",").map {
+                    Tag.fetchOrCreateWith(title: String($0), in: self.context)
+                })
+                DishEntity.createWith(
+                    name: self.dish.name,
+                    cuisine: self.dish.cuisine,
+                    cost: self.dish.cost,
+                    special: self.dish.special,
+                    discountable: self.dish.discountable,
+                    dishDescription: self.dish.dishDescription,
+                    tags: tags,
+                    using: self.context)
+                dismiss()
+            }, label: {
+                Text("Save")
+                    .fontWeight(.bold)
+            })
 //            Button("Add to Order") {
 //                addToOrder(orderCaretaker: orderCaretaker, dish: dish)
 //            }

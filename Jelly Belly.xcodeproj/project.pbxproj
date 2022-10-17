@@ -20,6 +20,9 @@
 		462896FF28F9BADB00CB6DF5 /* DishEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462896FD28F9BADB00CB6DF5 /* DishEntity+CoreDataClass.swift */; };
 		4628970028F9BADB00CB6DF5 /* DishEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462896FE28F9BADB00CB6DF5 /* DishEntity+CoreDataProperties.swift */; };
 		46354DA328FD244C00CF62BC /* DishInformationCDView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46354DA228FD244C00CF62BC /* DishInformationCDView.swift */; };
+		46354DA628FD305000CF62BC /* Tag+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46354DA428FD305000CF62BC /* Tag+CoreDataClass.swift */; };
+		46354DA728FD305000CF62BC /* Tag+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46354DA528FD305000CF62BC /* Tag+CoreDataProperties.swift */; };
+		46354DAA28FD49AE00CF62BC /* TagsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46354DA928FD49AE00CF62BC /* TagsView.swift */; };
 		46525CA628B6443B00D90956 /* OrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46525CA528B6443B00D90956 /* OrderView.swift */; };
 		46613C7228CB3AC100A70504 /* MenuItemTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46613C7128CB3AC100A70504 /* MenuItemTableViewController.swift */; };
 		46613C7428CB3CDF00A70504 /* SampleDishes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46613C7328CB3CDF00A70504 /* SampleDishes.swift */; };
@@ -71,6 +74,9 @@
 		462896FD28F9BADB00CB6DF5 /* DishEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DishEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
 		462896FE28F9BADB00CB6DF5 /* DishEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DishEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		46354DA228FD244C00CF62BC /* DishInformationCDView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishInformationCDView.swift; sourceTree = "<group>"; };
+		46354DA428FD305000CF62BC /* Tag+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Tag+CoreDataClass.swift"; sourceTree = "<group>"; };
+		46354DA528FD305000CF62BC /* Tag+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Tag+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		46354DA928FD49AE00CF62BC /* TagsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsView.swift; sourceTree = "<group>"; };
 		46525CA528B6443B00D90956 /* OrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderView.swift; sourceTree = "<group>"; };
 		46613C7128CB3AC100A70504 /* MenuItemTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemTableViewController.swift; sourceTree = "<group>"; };
 		46613C7328CB3CDF00A70504 /* SampleDishes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleDishes.swift; sourceTree = "<group>"; };
@@ -151,6 +157,14 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		46354DA828FD49A100CF62BC /* Tags */ = {
+			isa = PBXGroup;
+			children = (
+				46354DA928FD49AE00CF62BC /* TagsView.swift */,
+			);
+			path = Tags;
+			sourceTree = "<group>";
+		};
 		469BB5E228BFED10004BB435 /* CalculatingDiscounts */ = {
 			isa = PBXGroup;
 			children = (
@@ -177,6 +191,7 @@
 				46092F7628DDAE70002E6F44 /* ViewComponents */,
 				46E1FBDB28F02C7500F95505 /* SplashScreen.swift */,
 				46B52F5428F812480051881D /* CoreDataView.swift */,
+				46354DA828FD49A100CF62BC /* Tags */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -184,6 +199,8 @@
 		46A1B01B28AFD7FC00302426 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				46354DA428FD305000CF62BC /* Tag+CoreDataClass.swift */,
+				46354DA528FD305000CF62BC /* Tag+CoreDataProperties.swift */,
 				462896FD28F9BADB00CB6DF5 /* DishEntity+CoreDataClass.swift */,
 				462896FE28F9BADB00CB6DF5 /* DishEntity+CoreDataProperties.swift */,
 				46092F7D28DDC286002E6F44 /* OrderMemento */,
@@ -375,12 +392,15 @@
 				46092F7C28DDB6AA002E6F44 /* Dish.swift in Sources */,
 				46F4DA0128D4DCAE0088D91D /* DiscountGridView.swift in Sources */,
 				4689A9D728CE36D70091ABB2 /* MenuDetailedView.swift in Sources */,
+				46354DA728FD305000CF62BC /* Tag+CoreDataProperties.swift in Sources */,
 				46E0E5C928CCF67400D2E6AD /* UList_Menu.swift in Sources */,
+				46354DA628FD305000CF62BC /* Tag+CoreDataClass.swift in Sources */,
 				46B52F5528F812480051881D /* CoreDataView.swift in Sources */,
 				462896F328F9664100CB6DF5 /* FileManager.swift in Sources */,
 				46A1B02528AFDE2000302426 /* Constants.swift in Sources */,
 				4695086828DF491C007D2F89 /* PizzaBuilder.swift in Sources */,
 				46092F8128DDC48C002E6F44 /* OrderCaretaker.swift in Sources */,
+				46354DAA28FD49AE00CF62BC /* TagsView.swift in Sources */,
 				46613C8628CBADC300A70504 /* MenuUIListView.swift in Sources */,
 				46F4D9FF28D4D2460088D91D /* WelcomeView.swift in Sources */,
 				462896FF28F9BADB00CB6DF5 /* DishEntity+CoreDataClass.swift in Sources */,

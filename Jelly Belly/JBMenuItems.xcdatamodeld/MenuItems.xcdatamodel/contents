@@ -7,5 +7,10 @@
         <attribute name="dishDescription" attributeType="String"/>
         <attribute name="name" attributeType="String"/>
         <attribute name="special" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <relationship name="tags" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Tag" inverseName="specials" inverseEntity="Tag"/>
+    </entity>
+    <entity name="Tag" representedClassName="Tag" syncable="YES">
+        <attribute name="title" attributeType="String"/>
+        <relationship name="specials" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DishEntity" inverseName="tags" inverseEntity="DishEntity"/>
     </entity>
 </model>

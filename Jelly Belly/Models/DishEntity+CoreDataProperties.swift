@@ -19,6 +19,7 @@ extension DishEntity {
         special: Bool,
         discountable: Bool,
         dishDescription: String,
+        tags: Set<Tag> = [],
         using managedObjectContext: NSManagedObjectContext
     ) {
         let myMenuDish = DishEntity(context: managedObjectContext)
@@ -28,6 +29,7 @@ extension DishEntity {
         myMenuDish.special = special
         myMenuDish.discountable = discountable
         myMenuDish.dishDescription = dishDescription
+        myMenuDish.tags = tags
 
         do {
             try managedObjectContext.save()
@@ -43,6 +45,7 @@ extension DishEntity {
     @NSManaged public var special: Bool
     @NSManaged public var discountable: Bool
     @NSManaged public var dishDescription: String
+    @NSManaged public var tags: Set<Tag>?
 
 }
 

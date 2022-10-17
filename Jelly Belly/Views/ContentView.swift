@@ -52,14 +52,14 @@ struct ContentView: View {
                         Image(systemName: "heart.square.fill")
                         Text("Specials")
                     }
-                    .tag(1)
+                    .tag(3)
                 
                 OrderView(orderCaretaker: orderCaretaker)
                     .tabItem {
                         Image(systemName: "cart")
                         Text("Order")
                     }
-                    .tag(3)
+                    .tag(4)
             }
             .accentColor(Color("Belly"))
         } else {
