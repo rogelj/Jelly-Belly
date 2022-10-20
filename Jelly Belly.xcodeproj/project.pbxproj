@@ -25,7 +25,8 @@
 		46354DAA28FD49AE00CF62BC /* TagsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46354DA928FD49AE00CF62BC /* TagsView.swift */; };
 		46525CA628B6443B00D90956 /* OrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46525CA528B6443B00D90956 /* OrderView.swift */; };
 		46613C7428CB3CDF00A70504 /* SampleDishes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46613C7328CB3CDF00A70504 /* SampleDishes.swift */; };
-		468113B329014E950073E15A /* Jelly_BellyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468113B229014E950073E15A /* Jelly_BellyTests.swift */; };
+		468113B329014E950073E15A /* Jelly_BellyDishTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468113B229014E950073E15A /* Jelly_BellyDishTests.swift */; };
+		468113BA2901588B0073E15A /* Jelly_BellyOrderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468113B92901588B0073E15A /* Jelly_BellyOrderTests.swift */; };
 		4689A9D528CE28D30091ABB2 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4689A9D428CE28D30091ABB2 /* MenuView.swift */; };
 		4689A9D728CE36D70091ABB2 /* MenuDetailedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4689A9D628CE36D70091ABB2 /* MenuDetailedView.swift */; };
 		4689A9D928CE37C10091ABB2 /* Dishes.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4689A9D828CE37C10091ABB2 /* Dishes.xcassets */; };
@@ -81,7 +82,8 @@
 		46525CA528B6443B00D90956 /* OrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderView.swift; sourceTree = "<group>"; };
 		46613C7328CB3CDF00A70504 /* SampleDishes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleDishes.swift; sourceTree = "<group>"; };
 		468113B029014E950073E15A /* Jelly BellyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Jelly BellyTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		468113B229014E950073E15A /* Jelly_BellyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Jelly_BellyTests.swift; sourceTree = "<group>"; };
+		468113B229014E950073E15A /* Jelly_BellyDishTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Jelly_BellyDishTests.swift; sourceTree = "<group>"; };
+		468113B92901588B0073E15A /* Jelly_BellyOrderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Jelly_BellyOrderTests.swift; sourceTree = "<group>"; };
 		4689A9D428CE28D30091ABB2 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		4689A9D628CE36D70091ABB2 /* MenuDetailedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuDetailedView.swift; sourceTree = "<group>"; };
 		4689A9D828CE37C10091ABB2 /* Dishes.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Dishes.xcassets; sourceTree = "<group>"; };
@@ -166,7 +168,8 @@
 		468113B129014E950073E15A /* Jelly BellyTests */ = {
 			isa = PBXGroup;
 			children = (
-				468113B229014E950073E15A /* Jelly_BellyTests.swift */,
+				468113B229014E950073E15A /* Jelly_BellyDishTests.swift */,
+				468113B92901588B0073E15A /* Jelly_BellyOrderTests.swift */,
 			);
 			path = "Jelly BellyTests";
 			sourceTree = "<group>";
@@ -366,7 +369,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				468113B329014E950073E15A /* Jelly_BellyTests.swift in Sources */,
+				468113BA2901588B0073E15A /* Jelly_BellyOrderTests.swift in Sources */,
+				468113B329014E950073E15A /* Jelly_BellyDishTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
