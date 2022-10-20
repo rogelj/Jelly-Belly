@@ -52,6 +52,8 @@ final class Jelly_BellyOrderTests: XCTestCase {
         dishNoDisc = nil
         myOrder = nil
         newOrder = nil
+        newOrdercaretaker = OrderCaretaker()
+        myOrdercaretaker = OrderCaretaker()
     }
 
     func test_NumDishesInOrder() {
@@ -76,7 +78,7 @@ final class Jelly_BellyOrderTests: XCTestCase {
         XCTAssertEqual(num, 0.0)
     }
 
-    func test_OrdercaretakerAddToOrder() {
+    func test_OrdercaretakerMemento() {
         addToOrder(orderCaretaker: myOrdercaretaker, dish: dishDisc)
         var numDishes = myOrdercaretaker.order.count
         XCTAssertEqual(numDishes, 1)
@@ -97,6 +99,38 @@ final class Jelly_BellyOrderTests: XCTestCase {
         myOrdercaretaker.undo()
         numDishes = myOrdercaretaker.order.count
         XCTAssertEqual(numDishes, 2)
+
+        myOrdercaretaker.undo()
+        myOrdercaretaker.clear()
+        numDishes = myOrdercaretaker.order.count
+        XCTAssertEqual(numDishes, 0)
+    }
+
+    func test_OrdercaretakerEmpty() {
+        var numDishes = myOrdercaretaker.order.count
+        XCTAssertEqual(numDishes, 0)
+
+        myOrdercaretaker.undo()
+        numDishes = myOrdercaretaker.order.count
+        XCTAssertEqual(numDishes, 0)
+
+    }
+
+    func test_OrdercaretakerCalculations() {
+        addToOrder(orderCaretaker: myOrdercaretaker, dish: dishDisc)
+        addToOrder(orderCaretaker: myOrdercaretaker, dish: dishNoDisc)
+        let numDishes = myOrdercaretaker.order.count
+        XCTAssertEqual(numDishes, 2)
+
+        var total = myOrdercaretaker.totalOrder(discounted: true)
+        XCTAssertEqual(total, 190)
+
+        total = myOrdercaretaker.totalOrder(discounted: false)
+        XCTAssertEqual(total, 200)
+
+        myOrdercaretaker.printOrder()
+        myOrdercaretaker.printSpecials()
+        myOrdercaretaker.printDietaryDishes()
     }
 
     func test_InitOrdercaretaker() {
