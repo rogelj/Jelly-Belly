@@ -28,15 +28,6 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES"
       codeCoverageEnabled = "YES">
-      <CodeCoverageTargets>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "46AAB95E28AFCDDE00DE602A"
-            BuildableName = "Jelly Belly.app"
-            BlueprintName = "Jelly Belly"
-            ReferencedContainer = "container:Jelly Belly.xcodeproj">
-         </BuildableReference>
-      </CodeCoverageTargets>
       <Testables>
          <TestableReference
             skipped = "NO"
@@ -46,6 +37,17 @@
                BlueprintIdentifier = "468113AF29014E950073E15A"
                BuildableName = "Jelly BellyTests.xctest"
                BlueprintName = "Jelly BellyTests"
+               ReferencedContainer = "container:Jelly Belly.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "46044AE62901B321000D3E1B"
+               BuildableName = "Jelly_BellyUITests.xctest"
+               BlueprintName = "Jelly_BellyUITests"
                ReferencedContainer = "container:Jelly Belly.xcodeproj">
             </BuildableReference>
          </TestableReference>
