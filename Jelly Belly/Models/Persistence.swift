@@ -15,16 +15,16 @@ struct PersistenceController {
         let result = PersistenceController(inMemory: true)
         let viewContext = result.container.viewContext
 
-        // Dummy data will go here later
-        for _ in 0..<10 {
-            let newItem = DishEntity(context: viewContext)
-            newItem.name = "Dish 1"
-            newItem.dishDescription = "My new dish"
-            newItem.cost = 10.0
-            newItem.cuisine = "International"
-            newItem.special = false
-            newItem.discountable = false
-        }
+//        // Dummy data will go here later
+//        for _ in 0..<10 {
+//            let newItem = DishEntity(context: viewContext)
+//            newItem.name = "Dish 1"
+//            newItem.dishDescription = "My new dish"
+//            newItem.cost = 10.0
+//            newItem.cuisine = "International"
+//            newItem.special = false
+//            newItem.discountable = false
+//        }
 
         do {
             try viewContext.save()

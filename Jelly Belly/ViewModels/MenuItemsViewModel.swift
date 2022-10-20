@@ -118,28 +118,6 @@ class MenuItems: ObservableObject {
 
     }
 
-    // Getting a cookie from raywenderlich.com
-    func getRayCookie() async throws {
-        guard let url = URL(string: "https://www.raywenderlich.com") else {
-            throw MenuItemError.errorGettingCookies
-        }
-
-        do {
-            let (_, responseCookie) = try await session.data(from: url)
-
-            guard let httpResponse = responseCookie as? HTTPURLResponse,
-                  let fields = httpResponse.allHeaderFields as? [String: String],
-                  let cookie = HTTPCookie.cookies(withResponseHeaderFields: fields, for: url).first
-            else {
-                throw MenuItemError.invalidResponse
-            }
-            print("Cookie Name: \(cookie.name)")
-            print("Cookie Value: \(cookie.value)")
-        } catch {
-            throw MenuItemError.errorGettingCookies
-        }
-    }
-
     // Part of Assignment 1 - Mapping models
     private func mappingData(dwnLst: [Result]) -> [Dish] {
 
