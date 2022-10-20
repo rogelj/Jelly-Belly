@@ -10,7 +10,11 @@ import Combine
 import SwiftUI
 import CoreData
 
-class MenuItems: ObservableObject {
+protocol SessionMenu {
+    func loadJSONMenu()
+}
+
+class MenuItems: ObservableObject, SessionMenu {
 
     @Published var myResult = [Result]()
     @Published var myMenuDishes = [Dish]() {
@@ -68,11 +72,11 @@ class MenuItems: ObservableObject {
         self.session = URLSession(configuration: sessionConfiguration)
 
         if FileManager.SearchPathDirectory.documentDirectory.createSubFolder(named: "JB") {
-            print("folder successfully created")
+//            print("folder successfully created")
         }
 
         // Loading from local JSON file
-        // loadJSONMenu()
+         loadJSONMenu()
 
         // Loading form local plist file
         loadPListMenu()
@@ -164,14 +168,13 @@ class MenuItems: ObservableObject {
         }
     }
 
-    private func loadJSONMenu() {
-        print(Bundle.main.bundleURL)
-        print(FileManager.documentsDirectoryURL)
+    internal func loadJSONMenu() {
+//        print(Bundle.main.bundleURL)
+//        print(FileManager.documentsDirectoryURL)
 
-        let temporaryDirectoryURL = FileManager.default.temporaryDirectory
-        print(temporaryDirectoryURL)
-
-        print((try? FileManager.default.contentsOfDirectory(atPath: FileManager.documentsDirectoryURL.path)) ?? [])
+//        print(temporaryDirectoryURL)
+//
+//        print((try? FileManager.default.contentsOfDirectory(atPath: FileManager.documentsDirectoryURL.path)) ?? [])
 
         let decoder = JSONDecoder()
 
