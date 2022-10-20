@@ -63,7 +63,5 @@ extension Double {
         } else {
             return Double(intPart)
         }
-        // The block inside the extension could be replaced by:
-        // return self.rounded()
     }
 }

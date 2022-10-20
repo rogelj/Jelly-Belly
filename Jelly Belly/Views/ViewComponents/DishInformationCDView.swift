@@ -39,33 +39,12 @@ struct DishInformationCDView: View {
             }
             Spacer()
                 .frame(height: 5.0)
-//            HStack(alignment: .top) {
-//
-//                VStack {
-//                    if let isDietary = dish.dietary {
-//                        VStack{
-//                            DishItemText(text: "Dietary Requirement:")
-//                                .bold()
-//                            DishItemText(text: isDietary)
-//                            Spacer()
-//                                .frame(height: 5.0)
-//                        }
-//                    }
-//                }
-//            }
             HStack(alignment: .top) {
                 VStack {
                     DishItemText(text: "Cost:")
                         .bold()
                     DishItemText(text: "£\(dish.cost)")
                 }
-//                VStack {
-//                    if dish.discountable != nil && dish.discountable == true {
-//                        DishItemText(text: "Discounted Cost")
-//                            .bold()
-//                        DishItemText(text: "£\(dish.finalCost)")
-//                    }
-//                }
             }
             Spacer()
                 .frame(height: 5.0)
@@ -78,45 +57,6 @@ struct DishInformationCDView: View {
     }
 }
 
-//struct DishOrderInformationCD: View {
-//    var dish: Dish
-//    var body: some View {
-//        VStack(spacing: 3) {
-//            HStack {
-//                if dish.special != nil && dish.special == true {
-//                    VStack(alignment: .leading){
-//                        Text("Special")
-//                            .foregroundColor(Color("Jelly"))
-//                            .font(.headline)
-//                    }
-//                    Spacer()
-//                }
-//            }
-//            HStack {
-//                if dish.discountable != nil && dish.discountable == true {
-//                    Text("Seasonal discount available")
-//                        .foregroundColor(Color("Belly"))
-//                        .font(.headline)
-//                }
-//                Spacer()
-//            }
-//            HStack(alignment: .top) {
-//                VStack {
-//                    DishItemText(text: "Cost:")
-//                        .bold()
-//                    DishItemText(text: "£\(dish.cost)")
-//                }
-//                VStack {
-//                    if dish.discountable != nil && dish.discountable == true {
-//                        DishItemText(text: "Discounted Cost")
-//                            .bold()
-//                        DishItemText(text: "£\(dish.finalCost)")
-//                    }
-//                }
-//            }
-//        }
-//    }
-//}
 
 struct DishViewCD: View {
     var dish: DishEntity
