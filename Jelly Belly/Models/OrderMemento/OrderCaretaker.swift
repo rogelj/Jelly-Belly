@@ -30,7 +30,7 @@ class OrderCaretaker: ObservableObject {
     init(loadTestData: Bool = false) {
         if loadTestData {
             // Loading test data - now stored in `Dishes.swift`
-            order = dishes
+            order = dishes1
         }
     }
     

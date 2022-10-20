@@ -14,6 +14,8 @@ final class Jelly_BellyOrderTests: XCTestCase {
     var dishNoDisc: Dish!
     var myOrder: Order!
     var newOrder: Order!
+    var myOrdercaretaker = OrderCaretaker()
+    var newOrdercaretaker = OrderCaretaker()
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -42,7 +44,6 @@ final class Jelly_BellyOrderTests: XCTestCase {
                           description: "Fussilli Arrabiata made with whole meal pasta and fresh tomatoes.")
 
         myOrder = Order(loadTestData: true)
-
     }
 
     override func tearDownWithError() throws {
@@ -50,6 +51,7 @@ final class Jelly_BellyOrderTests: XCTestCase {
         dishDisc = nil
         dishNoDisc = nil
         myOrder = nil
+        newOrder = nil
     }
 
     func test_NumDishesInOrder() {
@@ -57,7 +59,7 @@ final class Jelly_BellyOrderTests: XCTestCase {
         XCTAssertEqual(numDishes, 20)
     }
 
-    func test_CreteOrder() {
+    func test_InitOrder() {
         newOrder = Order(order: [dishDisc, dishNoDisc])
         XCTAssertNotNil(newOrder)
     }
@@ -74,4 +76,32 @@ final class Jelly_BellyOrderTests: XCTestCase {
         XCTAssertEqual(num, 0.0)
     }
 
+    func test_OrdercaretakerAddToOrder() {
+        addToOrder(orderCaretaker: myOrdercaretaker, dish: dishDisc)
+        var numDishes = myOrdercaretaker.order.count
+        XCTAssertEqual(numDishes, 1)
+
+        removeFromOrder(orderCaretaker: myOrdercaretaker, dish: dishDisc)
+        numDishes = myOrdercaretaker.order.count
+        XCTAssertEqual(numDishes, 0)
+
+        addToOrder(orderCaretaker: myOrdercaretaker, dish: dishDisc)
+        addToOrder(orderCaretaker: myOrdercaretaker, dish: dishNoDisc)
+        numDishes = myOrdercaretaker.order.count
+        XCTAssertEqual(numDishes, 2)
+
+        myOrdercaretaker.clear()
+        numDishes = myOrdercaretaker.order.count
+        XCTAssertEqual(numDishes, 0)
+
+        myOrdercaretaker.undo()
+        numDishes = myOrdercaretaker.order.count
+        XCTAssertEqual(numDishes, 2)
+    }
+
+    func test_InitOrdercaretaker() {
+        newOrdercaretaker = OrderCaretaker(loadTestData: true)
+        let numDishes = newOrdercaretaker.order.count
+        XCTAssertEqual(numDishes, 6)
+    }
 }
