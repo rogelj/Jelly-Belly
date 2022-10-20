@@ -62,5 +62,16 @@ final class Jelly_BellyOrderTests: XCTestCase {
         XCTAssertNotNil(newOrder)
     }
 
+    // Testing constants - Double rounding
+
+    func test_RoundNearestUp() {
+        let num = 0.6.roundNearest()
+        XCTAssertEqual(num, 1.0)
+    }
+
+    func test_RoundNearestDown() {
+        let num = 0.4.roundNearest()
+        XCTAssertEqual(num, 0.0)
+    }
 
 }
