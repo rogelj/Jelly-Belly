@@ -20,7 +20,7 @@ final class Jelly_BellyCoreDataTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testFetchProductById() {
+    func test_SaveCoreData() {
         //Given
         let dish1 = testDish
         let context = coreDataStore.persistentContainer.newBackgroundContext()
