@@ -57,6 +57,8 @@
 		46F4D9FF28D4D2460088D91D /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F4D9FE28D4D2460088D91D /* WelcomeView.swift */; };
 		46F4DA0128D4DCAE0088D91D /* DiscountGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F4DA0028D4DCAE0088D91D /* DiscountGridView.swift */; };
 		46F4DA0328D4EADD0088D91D /* DishInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F4DA0228D4EADD0088D91D /* DishInformationView.swift */; };
+		46F81C6E2902E1F40018D1E9 /* TestCoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F81C6D2902E1F40018D1E9 /* TestCoreDataStack.swift */; };
+		46F81C702902E27F0018D1E9 /* Jelly_BellyCoreDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F81C6F2902E27F0018D1E9 /* Jelly_BellyCoreDataTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -132,6 +134,8 @@
 		46F4D9FE28D4D2460088D91D /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		46F4DA0028D4DCAE0088D91D /* DiscountGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscountGridView.swift; sourceTree = "<group>"; };
 		46F4DA0228D4EADD0088D91D /* DishInformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishInformationView.swift; sourceTree = "<group>"; };
+		46F81C6D2902E1F40018D1E9 /* TestCoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCoreDataStack.swift; sourceTree = "<group>"; };
+		46F81C6F2902E27F0018D1E9 /* Jelly_BellyCoreDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Jelly_BellyCoreDataTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -216,6 +220,8 @@
 				46044AD929017EA0000D3E1B /* Jelly_BellyPizzaMakerTest.swift */,
 				46044ADB290188CD000D3E1B /* Jelly_BellyGeneralViewTests.swift */,
 				46044ADD29018C36000D3E1B /* Jelly_BellyAsynchTests.swift */,
+				46F81C6D2902E1F40018D1E9 /* TestCoreDataStack.swift */,
+				46F81C6F2902E27F0018D1E9 /* Jelly_BellyCoreDataTests.swift */,
 			);
 			path = "Jelly BellyTests";
 			sourceTree = "<group>";
@@ -464,6 +470,8 @@
 				46044ADA29017EA0000D3E1B /* Jelly_BellyPizzaMakerTest.swift in Sources */,
 				46044ADE29018C36000D3E1B /* Jelly_BellyAsynchTests.swift in Sources */,
 				468113B329014E950073E15A /* Jelly_BellyDishTests.swift in Sources */,
+				46F81C702902E27F0018D1E9 /* Jelly_BellyCoreDataTests.swift in Sources */,
+				46F81C6E2902E1F40018D1E9 /* TestCoreDataStack.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
