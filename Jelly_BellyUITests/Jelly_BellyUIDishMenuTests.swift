@@ -75,7 +75,6 @@ final class Jelly_BellyUIDishMenuTests: XCTestCase {
 
         let tabBar = app.tabBars["Tab Bar"]
         let specialsTab = tabBar.buttons["Specials"]
-        let orderTab = tabBar.buttons["Order"]
 
         specialsTab.tap()
         XCTAssert(specialsTab.exists)
@@ -88,9 +87,16 @@ final class Jelly_BellyUIDishMenuTests: XCTestCase {
         dishButton.tap()
         print(dishName)
 
-        let backButton = app.buttons["Back"]
-        XCTAssert(backButton.exists)
-        backButton.tap()
+        app.staticTexts
+            .matching(identifier: "tags")
+            .firstMatch
+            .tap()
+
+
+        let saveButton = app.buttons["Save"]
+        XCTAssert(saveButton.exists)
+        saveButton.tap()
+
 
         let tagsButton = app.buttons["Tags"]
         XCTAssert(tagsButton.exists)
