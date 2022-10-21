@@ -16,6 +16,7 @@ struct HeaderViewOrder: View {
         if verticalSizeClass == .regular && horizontalSizeClass == .compact {
             HStack(spacing: 20.0) {
                 BigText(text: "Your Order")
+                    .accessibilityIdentifier("YourOrder")
                 Spacer()
                 RoundLogoView(imageSize: Constants.Logo.logoViewSizeSmall)
             }
@@ -25,6 +26,7 @@ struct HeaderViewOrder: View {
                 .frame(height: 0.5)
             HStack {
                 BigText(text: "Your Order")
+                    .accessibilityIdentifier("YourOrder")
                     .padding(.leading)
                 Spacer()
                 RoundLogoView(imageSize: Constants.Logo.logoViewSizeSmall)
@@ -65,6 +67,7 @@ struct OrderView: View {
                             .bold()
                             .frame(maxWidth: .infinity, alignment: .leading)
                             .padding(.leading)
+                            .accessibilityIdentifier("filledOrder")
                     }
                     Button(action: {
                         orderCaretaker.clear()

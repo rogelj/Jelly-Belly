@@ -173,7 +173,8 @@ struct DishCircle: View {
         }
     }
 }
-    
+
+#if DEBUG
 struct RoundViews: View {
     var body: some View {
         VStack(spacing: 10.0) {
@@ -185,6 +186,7 @@ struct RoundViews: View {
         }
     }
 }
+#endif
 
 #if DEBUG
 struct RoundViews_Previews: PreviewProvider {

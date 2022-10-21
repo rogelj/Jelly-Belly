@@ -53,11 +53,53 @@ final class Jelly_BellyUIDishMenuTests: XCTestCase {
 
         orderTab.tap()
         XCTAssert(orderTab.exists)
-        XCUIApplication().scrollViews.otherElements.buttons["POUNDED YAMM, Special"].tap()
 
+        XCTAssertEqual(
+        app.staticTexts
+            .matching(identifier: "filledOrder")
+            .firstMatch
+            .label,
+        "Enjoy your meal!"
+        )
+
+        XCTAssertEqual(
+            app.staticTexts
+                .matching(identifier: "YourOrder")
+                .firstMatch
+                .label,
+            "Your Order"
+        )
+    }
+
+    func test_Specials() throws {
+
+        let tabBar = app.tabBars["Tab Bar"]
+        let specialsTab = tabBar.buttons["Specials"]
+        let orderTab = tabBar.buttons["Order"]
+
+        specialsTab.tap()
+        XCTAssert(specialsTab.exists)
+
+        let dishButton = XCUIApplication().collectionViews.buttons.firstMatch
+
+        XCTAssert(dishButton.exists)
+
+        let dishName = String(dishButton.label.description)
+        dishButton.tap()
+        print(dishName)
+
+        let backButton = app.buttons["Back"]
+        XCTAssert(backButton.exists)
+        backButton.tap()
+
+        let tagsButton = app.buttons["Tags"]
+        XCTAssert(tagsButton.exists)
+        tagsButton.tap()
+
+        let dismissButton = app.buttons["Dismiss"]
+        XCTAssert(dismissButton.exists)
+        dismissButton.tap()
 
 
     }
-
-
 }
