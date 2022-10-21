@@ -62,42 +62,42 @@ struct RoundLogoView: View {
     }
 }
 
-/**
- An example on how  to create a custom button
- */
-struct JellyBellyButton: View {
-    var message: String
-    
-    var body: some View {
+///**
+// An example on how  to create a custom button
+// */
+//struct JellyBellyButton: View {
+//    var message: String
+//
+//    var body: some View {
+//
+//        Button(action: { }) {
+//                Text(message)
+//                    .bold()
+//                   .font(.title3)
+//            }   .buttonStyle(WideBellyButton())
+//    }
+//}
 
-        Button(action: { }) {
-                Text(message)
-                    .bold()
-                   .font(.title3)
-            }   .buttonStyle(WideBellyButton())
-    }
-}
-
-/**
-Defining the style of a custom button
- */
-struct WideBellyButton: ButtonStyle {
-    func makeBody(configuration: Configuration) -> some View {
-        configuration.label
-            .padding()
-            .frame(maxWidth: 175, maxHeight: 10)
-            .foregroundColor(.white)
-            .padding()
-            .background(
-                ZStack {
-                    RoundedRectangle(cornerRadius: Constants.General.roudedRectCornerRadius)
-                        .fill(Color("Belly"))
-                    LinearGradient(gradient: Gradient(colors: [Color.white.opacity(0.3), Color.clear]), startPoint: .top, endPoint: .bottom)
-                }
-                    .cornerRadius(Constants.General.roudedRectCornerRadius)
-        )
-    }
-}
+///**
+//Defining the style of a custom button
+// */
+//struct WideBellyButton: ButtonStyle {
+//    func makeBody(configuration: Configuration) -> some View {
+//        configuration.label
+//            .padding()
+//            .frame(maxWidth: 175, maxHeight: 10)
+//            .foregroundColor(.white)
+//            .padding()
+//            .background(
+//                ZStack {
+//                    RoundedRectangle(cornerRadius: Constants.General.roudedRectCornerRadius)
+//                        .fill(Color("Belly"))
+//                    LinearGradient(gradient: Gradient(colors: [Color.white.opacity(0.3), Color.clear]), startPoint: .top, endPoint: .bottom)
+//                }
+//                    .cornerRadius(Constants.General.roudedRectCornerRadius)
+//        )
+//    }
+//}
 
 struct MenuRowView: View {
     var dish: Dish
@@ -180,7 +180,7 @@ struct RoundViews: View {
             RoundedTextView(text: "1")
             RoundedImageView(systemName: "fork.knife")
             RoundLogoView(imageSize: Constants.Logo.logoViewSize)
-            JellyBellyButton(message: "OK")
+//            JellyBellyButton(message: "OK")
             DishCircle(dishName: "Fusilli Arrabiata")
         }
     }

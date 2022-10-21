@@ -6,12 +6,15 @@
 //
 
 import XCTest
+import SwiftUI
+@testable import Jelly_Belly
 
-final class Jelly_BellyUITests: XCTestCase {
+final class Jelly_BellyUITextViewTests: XCTestCase {
+    var app: XCUIApplication!
 
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-
+        app = XCUIApplication()
+        app.launch()
         // In UI tests it is usually best to stop immediately when a failure occurs.
         continueAfterFailure = false
 
@@ -23,12 +26,27 @@ final class Jelly_BellyUITests: XCTestCase {
     }
 
     func testExample() throws {
-        // UI tests must launch the application that they test.
-        let app = XCUIApplication()
-        app.launch()
+        @Environment(\.colorScheme) var colorScheme
+
+        let tabBar = app.tabBars["Tab Bar"]
+        let homeTab = tabBar.buttons["Home"]
+        homeTab.tap()
+
+        XCTAssert(tabBar.exists)
+
+        let imageName = colorScheme == .light ? "JellyBelly" : "JellyBellyDark"
+
+        let jellybellyImage = app.images[imageName]
+        jellybellyImage.tap()
+
+        XCTAssert(jellybellyImage.exists)
+
+
 
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
+
+
 
     func testLaunchPerformance() throws {
         if #available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 7.0, *) {
