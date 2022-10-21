@@ -58,14 +58,23 @@ final class Jelly_BellyUITabBarTests: XCTestCase {
         XCTAssert(orderTab.exists)
     }
 
+    func test_WelcomeOnboarding() throws {
 
+        let tabBar = app.tabBars["Tab Bar"]
+        let homeTab = tabBar.buttons["Home"]
+        homeTab.tap()
+        let infoButton = app.buttons["Info"]
+        infoButton.tap()
 
-    func testLaunchPerformance() throws {
-        if #available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 7.0, *) {
-            // This measures how long it takes to launch your application.
-            measure(metrics: [XCTApplicationLaunchMetric()]) {
-                XCUIApplication().launch()
-            }
-        }
+        XCTAssert(infoButton.exists)
+
+        app.scrollViews.otherElements.staticTexts["Users can choose menu items and add them to their order"].swipeUp()
+
+        let doneButton = app.buttons["Done"]
+        XCTAssert(doneButton.exists)
+
+        doneButton.tap()
+
     }
+
 }
