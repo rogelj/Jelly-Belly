@@ -93,6 +93,7 @@ struct OrderView: View {
     }
 }
 
+#if DEBUG
 struct OrderView_Previews: PreviewProvider {
     static private var testOrder = Order(loadTestData: true)
     static private var orderCaretaker = OrderCaretaker(loadTestData: true)
@@ -109,3 +110,4 @@ struct OrderView_Previews: PreviewProvider {
             .preferredColorScheme(.dark)
     }
 }
+#endif

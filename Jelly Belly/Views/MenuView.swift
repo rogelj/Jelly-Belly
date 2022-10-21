@@ -113,6 +113,7 @@ struct MenuHeaderView: View {
     }
 }
 
+#if DEBUG
 struct MenuView_Previews: PreviewProvider {
 //    static private var menuSwiftUIIsShowing = Binding.constant(false)
 //    static private var testOrder = Binding.constant(Order(loadTestData: true))
@@ -130,3 +131,4 @@ struct MenuView_Previews: PreviewProvider {
             .preferredColorScheme(.dark)
     }
 }
+#endif

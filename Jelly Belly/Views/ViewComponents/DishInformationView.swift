@@ -188,7 +188,7 @@ struct DishOrderView: View {
     }
 }
 
-
+#if DEBUG
 struct DishInformation_Previews: PreviewProvider {
     static private var orderCaretaker = OrderCaretaker()
     
@@ -197,3 +197,4 @@ struct DishInformation_Previews: PreviewProvider {
         DishOrderView(dish: testDish, orderCaretaker: orderCaretaker)
     }
 }
+#endif

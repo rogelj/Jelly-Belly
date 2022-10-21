@@ -96,6 +96,7 @@ struct TextViews: View {
     }
 }
 
+#if DEBUG
 struct TextViews_Previews: PreviewProvider {
     static var previews: some View {
         TextViews()
@@ -105,4 +106,4 @@ struct TextViews_Previews: PreviewProvider {
             .preferredColorScheme(.dark)
     }
 }
-
+#endif

@@ -32,6 +32,7 @@ struct TagsView: View {
     }
 }
 
+#if DEBUG
 struct TagsView_Previews: PreviewProvider {
     static var previews: some View {
         let context = PersistenceController.preview.container.viewContext
@@ -40,4 +41,4 @@ struct TagsView_Previews: PreviewProvider {
         return TagsView(tags: [tag])
     }
 }
-
+#endif

@@ -84,7 +84,7 @@ struct MenuCDDetailedView: View {
     }
 }
 
-
+#if DEBUG
 struct MenuDetailedView_Previews: PreviewProvider {
 //    static private var customerOrder = Binding.constant(Order(loadTestData: true))
     static private var orderCaretaker = OrderCaretaker()
@@ -93,3 +93,4 @@ struct MenuDetailedView_Previews: PreviewProvider {
         MenuDetailedView(dish: testDish, orderCaretaker: orderCaretaker)
     }
 }
+#endif

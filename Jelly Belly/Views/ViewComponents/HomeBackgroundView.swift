@@ -56,6 +56,7 @@ struct HomeBackgroundView: View {
     }
 }
 
+#if DEBUG
 struct HomeBackgroundView_Previews: PreviewProvider {
     static var previews: some View {
         HomeBackgroundView(customerOrder: .constant(Order()))
@@ -63,3 +64,4 @@ struct HomeBackgroundView_Previews: PreviewProvider {
             .preferredColorScheme(.dark)
     }
 }
+#endif

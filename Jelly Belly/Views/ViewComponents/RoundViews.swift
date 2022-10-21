@@ -186,6 +186,7 @@ struct RoundViews: View {
     }
 }
 
+#if DEBUG
 struct RoundViews_Previews: PreviewProvider {
     static var previews: some View {
         RoundViews()
@@ -196,3 +197,4 @@ struct RoundViews_Previews: PreviewProvider {
             .previewInterfaceOrientation(.landscapeLeft)
     }
 }
+#endif

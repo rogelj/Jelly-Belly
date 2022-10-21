@@ -70,6 +70,7 @@ struct CoreDataView: View {
     }
 }
 
+//#if DEBUG
 //struct CoreDataView_Previews: PreviewProvider {
 //    static private var downloader = MenuItems()
 //    static private var orderCaretaker = OrderCaretaker()
@@ -82,3 +83,4 @@ struct CoreDataView: View {
 //        return CoreDataView(orderCaretaker: orderCaretaker)
 //    }
 //}
+//#endif

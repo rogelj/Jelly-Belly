@@ -79,6 +79,7 @@ struct DishViewCD: View {
     }
 }
 
+//#if DEBUG
 //struct DishInformationCD_Previews: PreviewProvider {
 //    static private var orderCaretaker = OrderCaretaker()
 //
@@ -86,3 +87,4 @@ struct DishViewCD: View {
 //        DishViewCD(dish: testDish)
 //    }
 //}
+//#endif
