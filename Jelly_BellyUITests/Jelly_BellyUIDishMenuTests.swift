@@ -87,12 +87,6 @@ final class Jelly_BellyUIDishMenuTests: XCTestCase {
         dishButton.tap()
         print(dishName)
 
-        app.staticTexts
-            .matching(identifier: "tags")
-            .firstMatch
-            .tap()
-
-
         let saveButton = app.buttons["Save"]
         XCTAssert(saveButton.exists)
         saveButton.tap()
