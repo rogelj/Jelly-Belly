@@ -15,6 +15,7 @@ final class Jelly_BellyPizzaMakerTest: XCTestCase {
     var sauce: Sauces!
     var vegetable: Vegetables!
     var myPizza = JBPizzaBuilder()
+    var myOrdercaretaker = OrderCaretaker()
 
     override func setUpWithError() throws {
         protein = .chicken
@@ -146,7 +147,7 @@ final class Jelly_BellyPizzaMakerTest: XCTestCase {
         XCTAssertEqual(ingredient, "Tomatoes")
     }
 
-    func test_setProtein() {
+    func test_setPizza() {
         myPizza.setProtein(.chicken)
         myPizza.setCheese(.mozarella)
         myPizza.setSauce(.pastaSauce)
@@ -159,4 +160,12 @@ final class Jelly_BellyPizzaMakerTest: XCTestCase {
         XCTAssertEqual(myDish.name, "Your Jelly Belly Pizza")
 
     }
+
+    func test_BuildJBPizza() {
+        buildJBPizza(protein: .chicken, sauce: .pastaSauce, cheese: .mozarella, veggies: [.mushrooms], orderCaretaker: myOrdercaretaker)
+        let numDishes = myOrdercaretaker.order.count
+        XCTAssertEqual(numDishes, 1)
+    }
+
+
 }
