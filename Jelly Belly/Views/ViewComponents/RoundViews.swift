@@ -12,7 +12,7 @@ import SwiftUI
  */
 struct RoundedTextView: View {
     let text: String
-    
+
     var body: some View {
         Text(text)
             .font(.title2)

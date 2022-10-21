@@ -9,7 +9,7 @@ import XCTest
 import SwiftUI
 @testable import Jelly_Belly
 
-final class Jelly_BellyUITextViewTests: XCTestCase {
+final class Jelly_BellyUITabBarTests: XCTestCase {
     var app: XCUIApplication!
 
     override func setUpWithError() throws {
@@ -25,13 +25,17 @@ final class Jelly_BellyUITextViewTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() throws {
+    func test_Tabs() throws {
         @Environment(\.colorScheme) var colorScheme
 
         let tabBar = app.tabBars["Tab Bar"]
         let homeTab = tabBar.buttons["Home"]
-        homeTab.tap()
+        let menuTab = tabBar.buttons["Menu"]
+        let jbPizzaTab = tabBar.buttons["JB Pizza"]
+        let specialsTab = tabBar.buttons["Specials"]
+        let orderTab = tabBar.buttons["Order"]
 
+        homeTab.tap()
         XCTAssert(tabBar.exists)
 
         let imageName = colorScheme == .light ? "JellyBelly" : "JellyBellyDark"
@@ -41,9 +45,17 @@ final class Jelly_BellyUITextViewTests: XCTestCase {
 
         XCTAssert(jellybellyImage.exists)
 
+        menuTab.tap()
+        XCTAssert(menuTab.exists)
 
+        jbPizzaTab.tap()
+        XCTAssert(jbPizzaTab.exists)
 
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        specialsTab.tap()
+        XCTAssert(specialsTab.exists)
+
+        orderTab.tap()
+        XCTAssert(orderTab.exists)
     }
 
 

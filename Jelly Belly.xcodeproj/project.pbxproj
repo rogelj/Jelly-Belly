@@ -12,7 +12,7 @@
 		46044ADE29018C36000D3E1B /* Jelly_BellyAsynchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46044ADD29018C36000D3E1B /* Jelly_BellyAsynchTests.swift */; };
 		46044AE029018F4D000D3E1B /* JBMenu.json in Resources */ = {isa = PBXBuildFile; fileRef = 46044ADF29018F4D000D3E1B /* JBMenu.json */; };
 		46044AE22901A269000D3E1B /* JBMenu.plist in Resources */ = {isa = PBXBuildFile; fileRef = 46044AE12901A269000D3E1B /* JBMenu.plist */; };
-		46044AEA2901B321000D3E1B /* Jelly_BellyUITextViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46044AE92901B321000D3E1B /* Jelly_BellyUITextViewTests.swift */; };
+		46044AEA2901B321000D3E1B /* Jelly_BellyUITabBarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46044AE92901B321000D3E1B /* Jelly_BellyUITabBarTests.swift */; };
 		46044AEC2901B321000D3E1B /* Jelly_BellyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46044AEB2901B321000D3E1B /* Jelly_BellyUITestsLaunchTests.swift */; };
 		46092F7828DDB170002E6F44 /* WelcomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46092F7728DDB170002E6F44 /* WelcomeViewModel.swift */; };
 		46092F7A28DDB302002E6F44 /* MenuDetailedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46092F7928DDB302002E6F44 /* MenuDetailedViewModel.swift */; };
@@ -82,7 +82,7 @@
 		46044ADF29018F4D000D3E1B /* JBMenu.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = JBMenu.json; sourceTree = "<group>"; };
 		46044AE12901A269000D3E1B /* JBMenu.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = JBMenu.plist; sourceTree = "<group>"; };
 		46044AE72901B321000D3E1B /* Jelly_BellyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Jelly_BellyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		46044AE92901B321000D3E1B /* Jelly_BellyUITextViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Jelly_BellyUITextViewTests.swift; sourceTree = "<group>"; };
+		46044AE92901B321000D3E1B /* Jelly_BellyUITabBarTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Jelly_BellyUITabBarTests.swift; sourceTree = "<group>"; };
 		46044AEB2901B321000D3E1B /* Jelly_BellyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Jelly_BellyUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		46092F7728DDB170002E6F44 /* WelcomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewModel.swift; sourceTree = "<group>"; };
 		46092F7928DDB302002E6F44 /* MenuDetailedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuDetailedViewModel.swift; sourceTree = "<group>"; };
@@ -160,7 +160,7 @@
 		46044AE82901B321000D3E1B /* Jelly_BellyUITests */ = {
 			isa = PBXGroup;
 			children = (
-				46044AE92901B321000D3E1B /* Jelly_BellyUITextViewTests.swift */,
+				46044AE92901B321000D3E1B /* Jelly_BellyUITabBarTests.swift */,
 				46044AEB2901B321000D3E1B /* Jelly_BellyUITestsLaunchTests.swift */,
 			);
 			path = Jelly_BellyUITests;
@@ -447,7 +447,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				46044AEC2901B321000D3E1B /* Jelly_BellyUITestsLaunchTests.swift in Sources */,
-				46044AEA2901B321000D3E1B /* Jelly_BellyUITextViewTests.swift in Sources */,
+				46044AEA2901B321000D3E1B /* Jelly_BellyUITabBarTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
