@@ -50,6 +50,7 @@
 		46AAB96528AFCDDE00DE602A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AAB96428AFCDDE00DE602A /* ContentView.swift */; };
 		46AAB96728AFCDDF00DE602A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46AAB96628AFCDDF00DE602A /* Assets.xcassets */; };
 		46AAB96B28AFCDDF00DE602A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46AAB96A28AFCDDF00DE602A /* Preview Assets.xcassets */; };
+		46B407ED290AC57E0031AE9E /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B407EC290AC57E0031AE9E /* Network.swift */; };
 		46B52F5528F812480051881D /* CoreDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B52F5428F812480051881D /* CoreDataView.swift */; };
 		46C15E1D28E0BF1800786E2F /* JBPizzaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C15E1C28E0BF1800786E2F /* JBPizzaViewModel.swift */; };
 		46E1FBDC28F02C7500F95505 /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E1FBDB28F02C7500F95505 /* SplashScreen.swift */; };
@@ -127,6 +128,7 @@
 		46AAB96628AFCDDF00DE602A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		46AAB96828AFCDDF00DE602A /* Jelly_Belly.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Jelly_Belly.entitlements; sourceTree = "<group>"; };
 		46AAB96A28AFCDDF00DE602A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		46B407EC290AC57E0031AE9E /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		46B52F5428F812480051881D /* CoreDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataView.swift; sourceTree = "<group>"; };
 		46C15E1C28E0BF1800786E2F /* JBPizzaViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JBPizzaViewModel.swift; sourceTree = "<group>"; };
 		46E1FBDB28F02C7500F95505 /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
@@ -263,6 +265,7 @@
 				46613C7328CB3CDF00A70504 /* SampleDishes.swift */,
 				4689A9D828CE37C10091ABB2 /* Dishes.xcassets */,
 				462896F728F99DD700CB6DF5 /* Persistence.swift */,
+				46B407EC290AC57E0031AE9E /* Network.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -491,6 +494,7 @@
 				46AAB96328AFCDDE00DE602A /* Jelly_BellyApp.swift in Sources */,
 				46092F7C28DDB6AA002E6F44 /* Dish.swift in Sources */,
 				46F4DA0128D4DCAE0088D91D /* DiscountGridView.swift in Sources */,
+				46B407ED290AC57E0031AE9E /* Network.swift in Sources */,
 				4689A9D728CE36D70091ABB2 /* MenuDetailedView.swift in Sources */,
 				46354DA728FD305000CF62BC /* Tag+CoreDataProperties.swift in Sources */,
 				46354DA628FD305000CF62BC /* Tag+CoreDataClass.swift in Sources */,
