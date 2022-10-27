@@ -137,7 +137,8 @@ class MenuItems: ObservableObject, SessionMenu {
                 cost: Double(Double.random(in: 8..<25)).roundNearest(),
                 special: Bool.random(),
                 discountable: Bool.random(),
-                description: res.resultDescription
+                description: res.resultDescription,
+                imgURL: res.images[0].replacingOccurrences(of: "\\/", with: "/")
             )
 //            print("\(item.name) \(item.mealCategory) \(item.cost)")
 //            for it in item.ingredients {
