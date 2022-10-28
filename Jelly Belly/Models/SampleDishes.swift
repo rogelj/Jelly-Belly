@@ -19,7 +19,7 @@ let dishes: [Dish] = [
          Ingredients(ingredient: "Pasta Sauce ", portion:1)
       ],
       cuisine: DishParts.cuisine[0],
-      mealCategory: .main,
+      mealCategory: .miscellaneous,
       cost: 15,
       special: true,
       discountable: true,
@@ -33,7 +33,7 @@ let dishes: [Dish] = [
          Ingredients(ingredient: "Pasta Sauce ", portion:2)
       ],
       cuisine: DishParts.cuisine[0],
-      mealCategory: .main,
+      mealCategory: .miscellaneous,
       cost: 19,
       dietary: DishParts.diet[0],
       description: "Fresh pizza dough with mozarella."
@@ -45,7 +45,7 @@ let dishes: [Dish] = [
          Ingredients(ingredient: "Sugar", portion:1)
       ],
       cuisine: DishParts.cuisine[2],
-      mealCategory: .drink,
+      mealCategory: .miscellaneous,
       cost: 9,
       dietary: DishParts.diet[1],
       description: "Lemons and sugar, nothing else."
@@ -57,7 +57,7 @@ let dishes: [Dish] = [
          Ingredients(ingredient: "Sugar", portion:0.5)
       ],
       cuisine: DishParts.cuisine[1],
-      mealCategory: .drink,
+      mealCategory: .miscellaneous,
       cost: 12,
       dietary: DishParts.diet[1],
       discountable: true,
@@ -101,7 +101,7 @@ let dishes: [Dish] = [
          Ingredients(ingredient: "Tomato", portion:1)
       ],
       cuisine: DishParts.cuisine[2],
-      mealCategory: .main,
+      mealCategory: .miscellaneous,
       cost: 19,
       description: "Beef burger with cheese"
    ),
@@ -114,7 +114,7 @@ let dishes: [Dish] = [
          Ingredients(ingredient: "Cheddar", portion:1)
       ],
       cuisine: DishParts.cuisine[1],
-      mealCategory: .main,
+      mealCategory: .miscellaneous,
       cost: 18,
       description: "Mexican tortillas in a chilli sauce."
    ),
@@ -125,7 +125,7 @@ let dishes: [Dish] = [
          Ingredients(ingredient: "Rice", portion:5)
       ],
       cuisine: DishParts.cuisine[3],
-      mealCategory: .main,
+      mealCategory: .miscellaneous,
       cost: 25,
       dietary: DishParts.diet[4],
       discountable: true,
@@ -137,7 +137,7 @@ let dishes: [Dish] = [
          Ingredients(ingredient: "Alcohol", portion:1)
       ],
       cuisine: DishParts.cuisine[4],
-      mealCategory: .drink,
+      mealCategory: .miscellaneous,
       cost: 12,
       special: true,
       description: "Baja Californian rich red wine"
@@ -148,7 +148,7 @@ let dishes: [Dish] = [
          Ingredients(ingredient: "Alcohol", portion:1)
       ],
       cuisine: DishParts.cuisine[4],
-      mealCategory: .drink,
+      mealCategory: .miscellaneous,
       cost: 12,
       description: "Argentinean fruity white wine"
    ),
@@ -158,7 +158,7 @@ let dishes: [Dish] = [
          Ingredients(ingredient: "Water", portion:1)
       ],
       cuisine: DishParts.cuisine[4],
-      mealCategory: .drink,
+      mealCategory: .miscellaneous,
       cost: 6,
       discountable: true,
       description: "Bottled mineral water"
@@ -273,7 +273,7 @@ let dishes1: [Dish] = [
                        Ingredients(ingredient: "Parmesan", portion: 1.0),
                        Ingredients(ingredient: "Pasta Sauce", portion: 1.0)],
          cuisine: DishParts.cuisine[0],
-         mealCategory: .main,
+         mealCategory: .miscellaneous,
          cost: 15.0,
          special: true,
          discountable: true,
@@ -284,7 +284,7 @@ let dishes1: [Dish] = [
                        Ingredients(ingredient: "Mozarella", portion: 2.0),
                        Ingredients(ingredient: "Pasta Sauce", portion: 2.0)],
          cuisine: DishParts.cuisine[0],
-         mealCategory: .main,
+         mealCategory: .miscellaneous,
          cost: 19.0,
          dietary: DishParts.diet[0],
          discountable: false,
@@ -294,7 +294,7 @@ let dishes1: [Dish] = [
          ingredients: [Ingredients(ingredient: "Lemon", portion: 3.0),
                        Ingredients(ingredient:"Sugar", portion: 1.0)],
          cuisine: DishParts.cuisine[2],
-         mealCategory: .drink,
+         mealCategory: .miscellaneous,
          cost: 9.0,
          description: "Lemons and sugar, nothing else."
         ),
@@ -302,7 +302,7 @@ let dishes1: [Dish] = [
          ingredients: [Ingredients(ingredient: "Orange", portion: 3),
                        Ingredients(ingredient: "Sugar", portion: 0.5)],
          cuisine: DishParts.cuisine[1],
-         mealCategory: .drink,
+         mealCategory: .miscellaneous,
          cost: 12.0,
          special: true,
          description: "Orange and sugar, nothing else."
@@ -336,7 +336,7 @@ let testDish = Dish(name: "Fusilli Arrabiata",
                                   Ingredients(ingredient:"Parmesan", portion: 1.0),
                                   Ingredients(ingredient:"Pasta Sauce", portion: 1.0)],
                     cuisine: DishParts.cuisine[0],
-                    mealCategory: .main,
+                    mealCategory: .miscellaneous,
                     cost: 15.0,
                     special: true,
                     dietary: DishParts.diet[0],

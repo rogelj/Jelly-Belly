@@ -20,9 +20,17 @@ enum DishParts {
     
     enum MealCategory: String, Codable, CaseIterable {
         case starter = "Starter"
-        case main = "Main"
+//        case main = "Main"
         case dessert = "Dessert"
-        case drink = "Drink"
+//        case drink = "Drink"
+        case beef = "Beef"
+        case vegetarian = "Vegetarian"
+        case miscellaneous = "Miscellaneous"
+        case side = "Side"
+        case chicken = "Chicken"
+        case seafood = "Seafood"
+        case breakfast = "Breakfast"
+        case pork = "Pork"
     }
     
     public static let calorieValue: [String: Double] = [

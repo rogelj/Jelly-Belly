@@ -17,6 +17,7 @@ struct Jelly_BellyApp: App {
             ContentView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
                 .environmentObject(Network())
+                .environmentObject(ImageLoader())
         }
     }
 }

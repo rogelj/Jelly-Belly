@@ -17,6 +17,7 @@ struct ContentView: View {
     @State private var tabSelection = 1
     @StateObject var orderCaretaker = OrderCaretaker()
 
+    @EnvironmentObject var imageLoader: ImageLoader
     @EnvironmentObject var network: Network
 
     var body: some View {
@@ -79,6 +80,9 @@ struct ContentView: View {
                     .onAppear(perform: {
                         Task {
                             try await downloader.loadData(context: context)
+                            
+//                            downloader.saveData(context: context)
+                            try await ImageDatabase.shared.setUp()
                         }
                     })
             }
@@ -98,14 +102,18 @@ struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
             .environmentObject(Network())
+            .environmentObject(ImageLoader())
         ContentView()
             .environmentObject(Network())
+            .environmentObject(ImageLoader())
             .preferredColorScheme(.dark)
         ContentView()
             .environmentObject(Network())
+            .environmentObject(ImageLoader())
             .previewInterfaceOrientation(.landscapeLeft)
         ContentView()
             .environmentObject(Network())
+            .environmentObject(ImageLoader())
             .previewInterfaceOrientation(.landscapeLeft)
             .preferredColorScheme(.dark)
     }
