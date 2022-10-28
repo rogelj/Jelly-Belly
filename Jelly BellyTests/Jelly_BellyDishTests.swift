@@ -20,7 +20,7 @@ final class Jelly_BellyDishTests: XCTestCase {
                                   Ingredients(ingredient:"Parmesan", portion: 1.0),
                                   Ingredients(ingredient:"Pasta Sauce", portion: 1.0)],
                     cuisine: DishParts.cuisine[0],
-                    mealCategory: .main,
+                    mealCategory: .miscellaneous,
                     cost: 100.0,
                     special: true,
                     dietary: DishParts.diet[0],
@@ -32,7 +32,7 @@ final class Jelly_BellyDishTests: XCTestCase {
                                       Ingredients(ingredient:"Parmesan", portion: 1.0),
                                       Ingredients(ingredient:"Pasta Sauce", portion: 1.0)],
                         cuisine: DishParts.cuisine[0],
-                        mealCategory: .main,
+                        mealCategory: .miscellaneous,
                         cost: 100.0,
                         special: true,
                         dietary: DishParts.diet[0],
@@ -66,12 +66,12 @@ final class Jelly_BellyDishTests: XCTestCase {
     }
 
     func test_getDishes() {
-        let numDishes = Dish.getDishes(by: .main).count
-        XCTAssertEqual(numDishes, 2)
+        let numDishes = Dish.getDishes(by: .miscellaneous).count
+        XCTAssertEqual(numDishes, 4)
     }
 
     func test_getDiscountDishes() {
-        let numDishes = Dish.getDiscountDishes(by: .main).count
+        let numDishes = Dish.getDiscountDishes(by: .miscellaneous).count
         XCTAssertEqual(numDishes, 1)
     }
 }
