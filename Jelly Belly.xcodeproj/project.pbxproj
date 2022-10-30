@@ -267,9 +267,9 @@
 				46613C7328CB3CDF00A70504 /* SampleDishes.swift */,
 				4689A9D828CE37C10091ABB2 /* Dishes.xcassets */,
 				462896F728F99DD700CB6DF5 /* Persistence.swift */,
-				46B407EC290AC57E0031AE9E /* Network.swift */,
-				46B407EE290BD5710031AE9E /* ImageDatabase.swift */,
 				46B407F0290BD9B90031AE9E /* ImageLoader.swift */,
+				46B407EE290BD5710031AE9E /* ImageDatabase.swift */,
+				46B407EC290AC57E0031AE9E /* Network.swift */,
 				46B407F2290BDBA70031AE9E /* Utility.swift */,
 			);
 			path = Models;
@@ -278,7 +278,6 @@
 		46AAB95628AFCDDE00DE602A = {
 			isa = PBXGroup;
 			children = (
-				46B407F4290BE1790031AE9E /* Database */,
 				46AAB96128AFCDDE00DE602A /* Jelly Belly */,
 				468113B129014E950073E15A /* Jelly BellyTests */,
 				46044AE82901B321000D3E1B /* Jelly_BellyUITests */,
@@ -305,6 +304,7 @@
 				46B55AF328D3814100678814 /* ViewModels */,
 				46A1B01928AFD7D600302426 /* Views */,
 				46A1B01B28AFD7FC00302426 /* Models */,
+				46B407F4290BE1790031AE9E /* Database */,
 				46AAB96828AFCDDF00DE602A /* Jelly_Belly.entitlements */,
 				46AAB96928AFCDDF00DE602A /* Preview Content */,
 			);
