@@ -25,12 +25,12 @@ class OrderOriginator {
         }
     }
     
-    func removeLastDish() {
-        guard !orderState.isEmpty else {
-            return
-        }
-        orderState.removeLast()
-    }
+//    func removeLastDish() {
+//        guard !orderState.isEmpty else {
+//            return
+//        }
+//        orderState.removeLast()
+//    }
         
     func createMemento() -> OrderMemento {
         return Order(order: orderState)

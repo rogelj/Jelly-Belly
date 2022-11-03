@@ -22,7 +22,8 @@ let dishes: [Dish] = [
       mealCategory: .main,
       cost: 15,
       special: true,
-      discountable: true
+      discountable: true,
+      description: "Fussilli Arrabiata mades with whole meal pasta and fresh tomatoes."
    ),
     Dish(
       name: "Pizza Margherita",
@@ -34,7 +35,8 @@ let dishes: [Dish] = [
       cuisine: DishParts.cuisine[0],
       mealCategory: .main,
       cost: 19,
-      dietary: DishParts.diet[0]
+      dietary: DishParts.diet[0],
+      description: "Fresh pizza dough with mozarella."
    ),
     Dish(
       name: "Lemonade",
@@ -45,7 +47,8 @@ let dishes: [Dish] = [
       cuisine: DishParts.cuisine[2],
       mealCategory: .drink,
       cost: 9,
-      dietary: DishParts.diet[1]
+      dietary: DishParts.diet[1],
+      description: "Lemons and sugar, nothing else."
    ),
     Dish(
       name: "Naranjada",
@@ -57,7 +60,8 @@ let dishes: [Dish] = [
       mealCategory: .drink,
       cost: 12,
       dietary: DishParts.diet[1],
-      discountable: true
+      discountable: true,
+      description: "Orange and sugar, nothing else."
    ),
     Dish(
       name: "Garlic Bread",
@@ -70,7 +74,8 @@ let dishes: [Dish] = [
       mealCategory: .starter,
       cost: 9,
       dietary: "",
-      discountable: true
+      discountable: true,
+      description: "Toasted bread with garlic oil."
    ),
     Dish(
       name: "Tiramisu",
@@ -84,7 +89,8 @@ let dishes: [Dish] = [
       mealCategory: .dessert,
       cost: 14,
       special: true,
-      discountable: true
+      discountable: true,
+      description: "Chocolate and mascarpone with coffee"
    ),
     Dish(
       name: "Hamburger",
@@ -96,7 +102,8 @@ let dishes: [Dish] = [
       ],
       cuisine: DishParts.cuisine[2],
       mealCategory: .main,
-      cost: 19
+      cost: 19,
+      description: "Beef burger with cheese"
    ),
     Dish(
       name: "Enchiladas",
@@ -108,7 +115,8 @@ let dishes: [Dish] = [
       ],
       cuisine: DishParts.cuisine[1],
       mealCategory: .main,
-      cost: 18
+      cost: 18,
+      description: "Mexican tortillas in a chilli sauce."
    ),
     Dish(
       name: "Sushi",
@@ -120,7 +128,8 @@ let dishes: [Dish] = [
       mealCategory: .main,
       cost: 25,
       dietary: DishParts.diet[4],
-      discountable: true
+      discountable: true,
+      description: "Salmon avocado roll."
    ),
     Dish(
       name: "Red Wine",
@@ -130,7 +139,8 @@ let dishes: [Dish] = [
       cuisine: DishParts.cuisine[4],
       mealCategory: .drink,
       cost: 12,
-      special: true
+      special: true,
+      description: "Baja Californian rich red wine"
    ),
     Dish(
       name: "White Wine",
@@ -139,7 +149,8 @@ let dishes: [Dish] = [
       ],
       cuisine: DishParts.cuisine[4],
       mealCategory: .drink,
-      cost: 12
+      cost: 12,
+      description: "Argentinean fruity white wine"
    ),
     Dish(
       name: "Water",
@@ -149,7 +160,8 @@ let dishes: [Dish] = [
       cuisine: DishParts.cuisine[4],
       mealCategory: .drink,
       cost: 6,
-      discountable: true
+      discountable: true,
+      description: "Bottled mineral water"
    ),
     Dish(
       name: "Nachos",
@@ -161,7 +173,8 @@ let dishes: [Dish] = [
       ],
       cuisine: DishParts.cuisine[1],
       mealCategory: .starter,
-      cost: 10
+      cost: 10,
+      description: "Mexican tortilla chips with cheese and jalapeños."
    ),
     Dish(
       name: "Onion Soup",
@@ -173,7 +186,8 @@ let dishes: [Dish] = [
       mealCategory: .starter,
       cost: 9,
       special: true,
-      dietary: DishParts.diet[0]
+      dietary: DishParts.diet[0],
+      description: "French onion soup with croutons and cheese."
    ),
     Dish(
       name: "Edamame",
@@ -184,7 +198,8 @@ let dishes: [Dish] = [
       mealCategory: .starter,
       cost: 8,
       dietary: DishParts.diet[1],
-      discountable: true
+      discountable: true,
+      description: "Salted edamame soy beans."
    ),
     Dish(
       name: "Olives",
@@ -193,7 +208,8 @@ let dishes: [Dish] = [
       ],
       cuisine: DishParts.cuisine[0],
       mealCategory: .starter,
-      cost: 9
+      cost: 9,
+      description: "Olives, nothing else."
    ),
     Dish(
       name: "Crème Brulee",
@@ -205,7 +221,8 @@ let dishes: [Dish] = [
       cuisine: DishParts.cuisine[4],
       mealCategory: .dessert,
       cost: 12,
-      discountable: true
+      discountable: true,
+      description: "Rich custard base topped with a layer of hardened caramelized sugar."
    ),
     Dish(
       name: "Mochi",
@@ -217,7 +234,8 @@ let dishes: [Dish] = [
       cuisine: DishParts.cuisine[3],
       mealCategory: .dessert,
       cost: 8,
-      dietary: DishParts.diet[2]
+      dietary: DishParts.diet[2],
+      description: "Japanese rice cake made of mochigome (もち米), a short-grain japonica glutinous rice, and sometimes other ingredients such as water, sugar, and cornstarch."
    ),
     Dish(
       name: "Ice cream",
@@ -230,7 +248,8 @@ let dishes: [Dish] = [
       cuisine: DishParts.cuisine[0],
       mealCategory: .dessert,
       cost: 8,
-      special: true
+      special: true,
+      description: "Italian ice cream, nothing else."
    ),
     Dish(
       name: "Chocolate cake",
@@ -243,7 +262,8 @@ let dishes: [Dish] = [
       cuisine: DishParts.cuisine[2],
       mealCategory: .dessert,
       cost: 10,
-      discountable: true
+      discountable: true,
+      description: "Dark chocolate cake"
    )
    ]
 
@@ -256,7 +276,9 @@ let dishes1: [Dish] = [
          mealCategory: .main,
          cost: 15.0,
          special: true,
-         discountable: true),
+         discountable: true,
+         description: "Fussilli Arrabiata mades with whole meal pasta and fresh tomatoes."
+        ),
     Dish(name: "Pizza Margherita",
          ingredients: [Ingredients(ingredient: "Pizza Base", portion: 1.0),
                        Ingredients(ingredient: "Mozarella", portion: 2.0),
@@ -265,20 +287,26 @@ let dishes1: [Dish] = [
          mealCategory: .main,
          cost: 19.0,
          dietary: DishParts.diet[0],
-         discountable: false),
+         discountable: false,
+         description: "Fresh pizza dough with mozarella."
+        ),
     Dish(name: "Lemonade",
          ingredients: [Ingredients(ingredient: "Lemon", portion: 3.0),
                        Ingredients(ingredient:"Sugar", portion: 1.0)],
          cuisine: DishParts.cuisine[2],
          mealCategory: .drink,
-         cost: 9.0),
+         cost: 9.0,
+         description: "Lemons and sugar, nothing else."
+        ),
     Dish(name: "Naranjada",
          ingredients: [Ingredients(ingredient: "Orange", portion: 3),
                        Ingredients(ingredient: "Sugar", portion: 0.5)],
          cuisine: DishParts.cuisine[1],
          mealCategory: .drink,
          cost: 12.0,
-         special: true),
+         special: true,
+         description: "Orange and sugar, nothing else."
+        ),
     Dish(name: "Garlic Bread",
          ingredients: [Ingredients(ingredient: "Garlic", portion: 1),
                        Ingredients(ingredient: "Parmesan", portion: 2),
@@ -287,7 +315,9 @@ let dishes1: [Dish] = [
          mealCategory: .starter,
          cost: 9.0,
          dietary: DishParts.diet[0],
-         discountable: true),
+         discountable: true,
+         description: "Toasted bread with garlic oil."
+        ),
     Dish(name: "Tiramisu",
          ingredients: [Ingredients(ingredient: "Chocolate", portion: 1),
                        Ingredients(ingredient: "Cream", portion: 2),
@@ -296,7 +326,9 @@ let dishes1: [Dish] = [
          cuisine: DishParts.cuisine[0],
          mealCategory: .dessert,
          cost: 14.0,
-         discountable: false)
+         discountable: false,
+         description: "Chocolate and mascarpone with coffee"
+        )
 ]
 
 let testDish = Dish(name: "Fusilli Arrabiata",
@@ -308,6 +340,7 @@ let testDish = Dish(name: "Fusilli Arrabiata",
                     cost: 15.0,
                     special: true,
                     dietary: DishParts.diet[0],
-                    discountable: true)
+                    discountable: true,
+                    description: "Fussilli Arrabiata mades with whole meal pasta and fresh tomatoes.")
 
 

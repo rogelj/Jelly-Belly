@@ -8,13 +8,14 @@
 import SwiftUI
 
 struct ContentView: View {
-    @ObservedObject private var downloader = MenuItems()
+
+    @Environment(\.managedObjectContext) var context
+
+    @ObservedObject var downloader = MenuItems()
 
     @State private var showSplash = true
     @State private var tabSelection = 1
     @StateObject var orderCaretaker = OrderCaretaker()
-    
-    var menuDishes = dishes
 
     var body: some View {
         if !showSplash {
@@ -26,24 +27,30 @@ struct ContentView: View {
                     }
                     .tag(0)
                 
-                MenuView(orderCaretaker: orderCaretaker)
+                MenuView(downloader: downloader, orderCaretaker: orderCaretaker)
                     .tabItem {
                         Image(systemName: "fork.knife")
                         Text("Menu")
                     }
                     .tag(1)
                 
-                DiscountGridView(orderCaretaker: orderCaretaker)
-                    .tabItem {
-                        Image(systemName: "gift")
-                        Text("Discounts")
-                    }
-                    .tag(2)
+//                DiscountGridView(downloader: downloader, orderCaretaker: orderCaretaker)
+//                    .tabItem {
+//                        Image(systemName: "gift")
+//                        Text("Discounts")
+//                    }
+//                    .tag(1)
                 
                 JBPizzaView(orderCaretaker: orderCaretaker)
                     .tabItem {
                         Image(systemName: "chart.pie")
                         Text("JB Pizza")
+                    }
+                    .tag(2)
+                CoreDataView(orderCaretaker: orderCaretaker)
+                    .tabItem {
+                        Image(systemName: "heart.square.fill")
+                        Text("Specials")
                     }
                     .tag(3)
                 
@@ -68,14 +75,14 @@ struct ContentView: View {
                 }
                 .onAppear(perform: {
                     Task {
-                        try await downloader.loadData()
-                        try await downloader.getRayCookie()
+                        try await downloader.loadData(context: context)
                     }
                 })
         }
     }
 }
 
+#if DEBUG
 struct ContentView_Previews: PreviewProvider {
     static private var testOrder = Binding.constant(Order(loadTestData: true))
     
@@ -90,3 +97,4 @@ struct ContentView_Previews: PreviewProvider {
             .preferredColorScheme(.dark)
     }
 }
+#endif

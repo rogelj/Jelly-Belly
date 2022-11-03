@@ -27,7 +27,7 @@ extension Dish: Identifiable { }
     - `finalCost: Double` - Computed property - based on the discountFactor (if dish is discountable)
  
 */
-class Dish {
+class Dish: Codable {
     let id: UUID = UUID()
     let name: String
     var ingredients: [Ingredients]
@@ -37,6 +37,7 @@ class Dish {
     var special: Bool?
     var dietary: String?
     var discountable: Bool?
+    var description: String
     
     // Implementing a lazy property to get the level of discount for the season
     lazy var discountFactor: Double = Constants.General.currentSeason.rawValue
@@ -55,7 +56,7 @@ class Dish {
     }
     
     init(name: String, ingredients: [Ingredients], cuisine: String, mealCategory: DishParts.MealCategory,
-         cost: Double, special: Bool? = nil, dietary: String? = nil, discountable: Bool? = nil) {
+         cost: Double, special: Bool? = nil, dietary: String? = nil, discountable: Bool? = nil, description: String) {
         self.name = name
         self.ingredients = ingredients
         self.cuisine = cuisine
@@ -64,6 +65,7 @@ class Dish {
         self.special = special
         self.dietary = dietary
         self.discountable = discountable
+        self.description = description
     }
 
     // Implementing a method to calculate the calories of the dish - Not bad!!
@@ -87,17 +89,28 @@ class Dish {
         }
         return calories.roundNearest()  // **Nice to have** - implementing a method with `return`
     }
+
+    func printDish() {
+        Swift.print("\(name)")
+        Swift.print("\(description)")
+        Swift.print("\(cuisine)")
+        Swift.print("\(mealCategory)")
+        Swift.print("\(cost)")
+        for entry in ingredients {
+            Swift.print("Name: \(entry)")
+        }
+    }
 }
 
 extension Dish {
     static func getDishes(by mealCategory: DishParts.MealCategory) -> [Dish] {
-        dishes.filter { dish in
+        dishes1.filter { dish in
             dish.mealCategory == mealCategory
         }
     }
     
     static func getDiscountDishes(by mealCategory: DishParts.MealCategory) -> [Dish] {
-        dishes.filter { dish in
+        dishes1.filter { dish in
             dish.mealCategory == mealCategory && dish.discountable == true
         }
     }
@@ -111,12 +124,12 @@ extension Dish {
     - `ingredient: String`
     - `portion`: `Double`
 */
-struct Ingredients: Hashable {
+struct Ingredients: Codable, Hashable {
     var ingredient: String
     var portion: Double
 }
 
-struct PizzaIngredients: Hashable {
+struct PizzaIngredients: Codable, Hashable {
     var ingredients: Ingredients
     var cost: Double
 }

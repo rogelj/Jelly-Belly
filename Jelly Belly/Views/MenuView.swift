@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct HeaderViewMenu: View {
+
     @Binding var menuIsShowing: Bool
     
     @Environment(\.verticalSizeClass) var verticalSizeClass
@@ -59,11 +60,14 @@ struct HeaderViewMenu: View {
  Menu view
  */
 struct MenuView: View {
-    @State var menuDishes = dishes
+
+    var downloader: MenuItems
+    
 //    @EnvironmentObject var customerOrder: Order
     @ObservedObject var orderCaretaker: OrderCaretaker
     
     var body: some View {
+//        var menuDishes = downloader.myMenuDishes
         NavigationView {
             VStack {
                 HStack {
@@ -78,7 +82,7 @@ struct MenuView: View {
                     LazyVStack(alignment: .leading, pinnedViews: [.sectionHeaders]) {
                         ForEach(DishParts.MealCategory.allCases, id: \.self) { category in
                             Section(header: MenuHeaderView(title: category.rawValue)) {
-                                ForEach(Dish.getDishes(by: category)) { dish in
+                                ForEach(self.getMyDishes(by: category)) { dish in
                                     NavigationLink(destination: MenuDetailedView(dish: dish, orderCaretaker: orderCaretaker)) {
                                         MenuRowView(dish: dish)
                                             .padding(.leading)
@@ -89,6 +93,12 @@ struct MenuView: View {
                     }
                 }
             }
+        }
+    }
+
+    func getMyDishes(by mealCategory: DishParts.MealCategory) -> [Dish] {
+        downloader.myMenuDishes.filter { dish in
+            dish.mealCategory == mealCategory
         }
     }
 }
@@ -103,19 +113,22 @@ struct MenuHeaderView: View {
     }
 }
 
+#if DEBUG
 struct MenuView_Previews: PreviewProvider {
 //    static private var menuSwiftUIIsShowing = Binding.constant(false)
 //    static private var testOrder = Binding.constant(Order(loadTestData: true))
+    static private var downloader = MenuItems()
     static private var orderCaretaker = OrderCaretaker()
-    
+
     static var previews: some View {
-        MenuView(orderCaretaker: orderCaretaker)
-        MenuView(orderCaretaker: orderCaretaker)
+        MenuView(downloader: downloader, orderCaretaker: orderCaretaker)
+        MenuView(downloader: downloader,orderCaretaker: orderCaretaker)
             .preferredColorScheme(.dark)
-        MenuView(orderCaretaker: orderCaretaker)
+        MenuView(downloader: downloader,orderCaretaker: orderCaretaker)
             .previewInterfaceOrientation(.landscapeLeft)
-        MenuView(orderCaretaker: orderCaretaker)
+        MenuView(downloader: downloader,orderCaretaker: orderCaretaker)
             .previewInterfaceOrientation(.landscapeLeft)
             .preferredColorScheme(.dark)
     }
 }
+#endif

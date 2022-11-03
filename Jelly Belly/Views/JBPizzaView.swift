@@ -101,6 +101,7 @@ struct BuilderHeaderView: View {
     }
 }
 
+#if DEBUG
 struct JBPizzaView_Previews: PreviewProvider {
     static private var orderCaretaker = OrderCaretaker()
     
@@ -110,3 +111,4 @@ struct JBPizzaView_Previews: PreviewProvider {
             .preferredColorScheme(.dark)
     }
 }
+#endif

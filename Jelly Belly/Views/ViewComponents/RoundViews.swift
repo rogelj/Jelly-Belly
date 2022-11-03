@@ -12,7 +12,7 @@ import SwiftUI
  */
 struct RoundedTextView: View {
     let text: String
-    
+
     var body: some View {
         Text(text)
             .font(.title2)
@@ -62,42 +62,42 @@ struct RoundLogoView: View {
     }
 }
 
-/**
- An example on how  to create a custom button
- */
-struct JellyBellyButton: View {
-    var message: String
-    
-    var body: some View {
+///**
+// An example on how  to create a custom button
+// */
+//struct JellyBellyButton: View {
+//    var message: String
+//
+//    var body: some View {
+//
+//        Button(action: { }) {
+//                Text(message)
+//                    .bold()
+//                   .font(.title3)
+//            }   .buttonStyle(WideBellyButton())
+//    }
+//}
 
-        Button(action: { }) {
-                Text(message)
-                    .bold()
-                   .font(.title3)
-            }   .buttonStyle(WideBellyButton())
-    }
-}
-
-/**
-Defining the style of a custom button
- */
-struct WideBellyButton: ButtonStyle {
-    func makeBody(configuration: Configuration) -> some View {
-        configuration.label
-            .padding()
-            .frame(maxWidth: 175, maxHeight: 10)
-            .foregroundColor(.white)
-            .padding()
-            .background(
-                ZStack {
-                    RoundedRectangle(cornerRadius: Constants.General.roudedRectCornerRadius)
-                        .fill(Color("Belly"))
-                    LinearGradient(gradient: Gradient(colors: [Color.white.opacity(0.3), Color.clear]), startPoint: .top, endPoint: .bottom)
-                }
-                    .cornerRadius(Constants.General.roudedRectCornerRadius)
-        )
-    }
-}
+///**
+//Defining the style of a custom button
+// */
+//struct WideBellyButton: ButtonStyle {
+//    func makeBody(configuration: Configuration) -> some View {
+//        configuration.label
+//            .padding()
+//            .frame(maxWidth: 175, maxHeight: 10)
+//            .foregroundColor(.white)
+//            .padding()
+//            .background(
+//                ZStack {
+//                    RoundedRectangle(cornerRadius: Constants.General.roudedRectCornerRadius)
+//                        .fill(Color("Belly"))
+//                    LinearGradient(gradient: Gradient(colors: [Color.white.opacity(0.3), Color.clear]), startPoint: .top, endPoint: .bottom)
+//                }
+//                    .cornerRadius(Constants.General.roudedRectCornerRadius)
+//        )
+//    }
+//}
 
 struct MenuRowView: View {
     var dish: Dish
@@ -131,6 +131,34 @@ struct MenuRowView: View {
     }
 }
 
+struct MenuCDRowView: View {
+    var dish: DishEntity
+
+    var body: some View {
+        VStack(spacing: 3) {
+            HStack {
+                if dish.special != nil && dish.special == true {
+                    VStack(alignment: .leading){
+                        Text(dish.name.uppercased())
+                            .bold()
+                            .font(.title3)
+                        Text("Special")
+                            .foregroundColor(Color("Jelly"))
+                            .font(.headline)
+                    }
+                    Spacer()
+                } else {
+                    Text(dish.name.uppercased())
+                        .bold()
+                        .font(.title3)
+                    Spacer()
+                }
+            }
+        }
+        .frame(minHeight: 40)
+    }
+}
+
 struct DishCircle: View {
     var dishName: String
     
@@ -145,19 +173,22 @@ struct DishCircle: View {
         }
     }
 }
-    
+
+#if DEBUG
 struct RoundViews: View {
     var body: some View {
         VStack(spacing: 10.0) {
             RoundedTextView(text: "1")
             RoundedImageView(systemName: "fork.knife")
             RoundLogoView(imageSize: Constants.Logo.logoViewSize)
-            JellyBellyButton(message: "OK")
+//            JellyBellyButton(message: "OK")
             DishCircle(dishName: "Fusilli Arrabiata")
         }
     }
 }
+#endif
 
+#if DEBUG
 struct RoundViews_Previews: PreviewProvider {
     static var previews: some View {
         RoundViews()
@@ -168,3 +199,4 @@ struct RoundViews_Previews: PreviewProvider {
             .previewInterfaceOrientation(.landscapeLeft)
     }
 }
+#endif

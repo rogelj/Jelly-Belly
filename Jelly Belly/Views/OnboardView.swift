@@ -103,6 +103,7 @@ struct OnboardView: View {
     }
 }
 
+#if DEBUG
 struct OnboardView_Previews: PreviewProvider {
     static private var onboardingIsShowing = Binding.constant(false)
     static var previews: some View {
@@ -116,3 +117,4 @@ struct OnboardView_Previews: PreviewProvider {
             .preferredColorScheme(.dark)
     }
 }
+#endif

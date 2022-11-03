@@ -72,7 +72,7 @@ struct ArcChomp: Shape {
 }
 
 
-
+#if DEBUG
 struct WelcomeView_Previews: PreviewProvider {
     static var previews: some View {
         WelcomeView()
@@ -85,4 +85,5 @@ struct WelcomeView_Previews: PreviewProvider {
             .preferredColorScheme(.dark)
     }
 }
+#endif
 

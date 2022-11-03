@@ -48,7 +48,7 @@ enum Cheeses: String, CaseIterable, Identifiable {
         case .none: return PizzaIngredients(ingredients: Ingredients(ingredient: "", portion: 0.0), cost: 0.0)
         case .mozarella: return PizzaIngredients(ingredients: Ingredients(ingredient: "Mozarella", portion: 1.0), cost: 2.0)
         case .goatsCheese: return PizzaIngredients(ingredients: Ingredients(ingredient: "Goat's Cheese", portion: 2.0), cost: 3.0)
-        case .gorgonzola: return PizzaIngredients(ingredients: Ingredients(ingredient: "Gotgonzola", portion: 1.0), cost: 3.0)
+        case .gorgonzola: return PizzaIngredients(ingredients: Ingredients(ingredient: "Gorgonzola", portion: 1.0), cost: 3.0)
         case .sheese: return PizzaIngredients(ingredients: Ingredients(ingredient: "Sheese", portion: 1.0), cost: 2.0)
         }
     }
@@ -135,7 +135,7 @@ public class JBPizzaBuilder {
     func build() -> Dish {
         let name = "Your Jelly Belly Pizza"
     
-        return  Dish(name: name, ingredients: ingredients, cuisine: DishParts.cuisine[0], mealCategory: DishParts.MealCategory.main, cost: cost)
+        return  Dish(name: name, ingredients: ingredients, cuisine: DishParts.cuisine[0], mealCategory: DishParts.MealCategory.main, cost: cost, description: name)
     }
 }
 

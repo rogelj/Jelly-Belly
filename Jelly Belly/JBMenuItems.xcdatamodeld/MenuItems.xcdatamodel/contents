@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21279" systemVersion="21G115" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="DishEntity" representedClassName="DishEntity" syncable="YES">
+        <attribute name="cost" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="cuisine" attributeType="String"/>
+        <attribute name="discountable" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="dishDescription" attributeType="String"/>
+        <attribute name="name" attributeType="String"/>
+        <attribute name="special" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <relationship name="tags" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Tag" inverseName="specials" inverseEntity="Tag"/>
+    </entity>
+    <entity name="Tag" representedClassName="Tag" syncable="YES">
+        <attribute name="title" attributeType="String"/>
+        <relationship name="specials" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DishEntity" inverseName="tags" inverseEntity="DishEntity"/>
+    </entity>
+</model>
