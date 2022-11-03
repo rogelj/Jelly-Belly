@@ -51,9 +51,8 @@ let userNameJB = "Jelly Belly"
 let featuresToBuild = ["The app shows a menu as a list",
                    "Menu list is fetched from an API and saved in the app",
                    "Users can choose menu items and add them to their order",
-                   "Upon placing an order, users can select or add a tip",
                    "Upon checkout, total amount will be calculated",
-                   "Users can write a review of the menu item and add a photo of the dish"]
+                   "Users can tag the specials in the menu"]
 
 extension Double {
     func roundNearest() -> Double {
