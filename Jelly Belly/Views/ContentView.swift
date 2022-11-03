@@ -38,13 +38,6 @@ struct ContentView: View {
                         }
                         .tag(1)
 
-                    //                DiscountGridView(downloader: downloader, orderCaretaker: orderCaretaker)
-                    //                    .tabItem {
-                    //                        Image(systemName: "gift")
-                    //                        Text("Discounts")
-                    //                    }
-                    //                    .tag(1)
-
                     JBPizzaView(orderCaretaker: orderCaretaker)
                         .tabItem {
                             Image(systemName: "chart.pie")

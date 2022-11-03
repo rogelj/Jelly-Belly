@@ -116,11 +116,12 @@ struct MenuHeaderView: View {
 #if DEBUG
 struct MenuView_Previews: PreviewProvider {
 //    static private var menuSwiftUIIsShowing = Binding.constant(false)
-//    static private var testOrder = Binding.constant(Order(loadTestData: true))
-    static private var downloader = MenuItems()
+//    static private var myMenuDishes = Binding.constant(Order(loadTestData: true))
+    static private var downloader = MenuItems(loadTD: true)
     static private var orderCaretaker = OrderCaretaker()
 
     static var previews: some View {
+
         MenuView(downloader: downloader, orderCaretaker: orderCaretaker)
         MenuView(downloader: downloader,orderCaretaker: orderCaretaker)
             .preferredColorScheme(.dark)

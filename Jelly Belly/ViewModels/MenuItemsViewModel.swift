@@ -87,6 +87,18 @@ class MenuItems: ObservableObject, SessionMenu {
         loadPListMenu()
     }
 
+    init(loadTD: Bool = false) {
+        self.sessionConfiguration = URLSessionConfiguration.default
+        self.session = URLSession(configuration: sessionConfiguration)
+
+        if FileManager.SearchPathDirectory.documentDirectory.createSubFolder(named: "JB") {
+            //            print("folder successfully created")
+        }
+
+       loadTestData()
+    }
+
+
 
     func loadData(context: NSManagedObjectContext) async throws {
         guard let url = URL(string: "https://www.themealdb.com/api/json/v1/1/search.php?f=b") else {
@@ -191,6 +203,10 @@ class MenuItems: ObservableObject, SessionMenu {
         } catch let error {
             print(error)
         }
+    }
+
+    private func loadTestData() {
+        myMenuDishes = dishes1
     }
 
     // Assignment 2 - Saving to PList
