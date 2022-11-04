@@ -240,11 +240,6 @@ class MenuItems: ObservableObject, SessionMenu {
         } catch let error {
             print(error)
         }
-
-        // Printing some contents of the PList to the console
-        for item in myMenuDishes[0...4] {
-            item.printDish()
-        }
     }
 
     // Assignment 3 Saving JSON info to Core data
