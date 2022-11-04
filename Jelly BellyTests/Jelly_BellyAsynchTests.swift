@@ -36,7 +36,7 @@ final class Jelly_BellyAsynchTests: XCTestCase {
     }
 
     func test_decodeDish() {
-        let url = URL(string: "http://foodbukka.herokuapp.com/api/v1/menu")!
+        let url = URL(string: "https://www.themealdb.com/api/json/v1/1/search.php?f=b")!
         URLSession.shared.dataTask(with: url) { data, response, error in
             defer { self.expectation.fulfill() }
 
@@ -48,7 +48,7 @@ final class Jelly_BellyAsynchTests: XCTestCase {
 
                 let data = try XCTUnwrap(data)
                 XCTAssertNoThrow(
-                    try JSONDecoder().decode(MenuItems.FoodBukkaMenu.self, from: data)
+                    try JSONDecoder().decode(MenuItems.TheMealDB.self, from: data)
                 )
             } catch { }
         }
@@ -63,7 +63,7 @@ final class Jelly_BellyAsynchTests: XCTestCase {
             let name: String
             let region : String
         }
-        let url = URL(string: "http://foodbukka.herokuapp.com/api/v1/menu")!
+        let url = URL(string: "https://www.themealdb.com/api/json/v1/1/search.php?f=a")!
         URLSession.shared.dataTask(with: url) { data, response, error in
             defer { self.expectation.fulfill() }
 
@@ -75,7 +75,7 @@ final class Jelly_BellyAsynchTests: XCTestCase {
 
             do {
                 _ = try JSONDecoder().decode(
-                    MenuItems.FoodBukkaMenu.self,
+                    MenuItems.TheMealDB.self,
                     from: try XCTUnwrap(data)
                 )
             } catch {

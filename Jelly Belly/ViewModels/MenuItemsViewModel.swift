@@ -16,7 +16,7 @@ protocol SessionMenu {
 
 class MenuItems: ObservableObject, SessionMenu {
 
-    @Published var myResult = [Result]()
+    @Published var myResult = [[String: String?]]()
     @Published var myMenuDishes = [Dish]() {
         didSet {
             saveJSONMenu()
@@ -30,31 +30,36 @@ class MenuItems: ObservableObject, SessionMenu {
     let menuPListURL = URL(fileURLWithPath: "JellyBellyMenuItems",
                             relativeTo: FileManager.documentsDirectoryURL.appendingPathComponent("JB")).appendingPathExtension("plist")
 
-    // MARK: - FoodBukkaMenu
-    struct FoodBukkaMenu: Codable {
-        let totalMenu: Int
-        let result: [Result]
-
-        enum CodingKeys: String, CodingKey {
-            case totalMenu = "Total Menu"
-            case result = "Result"
-        }
+    // MARK: - TheMealDB
+    struct TheMealDB: Codable {
+        let meals: [[String: String?]]
     }
 
-    // MARK: - Result
-    struct Result: Codable {
-        let images: [String]
-        let id, menuname, resultDescription: String
-        let v: Int
-
-        enum CodingKeys: String, CodingKey {
-            case images
-            case id = "_id"
-            case menuname
-            case resultDescription = "description"
-            case v = "__v"
-        }
-    }
+//    // MARK: - FoodBukkaMenu
+//    struct FoodBukkaMenu: Codable {
+//        let totalMenu: Int
+//        let result: [Result]
+//
+//        enum CodingKeys: String, CodingKey {
+//            case totalMenu = "Total Menu"
+//            case result = "Result"
+//        }
+//    }
+//
+//    // MARK: - Result
+//    struct Result: Codable {
+//        let images: [String]
+//        let id, menuname, resultDescription: String
+//        let v: Int
+//
+//        enum CodingKeys: String, CodingKey {
+//            case images
+//            case id = "_id"
+//            case menuname
+//            case resultDescription = "description"
+//            case v = "__v"
+//        }
+//    }
 
     enum MenuItemError: Error {
         case invalidResponse
@@ -84,7 +89,8 @@ class MenuItems: ObservableObject, SessionMenu {
 
 
     func loadData(context: NSManagedObjectContext) async throws {
-        guard let url = URL(string: "http://foodbukka.herokuapp.com/api/v1/menu") else {
+        guard let url = URL(string: "https://www.themealdb.com/api/json/v1/1/search.php?f=b") else {
+//        guard let url = URL(string: "http://foodbukka.herokuapp.com/api/v1/menu") else {
             print("Invalid URL")
             throw MenuItemError.invalidURL
         }
@@ -93,7 +99,7 @@ class MenuItems: ObservableObject, SessionMenu {
             do {
                 let (data, response) = try await session.data(from: url)
 
-                if let httpResponse = response as? HTTPURLResponse, let decodedResponse = try? JSONDecoder().decode(FoodBukkaMenu.self, from: data)  {
+                if let httpResponse = response as? HTTPURLResponse, let decodedResponse = try? JSONDecoder().decode(TheMealDB.self, from: data)  {
                     let code = httpResponse.statusCode
                     switch code {
                     case 200...299:
@@ -109,7 +115,7 @@ class MenuItems: ObservableObject, SessionMenu {
                         throw MenuItemError.invalidResponse
                     }
                     DispatchQueue.main.async {
-                        self.myResult = decodedResponse.result
+                        self.myResult = decodedResponse.meals
                         self.myMenuDishes = self.mappingData(dwnLst: self.myResult)
                         self.saveData(context: context)
                     }
@@ -123,21 +129,22 @@ class MenuItems: ObservableObject, SessionMenu {
     }
 
     // Part of Assignment 1 - Mapping models
-    private func mappingData(dwnLst: [Result]) -> [Dish] {
+    private func mappingData(dwnLst: [[String: String?]]) -> [Dish] {
 
         var createdDishes: [Dish] = []
         for res in dwnLst {
             let item = Dish(
-                name: res.menuname,
+                name: res["strMeal"]!!,
                 ingredients: [myIngredients.randomElement()!,
                               myIngredients.randomElement()!,
                               myIngredients.randomElement()!],
                 cuisine: DishParts.cuisine[5],
-                mealCategory: DishParts.MealCategory.allCases.randomElement()!,
+                mealCategory: DishParts.MealCategory(rawValue: res["strCategory"]!!)!,
                 cost: Double(Double.random(in: 8..<25)).roundNearest(),
                 special: Bool.random(),
                 discountable: Bool.random(),
-                description: res.resultDescription
+                description: res["strInstructions"]!!,
+                imgURL: res["strMealThumb"]!!.replacingOccurrences(of: "\\/", with: "/")
             )
 //            print("\(item.name) \(item.mealCategory) \(item.cost)")
 //            for it in item.ingredients {

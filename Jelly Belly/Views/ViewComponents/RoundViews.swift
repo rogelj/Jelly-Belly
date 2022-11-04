@@ -56,9 +56,9 @@ struct RoundLogoView: View {
         
         Image(imageLogo)
             .resizable()
-                .aspectRatio(contentMode: .fill)
-                .frame(width: imageSize, height: imageSize, alignment: .center)
-                .clipShape(Circle())
+            .aspectRatio(contentMode: .fill)
+            .frame(width: imageSize, height: imageSize, alignment: .center)
+            .clipShape(Circle())
     }
 }
 
@@ -106,19 +106,26 @@ struct MenuRowView: View {
         VStack(spacing: 3) {
             HStack {
                 if dish.special != nil && dish.special == true {
-                    VStack(alignment: .leading){
+                    VStack(alignment: .leading) {
                         Text(dish.name.uppercased())
                             .bold()
                             .font(.title3)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+
                         Text("Special")
                             .foregroundColor(Color("Jelly"))
                             .font(.headline)
                     }
                     Spacer()
                 } else {
-                    Text(dish.name.uppercased())
-                        .bold()
-                        .font(.title3)
+                    VStack(alignment: .leading) {
+                        Text(dish.name.uppercased())
+                            .bold()
+                            .font(.title3)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+
+                        Spacer()
+                    }
                     Spacer()
                 }
                 Image(systemName: "chevron.right")
@@ -159,17 +166,50 @@ struct MenuCDRowView: View {
     }
 }
 
+struct ThumbImage: View {
+    let file: Dish
+    @State var image = UIImage()
+    @State var overlay = ""
+    @EnvironmentObject var imageLoader: ImageLoader
+
+    @MainActor func updateImage(_ image: UIImage) {
+        self.image = image
+    }
+
+    var body: some View {
+        Image(uiImage: image)
+            .resizable()
+            .aspectRatio(contentMode: .fill)
+            .foregroundColor(.gray)
+            .overlay {
+                if !overlay.isEmpty {
+                    Image(systemName: overlay)
+                }
+            }
+            .task {
+                guard let image = try? await ImageDatabase.shared.image(file.imgURL ??  "") else {
+                    overlay = "camera.metering.unknown"
+                    return
+                }
+                updateImage(image)
+            }
+    }
+}
+
 struct DishCircle: View {
-    var dishName: String
+    //    var dishName: String
+    var dish: Dish
     
     var body: some View {
         VStack {
-            Image(dishName)
+            //            Image(dishName)
+            ThumbImage(file: dish)
                 .clipShape(Circle())
                 .overlay(
                     Circle().stroke(Color("Jelly"), lineWidth: 4)
                 )
                 .shadow(radius: 10)
+                .frame(width: Constants.General.dishSize, height: Constants.General.dishSize)
         }
     }
 }
@@ -181,8 +221,9 @@ struct RoundViews: View {
             RoundedTextView(text: "1")
             RoundedImageView(systemName: "fork.knife")
             RoundLogoView(imageSize: Constants.Logo.logoViewSize)
-//            JellyBellyButton(message: "OK")
-            DishCircle(dishName: "Fusilli Arrabiata")
+            //            JellyBellyButton(message: "OK")
+            //            DishCircle(dishName: "Fusilli Arrabiata")
+            DishCircle(dish: testDish)
         }
     }
 }

@@ -12,10 +12,12 @@ struct MenuDetailedView: View {
     var dish: Dish
 
     @ObservedObject var orderCaretaker: OrderCaretaker
+
+    @EnvironmentObject var imageLoader: ImageLoader
     
     var body: some View {
         VStack {
-            DishCircle(dishName: dish.name)
+            DishCircle(dish: dish)
             DishInformationView(dish: dish)
             Spacer()
                 .frame(height: 30.0)
@@ -44,7 +46,7 @@ struct MenuCDDetailedView: View {
 
     var body: some View {
         VStack {
-            DishCircle(dishName: dish.name)
+//            DishCircle(dishName: dish.name)
             DishInformationCDView(dish: dish)
             Spacer()
                 .frame(height: 30.0)
@@ -91,6 +93,7 @@ struct MenuDetailedView_Previews: PreviewProvider {
     
     static var previews: some View {
         MenuDetailedView(dish: testDish, orderCaretaker: orderCaretaker)
+            .environmentObject(ImageLoader())
     }
 }
 #endif
