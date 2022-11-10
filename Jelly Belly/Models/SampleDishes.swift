@@ -328,10 +328,20 @@ let dishes1: [Dish] = [
          cost: 14.0,
          discountable: false,
          description: "Chocolate and mascarpone with coffee"
+        ),
+    Dish(name: "Bitterballen (Dutch meatballs)",
+         ingredients: [Ingredients(ingredient: "Egg", portion: 1),
+                       Ingredients(ingredient: "Cream", portion: 2),
+                       Ingredients(ingredient: "Mascarpone", portion:  2)],
+         cuisine: DishParts.cuisine[0],
+         mealCategory: .beef,
+         cost: 18.0,
+         discountable: false,
+         description: "Delicious bitterballen - Dutch meatballs with lots of flavour."
         )
 ]
 
-let testDish = Dish(name: "Fusilli Arrabiata",
+let testDish = Dish(name: "Bitterballen (Dutch meatballs)",
                     ingredients: [Ingredients(ingredient: "Fusilli", portion: 2.0),
                                   Ingredients(ingredient:"Parmesan", portion: 1.0),
                                   Ingredients(ingredient:"Pasta Sauce", portion: 1.0)],

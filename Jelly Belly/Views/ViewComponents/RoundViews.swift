@@ -108,8 +108,8 @@ struct MenuRowView: View {
                 if dish.special != nil && dish.special == true {
                     VStack(alignment: .leading) {
                         Text(dish.name.uppercased())
+                            .foregroundColor(Color("Belly"))
                             .bold()
-                            .font(.title3)
                             .frame(maxWidth: .infinity, alignment: .leading)
 
                         Text("Special")
@@ -120,8 +120,8 @@ struct MenuRowView: View {
                 } else {
                     VStack(alignment: .leading) {
                         Text(dish.name.uppercased())
+                            .foregroundColor(Color("Belly"))
                             .bold()
-                            .font(.title3)
                             .frame(maxWidth: .infinity, alignment: .leading)
 
                         Spacer()
@@ -132,6 +132,7 @@ struct MenuRowView: View {
                     .font(.title2)
                     .foregroundColor(.gray)
                     .padding(.trailing)
+                Spacer()
             }
         }
         .frame(minHeight: 40)
@@ -148,7 +149,6 @@ struct MenuCDRowView: View {
                     VStack(alignment: .leading){
                         Text(dish.name.uppercased())
                             .bold()
-                            .font(.title3)
                         Text("Special")
                             .foregroundColor(Color("Jelly"))
                             .font(.headline)
@@ -234,6 +234,7 @@ struct RoundViews_Previews: PreviewProvider {
     static var previews: some View {
         RoundViews()
         MenuRowView(dish: testDish)
+//            .preferredColorScheme(.dark)
         RoundViews()
             .preferredColorScheme(.dark)
         RoundViews()

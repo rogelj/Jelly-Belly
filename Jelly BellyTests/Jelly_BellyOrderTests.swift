@@ -136,6 +136,6 @@ final class Jelly_BellyOrderTests: XCTestCase {
     func test_InitOrdercaretaker() {
         newOrdercaretaker = OrderCaretaker(loadTestData: true)
         let numDishes = newOrdercaretaker.order.count
-        XCTAssertEqual(numDishes, 6)
+        XCTAssertEqual(numDishes, 7)
     }
 }

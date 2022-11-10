@@ -66,7 +66,6 @@ struct DishViewCD: View {
             HStack {
                 Text(dish.name.uppercased())
                     .bold()
-                    .font(.title3)
                 Spacer()
             }
             DishInformationCDView(dish: dish)

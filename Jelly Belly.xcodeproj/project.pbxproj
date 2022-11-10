@@ -58,7 +58,6 @@
 		46E1FBDC28F02C7500F95505 /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E1FBDB28F02C7500F95505 /* SplashScreen.swift */; };
 		46E4379228B62061004FCB53 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E4379128B62061004FCB53 /* Order.swift */; };
 		46F4D9FF28D4D2460088D91D /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F4D9FE28D4D2460088D91D /* WelcomeView.swift */; };
-		46F4DA0128D4DCAE0088D91D /* DiscountGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F4DA0028D4DCAE0088D91D /* DiscountGridView.swift */; };
 		46F4DA0328D4EADD0088D91D /* DishInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F4DA0228D4EADD0088D91D /* DishInformationView.swift */; };
 		46F81C6E2902E1F40018D1E9 /* TestCoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F81C6D2902E1F40018D1E9 /* TestCoreDataStack.swift */; };
 		46F81C702902E27F0018D1E9 /* Jelly_BellyCoreDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F81C6F2902E27F0018D1E9 /* Jelly_BellyCoreDataTests.swift */; };
@@ -138,7 +137,6 @@
 		46E1FBDB28F02C7500F95505 /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
 		46E4379128B62061004FCB53 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		46F4D9FE28D4D2460088D91D /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
-		46F4DA0028D4DCAE0088D91D /* DiscountGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscountGridView.swift; sourceTree = "<group>"; };
 		46F4DA0228D4EADD0088D91D /* DishInformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishInformationView.swift; sourceTree = "<group>"; };
 		46F81C6D2902E1F40018D1E9 /* TestCoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCoreDataStack.swift; sourceTree = "<group>"; };
 		46F81C6F2902E27F0018D1E9 /* Jelly_BellyCoreDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Jelly_BellyCoreDataTests.swift; sourceTree = "<group>"; };
@@ -239,7 +237,6 @@
 				46A1B02228AFD95200302426 /* OnboardView.swift */,
 				4689A9D428CE28D30091ABB2 /* MenuView.swift */,
 				4689A9D628CE36D70091ABB2 /* MenuDetailedView.swift */,
-				46F4DA0028D4DCAE0088D91D /* DiscountGridView.swift */,
 				4695086928DF6B6C007D2F89 /* JBPizzaView.swift */,
 				46525CA528B6443B00D90956 /* OrderView.swift */,
 				46AAB96628AFCDDF00DE602A /* Assets.xcassets */,
@@ -507,7 +504,6 @@
 				4696886728B8E5B4004E8B53 /* DishParts.swift in Sources */,
 				46AAB96328AFCDDE00DE602A /* Jelly_BellyApp.swift in Sources */,
 				46092F7C28DDB6AA002E6F44 /* Dish.swift in Sources */,
-				46F4DA0128D4DCAE0088D91D /* DiscountGridView.swift in Sources */,
 				46B407ED290AC57E0031AE9E /* Network.swift in Sources */,
 				4689A9D728CE36D70091ABB2 /* MenuDetailedView.swift in Sources */,
 				46354DA728FD305000CF62BC /* Tag+CoreDataProperties.swift in Sources */,

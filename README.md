@@ -6,28 +6,30 @@
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 [![Twitter](https://img.shields.io/badge/twitter-quantum__tunnel-blue)](http://twitter.com/quantum_tunnel)
 
-This is Jelly Belly, an app aimed for restaurant owners to manage their customers with minimum contact, when customer’s seated at a restaurant table.
+**Welcome to Jelly Belly** 
+
+Jelly Belly, an app aimed for restaurant owners to manage their customers with minimum contact when customer’s seated at a restaurant table.
+
+![JellyBelly_App](README_images/JellyBelly_App.png)
+
+JellyBelly has been build entirely in SwiftUI and using modern concurrency, Core Data and even SwiftUI animations all this within an MVVM architecture.
+
+The app starts by sending the user to the Menu tab where they are able to browse the different dishes available. We are using a lazy stack to improve responsiveness in the app and create sections for the Jelly Belly menu. 
+
+When selecting a dish, the user is presented with more information about it, including the type of cuisine, the ingredients used, calorie count and a description. All this is pulled out from an API. We would like to thank [TheMealDB](https://www.themealdb.com) for making some information available to the wider public. 
+
+The images shown in the detailed view of the dish are downloaded and cached so as to improve usability and responsiveness.
+
+In the JB Pizza tab, the user is able to create their own Jelly Belly pizza. This has been done with the implementation of a builder pattern. All the user needs to do is select their preferred protein, sauce and cheese and as many veggies as their belly desires! Dishes can be added to the order by tapping the "Add to Order" button. 
+
+There are a number of Special dishes in the menu and the user is able to look at a list of these dishes and add tags to them. This part of the app is powered by Core Data. 
+
+Finally, in the Order tab the user gets a summary of the dishes selected, including the cost and discounted cost (if discounts are available). With the use of a memento patters, we are able to remove and add dishes, and even clear the entire order. 
+
+Ready for some Jelly Belly‽ 
+
+You can see a demo of the app [here](https://vimeo.com/768029284). 
 
 **The code targets iOS 16**
 
-## Features
-
-1. The app shows a menu as a list
-2. Menu list is fetched from an API and saved in the app
-3. Users can choose menu items and add them to their order
-4. Upon placing an order, users can select or add a tip
-5. Upon checkout, total amount will be calculated
-6. Users can write a review of the menu item and add a photo of the dish.
-
-## Nice to Have
-
-1. User can filter items by cuisine or dietary requirements
-
-2. Notification when order is ready and place for collection within the restaurant
-
-3. User history and order status
-
-4. User preferences - Style (to go/to stay, dietary preferences, etc)
-
-   
-
+--jrogel
